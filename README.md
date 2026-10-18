@@ -33,7 +33,7 @@
 | **`ge007`** | **골든아이 007** | FPS / N64 | 100% 한글 자막 (v1.0 retrace) | ✅ | 🎯 **실기 검수 완료** ([빌더 준비 완료](https://github.com/jshsakura/goldeneye-007-switch)) |
 | **`zelda3-ko`** | **젤다: 신들의 트라이포스** | ARPG / SNES | C 디컴파일 60fps & 16:9 한글화 | ➖ | 🎯 **실기 검수 완료** |
 | **`sm64-hd`** | **슈퍼 마리오 64 HD** | Platformer / N64 | 한글 폰트 + HD 고해상도 텍스처팩 | ✅ | 🎯 **실기 검수 완료** |
-| **`zelda-oot-hd`** | **젤다: 시간의 오카리나 HD** | Action / N64 | Ship of Harkinian C++ 네이티브 | ✅ | ⚙️ **구동 성공 (한글 OTR 대기)** |
+| **`zelda-oot-hd`** | **젤다: 시간의 오카리나 HD** | Action / N64 | SoH v9.3.0 + 한글 Pretendard HD | ✅ | 🎯 **실기 검수 완료** |
 | **`zelda-mm-hd`** | **젤다: 무쥬라의 가면 HD** | Action / N64 | 와이드스크린 고해상도 & 한글 텍스트 | ✅ | 🎯 **실기 검수 완료** |
 | **`devilutionx`** | **디아블로 1 + 헬파이어** | ARPG / PC | 한글 폰트 + 완벽 한글 자막 | ➖ | 🎯 **실기 검수 완료** |
 | **`half-life`** | **하프라이프 1** | FPS / PC | **공식 한국어 풀더빙 음성 & 자막** | ✅ | 🎯 **실기 검수 완료** |

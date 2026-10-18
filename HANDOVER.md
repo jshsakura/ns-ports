@@ -14,22 +14,23 @@
 * **스타크래프트 64 리컴파일:** `/home/jshsakura/app/sc64-korean`
 * **홈브루 포트 후보 원천 목록:** `/home/jshsakura/app/ports/LIST.md`
 * **SCUMM 고전 한글화 원본:** `/home/jshsakura/app/scumm-sources/`
+* **OOT SoH v9.3.0 한글 HD 에셋 보관소:** `/mnt/HDD-8TB-STRIPE/media3/game/switch/homebrew-archive/zelda-oot-soh-930-assets/`
 * **스위치 실기 배포 스토리지:** `/mnt/HDD-8TB-STRIPE/media3/game/switch/homebrew/`
   * CookingFoil 서버(`oc-cookingfoil`)와 `.cookingfoil.json`을 통해 직접 연동 및 서비스
 
 ---
 
-## 2. 수록 포트 현황 (31종 전원 레시피 완비 & 하프라이프 라인 실기 검증 완료)
+## 2. 수록 포트 현황 (31종 전원 레시피 완비 & 오카리나/하프라이프 라인 실기 검증 완료)
 
 모든 포트는 `ports.json`에 메타데이터가 등록되어 있으며, `ports/<id>/recipe.py`를 통해 규격화된 빌드/배포 로직을 제공합니다.
 
 > **🎯 실기 검증 완료 (Verified In-Game):**
-> 현재 카탈로그 상단 라인업(`ge007`, `zelda3-ko`, `sm64-hd`, `zelda-mm-hd`, `devilutionx`, `half-life`, 그리고 `fallout1`)은 실기에서 한국어 번역, 폰트 출력, 조작성 검증이 100% 완료되었습니다.
-> *(※ `zelda-oot-hd`는 Ship of Harkinian C++ 네이티브 엔진 실기 구동 성공, 한글 OTR 모드 연동 대기 상태)*
+> 현재 카탈로그 상단 핵심 라인업(**`ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `devilutionx`, `half-life`, 그리고 `fallout1`**)은 실기에서 한국어 번역, 폰트 출력, 조작성 검증이 100% 완료되었습니다.
+> *(※ `zelda-oot-hd`: Ship of Harkinian v9.3.0 C 네이티브 + 3.89GB Pretendard HD 한글 에셋 + Japanese(3) 기본 언어 세팅 완료)*
 
 | 카테고리 | 등록 포트 ID | 주요 특징 및 한글화 방식 |
 | :--- | :--- | :--- |
-| **N64 / SNES Recomp** | `ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `starcraft64` | Fast3D CJK 글리프 캐시 패치, 60FPS 자이로 조준, 정적 리컴파일 한국어 롬, 16:9 와이드스크린 (SoH 엔진 실기 구동 성공, 한글 OTR 대기) |
+| **N64 / SNES Recomp** | `ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `starcraft64` | Fast3D CJK 글리프 캐시 패치, 60FPS 자이로 조준, SoH v9.3.0 한글 HD 에셋, 정적 리컴파일 한국어 롬, 16:9 와이드스크린 (상위 5종 실기 검증 완료) |
 | **GoldSrc / FPS** | `half-life`, `cstrike`, `doom64` | 하프라이프 공식 한국어 풀더빙 음성(실기 검증 완료), CS 1.6 오프라인 봇/한국어 UI, Doom64EX |
 | **CRPG / Classic PC** | `fallout1`, `fallout2`, `devilutionx` | fallout1-ce CJK 폰트 & 한글 다이얼로그(검증 완료), 디아블로 1 fonts.mpq(검증 완료), fallout2-ce CP949 FreeType |
 | **RTS / Strategy** | `war1gus`, `wargus`, `cnc`, `redalert`, `fheroes2` | Stratagus 엔진 워크래프트 1 & 2 에셋 연동, C&C 타이베리안 던/레드얼럿 풀 FMV, HOMM2 공식 한국어 팩 |
@@ -86,22 +87,23 @@ print(f"All {len(ports)}/{len(ports)} recipes passed verification!")
 
 ---
 
-## 5. 향후 추가 대상 후보 (Next Pipeline Candidates)
+## 5. 향후 추가 대상 및 최적화 후보 (Next Pipeline Candidates)
 
-`/home/jshsakura/app/ports/LIST.md` 및 `/home/jshsakura/app/scumm-sources/` 기반 향후 이식/추가 검토 대상:
-
-1. **SCUMM 고전 명작 한글화 포트 (`/home/jshsakura/app/scumm-sources/`)**
-   * 텐타클 최후의 날 (Day of the Tentacle CD)
-   * 원숭이 섬의 비밀 1 (The Secret of Monkey Island)
-   * 풀 스로틀 (Full Throttle)
-2. **대형 3D PC/콘솔 이식작**
-   * **`vcmi_nx`**: 히어로즈 오브 마이트 앤 매직 3 (HOMM3)
-   * **`openmw`**: 엘더스크롤 3 모로윈드 (The Elder Scrolls III: Morrowind)
-   * **`sh2-nx` / `sh3-nx` / `sh4-nx`**: 사일런트 힐 2, 3, 4 네이티브 포트
-   * **`MarathonRecomp-NX`**: 소닉 더 헤지혹 2006 (Sonic '06)
-   * **`ProjectCane`**: 슬라이 쿠퍼 1 (Sly Cooper)
-   * **`Undertale-Yellow-NX`**: 언더테일 옐로우
-3. **아케이드 / 세가 라인**
+1. **🔥 [최우선 과제] 젤다 무쥬라의 가면 2S2H C 네이티브 포트 교체 (`zelda-mm-hd`)**
+   - 현재 구형 RetroArch 래퍼 포워더 상태인 무쥬라의 가면을 **2Ship2Harkinian (2S2H) C 네이티브 포트**로 교체.
+   - SoH v9.3.0과 동일하게 실기 60FPS, 와이드스크린, 한글 텍스처/폰트 에셋 주입 파이프라인 구축.
+2. **SCUMM 고전 명작 한글화 포트 (`/home/jshsakura/app/scumm-sources/`)**
+   - 텐타클 최후의 날 (Day of the Tentacle CD)
+   - 원숭이 섬의 비밀 1 (The Secret of Monkey Island)
+   - 풀 스로틀 (Full Throttle)
+3. **대형 3D PC/콘솔 이식작**
+   - **`vcmi_nx`**: 히어로즈 오브 마이트 앤 매직 3 (HOMM3)
+   - **`openmw`**: 엘더스크롤 3 모로윈드 (The Elder Scrolls III: Morrowind)
+   - **`sh2-nx` / `sh3-nx` / `sh4-nx`**: 사일런트 힐 2, 3, 4 네이티브 포트
+   - **`MarathonRecomp-NX`**: 소닉 더 헤지혹 2006 (Sonic '06)
+   - **`ProjectCane`**: 슬라이 쿠퍼 1 (Sly Cooper)
+   - **`Undertale-Yellow-NX`**: 언더테일 옐로우
+4. **아케이드 / 세가 라인**
    * **`Virtual-On-NX`**: 버추얼 온
    * **`Daytona-NX-Modern`**: 데이토나 USA
    * **`VF2-NX-Modern`**: 버추어 파이터 2

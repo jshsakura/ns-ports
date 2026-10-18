@@ -40,12 +40,12 @@
     "id": "zelda-oot-hd",
     "name": "젤다의 전설: 시간의 오카리나 HD (Ocarina of Time)",
     "category": "Action Adventure / N64",
-    "engine": "Ship of Harkinian",
-    "status": "boot-ok",
-    "korean": false,
+    "engine": "Ship of Harkinian v9.3.0",
+    "status": "verified",
+    "korean": true,
     "motion_controls": true,
-    "description": "Ship of Harkinian C++ 네이티브 포트. 60FPS & 자이로 조준 실기 구동 성공 (한글화 OTR 대기)",
-    "required_assets": "oot.otr, soh.otr",
+    "description": "Ship of Harkinian v9.3.0 C++ 네이티브 포트 + 60FPS 와이드스크린 + 한글 Pretendard HD 에셋(3.89GB) 실기 검수 완료",
+    "required_assets": "oot.o2r, soh.o2r, mods/OoT_Reloaded_Korean_Pretendard_HD.o2r, shipofharkinian.json",
     "nro": "zelda-oot-hd.nro"
   },
   {

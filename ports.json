@@ -113,10 +113,10 @@
     "name": "폴아웃 2 (Fallout 2)",
     "category": "CRPG / PC",
     "engine": "fallout2-ce",
-    "status": "active",
+    "status": "verified",
     "korean": true,
     "motion_controls": false,
-    "description": "폴아웃 2 커뮤니티 에디션 기반. 한국어 패치 연동",
+    "description": "폴아웃 2 커뮤니티 에디션(fallout2-ce) 기반. CP949 FreeType 한글 폰트 & 1,033개 한글 대화 연동 실기 검수 완료",
     "required_assets": "master.dat, critter.dat (PC판 데이터)",
     "nro": "fallout2.nro"
   },

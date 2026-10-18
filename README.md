@@ -39,7 +39,7 @@
 | **`half-life`** | **하프라이프 1** | FPS / PC | **공식 한국어 풀더빙 음성 & 자막** | ✅ | 🎯 **실기 검수 완료** |
 | **`cstrike`** | **카운터 스트라이크 1.6** | FPS / PC | 한글 폰트 & 한글 UI/라디오/봇 | ✅ | 📦 레시피 수록 완료 |
 | **`fallout1`** | **폴아웃 1** | CRPG / PC | fallout1-ce CJK 폰트 엔진 + 한글화 | ➖ | 🎯 **실기 검수 완료** |
-| **`fallout2`** | **폴아웃 2** | CRPG / PC | fallout2-ce CP949 FreeType 한글 | ➖ | 📦 레시피 수록 완료 |
+| **`fallout2`** | **폴아웃 2** | CRPG / PC | fallout2-ce CP949 FreeType 한글 | ➖ | 🎯 **실기 검수 완료** |
 | **`cnc`** | **C&C: 타이베리안 던** | RTS / PC | C&C Gold 한글 폰트 & 미션 브리핑 | ➖ | 📦 레시피 수록 완료 |
 | **`redalert`** | **C&C: 레드 얼럿** | RTS / PC | 한글화 연합군/소련군 캠페인 | ➖ | 📦 레시피 수록 완료 |
 | **`war1gus`** | **워크래프트 1: 오크와 인간** | RTS / PC | War1gus Stratagus 원작 에셋 연동 | ➖ | 📦 레시피 수록 완료 |

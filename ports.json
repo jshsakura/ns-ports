@@ -97,18 +97,6 @@
     "nro": "cstrike.nro"
   },
   {
-    "id": "starcraft64",
-    "name": "스타크래프트 64 (StarCraft 64)",
-    "category": "RTS / N64",
-    "engine": "N64 Native / Title Takeover",
-    "status": "active",
-    "korean": false,
-    "motion_controls": false,
-    "description": "스타크래프트 64 전용 스위치 런처 포워더",
-    "required_assets": "StarCraft 64 (USA) N64 ROM",
-    "nro": "starcraft64.nro"
-  },
-  {
     "id": "fallout1",
     "name": "폴아웃 1 (Fallout 1)",
     "category": "CRPG / PC",
@@ -157,18 +145,6 @@
     "nro": "vanillara.nro"
   },
   {
-    "id": "war1gus",
-    "name": "워크래프트 1: 인간과 오크 (Warcraft 1)",
-    "category": "RTS / PC",
-    "engine": "Stratagus / War1gus",
-    "status": "active",
-    "korean": false,
-    "motion_controls": false,
-    "description": "Stratagus 엔진 기반 워크래프트 1 리테일 에셋 구동",
-    "required_assets": "워크래프트 1 DOS 데이터",
-    "nro": "war1gus.nro"
-  },
-  {
     "id": "wargus",
     "name": "워크래프트 2: 배틀넷 에디션 (Warcraft 2)",
     "category": "RTS / PC",
@@ -179,18 +155,6 @@
     "description": "워크래프트 2 캠페인, 맵, BGM 음원 연동 포트",
     "required_assets": "Warcraft II BNE CD 데이터",
     "nro": "wargus.nro"
-  },
-  {
-    "id": "jak1",
-    "name": "잭 & 덱스터 1: 옛 조상의 유산 (Jak and Daxter)",
-    "category": "Platformer / PS2",
-    "engine": "OpenGOAL",
-    "status": "active",
-    "korean": false,
-    "motion_controls": false,
-    "description": "PS2 OpenGOAL 디컴파일 기반 네이티브 AArch64 구동",
-    "required_assets": "Jak 1 PS2 ISO",
-    "nro": "jak1.nro"
   },
   {
     "id": "jak2",
@@ -215,18 +179,6 @@
     "description": "PS2 공식 한국어 더빙/자막 연동 OpenGOAL 포트",
     "required_assets": "Jak 3 PS2 ISO (정발판)",
     "nro": "jak3.nro"
-  },
-  {
-    "id": "doom64",
-    "name": "둠 64 (Doom 64)",
-    "category": "FPS / N64",
-    "engine": "Doom64EX",
-    "status": "active",
-    "korean": false,
-    "motion_controls": true,
-    "description": "Doom64EX 엔진 기반 스위치 네이티브 포트",
-    "required_assets": "DOOM64.WAD",
-    "nro": "doom64ex.nro"
   },
   {
     "id": "fheroes2",
@@ -275,66 +227,6 @@
     "description": "교통망 경영 시뮬레이션 오픈소스 엔진. 한글 폰트 지원",
     "required_assets": "오픈 그래픽/사운드 베이스셋",
     "nro": "openttd.nro"
-  },
-  {
-    "id": "cannonball",
-    "name": "아웃런 (CannonBall - OutRun Engine)",
-    "category": "Racing / Arcade",
-    "engine": "CannonBall",
-    "status": "active",
-    "korean": false,
-    "motion_controls": false,
-    "description": "세가 아웃런 아케이드 60FPS 네이티브 엔진 포트",
-    "required_assets": "OutRun Rev. B 아케이드 ROM",
-    "nro": "cannonball.nro"
-  },
-  {
-    "id": "jazz",
-    "name": "재즈 잭래빗 2 (Jazz Jackrabbit 2)",
-    "category": "Platformer / PC",
-    "engine": "Jazz2-Native",
-    "status": "active",
-    "korean": false,
-    "motion_controls": false,
-    "description": "재즈 잭래빗 2 스위치 네이티브 C++ 포트",
-    "required_assets": "Jazz Jackrabbit 2 PC 데이터 파일",
-    "nro": "jazz.nro"
-  },
-  {
-    "id": "sonic1",
-    "name": "소닉 더 헤지혹 1 (Sonic the Hedgehog)",
-    "category": "Platformer / Mobile",
-    "engine": "RSDKv4 Decomp",
-    "status": "active",
-    "korean": false,
-    "motion_controls": false,
-    "description": "2013 모바일 리마스터 RSDKv4 디컴파일 네이티브 포트",
-    "required_assets": "Data.rsdk (Sonic 1 2013)",
-    "nro": "s12013.nro"
-  },
-  {
-    "id": "sonic2",
-    "name": "소닉 더 헤지혹 2 (Sonic the Hedgehog 2)",
-    "category": "Platformer / Mobile",
-    "engine": "RSDKv4 Decomp",
-    "status": "active",
-    "korean": false,
-    "motion_controls": false,
-    "description": "2013 모바일 리마스터 RSDKv4 디컴파일 네이티브 포트",
-    "required_assets": "Data.rsdk (Sonic 2 2013)",
-    "nro": "s22013.nro"
-  },
-  {
-    "id": "sonic-cd",
-    "name": "소닉 CD (Sonic CD)",
-    "category": "Platformer / PC",
-    "engine": "RSDKv3 Decomp",
-    "status": "active",
-    "korean": false,
-    "motion_controls": false,
-    "description": "2011 리마스터 RSDKv3 디컴파일 네이티브 포트",
-    "required_assets": "Data.rsdk (Sonic CD 2011)",
-    "nro": "scd2011.nro"
   },
   {
     "id": "pokemon-survivor-burst",

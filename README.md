@@ -31,27 +31,27 @@
 | ID | 타이틀 | 장르 / 원작 | 한국어화 형태 | 자이로 | 레시피 상태 |
 | :--- | :--- | :--- | :--- | :---: | :---: |
 | **`ge007`** | **골든아이 007** | FPS / N64 | 100% 한글 자막 (v1.0 retrace) | ✅ | **[빌더 준비 완료](https://github.com/jshsakura/goldeneye-007-switch)** |
-| **`zelda3-ko`** | **젤다: 신들의 트라이포스** | ARPG / SNES | 유저 한글화 패치 연동 | ➖ | 수록 완료 |
-| **`sm64-hd`** | **슈퍼 마리오 64 HD** | Platformer / N64 | 한글 폰트 + HD 텍스처팩 | ✅ | 수록 완료 |
-| **`zelda-oot-hd`** | **젤다: 시간의 오카리나 HD** | Action / N64 | 공식/유저 한글 텍스트 연동 | ✅ | 수록 완료 |
-| **`zelda-mm-hd`** | **젤다: 무쥬라의 가면 HD** | Action / N64 | 2Ship2Harkinian 한글 텍스트 | ✅ | 수록 완료 |
-| **`devilutionx`** | **디아블로 1 + 헬파이어** | ARPG / PC | 한글 폰트 + 완벽 한글 자막 | ➖ | 수록 완료 |
-| **`half-life`** | **하프라이프 1** | FPS / PC | **공식 한국어 풀더빙 음성 & 자막** | ✅ | 수록 완료 |
-| **`cstrike`** | **카운터 스트라이크 1.6** | FPS / PC | 한글 폰트 & 한글 UI/라디오 | ✅ | 수록 완료 |
-| **`fallout1`** | **폴아웃 1** | CRPG / PC | fallout1-ce CJK 폰트 엔진 + 한글화 | ➖ | **검수 완료 (수록)** |
-| **`fallout2`** | **폴아웃 2** | CRPG / PC | fallout2-ce CP949 FreeType 한글 | ➖ | 수록 완료 |
-| **`cnc`** | **C&C: 타이베리안 던** | RTS / PC | C&C Gold 한글 폰트 & 미션 브리핑 | ➖ | 수록 완료 |
-| **`redalert`** | **C&C: 레드 얼럿** | RTS / PC | 한글화 연합군/소련군 캠페인 | ➖ | 수록 완료 |
-| **`wargus`** | **워크래프트 2: BNE** | RTS / PC | 워크래프트 2 완벽 한글화 데이터 | ➖ | 수록 완료 |
-| **`jak2`** | **잭 2 (Jak II)** | Action / PS2 | **소니 공식 한국어 음성 더빙** | ➖ | 수록 완료 |
-| **`jak3`** | **잭 3 (Jak 3)** | Action / PS2 | **소니 공식 한국어 음성 & 자막** | ➖ | 수록 완료 |
-| **`fheroes2`** | **히어로즈 오브 마이트 앤 매직 2** | TBS / PC | fheroes2 공식 한국어 팩 지원 | ➖ | 수록 완료 |
-| **`caesar3`** | **시저 3 (Julius)** | Sim / PC | 시저 3 공식 한국어화 데이터 | ➖ | 수록 완료 |
-| **`openrct2`** | **롤러코스터 타이쿤 2** | Sim / PC | OpenRCT2 한글 폰트 & 자막 | ➖ | 수록 완료 |
-| **`openttd`** | **오픈 TTD** | Sim / PC | OpenTTD 공식 한글 번역 | ➖ | 수록 완료 |
-| **`pokemon-survivor-burst`** | **포켓몬 서바이버 버스트** | Fan Game | [한국어 홈브루 포트](https://github.com/jshsakura/psb-switch) | ➖ | 수록 완료 |
-| **`dragonball-z-rpg`** | **드래곤볼 Z RPG** | Fan RPG | 한글 자막 지원 | ➖ | 수록 완료 |
-| **`wwhd`** | **바람의 지휘봉 HD** | Action / GC | 젤다 바람의 지휘봉 한글 텍스처 | ➖ | 수록 완료 |
+| **`zelda3-ko`** | **젤다: 신들의 트라이포스** | ARPG / SNES | C 디컴파일 60fps & 16:9 한글화 | ➖ | ✅ 레시피 수록 완료 |
+| **`sm64-hd`** | **슈퍼 마리오 64 HD** | Platformer / N64 | 한글 폰트 + HD 고해상도 텍스처팩 | ✅ | ✅ 레시피 수록 완료 |
+| **`zelda-oot-hd`** | **젤다: 시간의 오카리나 HD** | Action / N64 | 60FPS 자이로 조준 & 한글 텍스트 | ✅ | ✅ 레시피 수록 완료 |
+| **`zelda-mm-hd`** | **젤다: 무쥬라의 가면 HD** | Action / N64 | 와이드스크린 고해상도 & 한글 텍스트 | ✅ | ✅ 레시피 수록 완료 |
+| **`devilutionx`** | **디아블로 1 + 헬파이어** | ARPG / PC | 한글 폰트 + 완벽 한글 자막 | ➖ | ✅ 레시피 수록 완료 |
+| **`half-life`** | **하프라이프 1** | FPS / PC | **공식 한국어 풀더빙 음성 & 자막** | ✅ | ✅ 레시피 수록 완료 |
+| **`cstrike`** | **카운터 스트라이크 1.6** | FPS / PC | 한글 폰트 & 한글 UI/라디오/봇 | ✅ | ✅ 레시피 수록 완료 |
+| **`fallout1`** | **폴아웃 1** | CRPG / PC | fallout1-ce CJK 폰트 엔진 + 한글화 | ➖ | ✅ 레시피 수록 완료 |
+| **`fallout2`** | **폴아웃 2** | CRPG / PC | fallout2-ce CP949 FreeType 한글 | ➖ | ✅ 레시피 수록 완료 |
+| **`cnc`** | **C&C: 타이베리안 던** | RTS / PC | C&C Gold 한글 폰트 & 미션 브리핑 | ➖ | ✅ 레시피 수록 완료 |
+| **`redalert`** | **C&C: 레드 얼럿** | RTS / PC | 한글화 연합군/소련군 캠페인 | ➖ | ✅ 레시피 수록 완료 |
+| **`wargus`** | **워크래프트 2: BNE** | RTS / PC | 워크래프트 2 완벽 한글화 데이터 | ➖ | ✅ 레시피 수록 완료 |
+| **`jak2`** | **잭 2 (Jak II)** | Action / PS2 | **소니 공식 한국어 음성 더빙** | ➖ | ✅ 레시피 수록 완료 |
+| **`jak3`** | **잭 3 (Jak 3)** | Action / PS2 | **소니 공식 한국어 음성 & 자막** | ➖ | ✅ 레시피 수록 완료 |
+| **`fheroes2`** | **히어로즈 오브 마이트 앤 매직 2** | TBS / PC | fheroes2 공식 한국어 팩 지원 | ➖ | ✅ 레시피 수록 완료 |
+| **`caesar3`** | **시저 3 (Julius)** | Sim / PC | 시저 3 공식 한국어화 데이터 | ➖ | ✅ 레시피 수록 완료 |
+| **`openrct2`** | **롤러코스터 타이쿤 2** | Sim / PC | OpenRCT2 한글 폰트 & 자막 | ➖ | ✅ 레시피 수록 완료 |
+| **`openttd`** | **오픈 TTD** | Sim / PC | OpenTTD 나눔고딕 한글 번역 | ➖ | ✅ 레시피 수록 완료 |
+| **`pokemon-survivor-burst`** | **포켓몬 서바이버 버스트** | Fan Game | [한국어 홈브루 포트](https://github.com/jshsakura/psb-switch) | ➖ | ✅ 레시피 수록 완료 |
+| **`dragonball-z-rpg`** | **드래곤볼 Z RPG** | Fan RPG | 한글 자막 지원 | ➖ | ✅ 레시피 수록 완료 |
+| **`wwhd`** | **바람의 지휘봉 HD** | Action / GC | 젤다 바람의 지휘봉 한글 텍스처 | ➖ | ✅ 레시피 수록 완료 |
 
 ---
 

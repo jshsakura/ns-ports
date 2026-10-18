@@ -38,7 +38,7 @@
 | **`devilutionx`** | **디아블로 1 + 헬파이어** | ARPG / PC | 한글 폰트 + 완벽 한글 자막 | ➖ | 수록 완료 |
 | **`half-life`** | **하프라이프 1** | FPS / PC | **공식 한국어 풀더빙 음성 & 자막** | ✅ | 수록 완료 |
 | **`cstrike`** | **카운터 스트라이크 1.6** | FPS / PC | 한글 폰트 & 한글 UI/라디오 | ✅ | 수록 완료 |
-| **`fallout1`** | **폴아웃 1** | CRPG / PC | fallout1-ce CJK 폰트 엔진 + 한글화 | ➖ | **텍스트 교체 작업 중** |
+| **`fallout1`** | **폴아웃 1** | CRPG / PC | fallout1-ce CJK 폰트 엔진 + 한글화 | ➖ | **검수 완료 (수록)** |
 | **`fallout2`** | **폴아웃 2** | CRPG / PC | fallout2-ce CP949 FreeType 한글 | ➖ | 수록 완료 |
 | **`cnc`** | **C&C: 타이베리안 던** | RTS / PC | C&C Gold 한글 폰트 & 미션 브리핑 | ➖ | 수록 완료 |
 | **`redalert`** | **C&C: 레드 얼럿** | RTS / PC | 한글화 연합군/소련군 캠페인 | ➖ | 수록 완료 |

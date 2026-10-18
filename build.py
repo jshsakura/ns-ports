@@ -35,6 +35,8 @@ def list_ports():
         recipe_exists = os.path.exists(os.path.join(ROOT_DIR, "ports", pid, "recipe.py"))
         if status == "verified":
             mark = "[VERIFIED]"
+        elif status == "boot-ok":
+            mark = "[BOOT-OK]"
         elif recipe_exists:
             mark = "[RECIPE]"
         else:

@@ -24,11 +24,12 @@
 모든 포트는 `ports.json`에 메타데이터가 등록되어 있으며, `ports/<id>/recipe.py`를 통해 규격화된 빌드/배포 로직을 제공합니다.
 
 > **🎯 실기 검증 완료 (Verified In-Game):**
-> 현재 카탈로그 상단부터 **하프라이프 1까지의 핵심 라인업(`ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `devilutionx`, `half-life`, 그리고 `fallout1`)**은 실기에서 한국어 번역, 폰트 출력, 조작성 검증이 100% 완료되었습니다.
+> 현재 카탈로그 상단 라인업(`ge007`, `zelda3-ko`, `sm64-hd`, `zelda-mm-hd`, `devilutionx`, `half-life`, 그리고 `fallout1`)은 실기에서 한국어 번역, 폰트 출력, 조작성 검증이 100% 완료되었습니다.
+> *(※ `zelda-oot-hd`는 Ship of Harkinian C++ 네이티브 엔진 실기 구동 성공, 한글 OTR 모드 연동 대기 상태)*
 
 | 카테고리 | 등록 포트 ID | 주요 특징 및 한글화 방식 |
 | :--- | :--- | :--- |
-| **N64 / SNES Recomp** | `ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `starcraft64` | Fast3D CJK 글리프 캐시 패치, 60FPS 자이로 조준, 정적 리컴파일 한국어 롬, 16:9 와이드스크린 (상위 5종 실기 검증 완료) |
+| **N64 / SNES Recomp** | `ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `starcraft64` | Fast3D CJK 글리프 캐시 패치, 60FPS 자이로 조준, 정적 리컴파일 한국어 롬, 16:9 와이드스크린 (SoH 엔진 실기 구동 성공, 한글 OTR 대기) |
 | **GoldSrc / FPS** | `half-life`, `cstrike`, `doom64` | 하프라이프 공식 한국어 풀더빙 음성(실기 검증 완료), CS 1.6 오프라인 봇/한국어 UI, Doom64EX |
 | **CRPG / Classic PC** | `fallout1`, `fallout2`, `devilutionx` | fallout1-ce CJK 폰트 & 한글 다이얼로그(검증 완료), 디아블로 1 fonts.mpq(검증 완료), fallout2-ce CP949 FreeType |
 | **RTS / Strategy** | `war1gus`, `wargus`, `cnc`, `redalert`, `fheroes2` | Stratagus 엔진 워크래프트 1 & 2 에셋 연동, C&C 타이베리안 던/레드얼럿 풀 FMV, HOMM2 공식 한국어 팩 |

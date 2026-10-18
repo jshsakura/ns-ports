@@ -33,7 +33,12 @@ def list_ports():
         gyro = "O" if p.get("motion_controls") else "-"
         status = p.get("status", "planned")
         recipe_exists = os.path.exists(os.path.join(ROOT_DIR, "ports", pid, "recipe.py"))
-        mark = "[RECIPE]" if recipe_exists else f"[{status}]"
+        if status == "verified":
+            mark = "[VERIFIED]"
+        elif recipe_exists:
+            mark = "[RECIPE]"
+        else:
+            mark = f"[{status}]"
         print(f"  {pid:<16} {name:<32} {kor:<6} {gyro:<6} {mark}")
     print("=" * 85)
     print(f"Total: {len(ports)} ports registered in catalogue.")

@@ -52,12 +52,12 @@
     "id": "zelda-mm-hd",
     "name": "젤다의 전설: 무쥬라의 가면 HD (Majora's Mask)",
     "category": "Action Adventure / N64",
-    "engine": "2Ship2Harkinian",
+    "engine": "2Ship2Harkinian v5.0.1",
     "status": "verified",
     "korean": true,
     "motion_controls": true,
-    "description": "2Ship2Harkinian 엔진 기반 와이드스크린 & 고해상도 에셋",
-    "required_assets": "N64 ROM (mm.z64)",
+    "description": "2 Ship 2 Harkinian v5.0.1 (Battler Bravo) C++ 네이티브 포트 + 60FPS 와이드스크린 + MM-Reloaded v11.0.3 HD 에셋(2.95GB) 실기 배포 완료",
+    "required_assets": "mm.o2r, 2ship.o2r, mods/MM_Reloaded_v11.0.3_HD.o2r, 2ship2harkinian.json",
     "nro": "zelda-mm-hd.nro"
   },
   {

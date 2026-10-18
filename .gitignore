@@ -1,0 +1,29 @@
+# Game data and ROM files
+*.z64
+*.n64
+*.v64
+*.iso
+*.wad
+*.mpq
+*.dat
+*.mix
+*.pak
+*.bin
+
+# Build artifacts & packages
+build/
+dist/
+*.nro
+*.elf
+*.nacp
+*.zip
+*.tar.gz
+
+# Python & System
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+*.log
+.vscode/
+.idea/

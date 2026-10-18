@@ -1,10 +1,10 @@
-# NX Ports Hub (nx-ports)
+# NS Ports Hub (ns-ports)
 
-[![Platforms](https://img.shields.io/badge/platform-NX%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/nx-ports)
+[![Platforms](https://img.shields.io/badge/platform-NS%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/ns-ports)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Ports](https://img.shields.io/badge/catalogued%20ports-30+-orange.svg)](ports.json)
 
-NX(Horizon OS / Nintendo Switch) 환경을 위한 고전 명작 게임 **네이티브 홈브루 포트 통합 허브 & 레시피 컬렉션**입니다.
+NS(Horizon OS / AArch64) 환경을 위한 고전 명작 게임 **네이티브 홈브루 포트 통합 허브 & 레시피 컬렉션**입니다.
 
 에뮬레이터를 통한 구동이 아닌, C/C++ 소스코드 디컴파일 및 역공학 프로젝트를 기반으로 포팅된 타이틀에 **한국어 번역 패치**와 **최신 1:1 카메라 자이로 조준(Motion Controls)**을 결합하여 완벽한 플레이 경험을 제공합니다.
 
@@ -64,8 +64,8 @@ NX(Horizon OS / Nintendo Switch) 환경을 위한 고전 명작 게임 **네이�
 
 ### 1. 저장소 클론
 ```bash
-git clone https://github.com/jshsakura/nx-ports.git
-cd nx-ports
+git clone https://github.com/jshsakura/ns-ports.git
+cd ns-ports
 ```
 
 ### 2. 지원 포트 목록 확인

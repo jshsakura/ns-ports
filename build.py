@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Retro NX Ports Hub - Master Build & Management CLI
-Curated collection of classic game native ports for NX / Horizon OS.
+NS Ports Hub - Master Build & Management CLI
+Curated collection of classic game native ports for NS / Horizon OS.
 """
 
 import os
@@ -66,7 +66,7 @@ def main():
 
     port_id = sys.argv[1]
     if port_id in ("-h", "--help"):
-        print("Retro NX Ports Hub CLI")
+        print("NS Ports Hub CLI")
         print("Commands:")
         print("  python3 build.py --list                 List all ports")
         print("  python3 build.py <port-id> [options]    Build a specific port")

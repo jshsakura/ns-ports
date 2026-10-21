@@ -1,0 +1,14 @@
+{
+  "id": "zelda3-ko",
+  "title": "젤다의 전설: 신들의 트라이포스 (A Link to the Past)",
+  "reason": "신들의 트라이포스 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/zelda3.nro",
+    "out": "zelda3.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

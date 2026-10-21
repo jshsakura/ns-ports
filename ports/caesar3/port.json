@@ -1,0 +1,12 @@
+{
+  "id": "caesar3",
+  "title": "시저 3 (Caesar III / Julius)",
+  "reason": "시저 3 원작 리테일 데이터와 공식 한국어 패치가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/caesar3.nro",
+    "out": "caesar3.nro"
+  },
+  "overlays": [],
+  "files": []
+}

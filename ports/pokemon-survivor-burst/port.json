@@ -1,0 +1,12 @@
+{
+  "id": "pokemon-survivor-burst",
+  "title": "포켓몬 서바이버 버스트 (Pokemon Survivor Burst)",
+  "reason": "게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/pokemon-survivor-burst.nro",
+    "out": "pokemon-survivor-burst.nro"
+  },
+  "overlays": [],
+  "files": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "jak1",
+  "title": "잭 & 덱스터: 구세계의 유산 (Jak and Daxter)",
+  "reason": "잭 & 덱스터 게임 데이터와 리소스가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/jak1.nro",
+    "out": "jak1.nro"
+  },
+  "overlays": [],
+  "files": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "sonic2",
+  "title": "소닉 더 헤지혹 2 (Sonic 2 2013)",
+  "reason": "소닉 2 2013 리마스터 데이터(Data.rsdk)가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/s22013.nro",
+    "out": "s22013.nro"
+  },
+  "overlays": [],
+  "files": []
+}

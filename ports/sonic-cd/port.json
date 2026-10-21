@@ -1,0 +1,12 @@
+{
+  "id": "sonic-cd",
+  "title": "소닉 CD (Sonic CD 2011)",
+  "reason": "소닉 CD 2011 리마스터 데이터(Data.rsdk)가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/scd2011.nro",
+    "out": "scd2011.nro"
+  },
+  "overlays": [],
+  "files": []
+}

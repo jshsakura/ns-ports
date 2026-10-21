@@ -82,9 +82,27 @@ def retitle_nro(src, icon, title):
         sys.exit('이름이 너무 깁니다')
     for k in range(NACP_LANGS):
         nacp[k * NACP_STRIDE:k * NACP_STRIDE + NACP_NAME] = raw + b'\0' * (NACP_NAME - len(raw))
-    jpg = open(icon, 'rb').read()
+    jpg = open(icon, 'rb').read() if icon else b[i + off(8):i + off(8) + off(16)]  # 아이콘을 안 주면 NRO 의 것을 그대로 쓴다
     hdr = b'ASET' + struct.pack('<I', 0) + struct.pack('<QQQQQQ', 0x38, len(jpg), 0x38 + len(jpg), len(nacp), 0, 0)
     return b[:i] + hdr + jpg + bytes(nacp)
+
+
+def fetch_url(entry):
+    """프로필의 downloads 항목({url, sha256, dest})을 캐시로 받아 내용을 돌려준다. 저장소에는 링크만 둔다."""
+    cache = os.path.join(os.path.expanduser(os.environ.get('NS_PORTS_CACHE', '~/.cache/ns-ports')), 'dl')
+    os.makedirs(cache, exist_ok=True)
+    key = hashlib.sha256(entry['url'].encode()).hexdigest()[:24]
+    path = os.path.join(cache, key)
+    if not os.path.exists(path):
+        req = urllib.request.Request(entry['url'], headers={'User-Agent': 'ns-ports'})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            open(path, 'wb').write(r.read())
+    data = open(path, 'rb').read()
+    want = entry.get('sha256')
+    if want and hashlib.sha256(data).hexdigest() != want:
+        os.remove(path)
+        sys.exit('내려받은 파일의 해시가 다릅니다: ' + entry['url'])
+    return data
 
 
 def favorites(path, proto='49'):
@@ -218,12 +236,22 @@ def main():
             b = rel(p, ov)
             skip |= {os.path.relpath(os.path.join(r, f), b) for r, _, fs in os.walk(b) for f in fs}
         d.link_tree(a.data, skip)
-    nro = retitle_nro(need(p, p['nro']['src']), need(p, p['icon']), p['title'])
+    if p.get('icon_url') and not p.get('icon'):
+        ic = os.path.join(os.path.expanduser('~/.cache/ns-ports'), 'icon-' + p['id'] + '.jpg')
+        os.makedirs(os.path.dirname(ic), exist_ok=True)
+        open(ic, 'wb').write(fetch_url({'url': p['icon_url'], 'sha256': p.get('icon_sha256')}))
+        p['icon'] = ic
+    nro = retitle_nro(need(p, p['nro']['src']), need(p, p['icon']) if p.get('icon') else None, p['title'])
     d.write(p['nro'].get('out', p['id'] + '.nro'), nro)
     for ov in p.get('overlays', []):
         d.overlay(rel(p, ov), set(p.get('overlay_skip', [])))
     for f in p.get('files', []):
         d.write(f['dest'], open(need(p, f['src']), 'rb').read())
+    for dl in p.get('downloads', []):  # 재배포가 애매한 이미지 등은 링크만 두고 만드는 쪽 컴퓨터에서 받는다
+        try:
+            d.write(dl['dest'], fetch_url(dl))
+        except OSError as e:
+            print('받지 못해 건너뜀: %s (%s)' % (dl['dest'], e))
     fav = p.get('favorites')
     if fav and os.path.exists(rel(p, fav['file'])):
         d.write(fav['dest'], favorites(rel(p, fav['file']), str(fav.get('protocol', '49'))))

@@ -1,0 +1,12 @@
+{
+  "id": "jak3",
+  "title": "잭 3 (Jak 3)",
+  "reason": "잭 3 게임 데이터와 한국어 음성/자막 리소스가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/jak3.nro",
+    "out": "jak3.nro"
+  },
+  "overlays": [],
+  "files": []
+}

@@ -34,7 +34,7 @@ def list_ports():
         kor = "O" if p.get("korean") else "-"
         gyro = "O" if p.get("motion_controls") else "-"
         status = p.get("status", "planned")
-        recipe_exists = os.path.exists(os.path.join(ROOT_DIR, "ports", pid, "recipe.py"))
+        recipe_exists = any(os.path.exists(os.path.join(ROOT_DIR, "ports", pid, f)) for f in ("recipe.py", "port.json"))
         if status == "verified":
             mark = "[VERIFIED]"
         elif status == "boot-ok":

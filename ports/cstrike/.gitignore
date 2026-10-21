@@ -1,0 +1,11 @@
+# 소스 트리는 업스트림에서 받고 patches/ 를 적용한다. 산출물과 작업 흔적은 올리지 않는다
+src/
+out/
+logs/
+favorites.txt
+ref/old-*
+ref/server-backups/
+ref/*.7z
+overlay-private/
+ref/*
+!ref/cstrike-icon.jpg

@@ -63,6 +63,7 @@ def run_port(port_id, extra_args):
     parser.add_argument("--no-docker", action="store_true", help="Do not use Docker")
     parser.add_argument("--deploy", help="Deploy directory path")
     args, unknown = parser.parse_known_args(extra_args)
+    args.extra = unknown  # port-specific options a recipe parses itself
 
     return module.build(args)
 

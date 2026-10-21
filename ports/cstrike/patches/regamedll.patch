@@ -1,0 +1,48 @@
+diff --git a/regamedll/CMakeLists.txt b/regamedll/CMakeLists.txt
+index b1166d0..5e77ac0 100644
+--- a/regamedll/CMakeLists.txt
++++ b/regamedll/CMakeLists.txt
+@@ -37,7 +37,7 @@ if (NOT XASH_COMPAT)
+ endif()
+ 
+ set(COMPILE_FLAGS "-U_FORTIFY_SOURCE")
+-if(NOT MSVC)
++if(NOT MSVC AND NOT CMAKE_TOOLCHAIN_FILE MATCHES "switch")
+ 	set(LINK_LIBS dl)
+ endif()
+ 
+diff --git a/regamedll/engine/osconfig.h b/regamedll/engine/osconfig.h
+index 554b1d8..6c151d2 100644
+--- a/regamedll/engine/osconfig.h
++++ b/regamedll/engine/osconfig.h
+@@ -209,12 +209,17 @@
+ 	inline int closesocket(int fd) { return close(fd); }
+ 	inline int WSAGetLastError() { return errno; }
+ 
++#ifdef __SWITCH__
++	inline void* sys_allocmem(unsigned int size) { return malloc(size); }
++	inline void sys_freemem(void* ptr, unsigned int) { free(ptr); }
++#else
+ 	inline void* sys_allocmem(unsigned int size) {
+ 		return mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+ 	}
+ 	inline void sys_freemem(void* ptr, unsigned int size) {
+ 		munmap(ptr, size);
+ 	}
++#endif
+ 
+ 	#define WSAENOPROTOOPT ENOPROTOOPT
+ 
+diff --git a/regamedll/public/tier0/platform.h b/regamedll/public/tier0/platform.h
+index eaf294f..38934f6 100644
+--- a/regamedll/public/tier0/platform.h
++++ b/regamedll/public/tier0/platform.h
+@@ -75,7 +75,7 @@
+ // Can't use extern "C" when DLL exporting a global
+ #define DLL_GLOBAL_EXPORT extern __declspec(dllexport)
+ #define DLL_GLOBAL_IMPORT extern __declspec(dllimport)
+-#elif defined __linux__ || defined __APPLE__
++#elif defined __linux__ || defined __APPLE__ || defined __SWITCH__
+ 
+ // Used for dll exporting and importing
+ #define DLL_EXPORT extern "C"

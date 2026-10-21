@@ -1,0 +1,111 @@
+diff --git a/3rdparty/ReGameDLL_CS b/3rdparty/ReGameDLL_CS
+--- a/3rdparty/ReGameDLL_CS
++++ b/3rdparty/ReGameDLL_CS
+@@ -1 +1 @@
+-Subproject commit 7be9d59dca1ee11d270e4631d7e3be0c67a1a82b
++Subproject commit 7be9d59dca1ee11d270e4631d7e3be0c67a1a82b-dirty
+diff --git a/3rdparty/yapb b/3rdparty/yapb
+--- a/3rdparty/yapb
++++ b/3rdparty/yapb
+@@ -1 +1 @@
+-Subproject commit 4967a220ba3a58c461ee1cef8b6fb37c6fd93b5e
++Subproject commit 4967a220ba3a58c461ee1cef8b6fb37c6fd93b5e-dirty
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c80b503..dd9d8f5 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -67,7 +67,9 @@ if(BUILD_SERVER)
+ 	# 	BUILD_IN_SOURCE 1
+ 	# 	INSTALL_COMMAND meson install -C build --destdir ${CMAKE_INSTALL_PREFIX}
+ 	# )
+-	add_subdirectory(3rdparty/yapb)
++	if(NOT NO_YAPB)
++		add_subdirectory(3rdparty/yapb)
++	endif()
+ 
+ 	if(MSVC)
+ 		# Limit YaPB to one concurrent compile job because MSVC shares one
+@@ -76,7 +78,9 @@ if(BUILD_SERVER)
+ 		set_property(TARGET yapb PROPERTY JOB_POOL_COMPILE yapb_compile_pool)
+     endif()
+ 
+-	set_target_postfix(yapb)
++	if(NOT NO_YAPB)
++		set_target_postfix(yapb)
++	endif()
+ 
+ 	set(XASH_COMPAT ON CACHE BOOL "" FORCE)
+ 	add_subdirectory(3rdparty/ReGameDLL_CS)
+diff --git a/cl_dll/hud.h b/cl_dll/hud.h
+index f23bb7c..b2a6650 100644
+--- a/cl_dll/hud.h
++++ b/cl_dll/hud.h
+@@ -1006,8 +1006,13 @@ public:
+ 		return -1; // invalid sprite
+ 	}
+ 
+-	inline short GetCharWidth ( unsigned char ch )
++	inline short GetCharWidth ( int ch )
+ 	{
++		// 한글 등 255 를 넘는 코드는 표에 없으므로, 엔진에 폭만 물어본다(y=-99999)
++		if ( ch < 0 )
++			ch &= 255;
++		if ( ch > 255 )
++			return gEngfuncs.pfnDrawCharacter( 0, -99999, ch, 0, 0, 0 );
+ 		return m_scrinfo.charWidths[ ch ];
+ 	}
+ 
+diff --git a/cl_dll/hud/scoreboard.cpp b/cl_dll/hud/scoreboard.cpp
+index cdbde46..34475d7 100644
+--- a/cl_dll/hud/scoreboard.cpp
++++ b/cl_dll/hud/scoreboard.cpp
+@@ -187,6 +187,9 @@ int CHudScoreboard :: Draw( float flTime )
+ 	return DrawScoreboard(flTime);
+ }
+ 
++// wider gap than the 10 px that suited the long English headers, short Korean ones would bunch up
++#define SCOREBOARD_COL_GAP 28
++
+ int CHudScoreboard :: DrawScoreboard( float fTime )
+ {
+ 	GetAllPlayersInfo();
+@@ -206,20 +209,20 @@ int CHudScoreboard :: DrawScoreboard( float fTime )
+ 	g_Columns[COL_PING] = Column( xend - 15, Localize( "#PlayerPing" ) );
+ 	g_Columns[COL_PING].end = min( g_Columns[COL_PING].end, g_Columns[COL_PING].start - DrawUtils::HudStringLen( "9999" ) );
+ 
+-	g_Columns[COL_DEATHS] = Column( g_Columns[COL_PING].end - 10, Localize( "#PlayerDeath" ) );
++	g_Columns[COL_DEATHS] = Column( g_Columns[COL_PING].end - SCOREBOARD_COL_GAP, Localize( "#PlayerDeath" ) );
+ 	g_Columns[COL_DEATHS].end = min( g_Columns[COL_DEATHS].end, g_Columns[COL_DEATHS].start - DrawUtils::HudStringLen( "9999" ) );
+ 
+-	g_Columns[COL_KILLS] = Column( g_Columns[COL_DEATHS].end - 10, Localize( "#PlayerScore" ) );
++	g_Columns[COL_KILLS] = Column( g_Columns[COL_DEATHS].end - SCOREBOARD_COL_GAP, Localize( "#PlayerScore" ) );
+ 	g_Columns[COL_KILLS].end = min( g_Columns[COL_KILLS].end, g_Columns[COL_KILLS].start - DrawUtils::HudStringLen( "9999" ) );
+ 
+-	g_Columns[COL_MONEY] = Column( g_Columns[COL_KILLS].end - 10, Localize( "#Cstrike_ACCOUNT" ) );
++	g_Columns[COL_MONEY] = Column( g_Columns[COL_KILLS].end - SCOREBOARD_COL_GAP, Localize( "#Cstrike_ACCOUNT" ) );
+ 	g_Columns[COL_MONEY].end = min( g_Columns[COL_MONEY].end, g_Columns[COL_MONEY].start - DrawUtils::HudStringLen( "$999999" ) );
+ 
+-	g_Columns[COL_HP] = Column( g_Columns[COL_MONEY].end - 10, Localize( "#Cstrike_HEALTH" ) );
++	g_Columns[COL_HP] = Column( g_Columns[COL_MONEY].end - SCOREBOARD_COL_GAP, Localize( "#Cstrike_HEALTH" ) );
+ 	g_Columns[COL_HP].end = min( g_Columns[COL_HP].end, g_Columns[COL_HP].start - DrawUtils::HudStringLen( "999999" ) );
+ 
+-	g_Columns[COL_ATTRIB] = Column( g_Columns[COL_HP].end - 10 );
+-	g_Columns[COL_ATTRIB].end = g_Columns[COL_ATTRIB].start - DrawUtils::HudStringLen( "#Cstrike_DEFUSE_KIT" );
++	g_Columns[COL_ATTRIB] = Column( g_Columns[COL_HP].end - SCOREBOARD_COL_GAP );
++	g_Columns[COL_ATTRIB].end = g_Columns[COL_ATTRIB].start - DrawUtils::HudStringLen( "MMMMMM" );
+ 
+ 	g_Columns[COL_NAME] = Column( xstart + 15, nullptr, false );
+ 	g_Columns[COL_NAME].end = g_Columns[COL_ATTRIB].end - 10;
+diff --git a/common/interface.cpp b/common/interface.cpp
+index a13a9fd..2da71a3 100644
+--- a/common/interface.cpp
++++ b/common/interface.cpp
+@@ -14,7 +14,7 @@
+ #include <unistd.h>
+ #define VRTLD_LIBDL_COMPAT
+ #include <vrtld.h>
+-#elif XASH_APPLE == 1
++#elif XASH_APPLE == 1 || XASH_NSWITCH == 1
+ #include <dlfcn.h>
+ #include <unistd.h>
+ #endif

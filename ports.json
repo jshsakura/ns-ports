@@ -86,15 +86,16 @@
   },
   {
     "id": "cstrike",
-    "name": "카운터 스트라이크 1.6 (Counter-Strike)",
+    "name": "카운터 스트라이크 1.6 (Counter-Strike 1.6)",
     "category": "FPS / PC",
-    "engine": "CS16-client",
-    "status": "active",
+    "engine": "Xash3D FWGS + cs16-client",
+    "status": "boot-ok",
     "korean": true,
     "motion_controls": true,
-    "description": "CS 1.6 클라이언트 스위치 포트. 봇 대전 및 로컬 멀티 지원",
-    "required_assets": "cstrike/ 및 valve/ 데이터",
-    "nro": "cstrike.nro"
+    "description": "신형 Xash3D FWGS 기반 CS 1.6. 한글 UI/입력/점수판, 봇, 터치·게임패드·자이로, 푸시투토크, 즐겨찾기 서버. 한글판(ko)과 순정 영문판(en) 제공",
+    "required_assets": "정품 cstrike/ 및 valve/ 데이터",
+    "nro": "cstrike.nro",
+    "repository": "ports/cstrike"
   },
   {
     "id": "fallout1",

@@ -1,0 +1,9 @@
+{
+  "homebrew_dir": "/path/to/switch/homebrew",
+  "cook_url": "https://shop.example.com",
+  "token_file": "~/.config/ns-ports/cook-token",
+  "variant": "ko",
+  "data": {
+    "cstrike": "/path/to/your/cstrike-game-data"
+  }
+}

@@ -9,10 +9,15 @@
   3) .cookingfoil.json 매니페스트
   4) 서버 API 로 폴더 재스캔(adopt) 후 종류를 port 로 지정 (서버 재시작 없음)
 
-환경 변수
-  COOK_HOMEBREW_DIR  homebrew 폴더 (프로필의 homebrew_dir 보다 우선)
-  COOK_URL           서버 주소. 없으면 등록 단계를 건너뛰고 안내만 한다
-  COOK_API_TOKEN     관리자 화면에서 만든 자동화 토큰 (cft_...). 값은 출력하지 않는다
+설정 (위에서 아래로 우선: 명령줄 > 환경 변수 > 설정 파일 > 프로필)
+  설정 파일: $NS_PORTS_CONFIG, 없으면 <저장소>/ns-ports.config.json, 없으면 ~/.config/ns-ports/config.json
+    { "homebrew_dir": "...", "cook_url": "...", "token_file": "...", "variant": "ko",
+      "data": { "<포트 id>": "<게임 데이터 폴더>" } }
+  환경 변수
+    COOK_HOMEBREW_DIR  homebrew 폴더
+    COOK_URL           서버 주소. 없으면 등록 단계를 건너뛰고 안내만 한다
+    COOK_API_TOKEN     관리자 화면에서 만든 자동화 토큰 (cft_...). 값은 출력하지 않는다
+  토큰은 설정 파일에 직접 쓰지 않고 token_file(권한 600 권장)이 가리키는 파일에서 읽는다.
 
 같은 크기인데 내용이 바뀐 파일은 끝에 여분을 붙여 크기를 바꾼다(쇼핑몰이 크기만 보고 넘기는 문제).
 """
@@ -20,6 +25,18 @@ import argparse, hashlib, json, os, re, shutil, struct, sys, urllib.request, url
 
 TEXT_EXT = ('.cfg', '.txt', '.res', '.lst', '.json')
 NACP_LANGS, NACP_STRIDE, NACP_NAME = 12, 0x300, 0x200
+
+
+def load_config():
+    here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for p in (os.environ.get('NS_PORTS_CONFIG'), os.path.join(here, 'ns-ports.config.json'),
+              os.path.expanduser('~/.config/ns-ports/config.json')):
+        if p and os.path.exists(p):
+            try:
+                return json.load(open(p, encoding='utf-8'))
+            except ValueError as e:
+                sys.exit('설정 파일을 읽지 못했습니다: %s (%s)' % (p, e))
+    return {}
 
 
 def load_profile(path, variant=None):
@@ -178,9 +195,17 @@ def main():
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-register', action='store_true')
     a = ap.parse_args()
-    p = load_profile(a.profile, a.variant)
+    cfg = load_config()
+    p = load_profile(a.profile, a.variant or cfg.get('variant'))
+    if not os.environ.get('COOK_URL') and cfg.get('cook_url'):
+        os.environ['COOK_URL'] = cfg['cook_url']
+    tf = cfg.get('token_file')
+    if not os.environ.get('COOK_API_TOKEN') and tf and os.path.exists(os.path.expanduser(tf)):
+        os.environ['COOK_API_TOKEN'] = open(os.path.expanduser(tf)).read().strip()
+    if not a.data:
+        a.data = (cfg.get('data') or {}).get(p['id'])
 
-    hb = os.environ.get('COOK_HOMEBREW_DIR') or p.get('homebrew_dir')
+    hb = os.environ.get('COOK_HOMEBREW_DIR') or cfg.get('homebrew_dir') or p.get('homebrew_dir')
     if not hb:
         sys.exit('homebrew 폴더를 정하세요(COOK_HOMEBREW_DIR 또는 프로필 homebrew_dir)')
     root = os.path.join(hb, p['id'])

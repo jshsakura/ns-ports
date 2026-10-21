@@ -22,17 +22,22 @@
 - `Velaron/cs16-client` 9778fec (+ ReGameDLL_CS 7be9d59, yapb 4967a22)
 - `fgsfdsfgs/libsolder` 36e5f31
 
-## 빌드와 조립
+## 빌드와 조립 (007 포트와 같은 방식)
 ```
-# 1) 컨테이너 빌드 (엔진, 게임 로직+클라이언트). 절차는 BUILD.md
-# 2) 쇼핑몰 폴더 모양으로 조립
-export COOK_HOMEBREW_DIR=<쇼핑몰 homebrew 폴더>
-python3 ../../tools/port_register.py port.json --variant ko            # 한글판 반영
-python3 ../../tools/port_register.py port.json --variant en --data <게임 데이터>   # 순정(영문)판 새로 조립
-python3 ../../tools/port_register.py port.json --dry-run               # 바꿀 파일만 보기
+python3 build.py cstrike --rom <내 cstrike/valve 데이터 폴더>                  # 한글판을 dist/switch/ 에 조립
+python3 build.py cstrike --rom <데이터> --variant en --zip                      # 순정(영문)판 + zip
+python3 build.py cstrike --rom <데이터> --deploy <homebrew 폴더>                # 쇼핑몰 폴더에 바로 반영
+python3 build.py cstrike --skip-build --dry-run                                # 빌드 생략, 바꿀 파일만 보기
 ```
+1. 업스트림을 고정 커밋으로 `ports/cstrike/src/` 에 받아 `patches/` 를 적용한다(처음 한 번).
+2. devkitPro 도커에서 엔진과 게임 코드를 빌드한다. 도커가 필요하다.
+3. 바이너리, `overlay-*`, 내 게임 데이터(하드링크)를 합쳐 조립한다.
+4. `--deploy` 를 주고 설정에 서버 주소와 토큰이 있으면 폴더 재스캔과 종류(port) 지정까지 서버 API 로 한다.
+
+옵션은 `ns-ports.config.json` 에 적어 둘 수 있다(`ns-ports.config.example.json` 참고, 저장소에 올리지 않는다).
+우선순위는 명령줄, 환경 변수, 설정 파일, 프로필 순이다. 토큰은 설정 파일에 쓰지 않고 `token_file` 이 가리키는 파일에서 읽는다.
 같은 크기인데 내용이 바뀐 파일은 끝에 여분을 붙여 쇼핑몰이 새로 받게 한다(아래 함정).
-`--data` 는 하드링크로 연결하며, 다른 판이 덮어쓴 파일은 가져오지 않는다.
+`--data`(= `--rom`) 는 다른 판이 덮어쓴 파일을 가져오지 않는다.
 
 ## 즐겨찾기 서버
 `favorites.example.txt` 를 `favorites.txt` 로 복사해 한 줄에 `주소:포트` 로 적고 `register.py` 를 돌리면

@@ -27,3 +27,7 @@ __pycache__/
 *.log
 .vscode/
 .idea/
+ns-ports.config.json
+ports/cstrike/src/
+ports/cstrike/out/
+ports/cstrike/dist/

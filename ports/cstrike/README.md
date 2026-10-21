@@ -59,3 +59,7 @@ python3 build.py cstrike --skip-build --dry-run                                #
 ## 공개용 순정판 (레딧 등)
 `scripts/release-global.sh` 가 `out/release/cstrike-switch-global.zip` 을 만든다. 게임 데이터, 개인 배경 이미지, 한글 파일은 넣지 않고
 영문 설명(`release/README-global.txt`)과 패치(`source/`)를 함께 담는다. 쇼핑몰에는 올리지 않는다.
+
+## Third-party assets
+- `overlay-ko/cstrike/gfx/fonts/*.ttf` are NanumSquareRound (Naver Nanum fonts, SIL Open Font License 1.1), stored under the file names the engine looks for.
+- Touch button icons are generic drawings made for this port. App icons are not redistributed; link them with `icon_url` / `downloads`.

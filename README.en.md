@@ -10,6 +10,8 @@ and assembles a ready-to-copy folder around **your own game data**.
 
 ## Quick start
 
+Requirements and the game data each port needs are in [INSTALL.md](INSTALL.md).
+
 ```bash
 git clone https://github.com/jshsakura/ns-ports.git && cd ns-ports
 python3 build.py --list                                      # what is available

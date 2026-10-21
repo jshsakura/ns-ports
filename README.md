@@ -66,6 +66,8 @@
 
 ## 🚀 사용법 (Getting Started)
 
+> 모든 포트의 준비물과 설치법, 포트별로 필요한 게임 데이터는 [INSTALL.md](INSTALL.md) 한 곳에 모았습니다.
+
 ### 1. 저장소 클론
 ```bash
 git clone https://github.com/jshsakura/ns-ports.git

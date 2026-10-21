@@ -15,3 +15,9 @@ IP 와 개인 경로, 토큰은 넣지 않습니다. 푸시 전에 diff 에서 I
 Do not commit them. Put a link in `port.json` and the assembler downloads and verifies it on the user's machine:
 `"icon_url": "...", "icon_sha256": "..."` for the app icon, or `"downloads": [{"url": "...", "sha256": "...", "dest": "path/in/package"}]`.
 Credit the author in the port README. 링크만 두고, 받는 쪽에서 내려받아 해시를 확인합니다.
+
+## Where a port lives / 포트가 있어야 할 곳
+Everything lives in this repository, as patches, overlays and a recipe on top of a pinned upstream. The one exception is a
+port that is a full source tree of its own (today only `ge007`, a decompilation with its own history): it keeps its own repository
+and `ports/<id>/recipe.py` just clones it, so the install steps stay identical.
+업스트림에 패치를 얹는 포트는 전부 이 저장소에 두고, 자체 소스 트리를 통째로 가진 포트(지금은 `ge007` 하나)만 별도 저장소로 두고 레시피로 연결합니다.

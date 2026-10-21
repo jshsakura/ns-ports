@@ -76,27 +76,31 @@ def docker_build(script):
          DOCKER_IMAGE, "bash", "/work/scripts/" + script])
 
 
-def make_menu_background():
-    """Download the linked hero image (sha256-checked) and bake the Korean build's menu background from it."""
-    art = next((a for a in json.load(open(os.path.join(PORT_DIR, "port.json"), encoding="utf-8")).get("art", [])
-                if a.get("use") == "menu-background"), None)
-    if not art:
-        return
+ART_BUILDERS = {"menu-background": ("make-splash.py", "splash.bmp"), "loading-screen": ("make-conback.py", "conback.bmp")}
+
+
+def make_art():
+    """Download the linked hero images (sha256-checked) and bake the Korean build's backgrounds from them."""
+    arts = json.load(open(os.path.join(PORT_DIR, "port.json"), encoding="utf-8")).get("art", [])
     sys.path.insert(0, os.path.join(ROOT_DIR, "tools"))
     import port_register
-    try:
-        data = port_register.fetch_url(art)
-    except OSError as e:
-        print("[!] menu background skipped, download failed:", e)
-        return
     dst = os.path.join(PORT_DIR, "generated", "cstrike", "gfx", "shell")
-    os.makedirs(dst, exist_ok=True)
-    src = os.path.join(dst, "hero.src")
-    open(src, "wb").write(data)
-    subprocess.run([sys.executable, os.path.join(PORT_DIR, "scripts", "make-splash.py"), src,
-                    os.path.join(dst, "splash.bmp")], check=True)
-    os.remove(src)
-    print("[*] menu background from", art["page"], "by", art["author"])
+    for art in arts:
+        builder = ART_BUILDERS.get(art.get("use"))
+        if not builder:
+            continue
+        try:
+            data = port_register.fetch_url(art)
+        except OSError as e:
+            print("[!] %s skipped, download failed: %s" % (art["use"], e))
+            continue
+        os.makedirs(dst, exist_ok=True)
+        src = os.path.join(dst, "hero.src")
+        open(src, "wb").write(data)
+        subprocess.run([sys.executable, os.path.join(PORT_DIR, "scripts", builder[0]), src,
+                        os.path.join(dst, builder[1])], check=True)
+        os.remove(src)
+        print("[*] %s from %s by %s" % (art["use"], art["page"], art["author"]))
 
 
 def build(args):
@@ -116,7 +120,7 @@ def build(args):
         docker_build("build-cs.sh")
 
     if getattr(args, "variant", None) != "original" and not opt.dry_run:
-        make_menu_background()
+        make_art()
 
     out = args.deploy or os.path.join(DIST, "switch")
     cmd = [sys.executable, REGISTER, os.path.join(PORT_DIR, "port.json")]

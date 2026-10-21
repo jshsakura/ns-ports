@@ -14,6 +14,7 @@ The game data is yours: it is hard-linked, never uploaded or committed.
 Options and defaults can also live in ns-ports.config.json (see ns-ports.config.example.json).
 """
 import argparse
+import json
 import os
 import shutil
 import subprocess
@@ -75,6 +76,29 @@ def docker_build(script):
          DOCKER_IMAGE, "bash", "/work/scripts/" + script])
 
 
+def make_menu_background():
+    """Download the linked hero image (sha256-checked) and bake the Korean build's menu background from it."""
+    art = next((a for a in json.load(open(os.path.join(PORT_DIR, "port.json"), encoding="utf-8")).get("art", [])
+                if a.get("use") == "menu-background"), None)
+    if not art:
+        return
+    sys.path.insert(0, os.path.join(ROOT_DIR, "tools"))
+    import port_register
+    try:
+        data = port_register.fetch_url(art)
+    except OSError as e:
+        print("[!] menu background skipped, download failed:", e)
+        return
+    dst = os.path.join(PORT_DIR, "generated", "cstrike", "gfx", "shell")
+    os.makedirs(dst, exist_ok=True)
+    src = os.path.join(dst, "hero.src")
+    open(src, "wb").write(data)
+    subprocess.run([sys.executable, os.path.join(PORT_DIR, "scripts", "make-splash.py"), src,
+                    os.path.join(dst, "splash.bmp")], check=True)
+    os.remove(src)
+    print("[*] menu background from", art["page"], "by", art["author"])
+
+
 def build(args):
     own = argparse.ArgumentParser(prog="build.py cstrike")
     own.add_argument("--skip-build", action="store_true", help="reuse binaries in out/")
@@ -90,6 +114,9 @@ def build(args):
         os.makedirs(os.path.join(PORT_DIR, "out"), exist_ok=True)
         docker_build("build-engine.sh")
         docker_build("build-cs.sh")
+
+    if getattr(args, "variant", None) != "original" and not opt.dry_run:
+        make_menu_background()
 
     out = args.deploy or os.path.join(DIST, "switch")
     cmd = [sys.executable, REGISTER, os.path.join(PORT_DIR, "port.json")]

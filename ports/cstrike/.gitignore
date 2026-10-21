@@ -9,3 +9,4 @@ ref/*.7z
 overlay-private
 ref/*
 !ref/cstrike-icon.jpg
+generated

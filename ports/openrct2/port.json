@@ -7,6 +7,22 @@
     "src": "in/openrct2.nro",
     "out": "openrct2.nro"
   },
-  "overlays": [],
-  "files": []
+  "overlays": [
+    "overlay"
+  ],
+  "files": [],
+  "upstream": "https://github.com/Wander-Eule/OpenRCT2-Switch",
+  "variants": {
+    "ko": {
+      "files": [
+        {
+          "src": "assets/NanumBarunGothic.ttf",
+          "dest": "font.ttf"
+        }
+      ]
+    },
+    "original": {
+      "title": "RollerCoaster Tycoon 2 (OpenRCT2)"
+    }
+  }
 }

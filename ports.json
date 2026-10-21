@@ -272,9 +272,9 @@
     "description": "OpenRCT2 스위치 터치/패드 지원 포트",
     "required_assets": "RCT2 설치 파일",
     "nro": "openrct2.nro",
-    "upstream": "https://github.com/rsn8887/OpenRCT2",
-    "version": "v1.06-switch",
-    "obtained": "downloaded"
+    "upstream": "https://github.com/Wander-Eule/OpenRCT2-Switch",
+    "version": "7d4673d8b2 + Korean patch",
+    "obtained": "built"
   },
   {
     "id": "openttd",
@@ -423,5 +423,20 @@
     "upstream": "https://github.com/centollOS/SwitchWakerHD",
     "version": "9a57081",
     "obtained": "built"
+  },
+  {
+    "id": "openbor",
+    "name": "OpenBOR (Streets of Rage X 등)",
+    "category": "Beat'em up / Engine",
+    "engine": "OpenBOR 3.0 / SoRX / FFLNS",
+    "status": "active",
+    "korean": false,
+    "motion_controls": false,
+    "description": "OpenBOR 엔진의 스위치 빌드 4종(일반, Streets of Rage X, Final Fight LNS, 2018 엔진). 팩은 직접 준비합니다",
+    "required_assets": "OpenBOR .pak 게임 팩",
+    "nro": "OpenBOR.nro",
+    "upstream": "https://github.com/SylphiaWindy/openbor",
+    "version": "switch-v26.0919.1",
+    "obtained": "downloaded"
   }
 ]

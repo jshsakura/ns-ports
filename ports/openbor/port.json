@@ -1,0 +1,10 @@
+{
+  "id": "openbor",
+  "title": "OpenBOR",
+  "reason": "OpenBOR 게임 팩(.pak)을 Paks 폴더에 넣어야 실행됩니다",
+  "base": ".",
+  "upstream": "https://github.com/SylphiaWindy/openbor",
+  "nro": { "src": "in/OpenBOR.nro", "out": "OpenBOR.nro" },
+  "overlays": [],
+  "files": []
+}

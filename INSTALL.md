@@ -46,7 +46,8 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `jak2` | Jak 2 PS2 ISO (정발판) | assemble | place your built `jak2.nro` in `ports/jak2/in/` | fildicio/jak-project-switch |
 | `jak3` | Jak 3 PS2 ISO (정발판) | assemble | place your built `jak3.nro` in `ports/jak3/in/` | fildicio/jak-project-switch |
 | `jazz` | 원작 PC 설치 데이터 (Source/) | assemble | place your built `jazz.nro` in `ports/jazz/in/` | deathkiller/jazz2 3.8.0, downloaded |
-| `openrct2` | RCT2 설치 파일 | assemble | place your built `openrct2.nro` in `ports/openrct2/in/` | rsn8887/OpenRCT2 v1.06-switch, downloaded |
+| `openbor` | OpenBOR .pak 게임 팩 | assemble | place your built `OpenBOR.nro` in `ports/openbor/in/` | SylphiaWindy/openbor switch-v26.0919.1, downloaded |
+| `openrct2` | RCT2 설치 파일 | source | built on your machine | Wander-Eule/OpenRCT2-Switch 7d4673d8b2 + Korean patch, built |
 | `openttd` | 오픈 그래픽/사운드 베이스셋 | assemble | place your built `openttd.nro` in `ports/openttd/in/` | rsn8887/OpenTTD v1.07-switch, downloaded |
 | `pokemon-survivor-burst` | 게임 데이터 리소스 | assemble | place your built `pokemon-survivor-burst.nro` in `ports/pokemon-survivor-burst/in/` | - |
 | `redalert` | Red Alert CD1/CD2 .MIX 파일 | assemble | place your built `vanillara.nro` in `ports/redalert/in/` | - |

@@ -63,4 +63,4 @@ python3 build.py cstrike --skip-build --dry-run                                #
 ## Third-party assets
 - `overlay-ko/cstrike/gfx/fonts/*.ttf` are NanumSquareRound (Naver Nanum fonts, SIL Open Font License 1.1), stored under the file names the engine looks for.
 - Touch button icons are generic drawings made for this port. App icons are not redistributed; link them with `icon_url` / `downloads`.
-- Hero images (SteamGridDB, not stored in this repository; `port.json` `art` has the links and sha256): by F R A N K Z E B (hero/152895) and Asterdenpa (hero/123728).
+- Menu background (SteamGridDB hero, not stored in this repository; `port.json` `art` has the link and sha256): by F R A N K Z E B (hero/152895).

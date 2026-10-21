@@ -22,7 +22,8 @@
     "motion_controls": false,
     "description": "SNES 신들의 트라이포스 C 재구현 포트. 와이드스크린 16:9 60fps & 한국어 텍스트 지원",
     "required_assets": "zelda3_assets.dat",
-    "nro": "zelda3.nro"
+    "nro": "zelda3.nro",
+    "upstream": "https://github.com/snesrev/zelda3"
   },
   {
     "id": "sm64-hd",
@@ -82,7 +83,8 @@
     "motion_controls": true,
     "description": "Xash3D 엔진 기반 하프라이프 1 네이티브 포트. 공식 한국어 풀더빙 음성 연동",
     "required_assets": "valve/ 폴더 (원작 PC 게임 데이터)",
-    "nro": "half-life.nro"
+    "nro": "half-life.nro",
+    "upstream": "https://github.com/FWGS/xash3d-fwgs"
   },
   {
     "id": "cstrike",
@@ -95,7 +97,8 @@
     "description": "신형 Xash3D FWGS 기반 CS 1.6. 한글 UI/입력/점수판, 봇, 터치·게임패드·자이로, 푸시투토크, 즐겨찾기 서버. 한글판(ko)과 순정 영문판(en) 제공",
     "required_assets": "정품 cstrike/ 및 valve/ 데이터",
     "nro": "cstrike.nro",
-    "repository": "ports/cstrike"
+    "repository": "ports/cstrike",
+    "upstream": "https://github.com/FWGS/xash3d-fwgs"
   },
   {
     "id": "fallout1",
@@ -155,7 +158,8 @@
     "motion_controls": false,
     "description": "워크래프트 1 원작 에셋 기반 Stratagus 엔진 포트",
     "required_assets": "DATA.WAR 등 DOS/Mac 원작 데이터",
-    "nro": "war1gus.nro"
+    "nro": "war1gus.nro",
+    "upstream": "https://github.com/Thorhax/War1gus-NX-Modern"
   },
   {
     "id": "wargus",
@@ -167,7 +171,8 @@
     "motion_controls": false,
     "description": "워크래프트 2 캠페인, 맵, BGM 음원 연동 포트",
     "required_assets": "Warcraft II BNE CD 데이터",
-    "nro": "wargus.nro"
+    "nro": "wargus.nro",
+    "upstream": "https://github.com/Thorhax/Wargus-NX-Modern"
   },
   {
     "id": "starcraft64",
@@ -191,7 +196,8 @@
     "motion_controls": false,
     "description": "OpenGOAL 기반 잭 & 덱스터 1 네이티브 포트. 60fps & 16:9 와이드스크린",
     "required_assets": "Jak 1 PS2 ISO",
-    "nro": "jak1.nro"
+    "nro": "jak1.nro",
+    "upstream": "https://github.com/fildicio/jak-project-switch"
   },
   {
     "id": "jak2",
@@ -203,7 +209,8 @@
     "motion_controls": false,
     "description": "PS2 공식 한국어 음성 에셋 연동 OpenGOAL 포트",
     "required_assets": "Jak 2 PS2 ISO (정발판)",
-    "nro": "jak2.nro"
+    "nro": "jak2.nro",
+    "upstream": "https://github.com/fildicio/jak-project-switch"
   },
   {
     "id": "jak3",
@@ -215,7 +222,8 @@
     "motion_controls": false,
     "description": "PS2 공식 한국어 더빙/자막 연동 OpenGOAL 포트",
     "required_assets": "Jak 3 PS2 ISO (정발판)",
-    "nro": "jak3.nro"
+    "nro": "jak3.nro",
+    "upstream": "https://github.com/fildicio/jak-project-switch"
   },
   {
     "id": "fheroes2",
@@ -227,7 +235,8 @@
     "motion_controls": false,
     "description": "HOMM2 최신 C++ 오픈소스 리메이크 엔진. 공식 한국어 팩 지원",
     "required_assets": "HOMM2 원작 게임 데이터 (HEROES2/DATA)",
-    "nro": "fheroes2.nro"
+    "nro": "fheroes2.nro",
+    "upstream": "https://github.com/ihhub/fheroes2"
   },
   {
     "id": "caesar3",
@@ -251,7 +260,8 @@
     "motion_controls": false,
     "description": "OpenRCT2 스위치 터치/패드 지원 포트",
     "required_assets": "RCT2 설치 파일",
-    "nro": "openrct2.nro"
+    "nro": "openrct2.nro",
+    "upstream": "https://github.com/rsn8887/OpenRCT2"
   },
   {
     "id": "openttd",
@@ -263,7 +273,8 @@
     "motion_controls": false,
     "description": "교통망 경영 시뮬레이션 오픈소스 엔진. 한글 폰트 지원",
     "required_assets": "오픈 그래픽/사운드 베이스셋",
-    "nro": "openttd.nro"
+    "nro": "openttd.nro",
+    "upstream": "https://github.com/rsn8887/OpenTTD"
   },
   {
     "id": "sonic1",
@@ -275,7 +286,8 @@
     "motion_controls": false,
     "description": "소닉 1 2013 리마스터 네이티브 디컴파일 포트. 공식 한국어(Language=8) 지원",
     "required_assets": "Data.rsdk (모바일 2013 리마스터 데이터)",
-    "nro": "s12013.nro"
+    "nro": "s12013.nro",
+    "upstream": "https://github.com/heyjoeway/Sonic-1-2-2013-Decompilation"
   },
   {
     "id": "sonic2",
@@ -287,7 +299,8 @@
     "motion_controls": false,
     "description": "소닉 2 2013 리마스터 네이티브 디컴파일 포트. 공식 한국어(Language=8) 지원",
     "required_assets": "Data.rsdk (모바일 2013 리마스터 데이터)",
-    "nro": "s22013.nro"
+    "nro": "s22013.nro",
+    "upstream": "https://github.com/heyjoeway/Sonic-1-2-2013-Decompilation"
   },
   {
     "id": "sonic-cd",
@@ -311,7 +324,8 @@
     "motion_controls": false,
     "description": "아웃런 아케이드 C++ 재구현 엔진 포트. 60fps & 와이드스크린 지원",
     "required_assets": "OutRun 아케이드 ROM 세트",
-    "nro": "cannonball.nro"
+    "nro": "cannonball.nro",
+    "upstream": "https://github.com/Thorhax/Cannonball-NX-Modern"
   },
   {
     "id": "jazz",
@@ -360,7 +374,8 @@
     "motion_controls": false,
     "description": "드래곤볼 Z 팬메이드 RPG 스위치 포트",
     "required_assets": "게임 에셋",
-    "nro": "DragonballZrpg.nro"
+    "nro": "DragonballZrpg.nro",
+    "upstream": "https://github.com/white-axe/mkxp-z"
   },
   {
     "id": "wwhd",

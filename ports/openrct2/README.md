@@ -1,13 +1,15 @@
-# 롤러코스터 타이쿤 2 (OpenRCT2)
+# RollerCoaster Tycoon 2 (OpenRCT2)
 
-OpenRCT2 스위치 터치/패드 지원 포트
+OpenRCT2 for Switch with touch and controller support, based on the Wander-Eule/OpenRCT2-Switch fork (`7d4673d8b2`, engine 0.5.4).
 
-- 엔진: OpenRCT2
-- 필요한 것: RCT2 설치 파일
+- `original`: the fork as it is, built without TrueType text.
+- `ko`: adds `patches/korean-switch.patch`: an embedded Korean font (NanumBarunGothic, SIL OFL, `assets/`), the `ko-KR` strings,
+  and Switch locale handling so the saved language is not reset. The patch applies cleanly to the pinned commit.
 
-## 사용
-`in/openrct2.nro` 에 빌드된 NRO 를 두고, 내 게임 데이터 폴더를 지정한다.
 ```
-python3 build.py openrct2 --rom <게임 데이터 폴더> --zip          # 또는 --deploy <homebrew 폴더>
+python3 build.py openrct2 --rom <your RCT2 files> --variant ko --zip
+python3 build.py openrct2 --rom <your RCT2 files> --variant original --deploy <homebrew folder>
 ```
-덮어쓸 설정 파일은 `overlay/` 에 있다. 게임 데이터와 NRO 는 저장소에 없다.
+The build runs in a devkitPro container with ICU 78 and libzip (`scripts/Dockerfile`, `scripts/build-icu78.sh`, or `OPENRCT2_BUILDER`).
+The builder files are reconstructed from the image that built the shipped NRO and have not been rebuilt from scratch.
+Game data (RollerCoaster Tycoon 2) is never included. Without `in/openrct2.nro` and without `--skip-build` the NRO is built; with `--skip-build` an existing NRO is reused.

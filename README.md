@@ -3,7 +3,7 @@
 [![Platforms](https://img.shields.io/badge/platform-NS%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/ns-ports)
 [![Language](https://img.shields.io/badge/language-Korean%20(100%25)-red.svg)](README.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Ports](https://img.shields.io/badge/native%20ports-31-orange.svg)](ports.json)
+[![Ports](https://img.shields.io/badge/native%20ports-32-orange.svg)](ports.json)
 
 **닌텐도 스위치(NS / Horizon OS) 환경을 위한 명작 게임 한국어화(Korean) 네이티브 포트 전문 컬렉션**입니다.
 
@@ -26,7 +26,7 @@
 
 ---
 
-## 🎮 네이티브 포트 카탈로그 (31 Games)
+## 🎮 네이티브 포트 카탈로그 (32 Games)
 
 | ID | 타이틀 | 장르 / 원작 | 한국어화 형태 | 자이로 | 구동 및 레시피 상태 |
 | :--- | :--- | :--- | :--- | :---: | :---: |

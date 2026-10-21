@@ -107,8 +107,9 @@ class Dest:
         dst = os.path.join(self.root, relpath)
         if os.path.exists(dst):
             old = open(dst, 'rb').read()
-            if old == data:
-                return
+            pad = b'\n' if relpath.endswith(TEXT_EXT) else b'\0'
+            if old == data or (old.startswith(data) and not old[len(data):].strip(pad)):
+                return  # 같거나, 지난번에 크기를 맞추려 붙인 여분만 다르다
             if relpath.endswith('.json'):
                 try:
                     if json.loads(old) == json.loads(data):

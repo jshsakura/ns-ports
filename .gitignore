@@ -28,6 +28,8 @@ __pycache__/
 .vscode/
 .idea/
 ns-ports.config.json
-ports/cstrike/src/
-ports/cstrike/out/
-ports/cstrike/dist/
+ports/cstrike/src
+ports/cstrike/out
+ports/cstrike/dist
+ports/cstrike/logs
+ports/cstrike/overlay-private

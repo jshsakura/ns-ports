@@ -1,0 +1,12 @@
+{
+  "id": "war1gus",
+  "title": "워크래프트 1: 오크와 인간 (Warcraft: Orcs & Humans)",
+  "reason": "워크래프트 1 원작 리테일 그래픽과 사운드 및 캠페인 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/war1gus.nro",
+    "out": "war1gus.nro"
+  },
+  "overlays": [],
+  "files": []
+}

@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 67e6eae..e80a4b3 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -149,7 +149,7 @@ if(WIN32 OR MINGW)
+ elseif(ANDROID)
+     target_link_libraries(${PROJECT_NAME} PRIVATE m dl log)
+ elseif(NOT VITA)
+-    target_link_libraries(${PROJECT_NAME} PRIVATE m dl pthread)
++    target_link_libraries(${PROJECT_NAME} PRIVATE m pthread)
+ endif()
+ 
+ target_include_directories(${PROJECT_NAME} PRIVATE

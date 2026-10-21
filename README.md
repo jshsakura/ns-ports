@@ -37,7 +37,7 @@
 | **`zelda-mm-hd`** | **젤다: 무쥬라의 가면 HD** | Action / N64 | 2S2H v5.0.1 + MM-Reloaded HD | ✅ | 🎯 **실기 배포 완료** |
 | **`devilutionx`** | **디아블로 1 + 헬파이어** | ARPG / PC | 한글 폰트 + 완벽 한글 자막 | ➖ | 🎯 **실기 검수 완료** |
 | **`half-life`** | **하프라이프 1** | FPS / PC | **공식 한국어 풀더빙 음성 & 자막** | ✅ | 🎯 **실기 검수 완료** |
-| **`cstrike`** | **카운터 스트라이크 1.6** | FPS / PC | 한글 폰트 & 한글 UI/라디오/봇 | ✅ | 📦 레시피 수록 완료 |
+| **`cstrike`** | **카운터 스트라이크 1.6** | FPS / PC | 한글 UI/입력/점수판 + 순정 영문판 | ✅ | 🔧 신형 엔진 빌드, 실기 확인 중 ([레시피](ports/cstrike)) |
 | **`fallout1`** | **폴아웃 1** | CRPG / PC | fallout1-ce CJK 폰트 엔진 + 한글화 | ➖ | 🎯 **실기 검수 완료** |
 | **`fallout2`** | **폴아웃 2** | CRPG / PC | fallout2-ce CP949 FreeType 한글 | ➖ | 🎯 **실기 검수 완료** |
 | **`cnc`** | **C&C: 타이베리안 던** | RTS / PC | C&C Gold 한글 폰트 & 미션 브리핑 | ➖ | 📦 레시피 수록 완료 |
@@ -66,6 +66,8 @@
 
 ## 🚀 사용법 (Getting Started)
 
+> 모든 포트의 준비물과 설치법, 포트별로 필요한 게임 데이터는 [INSTALL.md](INSTALL.md) 한 곳에 모았습니다.
+
 ### 1. 저장소 클론
 ```bash
 git clone https://github.com/jshsakura/ns-ports.git
@@ -85,8 +87,24 @@ python3 build.py --list
 python3 build.py ge007 --rom /path/to/baserom.j.z64 --zip
 
 # 스위치 SD 카드 또는 CookingFoil 배포 폴더로 즉시 배포
-python3 build.py ge007 --rom /path/to/baserom.j.z64 --deploy /mnt/.../homebrew/
+python3 build.py ge007 --rom /path/to/baserom.j.z64 --deploy /path/to/homebrew/
 ```
+
+### 4. 내 파일로 바로 쓰기 (새 포트 만들기)
+이미 빌드된 NRO 와 아이콘, 내 게임 데이터만 있으면 포트 뼈대가 바로 만들어집니다.
+
+```bash
+# 1) 뼈대 만들기 (ports/<id>/ 와 목록 항목이 생깁니다)
+python3 build.py new mygame "내 게임 (My Game)" --nro /path/to/mygame.nro --icon /path/to/icon.jpg
+
+# 2) 덮어쓸 파일(한글 사전, 설정 등)은 ports/mygame/overlay/ 에 같은 구조로 넣습니다
+
+# 3) 내 게임 데이터와 합쳐 조립 (또는 --deploy 로 homebrew 폴더에 바로 반영, --zip 으로 압축)
+python3 build.py mygame --rom /path/to/game-data
+```
+조립 결과는 쇼핑몰(CookingFoil) 폴더 구조이고 `.cookingfoil.json` 도 함께 만들어집니다.
+서버 주소와 토큰을 `ns-ports.config.json` 에 적어 두면 `--deploy` 후 폴더 재스캔과 종류(port) 지정까지 서버 API 로 합니다
+([예시](ns-ports.config.example.json)). 소스부터 빌드하는 포트(예: `cstrike`)는 `ports/<id>/recipe.py` 를 두면 됩니다.
 
 ---
 

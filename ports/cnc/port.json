@@ -1,0 +1,12 @@
+{
+  "id": "cnc",
+  "title": "커맨드 앤 컨커: 타이베리안 던 (C&C 1)",
+  "reason": "커맨드 앤 컨커 골드 전체 리테일 데이터(.MIX) 및 GDI/NOD 캠페인 동영상 에셋이 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/vanillatd.nro",
+    "out": "vanillatd.nro"
+  },
+  "overlays": [],
+  "files": []
+}

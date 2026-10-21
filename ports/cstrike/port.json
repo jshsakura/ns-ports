@@ -1,0 +1,86 @@
+{
+  "id": "cstrike",
+  "title": "카운터 스트라이크 1.6 (Counter-Strike 1.6)",
+  "reason": "카운터 스트라이크 1.6 게임 데이터(cstrike/valve)와 한글 리소스가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "out/engine/xash.nro",
+    "out": "cstrike.nro"
+  },
+  "overlays": [
+    "overlay-common"
+  ],
+  "files": [
+    {
+      "src": "out/engine/libmenu.so",
+      "dest": "libmenu.so"
+    },
+    {
+      "src": "out/engine/libref_gl.so",
+      "dest": "libref_gl.so"
+    },
+    {
+      "src": "out/engine/filesystem_stdio.so",
+      "dest": "filesystem_stdio.so"
+    },
+    {
+      "src": "out/engine/valve/extras.pk3",
+      "dest": "valve/extras.pk3"
+    },
+    {
+      "src": "out/cs/cs_nswitch_arm64.so",
+      "dest": "cstrike/dlls/cs_nswitch_arm64.so"
+    },
+    {
+      "src": "src/build-cs/cl_dll/client_nswitch_arm64.so",
+      "dest": "cstrike/cl_dlls/client_nswitch_arm64.so"
+    }
+  ],
+  "favorites": {
+    "file": "favorites.txt",
+    "dest": "cstrike/default_favorites.lst",
+    "protocol": "49"
+  },
+  "variants": {
+    "ko": {
+      "overlays": [
+        "overlay-common",
+        "overlay-ko",
+        "overlay-private",
+        "generated"
+      ]
+    },
+    "original": {
+      "id": "cstrike-global",
+      "title": "Counter-Strike 1.6",
+      "reason": "Counter-Strike 1.6 game data (cstrike/valve) is required to run",
+      "overlays": [
+        "overlay-common",
+        "overlay-en"
+      ],
+      "data_exclude_overlays": [
+        "overlay-ko"
+      ]
+    }
+  },
+  "art": [
+    {
+      "kind": "hero",
+      "size": "1920x620",
+      "author": "F R A N K Z E B",
+      "page": "https://www.steamgriddb.com/hero/152895",
+      "url": "https://cdn2.steamgriddb.com/hero/b47a079d3e208a4a0fee6896af1d8fed.png",
+      "sha256": "1e1136691466332be7f3d775bb1cf75f4d376730c26441846bf7b8e6e2a56fb2", "hash_of": "public image privacy-ok",
+      "use": "menu-background"
+    },
+    {
+      "kind": "hero",
+      "size": "1920x620",
+      "author": "Asterdenpa",
+      "page": "https://www.steamgriddb.com/hero/123728",
+      "url": "https://cdn2.steamgriddb.com/hero/3a128bf93e9ba7db128aa7bcab087217.jpg",
+      "sha256": "4d9ecdcf831b983154ee0aae30a8361870b3084bf772b7e3b4222adfb5309d92", "hash_of": "public image privacy-ok",
+      "use": "loading-screen"
+    }
+  ]
+}

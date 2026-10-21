@@ -1,0 +1,591 @@
+"lang" 
+{ 
+"Language" "korean" 
+"Tokens" 
+{ 
+"Valve_Listen_MapName"			"맵"
+"Valve_Movement_Title"			"이동"
+"Valve_Move_Forward"			"앞으로 이동"
+"Valve_Move_Back"			"뒤로 이동"
+"Valve_Turn_Left"			"왼쪽으로 돌기"
+"Valve_Turn_Right"			"오른쪽으로 돌기"
+"Valve_Move_Left"			"왼쪽으로 이동(옆걸음)"
+"Valve_Move_Right"			"오른쪽으로 이동(옆걸음)"
+"Valve_Jump"				"점프"
+"Valve_Duck"				"웅크리기"
+"Valve_Swim_Up"				"위로 수영"
+"Valve_Swim_Down"			"아래로 수영"
+"Valve_Look_Up"				"위쪽 보기"
+"Valve_Look_Down"			"아래쪽 보기"
+"Valve_Look_Straight_Ahead"		"정면 보기"
+"Valve_Strafe_Modifier"			"옆걸음 전환"
+"Valve_Mouse_Look_Modifier"		"마우스 보기 전환"
+"Valve_Keyboard_Look_Modifier"		"키보드 보기 전환"
+"Valve_Use_Items"			"아이템 사용(버튼, 장비 등)"
+"Valve_Pickup_Use_Objects"		"물건 줍기/사용"
+"Valve_Communication_Title"		"대화"
+"Valve_Use_Voice_Communication"		"음성 채팅 기능 사용"
+"Valve_Chat_Message"			"채팅 메시지"
+"Valve_Team_Message"			"팀 메시지"
+"Valve_Combat_Title"			"전투"
+"Valve_Primary_Attack"			"기본 무기"
+"Valve_Secondary_Attack"		"보조 무기"
+"Valve_Reload_Weapon"			"재장전"
+"Valve_Walk"				"걷기(느리게 이동)"
+"Valve_Flashlight"			"플래시"
+"Valve_Spray_Logo"			"로고 뿌리기"
+"Valve_ServerOfferingToConnect"		"서버가 다음으로의 연결 제공:"
+"Valve_PressKeyToAccept"		"%s1을 눌러 수락합니다."
+"Valve_BindKeyToAccept"			"수락 키를 지정하십시오."
+"Valve_Weapon_Category_1"		"무기 1"
+"Valve_Weapon_Category_2"		"무기 2"
+"Valve_Weapon_Category_3"		"무기 3"
+"Valve_Weapon_Category_4"		"무기 4"
+"Valve_Weapon_Category_5"		"무기 5"
+"Valve_Weapon_Category_6"		"무기 6"
+"Valve_Weapon_Category_7"		"무기 7"
+"Valve_Weapon_Category_8"		"무기 8"
+"Valve_Weapon_Category_9"		"무기 9"
+"Valve_Weapon_Category_0"		"무기 0"
+"Valve_Previous_Weapon"			"이전 무기"
+"Valve_Next_Weapon"			"다음 무기"
+"Valve_Last_Weapon_Used"		"마지막으로 사용한 무기"
+"Valve_Miscellaneous_Title"		"기타"
+"Valve_Display_Scores"			"멀티플레이 점수 보기"
+"Valve_Take_Screen_Shot"		"스크린샷 찍기"
+"Valve_Quick_Save"			"빠른 저장"
+"Valve_Quick_Load"			"빠른 불러오기"
+"Valve_Pause_Game"			"일시 중지"
+"Valve_Quit_Game"			"나가기"
+"Valve_Accept_Redirect"			"다른 서버로 이동을 허용"
+"Valve_Cheer"				"응원하기"
+"Valve_Activate_In_Game_GUI"		"게임 내 GUI 작동"
+"Valve_Change_Team"			"팀 변경"
+"Valve_Change_Class"			"클래스 변경"
+"Valve_Use_Special_Skill"		"특수 능력 사용"
+"Valve_Multiplayer_Decal_Limit"		"최대 자국 및 흔적 개수"
+"Valve_Valid_Teams"			"유효 팀, 모든 공간을 비움"
+"Valve_Frag_Limit"			"프래그 제한"
+"Valve_Time_Limit"			"시간 제한(분)"
+"Valve_Falling_Damage"			"추락 데미지"
+"Valve_Normal"				"보통"
+"Valve_Realistic"			"현실적"
+"Valve_Teamplay"			"팀플레이"
+"Valve_Friendly_Fire"			"아군 공격"
+"Valve_Weapons_Stay"			"무기 보존"
+"Valve_Force_Respawn"			"강제 리스폰"
+"Valve_Footsteps"			"발자국"
+"Valve_Autocrosshair"			"자동 조준선"
+"Valve_Center_Player_Names"		"플레이어 이름 중앙 정렬"
+"Valve_Switch_Weapons_Immediately"	"무기 즉시 바꾸기"
+"Valve_Automatic_Screenshots"		"게임 종료시 자동으로 스크린샷 찍기"
+"Valve_Observer_Crosshair"		"관전자 조준선"
+"Valve_Console_Toggle"		"개발자 콘솔 전환"
+
+
+"Spec_Slow_Motion" "슬로우 모션"
+"Spec_No_PIP" "1인칭 모드에서는 Picture-In-Picture를 사용할 수 없습니다."
+
+"Spec_Replay" "인스턴트 리플레이"
+"Spec_Auto" "자동"
+"Spec_Time" "시간"
+"Spec_Map" "맵: %s1"
+"Spectators" "관전자"
+"Spec_PlayerItem_Health" "%s1 (%s2)"
+"Spec_PlayerItem" "%s1"
+"Spec_PlayerItem_Team" "%s1 (%s2)"
+"Spec_Duck"	"관전자 메뉴를 보려면 '웅크리기' 키를 누르십시오."
+"Spec_Help_Title" "관전자 모드"
+"Spec_Help_Text"  "
+시점을 변경하려면 다음 키를 사용하세요.
+
+ 기본 무기 - 다음 플레이어 관전
+ 보조 무기 - 이전 플레이어 관전
+ 점프 - 시점 모드 변경
+ 아이템 용- 작은 창 모드 변경
+ 
+앉기 - 관전자 메뉴 보기
+ 
+내려다 보기 모드에 이동하려면 다음 키를 사용하세요.
+
+ 왼쪽으로 이동 - 왼쪽으로 이동
+ 오른쪽으로 이동 - 오른쪽으로 이동
+ 앞으로 이동 - 확대
+ 뒤로 이동 - 축소
+ 마우스 - 맵/목표물을 중심으로 회전
+"
+
+"Spec_Modes" 	"카메라 설정"
+"Spec_Mode0" 	"카메라 끄기"
+"Spec_Mode1" 	"전사 캠"
+"Spec_Mode2" 	"고정 캠"
+"Spec_Mode3" 	"1인칭"
+"Spec_Mode4" 	"체이스 캠"
+"Spec_Mode5" 	"자유 시점"
+"Spec_Mode6" "추적 시점 맵 보기"
+"Spec_NoTarget" "목표물이 없습니다. 카메라 모드를 전환할 수 없습니다."
+"Spec_Options"	"설정"
+"OBS_NONE" "카메라 설정"
+"OBS_CHASE_LOCKED" "고정 추적 캠"
+"OBS_CHASE_FREE" "자유 추적 캠"
+"OBS_ROAMING" "자유 시점"
+"OBS_IN_EYE" "1인칭 "
+"OBS_MAP_FREE" "자유 시점 맵 보기"
+"OBS_MAP_CHASE" "추적 시점 맵 보기"
+"SPECT_OPTIONS" "설정"
+"CAM_OPTIONS" "카메라 설정"
+
+"PlayerName"	"이름"
+"PlayerScore"	"점수"
+"PlayerDeath"	"사망"
+"PlayerPing"	"지연"
+"PlayerVoice"	"음성"
+"PlayerTracker"	"친구"
+
+"T0A0TITLE"	"장애물 코스"
+"C0A0TITLE"	"블랙 메사 접근 중"
+"C0A1TITLE"	"이상 물질"
+"C1A1TITLE"	"예측하지 못한 결과"
+"C1A2TITLE"	"사무실 시설"
+"C1A3TITLE"	"적 출현"
+"C1A4TITLE"	"블래스트 핏"
+"C2A1TITLE"	"파워 업"
+"C2A2TITLE"	"철도 위에서"
+"C2A3TITLE"	"불안"
+"C2A4TITLE1"	"잔여물 처리"
+"C2A4TITLE2"	"의심스러운 윤리"
+"C2A5TITLE"	"표면 장력"
+"C3A1TITLE"	"프리먼은 잊어버려!"
+"C3A2TITLE"	"람다 코어"
+"C4A1TITLE"	"젠"
+"C4A1ATITLE"	"침입자"
+"C4A2TITLE"	"고나크의 둥지"
+"C4A3TITLE"	"공허"
+"C5TITLE"	"최후의 게임"
+
+"Valve_Hostname"	"호스트 이름"
+"Valve_Max_Players"	"최대 플레이어"
+"Valve_Server_Password"	"서버 암호"
+
+"Valve_Close"		"닫기"
+"Valve_Help"		"도움말"
+"Valve_Settings"	"설정"
+"Valve_Chat_Messages"	"채팅 메시지"
+"Valve_Show_Status"	"상태 보기"
+"Valve_View_Cone"	"콘 보기"
+"Valve_Player_Names"	"플레이어 이름"
+"Valve_PIP"		"PIP"
+"Valve_Overview"	"내려다 보기"
+"Valve_Overview_Off"	"맵 없음"
+"Valve_Overview_Small"	"작은 맵"
+"Valve_Overview_Large"	"큰 맵"
+"Valve_Overview_ZoomIn"	"확대"
+"Valve_Overview_Zoomout" "축소"
+"Valve_Overview_Locked"	"회전 없음"
+"Valve_Overview_Names" 	"이름 보기"
+"Valve_Overview_Health" "체력 보기"
+"Valve_Overview_Tracks" "트랙 보기"
+"Valve_Auto_Director"	"자동 감독"
+"Valve_Show_Scores"	"점수 표시"
+"Valve_Game_Saved"	"게임이 저장되었습니다"
+
+"Valve_Orange"		"오렌지"
+"Valve_Yellow"		"옐로"
+"Valve_Blue"		"블루"
+"Valve_Ltblue"		"라이트블루"
+"Valve_Green"		"그린"
+"Valve_Red"		"레드"
+"Valve_Brown"		"브라운"
+"Valve_Ltgray"		"라이트그레이"
+"Valve_Dkgray"		"다크그레이"
+
+"Valve_Playing"		"플레이 중"
+"Valve_Stopped"		"중단됨"
+"Valve_Paused"		"일시 정지"
+
+"Valve_x_1_4"		"x1/4"
+"Valve_x_1_2"		"x1/2"
+"Valve_x_1"		"x1"
+"Valve_x_2"		"x2"
+"Valve_x_4"		"x4"
+
+"Valve_ViewDemoStatus"	"%s1  %s2  %s3"
+
+"Valve_Hint_Zoom"	"%+zoom% 시점 축소/확대"
+"Valve_Hint_machinegun"	"%+USE% 장착 무기 사용"
+"Valve_Hint_Flashlight" "%impulse 100% 플래시"
+"Valve_Hint_PhysSwap" "%phys_swap% 중력건을\n 이전 무기로 전환"
+"Valve_Hint_Command_send"  "%impulse 50% 팀을 특정 위치로 보내기"
+"Valve_Hint_Command_recall"  "%impulse 50% (두 번) 팀 다시 부르기"
+"Valve_Hint_CraneKeys"	"%+forward% 팔 뻗기 %+back% 팔 접기 %+moveleft% 왼쪽으로 돌기 %+moveright% 오른쪽으로 돌기 %+attack% 물건 줍기 또는 버리기" [$WIN32]
+"Valve_Hint_CraneKeys"	"%xmove% 팔 움직이기 %+attack% 물건 줍기/떨구기" [$X360]
+"Valve_Hint_BoatKeys"	"%+forward% 속도 올리기 %+back% 속도 내리기 %+moveleft% 왼쪽으로 돌기 %+moveright% 오른쪽으로 돌기" [$WIN32]
+"Valve_Hint_BoatKeys"	"%xmove% 가속/조종 %xlook% 보기" [$X360]
+"Valve_Hint_JeepKeys"	"%+speed% 터보 %+jump% 수동 브레이크"
+"Valve_Hint_JeepTurbo"	"%+speed% 터보"
+"Valve_Hint_HEVcharger" "%+use% 길게 눌러 특수복 충전"
+"Valve_Hint_AirboatGun" "%+attack% 수상기 무기 사용"
+"Valve_Hint_AmmoCrate" "%+use% 상자에서 탄약 얻기"
+"Valve_Hint_USEPickup"  "%+use% 물건 획득"
+"Valve_Hint_ThrowHeld"  "%+attack% 들고 있는 물건 던지기"
+"Valve_Hint_MomentaryButton"	"%+use% 길게 눌러 휠 돌리기"
+"Valve_Hint_ThrowBait"	"%+attack% 벌레 미끼 던지기"
+"Valve_Hint_SqueezeBait"  "%+attack2% 개미귀신 부르기"
+"Valve_Hint_Ladder" "%+use% 사다리 타기"
+"Valve_Hint_Interact" "%+use% 상호 작용"
+"Valve_Hint_Jump" "%+jump% 점프"
+"Valve_Hint_Movement" "%xmove% 이동 %xlook% 보기" [$X360] 
+"Valve_Hint_Movement" "앞 %+forward%뒤 %+back%왼쪽 %+moveleft%오른쪽 %+moveright%" [$WIN32]
+"Valve_Hint_Door" "%+use% 문 열기"
+"Valve_Hint_Sprint" "%+speed% 달리기"
+"Valve_Hint_Attack" "%+attack% 공격"
+"Valve_Hint_Crouch" "%+duck% 웅크리기"
+"Valve_Hint_ItemCrate" "%+attack% 보급 상자를 부숴 아이템 얻기"
+"Valve_Hint_Healthcharger" "%+use% 길게 눌러 메드 키트로 치료"
+"Valve_Hint_Reload"     "%+reload% 재장전"
+"Valve_Hint_SwimUp" "%+jump% 위로 수영"
+
+
+
+"Valve_Miscellaneous_Keyboard_Keys_Title"  "기타 동작"
+"Valve_Chapter"		"장"
+
+"Valve_HudPoisonDamage"	"신경 독 발견\n해독제 투여 중"
+
+"Valve_CreatingCache"	"사운드 캐시 생성 중..."
+"Valve_CreatingSpecificSoundCache"	"처리 중:  %s1"
+
+"Valve_UpdatingSteamResources" "Steam 리소스 업데이트 중..."
+
+"Valve_Sprint"		"달리기(빠르게 이동)"
+"Valve_Suit_Zoom"	"수트 확대/축소"
+"Valve_Commander_Mode"	"팀 투입/철수"
+"Valve_Gravity_Gun"	"중력건"
+"Valve_CC_Toggle"	"자막 끄기/켜기"
+
+"Valve_Hud_HEALTH"		"체력"
+"Valve_Hud_AMMO"		"탄약"
+"Valve_Hud_AMMO_ALT"		"Alt"
+"Valve_Hud_SUIT"		"수트"
+"Valve_Hud_AUX_POWER"		"보조 전원"
+"Valve_Hud_OXYGEN"		"산소"
+"Valve_Hud_FLASHLIGHT"		"플래시"
+"Valve_Hud_SPRINT"		"달리기"
+"Valve_Hud_BONUS_PROGRESS"	"보너스"
+
+"Valve_Hud_SQUAD_FOLLOWING"	"팀 따라오는 중"
+"Valve_Hud_SQUAD_STATIONED"	"팀 배치 완료"
+
+"Valve_HDRDEMO_LeftTitle"	"조리개 고정"
+"Valve_HDRDEMO_RightTitle"	"HDR"
+
+"Valve_Hud_CamFOV"		"FOV"
+"Valve_Hud_CamHeight"	"카메라 높이"
+"Valve_CamArmLength"	"팔 길이"
+
+"Valve_FilmDemo_FilmGrain_LeftTitle"	"필름 효과 없음"
+"Valve_FilmDemo_FilmGrain_RightTitle"	"필름 효과"
+
+"Valve_FilmDemo_ColorCorrection_LeftTitle"	"색상 보정 없음"
+"Valve_FilmDemo_ColorCorrection_RightTitle"	"색상 보정"
+
+// Xbox 360
+"Valve_Hint_Select_Weapon_357" "%slot1% .357 매그넘 선택"
+"Valve_Hint_Select_Weapon_AR2" "%slot2% 펄스 소총 선택"
+"Valve_Hint_Select_Weapon_Bugbait" "%slot4% 페로포드 선택"
+"Valve_Hint_Select_Weapon_Crossbow" "%slot1% 석궁 선택"
+"Valve_Hint_Select_Weapon_Crowbar" "%slot3% 크로우바 선택"
+"Valve_Hint_Select_Weapon_Frag" "%slot4% 수류탄 선택"
+"Valve_Hint_Select_Weapon_Physcannon" "%slot3% 중력건 선택"
+"Valve_Hint_Select_Weapon_Pistol" "%slot1% 9MM 권총 선택"
+"Valve_Hint_Select_Weapon_RPG" "%slot4% RPG 선택"
+"Valve_Hint_Select_Weapon_Shotgun" "%slot2% 산탄총 선택"
+"Valve_Hint_Select_Weapon_SMG1" "%slot2% 소형 기관총 선택"
+"Valve_Hint_Select_WEAPONUP" "%slot1% 무기 선택"
+"Valve_Hint_Select_WEAPONRIGHT" "%slot2% 무기 선택"
+"Valve_Hint_Select_WEAPONDOWN" "%slot3% 무기 선택"
+"Valve_Hint_Select_WEAPONLEFT" "%slot4% 무기 선택"
+
+"Valve_Hint_Alt_Weapon_SMG1" "%+attack2% SMG 수류탄 발사"
+"Valve_Hint_Alt_Weapon_Crossbow" "%+attack2% 석궁 조준경"
+"Valve_Hint_Alt_Weapon_AR2" "%+attack2% 충전된 펄스"
+"Valve_Hint_Alt_Weapon_Shotgun" "%+attack% 한 발 발사 %+attack2% 두 발 발사"
+"Valve_Hint_Alt_Weapon_Frag" "%+attack% 수류탄 던지기 %+attack2% 수류탄 굴리기"
+"Valve_Hint_Alt_Weapon_Bugbait" "%+attack% 페로포드 던지기 %+attack2% 페로포드 짜기"
+"Valve_Hint_Alt_Weapon_Physcannon" "%+attack% 물건 던지기 %+attack2% 물건 잡기"
+
+"Valve_Hint_EnterVehicle"  "%+use% 타기"
+
+"Commentary_PrimaryAttack"	"%+attack%: 노드 시작/중지"
+"Commentary_SecondaryAttack"	"%+attack2%: 다음 노드"
+
+"game_player_joined_game"	"%s1님이 게임에 참가했습니다."
+"game_player_left_game"		"%s1 님이 (%s2) 게임에서 퇴장했습니다." [$WIN32]
+"game_player_left_game"		"%s1님이 게임에서 나갔습니다." [$X360]
+"game_player_joined_team"	"%s1님이 %s2 팀에 합류했습니다."
+"game_player_joined_autoteam" "%s1 님이 무작위선택을 통해 %s2 팀에 참가했습니다"
+"game_player_changed_name"	"%s1님이 %s2 님으로 이름을 변경하셨습니다."
+"game_server_cvar_changed"	"서버 cvar '%s1' (이)가 %s2 (으)로 변경되었습니다."
+
+// Radio and chat strings can have control characters embedded to set colors.  For the control characters to be used, one must be at the start of the string.
+// The control characters can be copied and pasted in notepad.
+//  = 0x02 (STX) - Use team color up to the end of the player name.  This only works at the start of the string, and precludes using the other control characters.
+//  = 0x03 (ETX) - Use team color from this point forward
+//  = 0x04 (EOT) - Use location color from this point forward
+//  = 0x05 (ENQ) - Use achievement color from this point forward
+//  = 0x01 (SOH) - Use normal color from this point forward
+"Achievement_Earned"		"%s1님이 %s2 도전 과제를 달성하였습니다."
+
+"game_nextmap"		"다음 맵: %s1"
+"game_takesshots"	"맵 마지막에 점수판 스크린샷을 자동 저장합니다."
+
+"Cannot_Be_Spectator"			"이 서버에서는 관전 기능을 제공하지 않습니다."
+
+"Valve_DisableHTMLMOTD"		"HTML MOTD를 비활성화합니다."
+"Valve_UseSteamCloud"		"Steam 클라우드와 동기화합니다."
+"Valve_SteamScreenshots"	"Steam에 스크린샷 저장"
+
+
+//----------------------------------------------------------------------------------------
+// Econ UI
+"ValveEcon_RootUI_Title"			"아이템 관리"
+"ValveEcon_RootUI_OpenStore"		"상점"
+"ValveEcon_RootUI_OpenLoadout"		"장비 설정"
+"ValveEcon_RootUI_OpenBackpack"		"배낭"
+"ValveEcon_RootUI_OpenCrafting"		"제작"
+"ValveEcon_RootUI_OpenTrading"		"거래"
+
+//----------------------------------------------
+// Econ generic attributes
+"Attrib_TradableAfterDate"			"\n%s1 이후에 거래 가능"
+"Attrib_Store_TradableAfterDate"	"며칠 뒤 거래 가능합니다"
+"Attrib_Store_Purchased"			"거래할 수 없으며 제작에 사용할 수 없습니다"
+"Attrib_Purchased"					"구매: 거래 불가 및 제작에 사용 불가"
+"Attrib_Promotion"					"상점 판촉 아이템: 거래 불가"
+"Attrib_AchievementItem"			"도전 과제 아이템: 거래 불가"
+"Attrib_CannotTrade"				"거래 불가"
+"Attrib_CannotCraft"				"제작에 사용할 수 없음"
+"Attrib_SpecialItem"				"거래 불가 혹은 조합 불가"
+"Attrib_GifterAccountID"			"보낸 사람: %s1"
+"Attrib_ReferencedItem"				"포함하는 아이템: %s1"
+"Attrib_CustomDesc"					"이 아이템의 설명은 사용자가 작성했습니다:"
+"Attrib_Renamed"					"이 아이템은 이름표가 붙은 아이템입니다.\n원래 이름: \"%s1\""
+"Attrib_LimitedUse"					"사용 횟수가 제한된 아이템입니다. 남은 사용 횟수: %s1"
+"Attrib_EventDate"					"받은 날짜: %s1"
+"Attrib_InUse"						"사용중"
+"Attrib_Community_Description"		"소중한 커뮤니티 기여자에게 바칩니다."
+"Attrib_Selfmade_Description"		"내가 직접 만든 아이템!"
+
+//----------------------------------------------
+// Econ item collection strings
+// WARNING: The code MUST be able find the '::' in this string. The second : will be replaced by a color code for the quality. 
+"Item_Found"						"%s1님이 %s2 %s3 아이템을 발견하였습니다."
+"Item_Crafted"						"%s1 님이 %s2 %s3 아이템을 제작하였습니다."
+"Item_Traded"						"%s1 님이 %s2 %s3 아이템을 거래하였습니다."
+"Item_Purchased"					"%s1 님이 %s2 %s3 아이템을 구매하였습니다."
+"Item_FoundInCrate"					"%s1 님이 %s2 %s3 아이템을 상자에서 꺼냈습니다."
+"Item_Gifted"						"%s1 님이 %s2 %s3 아이템을 선물로 받았습니다."
+"Item_Earned"						"%s1 님이 %s2 %s3 아이템을 획득하였습니다."
+"Item_Refunded"						"%s1 가 환불됨:: %s2 %s3"
+"Item_GiftWrapped"					"%s1 가 선물을 포장했습니다:: %s2 %s3"
+
+"Item"					"아이템"
+"SelectedItemNumber"	"#%selecteditem%"
+"NewItemsAcquired"		"%numitems%개의 새로운 아이템 획득!"
+"NewItemAcquired"		"새로운 아이템 획득!"
+"NewItemsCrafted"		"%numitems%개의 새로운 아이템 제작!"
+"NewItemCrafted"		"새로운 아이템 제작!"
+"TF_HasNewItems"		"새로운 아이템 획득!"
+
+// These pickup strings have control characters embedded to set colors.
+// The control characters can be copied and pasted in notepad.
+//  = 0x01 (SOH) - Use default color from this point forward
+//  = 0x02 (STX) - Use a highlight color from this point forward
+"NewItemMethod_Dropped"			"발견:"
+"NewItemMethod_Crafted"			"제작:"
+"NewItemMethod_Traded"			"거래:"
+"NewItemMethod_Purchased"		"구매:"
+"NewItemMethod_FoundInCrate"	"상자에서 꺼냄:"
+"NewItemMethod_Gifted"			"선물 받음:"
+"NewItemMethod_Promotion"		"상점 판촉 아이템을 받았습니다."
+"NewItemMethod_Earned"			"획득:"
+"NewItemMethod_Refunded"		"귀하는 다음을 환불 받았습니다:"
+"NewItemMethod_Support"			"고객 지원 서비스 내역:"
+"NewItemMethod_Foreign"			"다른 게임에서 발견:"
+
+"NextItem"				"보기\n다음 >"
+"PreviousItem"			"보기\n< 이전"
+"CloseItemPanel"		"확인, 게임으로 돌아가기"
+"OpenGeneralLoadout"	"장비 설정 열기..."
+"OpenBackpack"			"배낭 열기..."
+
+//----------------------------------------------
+// Econ store
+"Store_Price_New"		"신상품!"
+"Store_Price_Sale"		"할인 중!"
+"Store_OK"				"확인!"
+"Store_CANCEL"			"취소"
+"Store_NowAvailable"	"판매 중"
+
+"Store_ClassFilter_None"		"모든 아이템"
+
+"Store_Cart"			"(%s1)"
+"Store_Checkout"		"결제"
+"Store_AddToCart"		"장바구니에 추가"
+
+"StoreViewCartTitle"	"장바구니"
+"Store_ContinueShopping" "쇼핑 계속하기"
+"Store_CartItems"		"%s1 아이템"
+"Store_EstimatedTotal"	"예상 합계"
+"Store_WAStateSalesTax"	"워싱턴 주의 주민에게는 판매세가 적용됩니다."
+"Store_TotalSubtextB"	"구매한 아이템은 배낭에 추가됩니다."
+"Store_Remove"			"제거"
+"Store_CartIsEmpty"		"장바구니에 아이템이 없습니다."
+"Store_Wallet"			"Steam 계정 잔고: $%s1 (장바구니 계산 후 $%s2)"
+"Store_Wallet_EmptyCart" "Steam 계정 잔고: $%s1"
+"Store_FeaturedItem"	"특집 항목!"
+"Store_PreviewItem"		"미리 보기"
+"Store_DetailsItem"		"정보"
+"Store_FreeBackpackSpace"	"비어 있는 배낭 칸수: %s1"
+
+"StoreCheckout_NoItems"			"장바구니가 비어 있습니다!"
+"StoreCheckout_TooManyItems"	"장바구니에 아이템이 너무 많습니다!"
+"StoreCheckout_Loading"			"결제 진행 중..."
+"StoreCheckout_Unavailable"		"지금은 결제를 진행할 수 없습니다."
+"StoreCheckout_Canceling"		"취소 중..."
+
+"StoreUpdate_Loading"				"상점 불러오는 중..."
+"StoreUpdate_NoGCResponse"			"현재 상점을 이용할 수 없습니다."
+"StoreUpdate_NewPriceSheetLoaded"	"제품 목록이 최신 버전으로 업데이트되었습니다."
+"StoreUpdate_ContactSupport"		"Steam 지갑 구성을 마무리하려면 고객 지원에 연락하시기 바랍니다."
+"StoreUpdate_OverlayRequired"		"상점을 이용하려면 게임 상에서 Steam 커뮤니티를 활성화하고 게임을 다시 시작해야 합니다."
+"StoreUpdate_SteamRequired"			"상점을 이용하려면 Steam에 연결되어 있어야 합니다."
+
+"StoreCheckout_Fail"				"현재 상점을 이용할 수 없습니다."
+"StoreCheckout_InvalidParam"		"프로그램 오류! 게임 코디네이터에게 잘못된 매개변수가 전송되었습니다. 구매를 다시 시도해 주십시오."
+"StoreCheckout_InternalError"		"거래를 시작하거나 업데이트하는 과정에서 문제가 발생하였습니다. 잠시 후 다시 시도하시거나, 고객지원센터에 문의하여 주십시오."
+"StoreCheckout_ContactSupport"		"결제 과정에 오류가 발생했습니다. 고객지원 항목을 통해 문의해 주십시오."
+"StoreCheckout_NotApproved"			"게임 코디네이터가 고객님의 Steam 거래를 승인하지 못하였습니다. 나중에 구매를 다시 시도해 주십시오."
+"StoreCheckout_NotLoggedin"			"구매를 완료하려면 Steam에 로그인해야 합니다."
+"StoreCheckout_WrongCurrency"		"구매에 사용된 통화가 지갑의 통화와 일치하지 않습니다."
+"StoreCheckout_NoAccount"			"현재 고객님의 Steam 계정은 이용할 수 없습니다. 나중에 구매를 다시 시도해 주십시오."
+"StoreCheckout_InsufficientFunds"	"구매를 완료하는 데 필요한 잔고가 부족합니다."
+"StoreCheckout_TimedOut"			"거래 제한 시간이 초과되었습니다. 구매를 다시 시도해 주십시오."
+"StoreCheckout_SteamAccountDisabled"	"고객님의 Steam 계정은 이용할 수 없으므로 구매를 진행할 수 없습니다."
+"StoreCheckout_SteamAccountNoPurchase"	"본 계정은 Steam 지갑을 이용한 거래가 허용되지 않았습니다"
+"StoreCheckout_OldPriceSheet"			"지역 제품 목록이 구버전입니다. 새 목록을 요청 중입니다."
+"StoreCheckout_TransactionNotFound"		"게임 코디네이터가 거래 ID를 찾지 못했습니다. 구매를 다시 시도해 주십시오."
+"StoreCheckout_TransactionCanceled"		"거래가 취소되었습니다. 금액이 결제되지 않았습니다."
+"StoreCheckout_TransactionCompleted"	"거래가 완료되었습니다! 전리품을 즐기세요!"
+"StoreCheckout_CompleteButUnfinalized"	"거래를 확인할 수 없습니다. 거래가 완료되면 나중에 아이템이 전송됩니다."
+"StoreCheckout_NotEnoughRoom"			"구매할 아이템에 비해 배낭 공간이 모자랍니다."
+"StoreCheckout_ContactSupport_Dialog_Title"	"경고"
+"StoreCheckout_ContactSupport_Dialog_Btn"	"문의하기"
+
+//----------------------------------------------
+"Econ_Back"				"뒤로"
+
+"BackpackTitle"			"배낭"
+"X_DeleteItem"			"X 삭제"
+"X_Delete"				"X 삭제"
+"X_DiscardItem"			"X 버리기"
+"DiscardItem"			"영구 삭제"
+"DeleteConfirmTitle"	"계속하시겠습니까?"
+"ConfirmTitle"			"계속하시겠습니까?"
+"ConfirmButtonText"		"계속하기"
+"DeleteItemConfirmText"		"이 아이템을 제거하면 나중에 복구 또는 실행 취소할 수 없습니다."
+"MultiDeleteItemConfirmText"		"이 아이템을 삭제하면 나중에 복구 또는 실행 취소할 수 없습니다."
+"X_DeleteConfirmButton"	"X 예, 삭제합니다."
+"Backpack_Delete_Item"	"배낭 - 공간 부족"
+"DiscardExplanation"	"해당 아이템을 받았지만 배낭에 공간이 없습니다."
+"DiscardExplanation2"	"자리를 만들려면 아래 아이템을  버리기를 눌러 삭제하거나 새 아이템을 포기할 수 있습니다."
+"DeleteConfirmDefault"	"삭제하시겠습니까?"
+"Discarded"				"버림!"
+"ItemPanelEquipped"		"장착됨"
+
+"BackpackApplyTool"		"%s1 아이템을 사용할 대상 아이템을 선택하세요."
+"ApplyOnItem"			"함께 사용하기"
+"ConsumeItem"			"사용하기"
+"RefurbishItem"			"복구하기"
+"CustomizeItem"			"사용자 설정"
+"ShowBaseItems"			"창고 아이템"
+"ShowBackpackItems"		"특수 아이템"
+"ShowBaseItemsCheckBox"	"기본 아이템 보기"
+"ShowDuplicateItemsCheckbox"	"중복 아이템 보기"
+"WrapGift"				"선물 포장하기"
+"UnwrapGift"			"선물 포장 풀기"
+"DeliverGift"			"선물 보내기"
+"NoAction"				"취소"
+"Style"					"양식 지정"
+"TF_Item_SelectStyle"	"양식 선택"
+
+"RefurbishItem_RemovePaintTitle"	"염색을 지울까요?"
+"RefurbishItem_RemovePaint"			"칠했던 색을 지우고 원래 색으로 돌아갈까요?\n\n(페인트는 사라집니다)"
+
+"RefurbishItem_RemoveNameTitle"		"이름을 지웁니까?"
+"RefurbishItem_RemoveName"			"바꿨던 이름을 지우고 원래 이름으로 돌아갈까요?\n\n(이름표는 사라집니다)"
+
+"RefurbishItem_RemoveDescTitle"		"설명을 지우시겠습니까?"
+"RefurbishItem_RemoveDesc"			"작성한 아이템 설명을 지우고, 원래 아이템 설명으로 되돌리시겠습니까?\n\n(설명서는 사라집니다.)"
+
+"RefurbishItem_Yes"					"네, 지워 버립니다"
+"RefurbishItem_No"					"아니요"
+
+"ToolConfirmWarning"	"도구는 한 번 사용하면 사라집니다!"
+
+"ToolItemRenameOldItemName"	"현재 아이템 이름:"
+"ToolItemRenameNewItemName"	"새 아이템 이름:"
+
+"ToolItemRenameOldItemDesc"	"현재 아이템 설명:"
+"ToolItemRenameNewItemDesc"	"새 아이템 설명:"
+
+// This string has control characters embedded to set colors.
+// The control characters can be copied and pasted in notepad.
+//  = 0x01 (SOH) - Use normal color from this point forward
+//  = 0x02 (STX) - Use item one color from this point forward
+//  = 0x03 (ETX) - Use item two color from this point forward
+"ToolDialogTitle"			"%s2 에 %s1 사용"
+
+// Item naming
+"CraftAskName"			"아이템의 새 이름 입력:"
+"CraftNameOk"			"이름을 짓습니다."
+"CraftDescribeOk"		"설명 쓰기!"
+"CraftNameCancel"		"아니요"
+"CraftAskNameConfirm"	"이 이름을 사용하시겠습니까?"
+"CraftAskNameWarning"	"(이름이 영구적으로 공개됨)"
+"CraftNameConfirm"		"그럼요!"
+"CraftInvalidName"		"이름이 잘못되었습니다!"
+"CraftInvalidNameDetail"	"문자, 숫자 및 여백만 사용할 수 있습니다."
+
+// Item painting
+"ToolPaintConfirm"		  "아이템을 이 색상으로 칠하시겠습니까?"
+"ToolPaintConfirmWarning" "(이 색상은 영구적이며 다른 플레이어들에게 보이게 됩니다)"
+"ToolDecodeConfirm"		  "이 상자를 여시겠습니까?"
+
+"ToolDecodeInProgress"    "전리품 상자를 여는 중"
+"ToolGiftWrapConfirm"		  "정말로 이 아이템을 선물하시겠습니까?"
+"ToolGiftWrapInProgress"    "선물 포장"
+"ToolGiftUnwrapInProgress"    "선물을 풀어보는 중"
+
+"ToolNoTargetItems"		"이 도구와 함께 사용할 수 있는 아이템이 없습니다."
+
+"BackpackShowDetails"		"정보"
+"Backpack_SortBy_Header"	"배낭 정렬"
+"Backpack_SortBy_Rarity"	"품질별 정렬"
+"Backpack_SortBy_Type"		"유형별 정렬"
+"Backpack_SortBy_Slot"		"장비 설정 칸별 정렬"
+
+"Codec_MPEG2"			"MPEG-2"
+"Codec_MPEG4"			"MPEG-4"
+"Codec_H261"			"H.261"
+"Codec_H263"			"H.263"
+"Codec_H264"			"H.264"
+"Codec_MJPEG_A"			"Motion JPEG A"
+"Codec_MJPEG_B"			"Motion JPEG B"
+"Codec_SORENSON3"		"Sorenson 3"
+"Codec_CINEPACK"		"Cinepack"
+"Codec_WEBM"		    "WebM"
+"Cstrike_HEALTH"		"체력"
+"Cstrike_ACCOUNT"		"돈"
+} 
+}

@@ -1,0 +1,43 @@
+// mkxp.json generado por pack_psb.py (adaptacion de Empaquetar.ps1).
+// Capas: 1 mkxp.base.json / 2 mkxp.json del juego / 3 perfil (generico) / 4 preload+loadpath.
+// Juego: Pokémon Survivor Burst   slug: pokemon-survivor-burst   familia: ruby31   perfil: generico
+{
+    "fullscreen": true,
+    "winResizable": false,
+    "fixedAspectRatio": true,
+    "integerScalingActive": false,
+    "smoothScaling": true,
+    "lanczos3Scaling": false,
+    "subImageFix": true,
+    "vsync": true,
+    "syncToRefreshrate": false,
+    "pathCache": true,
+    "enableReset": false,
+    "enableSettings": false,
+    "rgssVersion": 1,
+    "rubyLoadpath": [
+        "lib"
+    ],
+    "printFPS": false,
+    "windowTitle": "Pokémon Survivor Burst 9.0.3",
+    "defScreenW": 683,
+    "defScreenH": 384,
+    "bindingNames": {
+        "c": "Use",
+        "b": "Back",
+        "a": "Action",
+        "x": "JumpUp",
+        "y": "JumpDown",
+        "z": "Special",
+        "l": "(unused)",
+        "r": "(unused)"
+    },
+    "midiSoundFont": "soundfont.sf2",
+    "preloadScript": [
+        "lib/nx-compat.rb",
+        "lib/nx-teclado.rb",
+        "lib/nx-rutas.rb",
+        "lib/nx-bezel.rb",
+        "lib/nx-psb-fixes.rb"
+    ]
+}

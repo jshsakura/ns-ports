@@ -1,0 +1,12 @@
+{
+  "id": "redalert",
+  "title": "커맨드 앤 컨커: 레드 얼럿 (C&C Red Alert)",
+  "reason": "커맨드 앤 컨커: 레드 얼럿 연합군(CD1) 및 소련군(CD2) 풀 리테일 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/vanillara.nro",
+    "out": "vanillara.nro"
+  },
+  "overlays": [],
+  "files": []
+}

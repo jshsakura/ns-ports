@@ -1,0 +1,12 @@
+{
+  "id": "half-life",
+  "title": "하프라이프 1 (Half-Life)",
+  "reason": "하프라이프 게임 데이터(PAK)와 공식 한국어 더빙 음성이 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/half-life.nro",
+    "out": "half-life.nro"
+  },
+  "overlays": [],
+  "files": []
+}

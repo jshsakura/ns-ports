@@ -1,0 +1,12 @@
+{
+  "id": "starcraft64",
+  "title": "스타크래프트 64 (StarCraft 64 Recomp)",
+  "reason": "스타크래프트64 게임 데이터(롬)가 함께 설치되어야 실행됩니다. 앨범이 아닌 포워더(타이틀 테이크오버)로 실행해야 합니다",
+  "base": ".",
+  "nro": {
+    "src": "in/starcraft64.nro",
+    "out": "starcraft64.nro"
+  },
+  "overlays": [],
+  "files": []
+}

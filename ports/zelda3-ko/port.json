@@ -1,0 +1,28 @@
+{
+  "id": "zelda3-ko",
+  "title": "젤다의 전설: 신들의 트라이포스 (A Link to the Past)",
+  "reason": "신들의 트라이포스 게임 데이터(zelda3_assets.dat)가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/zelda3.nro",
+    "out": "zelda3.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": [],
+  "variants": {
+    "ko": {
+      "overlays": [
+        "overlay",
+        "overlay-ko"
+      ]
+    },
+    "original": {
+      "title": "The Legend of Zelda: A Link to the Past",
+      "overlays": [
+        "overlay"
+      ]
+    }
+  }
+}

@@ -1,62 +1,88 @@
 #!/usr/bin/env python3
 """
-Port Recipe: Zelda 3 (A Link to the Past - C Re-implementation for Switch)
-Upstream: https://github.com/snesrev/zelda3
-Language: Korean (ko) via embedded Korean font & dialog tables in zelda3_assets.dat
-"""
+Port Recipe: The Legend of Zelda: A Link to the Past (snesrev/zelda3, Switch build)
 
+  python3 build.py zelda3-ko --rom <folder with your zelda3_assets.dat> [--variant ko|original] [--zip] [--deploy <homebrew dir>]
+
+  original: upstream snesrev/zelda3 at a pinned commit, built for Switch.
+  ko:       the same plus patches/zelda3-ko.patch (Korean dialogue rendering: 16px variable-width glyphs).
+
+The Korean glyph/dialogue tables are generated from the Korean patch outside this repository and baked into
+zelda3_assets.dat; supply that file (and the stock one for `original`) in the --rom folder. No ROM or asset is
+included here. Building needs Docker (devkitPro image).
+"""
+import argparse
 import os
+import shutil
+import subprocess
 import sys
 
+VARIANTS = ("ko", "original")
 PORT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(os.path.dirname(PORT_DIR))
+REGISTER = os.path.join(ROOT_DIR, "tools", "port_register.py")
+SRC = os.path.join(PORT_DIR, "src")
+UPSTREAM, COMMIT = "https://github.com/snesrev/zelda3.git", "a23632a"
+IMAGE = "devkitpro/devkita64:latest"
 
-ZELDA3_INI_TEMPLATE = """[General]
-Autosave = 1
-Language = ko
-DisplayPerfInTitle = 0
-ExtendedAspectRatio = 16:9
 
-[Graphics]
-WindowSize = 1280x720
-Fullscreen = 0
-WindowScale = 1
-NewRenderer = 1
-EnhancedMode7 = 1
-IgnoreAspectRatio = 0
-NoSpriteLimits = 1
+def run(cmd, cwd=None):
+    print("[*]", " ".join(cmd))
+    subprocess.run(cmd, cwd=cwd, check=True)
 
-[Sound]
-EnableAudio = 1
-AudioFreq = 44100
-AudioChannels = 2
-AudioSamples = 2048
-"""
+
+def fetch(variant):
+    if not os.path.isdir(os.path.join(SRC, ".git")):
+        run(["git", "clone", "--quiet", UPSTREAM, SRC])
+    run(["git", "checkout", "--quiet", "--force", COMMIT], cwd=SRC)
+    run(["git", "clean", "-qfd"], cwd=SRC)
+    if variant == "ko":
+        run(["git", "apply", "--whitespace=nowarn", os.path.join(PORT_DIR, "patches", "zelda3-ko.patch")], cwd=SRC)
+    shutil.copyfile(os.path.join(PORT_DIR, "ref", "zelda3.nacp"), os.path.join(SRC, "zelda3.nacp"))
+
+
+def compile_nro():
+    run(["docker", "run", "--rm", "-v", SRC + ":/src", "-v", os.path.join(PORT_DIR, "scripts") + ":/scripts",
+         IMAGE, "sh", "/scripts/build-switch.sh"])
+    os.makedirs(os.path.join(PORT_DIR, "in"), exist_ok=True)
+    shutil.copyfile(os.path.join(SRC, "zelda3.nro"), os.path.join(PORT_DIR, "in", "zelda3.nro"))
+
 
 def build(args):
-    print("=" * 60)
-    print("  [RECIPE] The Legend of Zelda: A Link to the Past (zelda3-ko)")
-    print("=" * 60)
-    
-    cookingfoil_path = "/mnt/HDD-8TB-STRIPE/media3/game/switch/homebrew/zelda3-ko"
-    if os.path.exists(cookingfoil_path):
-        print(f"[*] Verified CookingFoil deployment folder at: {cookingfoil_path}")
-        print("[*] Required files: zelda3.nro, zelda3_assets.dat, zelda3.ini")
-        print("[*] Features: Native 60fps C code execution, 16:9 widescreen, Korean translation")
-        print("[*] Status: Verified & 100% playable in Korean!")
-    else:
-        print(f"[!] Warning: CookingFoil folder not found at {cookingfoil_path}")
+    own = argparse.ArgumentParser(prog="build.py zelda3-ko")
+    own.add_argument("--skip-build", action="store_true", help="reuse in/zelda3.nro")
+    own.add_argument("--dry-run", action="store_true")
+    own.add_argument("--no-register", action="store_true")
+    opt = own.parse_args(getattr(args, "extra", []))
+    variant = getattr(args, "variant", None) or "ko"
+    if not opt.skip_build:
+        if args.no_docker:
+            print("[!] The build runs in Docker; --no-docker is not supported (use --skip-build).", file=sys.stderr)
+            return 1
+        fetch(variant)
+        compile_nro()
+    out = args.deploy or os.path.join(PORT_DIR, "dist", "switch")
+    cmd = [sys.executable, REGISTER, os.path.join(PORT_DIR, "port.json"), "--variant", variant]
+    if args.rom:
+        cmd += ["--data", args.rom]
+    if opt.dry_run:
+        cmd.append("--dry-run")
+    if opt.no_register or not args.deploy:
+        cmd.append("--no-register")
+    ret = subprocess.call(cmd, env=dict(os.environ, COOK_HOMEBREW_DIR=out))
+    if ret == 0 and args.zip and not opt.dry_run:
+        shutil.make_archive(os.path.join(PORT_DIR, "dist", "zelda3-" + variant), "zip", out)
+        print("[*] zip:", os.path.join(PORT_DIR, "dist", "zelda3-%s.zip" % variant))
+    return ret
 
-    if hasattr(args, "deploy") and args.deploy:
-        out_dir = os.path.join(args.deploy, "zelda3-ko")
-        os.makedirs(out_dir, exist_ok=True)
-        with open(os.path.join(out_dir, "zelda3.ini"), "w", encoding="utf-8") as f:
-            f.write(ZELDA3_INI_TEMPLATE)
-        print(f"[*] Deployed configuration to {out_dir}")
-
-    return 0
 
 if __name__ == "__main__":
-    import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--deploy", help="Deploy directory path")
-    sys.exit(build(parser.parse_args()))
+    parser.add_argument("--rom", help="folder containing your zelda3_assets.dat")
+    parser.add_argument("--variant", choices=VARIANTS)
+    parser.add_argument("--zip", action="store_true")
+    parser.add_argument("--no-docker", action="store_true")
+    parser.add_argument("--deploy")
+    a, rest = parser.parse_known_args()
+    a.extra = rest
+    sys.exit(build(a))

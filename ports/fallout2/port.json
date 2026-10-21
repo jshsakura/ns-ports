@@ -1,0 +1,14 @@
+{
+  "id": "fallout2",
+  "title": "폴아웃 2 (Fallout 2)",
+  "reason": "폴아웃 2 원작 리테일 데이터와 한글 폰트 및 한국어 패치가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/fallout2.nro",
+    "out": "fallout2.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

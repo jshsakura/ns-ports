@@ -1,0 +1,12 @@
+{
+  "id": "jak2",
+  "title": "잭 2 (Jak II)",
+  "reason": "잭 2 게임 데이터와 한국어 음성 리소스가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/jak2.nro",
+    "out": "jak2.nro"
+  },
+  "overlays": [],
+  "files": []
+}

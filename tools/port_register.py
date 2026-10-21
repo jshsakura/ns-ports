@@ -246,7 +246,13 @@ def main():
         os.makedirs(os.path.dirname(ic), exist_ok=True)
         open(ic, 'wb').write(fetch_url({'url': p['icon_url'], 'sha256': p.get('icon_sha256')}))
         p['icon'] = ic
-    nro = retitle_nro(need(p, p['nro']['src']), need(p, p['icon']) if p.get('icon') else None, p['title'])
+    nro_src = rel(p, p['nro']['src'])
+    if not os.path.exists(nro_src):  # in/ 에 없으면 이미 샵에 올라가 있는 NRO 를 그대로 쓴다(검증된 것)
+        deployed = os.path.join(root, p['nro'].get('out', p['id'] + '.nro'))
+        if os.path.exists(deployed):
+            print('in/ 에 NRO 가 없어 샵 폴더의 것을 씁니다:', os.path.basename(deployed))
+            nro_src = deployed
+    nro = open(nro_src, 'rb').read() if nro_src.startswith(root) else retitle_nro(need(p, nro_src), need(p, p['icon']) if p.get('icon') else None, p['title'])
     d.write(p['nro'].get('out', p['id'] + '.nro'), nro)
     for ov in p.get('overlays', []):
         d.overlay(rel(p, ov), set(p.get('overlay_skip', [])))

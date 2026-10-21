@@ -3,7 +3,6 @@
   "title": "카운터 스트라이크 1.6 (Counter-Strike 1.6)",
   "reason": "카운터 스트라이크 1.6 게임 데이터(cstrike/valve)와 한글 리소스가 함께 있어야 실행됩니다",
   "base": ".",
-  "icon": "ref/cstrike-icon.jpg",
   "nro": {
     "src": "out/engine/xash.nro",
     "out": "cstrike.nro"

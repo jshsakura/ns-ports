@@ -85,8 +85,24 @@ python3 build.py --list
 python3 build.py ge007 --rom /path/to/baserom.j.z64 --zip
 
 # 스위치 SD 카드 또는 CookingFoil 배포 폴더로 즉시 배포
-python3 build.py ge007 --rom /path/to/baserom.j.z64 --deploy /mnt/.../homebrew/
+python3 build.py ge007 --rom /path/to/baserom.j.z64 --deploy /path/to/homebrew/
 ```
+
+### 4. 내 파일로 바로 쓰기 (새 포트 만들기)
+이미 빌드된 NRO 와 아이콘, 내 게임 데이터만 있으면 포트 뼈대가 바로 만들어집니다.
+
+```bash
+# 1) 뼈대 만들기 (ports/<id>/ 와 목록 항목이 생깁니다)
+python3 build.py new mygame "내 게임 (My Game)" --nro /path/to/mygame.nro --icon /path/to/icon.jpg
+
+# 2) 덮어쓸 파일(한글 사전, 설정 등)은 ports/mygame/overlay/ 에 같은 구조로 넣습니다
+
+# 3) 내 게임 데이터와 합쳐 조립 (또는 --deploy 로 homebrew 폴더에 바로 반영, --zip 으로 압축)
+python3 build.py mygame --rom /path/to/game-data
+```
+조립 결과는 쇼핑몰(CookingFoil) 폴더 구조이고 `.cookingfoil.json` 도 함께 만들어집니다.
+서버 주소와 토큰을 `ns-ports.config.json` 에 적어 두면 `--deploy` 후 폴더 재스캔과 종류(port) 지정까지 서버 API 로 합니다
+([예시](ns-ports.config.example.json)). 소스부터 빌드하는 포트(예: `cstrike`)는 `ports/<id>/recipe.py` 를 두면 됩니다.
 
 ---
 

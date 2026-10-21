@@ -25,7 +25,7 @@
 ## 빌드와 조립 (007 포트와 같은 방식)
 ```
 python3 build.py cstrike --rom <내 cstrike/valve 데이터 폴더>                  # 한글판을 dist/switch/ 에 조립
-python3 build.py cstrike --rom <데이터> --variant en --zip                      # 순정(영문)판 + zip
+python3 build.py cstrike --rom <데이터> --variant original --zip                      # 순정(영문)판 + zip
 python3 build.py cstrike --rom <데이터> --deploy <homebrew 폴더>                # 쇼핑몰 폴더에 바로 반영
 python3 build.py cstrike --skip-build --dry-run                                # 빌드 생략, 바꿀 파일만 보기
 ```

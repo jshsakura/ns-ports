@@ -4,7 +4,7 @@
 set -e
 cd "$(dirname "$0")/.."
 rm -rf out/release && mkdir -p out/release
-COOK_HOMEBREW_DIR=$PWD/out/release python3 ../../tools/port_register.py port.json --variant en --no-register
+COOK_HOMEBREW_DIR=$PWD/out/release python3 ../../tools/port_register.py port.json --variant original --no-register
 R=out/release/cstrike-global
 rm -f $R/.cookingfoil.json $R/cstrike/default_favorites.lst  # 개인 즐겨찾기는 공개본에 넣지 않는다
 mkdir -p $R/source && cp patches/*.patch $R/source/ && cp release/README-global.txt $R/README.txt

@@ -3,7 +3,7 @@
 Port Recipe: Counter-Strike 1.6 (Xash3D FWGS + cs16-client, Korean/global builds)
 
 Same flow as the other native ports:
-  python3 build.py cstrike --rom <your cstrike/valve data folder> [--variant ko|en] [--zip] [--deploy <homebrew dir>]
+  python3 build.py cstrike --rom <your cstrike/valve data folder> [--variant ko|original] [--zip] [--deploy <homebrew dir>]
 
   1. fetch   upstream sources at pinned commits into ports/cstrike/src and apply patches/
   2. build   engine and game code in the devkitPro container (docker)
@@ -19,6 +19,7 @@ import shutil
 import subprocess
 import sys
 
+VARIANTS = ("ko", "original")
 PORT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(os.path.dirname(PORT_DIR))
 REGISTER = os.path.join(ROOT_DIR, "tools", "port_register.py")
@@ -76,7 +77,6 @@ def docker_build(script):
 
 def build(args):
     own = argparse.ArgumentParser(prog="build.py cstrike")
-    own.add_argument("--variant", choices=["ko", "en"], help="ko: Korean, en: stock/global (default from config, else ko)")
     own.add_argument("--skip-build", action="store_true", help="reuse binaries in out/")
     own.add_argument("--dry-run", action="store_true")
     own.add_argument("--no-register", action="store_true")
@@ -93,8 +93,8 @@ def build(args):
 
     out = args.deploy or os.path.join(DIST, "switch")
     cmd = [sys.executable, REGISTER, os.path.join(PORT_DIR, "port.json")]
-    if opt.variant:
-        cmd += ["--variant", opt.variant]
+    if getattr(args, "variant", None):
+        cmd += ["--variant", args.variant]
     if args.rom:
         cmd += ["--data", args.rom]
     if opt.dry_run:

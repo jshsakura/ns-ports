@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """스위치 포트를 쇼핑몰 라이브러리에 조립하고 등록한다.
 
-사용: register.py <프로필.json> [--variant ko|en] [--data <게임 데이터 폴더>] [--dry-run] [--no-register]
+사용: register.py <프로필.json> [--variant ko|original] [--data <게임 데이터 폴더>] [--dry-run] [--no-register]
 
 하는 일
   1) 엔진 NRO 의 이름과 아이콘 교체 (NACP / ASET)
@@ -39,17 +39,22 @@ def load_config():
     return {}
 
 
+VARIANT_ALIASES = {'en': 'original', 'stock': 'original', 'global': 'original'}
+
+
 def load_profile(path, variant=None):
     p = json.load(open(path, encoding='utf-8'))
-    variants = p.pop('variants', {})
-    if variants:
-        variant = variant or next(iter(variants))
-        if variant not in variants:
-            sys.exit('없는 변형입니다: %s (있는 것: %s)' % (variant, ', '.join(variants)))
-        p.update(variants[variant])
-    elif variant:
-        sys.exit('이 프로필에는 변형이 없습니다')
     base = os.path.dirname(os.path.abspath(path))
+    variants = p.pop('variants', None)
+    if not variants:
+        # 모든 포트는 원본(original)과 한국어(ko) 두 판을 가진다. overlay 는 공통, overlay-ko 는 한국어 전용.
+        ov = [o for o in p.get('overlays', ['overlay']) if o != 'overlay-ko'] or ['overlay']
+        variants = {'ko': {'overlays': ov + ['overlay-ko']}, 'original': {'overlays': ov}}
+    variant = VARIANT_ALIASES.get(variant, variant) or next(iter(variants))
+    if variant not in variants:
+        sys.exit('없는 판입니다: %s (있는 것: %s)' % (variant, ', '.join(variants)))
+    p.update(variants[variant])
+    p['_variant'] = variant
     p['_base'] = os.path.normpath(os.path.join(base, p.get('base', '.')))
     for k in ('id', 'title', 'nro'):
         if k not in p:
@@ -210,7 +215,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('profile')
     ap.add_argument('--data', help='게임 데이터 폴더(하드링크)')
-    ap.add_argument('--variant', help='프로필의 변형(예: ko, en). 기본은 첫 번째')
+    ap.add_argument('--variant', help='프로필의 변형(예: ko, original). 기본은 첫 번째')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-register', action='store_true')
     a = ap.parse_args()

@@ -50,7 +50,7 @@
         "overlay-private"
       ]
     },
-    "en": {
+    "original": {
       "id": "cstrike-global",
       "title": "Counter-Strike 1.6",
       "reason": "Counter-Strike 1.6 game data (cstrike/valve) is required to run",

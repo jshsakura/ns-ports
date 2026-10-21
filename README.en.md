@@ -13,10 +13,10 @@ and assembles a ready-to-copy folder around **your own game data**.
 ```bash
 git clone https://github.com/jshsakura/ns-ports.git && cd ns-ports
 python3 build.py --list                                      # what is available
-python3 build.py cstrike --rom /path/to/your/cstrike-valve-data --variant en --zip
+python3 build.py cstrike --rom /path/to/your/cstrike-valve-data --variant original --zip
 ```
 Needs Python 3 and, for ports built from source, Docker (devkitPro image). Output goes to `ports/<id>/dist/`.
-`--variant ko` builds the Korean edition, `--variant en` the stock edition.
+`--variant ko` builds the Korean edition, `--variant original` the stock edition.
 Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 
 ## Use your own files (new port)

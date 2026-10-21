@@ -102,6 +102,8 @@ def generic_build(port_id, args):
     cmd = [sys.executable, REGISTER, os.path.join(ROOT_DIR, "ports", port_id, "port.json")]
     if args.rom:
         cmd += ["--data", args.rom]
+    if args.variant:
+        cmd += ["--variant", args.variant]
     if not args.deploy:
         cmd.append("--no-register")
     extra = getattr(args, "extra", [])
@@ -123,6 +125,7 @@ def run_port(port_id, extra_args):
         parser.add_argument("--rom", help="내 게임 데이터 폴더")
         parser.add_argument("--zip", action="store_true")
         parser.add_argument("--deploy", help="homebrew 폴더")
+        parser.add_argument("--variant", help="ko(한국어) 또는 original(원본)")
         args, unknown = parser.parse_known_args(extra_args)
         args.extra = unknown
         return generic_build(port_id, args)
@@ -140,7 +143,10 @@ def run_port(port_id, extra_args):
     parser.add_argument("--zip", action="store_true", help="Create zip package")
     parser.add_argument("--no-docker", action="store_true", help="Do not use Docker")
     parser.add_argument("--deploy", help="Deploy directory path")
+    parser.add_argument("--variant", help="ko (Korean) or original; every port takes it")
     args, unknown = parser.parse_known_args(extra_args)
+    if args.variant and not getattr(module, "VARIANTS", None):
+        print(f"[!] '{port_id}' 레시피는 아직 --variant 를 구분하지 않습니다. 기본 판으로 진행합니다.", file=sys.stderr)
     args.extra = unknown  # port-specific options a recipe parses itself
 
     return module.build(args)

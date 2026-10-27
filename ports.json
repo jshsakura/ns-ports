@@ -26,18 +26,6 @@
     "upstream": "https://github.com/snesrev/zelda3"
   },
   {
-    "id": "sm64-hd",
-    "name": "슈퍼 마리오 64 HD (Super Mario 64)",
-    "category": "Platformer / N64",
-    "engine": "sm64ex-nx / Mupen64Plus-Next HD",
-    "status": "verified",
-    "korean": true,
-    "motion_controls": true,
-    "description": "N64 슈퍼마리오 64 네이티브 포트 + 와이드스크린 60fps & HD 텍스처 팩",
-    "required_assets": "N64 ROM (baserom.us.z64)",
-    "nro": "sm64-hd.nro"
-  },
-  {
     "id": "zelda-oot-hd",
     "name": "젤다의 전설: 시간의 오카리나 HD (Ocarina of Time)",
     "category": "Action Adventure / N64",

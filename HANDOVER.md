@@ -26,13 +26,13 @@
 모든 포트는 `ports.json`에 메타데이터가 등록되어 있으며, `ports/<id>/recipe.py`를 통해 규격화된 빌드/배포 로직을 제공합니다.
 
 > **🎯 실기 검증 완료 (Verified In-Game):**
-> 현재 카탈로그 상단 핵심 라인업(**`ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `devilutionx`, `half-life`, `fallout1`, `fallout2`**)은 실기에서 한국어 번역, 폰트 출력, 조작성 검증이 100% 완료되었습니다.
+> 현재 카탈로그 상단 핵심 라인업(**`ge007`, `zelda3-ko`, `zelda-oot-hd`, `zelda-mm-hd`, `devilutionx`, `half-life`, `fallout1`, `fallout2`**)은 실기에서 한국어 번역, 폰트 출력, 조작성 검증이 100% 완료되었습니다.
 > *(※ `zelda-oot-hd`: Ship of Harkinian v9.3.0 C 네이티브 + 3.89GB Pretendard HD 한글 에셋 + Japanese(3) 기본 언어 세팅 완료)*
 > *(※ `zelda-mm-hd`: 2 Ship 2 Harkinian v5.0.1 C 네이티브 + 2.95GB MM-Reloaded v11.0.3 HD + Title ID 05BC5D84DDD7A000 동기화 완료)*
 
 | 카테고리 | 등록 포트 ID | 주요 특징 및 한글화 방식 |
 | :--- | :--- | :--- |
-| **N64 / SNES Recomp** | `ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `starcraft64` | Fast3D CJK 글리프 캐시 패치, 60FPS 자이로 조준, SoH v9.3.0 한글 HD, 2S2H v5.0.1 HD, 16:9 와이드스크린 (상위 5종 실기 검증 완료) |
+| **N64 / SNES Recomp** | `ge007`, `zelda3-ko`, `zelda-oot-hd`, `zelda-mm-hd`, `starcraft64` | Fast3D CJK 글리프 캐시 패치, 60FPS 자이로 조준, SoH v9.3.0 한글 HD, 2S2H v5.0.1 HD, 16:9 와이드스크린 (상위 5종 실기 검증 완료) |
 | **GoldSrc / FPS** | `half-life`, `cstrike`, `doom64` | 하프라이프 공식 한국어 풀더빙 음성(실기 검증 완료), CS 1.6 오프라인 봇/한국어 UI, Doom64EX |
 | **CRPG / Classic PC** | `fallout1`, `fallout2`, `devilutionx` | fallout1/2-ce CJK/CP949 FreeType 한글 & 1,000+ 대화 번역(실기 검증 완료), 디아블로 1 fonts.mpq(검증 완료) |
 | **RTS / Strategy** | `war1gus`, `wargus`, `cnc`, `redalert`, `fheroes2` | Stratagus 엔진 워크래프트 1 & 2 에셋 연동, C&C 타이베리안 던/레드얼럿 풀 FMV, HOMM2 공식 한국어 팩 |

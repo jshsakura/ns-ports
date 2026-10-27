@@ -1,0 +1,12 @@
+{
+  "id": "supertux2",
+  "title": "슈퍼 턱스 2 (SuperTux 2)",
+  "reason": "슈퍼 턱스 2 (SuperTux 2 Milestone 2) 오픈소스 플랫폼머 풀버전 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/supertux2.nro",
+    "out": "supertux2.nro"
+  },
+  "overlays": [],
+  "files": []
+}

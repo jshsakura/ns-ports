@@ -1,0 +1,12 @@
+{
+  "id": "0ad",
+  "title": "0 A.D. (제로 에이디)",
+  "reason": "0 A.D. Release 28 공식 무료 데이터 (CC-BY-SA) + Pyrogenesis 스위치 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/0ad.nro",
+    "out": "pyrogenesis.nro"
+  },
+  "overlays": [],
+  "files": []
+}

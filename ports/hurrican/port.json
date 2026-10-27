@@ -1,0 +1,12 @@
+{
+  "id": "hurrican",
+  "title": "허리케인 (Hurrican)",
+  "reason": "허리케인 (Hurrican v1.04) 프리웨어 점프 앤 슛 풀버전 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/hurrican.nro",
+    "out": "Hurrican.nro"
+  },
+  "overlays": [],
+  "files": []
+}

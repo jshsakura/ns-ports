@@ -1,0 +1,12 @@
+{
+  "id": "supertuxkart",
+  "title": "슈퍼 턱스 카트 (SuperTuxKart)",
+  "reason": "슈퍼 턱스 카트 (SuperTuxKart 1.5) 공식 스위치 빌드 풀버전 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/supertuxkart.nro",
+    "out": "stk.nro"
+  },
+  "overlays": [],
+  "files": []
+}

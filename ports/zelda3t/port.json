@@ -1,0 +1,12 @@
+{
+  "id": "zelda3t",
+  "title": "젤다의 전설: 승리의 시간 (Zelda: Time to Triumph)",
+  "reason": "젤다 팬게임 3부작 완결편 Zelda: Time to Triumph 2.3 풀버전 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/zelda3t.nro",
+    "out": "Zelda3T_nx.nro"
+  },
+  "overlays": [],
+  "files": []
+}

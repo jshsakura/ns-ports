@@ -1,0 +1,12 @@
+{
+  "id": "doukutsu-rs",
+  "title": "동굴이야기 (Cave Story)",
+  "reason": "동굴이야기 (Cave Story) Studio Pixel 프리웨어 판본 + doukutsu-rs 1.0.0 엔진 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/doukutsu-rs.nro",
+    "out": "doukutsu-rs.nro"
+  },
+  "overlays": [],
+  "files": []
+}

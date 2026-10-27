@@ -456,5 +456,33 @@
     "upstream": "https://github.com/NaGaa95/ProjectCane",
     "version": "0.5.0",
     "obtained": "downloaded"
+  },
+  {
+    "id": "ro",
+    "name": "라그나로크 온라인 (RO Switch)",
+    "category": "MMORPG / Client",
+    "engine": "RO Switch 클라이언트(roswitch)",
+    "status": "boot-ok",
+    "korean": true,
+    "motion_controls": false,
+    "description": "라그나로크 온라인 스위치 클라이언트. 실기 폴더에 풀 배포되어 돌아가는 구성을 그대로 레시피로 옮긴 것입니다",
+    "required_assets": "라그나로크 클라이언트 데이터(data.grf, rdata.grf)와 접속 설정(login.ini)",
+    "nro": "ragnarok.nro",
+    "obtained": "deployed"
+  },
+  {
+    "id": "dantes-inferno",
+    "name": "단테스 인페르노 (Dante's Inferno)",
+    "category": "Action / Xbox 360 Recomp",
+    "engine": "ReXGlue 정적 리컴파일 + deko3d",
+    "status": "planned",
+    "korean": true,
+    "motion_controls": false,
+    "description": "Xbox 360판 단테스 인페르노(TU2)를 정적 리컴파일한 네이티브 포트. 한글패치(비공식 팬 패치)를 리눅스에서 적용하는 도구가 있습니다. 코드, 셰이더, NRO는 사용자 컴퓨터에서 자기 디스크로 만듭니다",
+    "required_assets": "Xbox 360 디스크 game 폴더(bigfile0.viv, bigfile1.viv, default.xex, default.xexp 타이틀 업데이트 2)와 dante_shaders.dslib, shadercache_dksh.bin",
+    "nro": "dantes-inferno-nx.nro",
+    "upstream": "https://github.com/VasilkovND/dantes-inferno-nx",
+    "version": "v1.1.0",
+    "obtained": "built"
   }
 ]

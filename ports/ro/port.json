@@ -1,0 +1,14 @@
+{
+  "id": "ro",
+  "title": "라그나로크 온라인 (RO Switch)",
+  "reason": "라그나로크 클라이언트 데이터(data.grf, rdata.grf)가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/ragnarok.nro",
+    "out": "ragnarok.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

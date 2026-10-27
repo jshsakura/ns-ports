@@ -1,7 +1,7 @@
 # 슬라이 쿠퍼 1 (Sly Cooper and the Thievius Raccoonus)
 
 PS2 슬라이 쿠퍼 1을 디컴파일한 네이티브 포트. 업스트림 [NaGaa95/ProjectCane](https://github.com/NaGaa95/ProjectCane) 0.5.0 의 `ProjectCane.nro` 를 쓴다.
-원판은 게임 데이터를 앱이 처음 실행할 때 SD 카드의 ISO 를 골라 `sdmc:/switch/ProjectCane` 에 직접 풀어 준다. 풀어 주는 방식이다. 이 저장소에는 NRO 도 데이터도 없다.
+원판은 게임 데이터를 앱이 처음 실행할 때 SD 카드의 ISO 를 골라 `sdmc:/switch/ProjectCane` 에 직접 풀어 준다. 이 저장소에는 NRO 도 데이터도 없다.
 
 - 지원하는 ISO: 미국 `SCUS-971.98`, 유럽 `SCES-509.17`, 일본 `SCPS-150.36`
 - 업스트림은 한국판(`SCKA_200.04`)을 거절한다. 그래서 `tools/sly1_extract/` 로 서버에서 ISO 를 미리 풀어 데이터를 폴더에 넣는다. 받으면 ISO 없이 바로 실행된다. 한국판은 미국판 구조가 아니라 일본판·PAL 쪽 구조라서 추출기 소스를 한국판용으로 고쳐 쓴다.

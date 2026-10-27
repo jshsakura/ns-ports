@@ -1,0 +1,14 @@
+{
+  "id": "serious-sam",
+  "title": "시리어스 샘 1 & 2 (Serious Sam)",
+  "reason": "시리어스 샘 1 & 2 (Serious Sam) 실행을 위한 Serious Sam TFE / TSE 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/serioussam.nro",
+    "out": "serioussam.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "sh3",
+  "title": "사일런트 힐 3 (Silent Hill 3)",
+  "reason": "사일런트 힐 3 (Silent Hill 3) 실행을 위한 사일런트 힐 3 PC판 설치본",
+  "base": ".",
+  "nro": {
+    "src": "in/sh3.nro",
+    "out": "sh3.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

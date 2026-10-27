@@ -1,0 +1,14 @@
+{
+  "id": "unreal",
+  "title": "언리얼 골드 (Unreal Gold)",
+  "reason": "언리얼 골드 (Unreal Gold) 실행을 위한 Unreal Gold PC 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/unreal.nro",
+    "out": "unreal.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

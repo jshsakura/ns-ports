@@ -1,0 +1,14 @@
+{
+  "id": "daytona-usa",
+  "title": "데이토나 USA (Daytona USA)",
+  "reason": "데이토나 USA (Daytona USA) 실행을 위한 MAME Model 2 daytona.zip (Rev A) 롬",
+  "base": ".",
+  "nro": {
+    "src": "in/Daytona.nro",
+    "out": "Daytona.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

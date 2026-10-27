@@ -1,0 +1,14 @@
+{
+  "id": "sega-rally",
+  "title": "세가 랠리 챔피언십 (Sega Rally Championship)",
+  "reason": "세가 랠리 챔피언십 (Sega Rally Championship) 실행을 위한 MAME Model 2 srallyc.zip 롬",
+  "base": ".",
+  "nro": {
+    "src": "in/segarally.nro",
+    "out": "segarally.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

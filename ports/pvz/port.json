@@ -1,0 +1,14 @@
+{
+  "id": "pvz",
+  "title": "식물 대 좀비 (Plants vs. Zombies Portable)",
+  "reason": "식물 대 좀비 (Plants vs. Zombies Portable) 실행을 위한 Plants vs. Zombies PC판 main.pak",
+  "base": ".",
+  "nro": {
+    "src": "in/pvz.nro",
+    "out": "pvz.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "space-cadet",
+  "title": "3D 핀볼: 스페이스 카뎃 (Space Cadet Pinball)",
+  "reason": "3D 핀볼: 스페이스 카뎃 (Space Cadet Pinball) 실행을 위한 Windows 3D Pinball 사운드 및 테이블 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/SpaceCadetPinball.nro",
+    "out": "SpaceCadetPinball.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "descent2",
+  "title": "디센트 2 (Descent 2)",
+  "reason": "디센트 2 (Descent 2) 실행을 위한 Descent 2 DESCENT2.HOG 및 PIG 파일",
+  "base": ".",
+  "nro": {
+    "src": "in/d2x-rebirth.nro",
+    "out": "d2x-rebirth.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

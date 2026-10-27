@@ -1,0 +1,14 @@
+{
+  "id": "futari",
+  "title": "벌레공주 두 사람 (Mushihimesama Futari)",
+  "reason": "벌레공주 두 사람 (Mushihimesama Futari) 실행을 위한 Xbox 360판 벌레공주 두 사람 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/futari-nx.nro",
+    "out": "futari-nx.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "sonic-fighters",
+  "title": "소닉 더 파이터즈 (Sonic the Fighters)",
+  "reason": "소닉 더 파이터즈 (Sonic the Fighters) 실행을 위한 MAME Model 2 sfight.zip 롬",
+  "base": ".",
+  "nro": {
+    "src": "in/sonic_the_fighters.nro",
+    "out": "sonic_the_fighters.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

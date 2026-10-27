@@ -1,0 +1,14 @@
+{
+  "id": "openomf",
+  "title": "원 머스트 폴: 2097 (OpenOMF)",
+  "reason": "원 머스트 폴: 2097 (OpenOMF) 실행을 위한 One Must Fall: 2097 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/openomf.nro",
+    "out": "openomf.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

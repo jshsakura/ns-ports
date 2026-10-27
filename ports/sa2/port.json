@@ -1,0 +1,14 @@
+{
+  "id": "sa2",
+  "title": "소닉 어드벤처 2 (Sonic Adventure 2)",
+  "reason": "소닉 어드벤처 2 (Sonic Adventure 2) 실행을 위한 Xbox 360판 소닉 어드벤처 2 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/sa2-nx.nro",
+    "out": "sa2-nx.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

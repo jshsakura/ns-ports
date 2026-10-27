@@ -1,0 +1,14 @@
+{
+  "id": "pokemmo",
+  "title": "포켓몬 MMO (PokeMMO)",
+  "reason": "포켓몬 MMO (PokeMMO) 실행을 위한 GBA/NDS 포켓몬 롬 (FireRed, Emerald, Platinum, Black/White)",
+  "base": ".",
+  "nro": {
+    "src": "in/pokemmo.nro",
+    "out": "pokemmo.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

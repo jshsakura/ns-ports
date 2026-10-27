@@ -1,0 +1,14 @@
+{
+  "id": "outrun2",
+  "title": "아웃런 2006: Coast 2 Coast (Outrun 2006)",
+  "reason": "아웃런 2006: Coast 2 Coast (Outrun 2006) 실행을 위한 OutRun 2006 Coast 2 Coast PC판 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/outrun2.nro",
+    "out": "outrun2.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

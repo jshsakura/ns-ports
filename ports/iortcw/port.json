@@ -1,0 +1,14 @@
+{
+  "id": "iortcw",
+  "title": "리턴 투 캐슬 울펜슈타인 (ioRTCW)",
+  "reason": "리턴 투 캐슬 울펜슈타인 (ioRTCW) 실행을 위한 RTCW Main 폴더 게임 데이터 (pak0.pk3 등)",
+  "base": ".",
+  "nro": {
+    "src": "in/iortcw.nro",
+    "out": "iortcw.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

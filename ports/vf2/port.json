@@ -1,0 +1,14 @@
+{
+  "id": "vf2",
+  "title": "버추어 파이터 2 (Virtua Fighter 2)",
+  "reason": "버추어 파이터 2 (Virtua Fighter 2) 실행을 위한 MAME Model 2 vf2.zip 롬",
+  "base": ".",
+  "nro": {
+    "src": "in/VF2.nro",
+    "out": "VF2.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "avp-gold",
+  "title": "에일리언 대 프레데터: 골드 (AvP Gold)",
+  "reason": "에일리언 대 프레데터: 골드 (AvP Gold) 실행을 위한 AvP Gold / Classic 2000 PC 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/avp.nro",
+    "out": "avp.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

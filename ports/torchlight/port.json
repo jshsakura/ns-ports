@@ -1,0 +1,14 @@
+{
+  "id": "torchlight",
+  "title": "토치라이트 (Torchlight)",
+  "reason": "토치라이트 (Torchlight) 실행을 위한 Xbox 360판 토치라이트 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/torchlight-nx.nro",
+    "out": "torchlight-nx.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

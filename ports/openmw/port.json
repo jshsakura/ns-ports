@@ -1,0 +1,14 @@
+{
+  "id": "openmw",
+  "title": "엘더스크롤 3: 모로윈드 (OpenMW)",
+  "reason": "엘더스크롤 3: 모로윈드 (OpenMW) 실행을 위한 Morrowind Data Files (Morrowind.esm 등)",
+  "base": ".",
+  "nro": {
+    "src": "in/openmw.nro",
+    "out": "openmw.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

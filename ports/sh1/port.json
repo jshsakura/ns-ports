@@ -1,0 +1,14 @@
+{
+  "id": "sh1",
+  "title": "사일런트 힐 1 (Silent Hill 1)",
+  "reason": "사일런트 힐 1 (Silent Hill 1) 실행을 위한 PS1 사일런트 힐 1 롬 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/silent-hill.nro",
+    "out": "silent-hill.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "sh2",
+  "title": "사일런트 힐 2 (Silent Hill 2)",
+  "reason": "사일런트 힐 2 (Silent Hill 2) 실행을 위한 사일런트 힐 2 PC판(Enhanced Edition) 설치본",
+  "base": ".",
+  "nro": {
+    "src": "in/sh2.nro",
+    "out": "sh2.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

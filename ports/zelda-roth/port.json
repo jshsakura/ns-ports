@@ -1,0 +1,14 @@
+{
+  "id": "zelda-roth",
+  "title": "젤다의 전설: 하일리아인의 귀환 (Zelda: ROTH)",
+  "reason": "젤다의 전설: 하일리아인의 귀환 (Zelda: ROTH) 실행을 위한 자체 무료 데이터 포함",
+  "base": ".",
+  "nro": {
+    "src": "in/ZeldaROTH.nro",
+    "out": "ZeldaROTH.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

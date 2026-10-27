@@ -31,6 +31,10 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | Port | Game data you provide | Kind | NRO | Upstream |
 | --- | --- | --- | --- | --- |
 | `caesar3` | Caesar 3 PC 설치 데이터 | assemble | place your built `caesar3.nro` in `ports/caesar3/in/` | - |
+| `dantes-inferno` | Xbox 360 유럽판 TU2 game 폴더와 셰이더 2개 (한글판은 tools/dante_kr_patch.py 로 만든다) | assemble | place your built `dantes-inferno-nx.nro` in `ports/dantes-inferno/in/` | VasilkovND/dantes-inferno-nx v1.1.0, built |
+| `ro` | 라그나로크 data.grf, rdata.grf, login.ini | assemble | reuses the NRO already deployed in the shop | roswitch, deployed |
+| `sly1` | 슬라이 쿠퍼 1 PS2 ISO (미국/유럽/일본판, SD 카드에 두면 앱이 직접 풀어 줍니다) | assemble | place `ProjectCane.nro` as `ports/sly1/in/sly1.nro` | NaGaa95/ProjectCane 0.5.0, downloaded |
+| `nfsmw` | Xbox 360 NTSC-K 디스크의 game_root 와 nfsmw_shaders.nfsp | assemble | place `nfsmw-nx-kor.nro` as `ports/nfsmw/in/nfsmw.nro` | StevensND/nfsmw-nx v1.0.0, downloaded |
 | `cannonball` | OutRun 아케이드 ROM 세트 | assemble | place your built `cannonball.nro` in `ports/cannonball/in/` | Thorhax/Cannonball-NX-Modern v1.08-nx, downloaded |
 | `cnc` | C&C Gold .MIX 파일 및 영상 에셋 | assemble | place your built `vanillatd.nro` in `ports/cnc/in/` | - |
 | `cstrike` | 정품 cstrike/ 및 valve/ 데이터 | source | built on your machine | FWGS/xash3d-fwgs |
@@ -51,7 +55,6 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `openttd` | 오픈 그래픽/사운드 베이스셋 | assemble | place your built `openttd.nro` in `ports/openttd/in/` | rsn8887/OpenTTD v1.07-switch, downloaded |
 | `pokemon-survivor-burst` | 게임 데이터 리소스 | assemble | place your built `pokemon-survivor-burst.nro` in `ports/pokemon-survivor-burst/in/` | - |
 | `redalert` | Red Alert CD1/CD2 .MIX 파일 | assemble | place your built `vanillara.nro` in `ports/redalert/in/` | - |
-| `sm64-hd` | N64 ROM (baserom.us.z64) | assemble | place your built `sm64-hd.nro` in `ports/sm64-hd/in/` | - |
 | `sonic-cd` | Data.rsdk (Steam/모바일 리마스터 데이터) | assemble | place your built `scd2011.nro` in `ports/sonic-cd/in/` | heyjoeway/Sonic-CD-11-Decompilation 1.3.0, downloaded |
 | `sonic1` | Data.rsdk (모바일 2013 리마스터 데이터) | assemble | place your built `s12013.nro` in `ports/sonic1/in/` | heyjoeway/Sonic-1-2-2013-Decompilation 1.3.0rev1, downloaded |
 | `sonic2` | Data.rsdk (모바일 2013 리마스터 데이터) | assemble | place your built `s22013.nro` in `ports/sonic2/in/` | heyjoeway/Sonic-1-2-2013-Decompilation 1.3.0rev1, downloaded |

@@ -1,0 +1,14 @@
+{
+  "id": "virtual-on",
+  "title": "전뇌전기 버추얼 온 (Cyber Troopers Virtual-On)",
+  "reason": "전뇌전기 버추얼 온 (Cyber Troopers Virtual-On) 실행을 위한 MAME Model 2 von.zip 롬",
+  "base": ".",
+  "nro": {
+    "src": "in/Virtual-On.nro",
+    "out": "Virtual-On.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

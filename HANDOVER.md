@@ -21,22 +21,26 @@
 
 ---
 
-## 2. 수록 포트 현황 (31종 전원 레시피 완비 & 오카리나/무쥬라/폴아웃 실기 검증 완료)
+## 2. 수록 포트 현황 (59종 등록, 기기 시험 전인 신규 24종은 `planned` & 오카리나/무쥬라/폴아웃 실기 검증 완료)
 
 모든 포트는 `ports.json`에 메타데이터가 등록되어 있으며, `ports/<id>/recipe.py`를 통해 규격화된 빌드/배포 로직을 제공합니다.
 
 > **🎯 실기 검증 완료 (Verified In-Game):**
-> 현재 카탈로그 상단 핵심 라인업(**`ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `devilutionx`, `half-life`, `fallout1`, `fallout2`**)은 실기에서 한국어 번역, 폰트 출력, 조작성 검증이 100% 완료되었습니다.
+> 현재 카탈로그 상단 핵심 라인업(**`ge007`, `zelda3-ko`, `zelda-oot-hd`, `zelda-mm-hd`, `devilutionx`, `half-life`, `fallout1`, `fallout2`**)은 실기에서 한국어 번역, 폰트 출력, 조작성 검증이 100% 완료되었습니다.
 > *(※ `zelda-oot-hd`: Ship of Harkinian v9.3.0 C 네이티브 + 3.89GB Pretendard HD 한글 에셋 + Japanese(3) 기본 언어 세팅 완료)*
 > *(※ `zelda-mm-hd`: 2 Ship 2 Harkinian v5.0.1 C 네이티브 + 2.95GB MM-Reloaded v11.0.3 HD + Title ID 05BC5D84DDD7A000 동기화 완료)*
 
 | 카테고리 | 등록 포트 ID | 주요 특징 및 한글화 방식 |
 | :--- | :--- | :--- |
-| **N64 / SNES Recomp** | `ge007`, `zelda3-ko`, `sm64-hd`, `zelda-oot-hd`, `zelda-mm-hd`, `starcraft64` | Fast3D CJK 글리프 캐시 패치, 60FPS 자이로 조준, SoH v9.3.0 한글 HD, 2S2H v5.0.1 HD, 16:9 와이드스크린 (상위 5종 실기 검증 완료) |
+| **N64 / SNES Recomp** | `ge007`, `zelda3-ko`, `zelda-oot-hd`, `zelda-mm-hd`, `starcraft64` | Fast3D CJK 글리프 캐시 패치, 60FPS 자이로 조준, SoH v9.3.0 한글 HD, 2S2H v5.0.1 HD, 16:9 와이드스크린 (상위 5종 실기 검증 완료) |
 | **GoldSrc / FPS** | `half-life`, `cstrike`, `doom64` | 하프라이프 공식 한국어 풀더빙 음성(실기 검증 완료), CS 1.6 오프라인 봇/한국어 UI, Doom64EX |
 | **CRPG / Classic PC** | `fallout1`, `fallout2`, `devilutionx` | fallout1/2-ce CJK/CP949 FreeType 한글 & 1,000+ 대화 번역(실기 검증 완료), 디아블로 1 fonts.mpq(검증 완료) |
 | **RTS / Strategy** | `war1gus`, `wargus`, `cnc`, `redalert`, `fheroes2` | Stratagus 엔진 워크래프트 1 & 2 에셋 연동, C&C 타이베리안 던/레드얼럿 풀 FMV, HOMM2 공식 한국어 팩 |
 | **Simulation / City Builder** | `caesar3`, `openrct2`, `openttd` | 나눔고딕 TTF 폰트 및 한국어 lng 연동, 720p/1080p 터치 조작 |
+| **Racing / Xbox 360 Recomp** | `nfsmw` | ReXGlue 정적 리컴파일 NFS 모스트 원티드 한국판(`nfsmw-nx-kor.nro`). 기기 시험 전 |
+| **신규 24종 (전부 `planned`)** | `sa2`, `marathon-recomp`, `futari`, `masseffect`, `project8`, `torchlight`, `virtual-on`, `daytona-usa`, `vf2`, `sonic-fighters`, `nzportable`, `space-cadet`, `undertale-yellow`, `pokemmo`, `pvz`, `avp-gold`, `sh1`~`sh4`, `vcmi`, `openmw`, `zelda-olb`, `zelda-roth` | 업스트림 릴리스 NRO 를 쓰는 조립 뼈대. 기기에서 켜 보기 전이라 `boot-ok` 로 올리지 않았다. 사일런트 힐은 PC판, 슬라이/NFS 등은 디스크가 필요하다 |
+| **Xbox 360 Recomp / MMO** | `dantes-inferno`, `ro` | 단테스 인페르노 TU2 + 한글패치 리눅스 적용 도구(`tools/dante_kr_patch.py`), 라그나로크 스위치 클라이언트(기동 확인) |
+| **Action / PS2 Decomp** | `sly1` | ProjectCane 0.5.0. 앱이 SD 의 ISO 를 직접 풀며 미국/유럽/일본판만 받는다. 한국판(`SCKA_200.04`)은 거절. 기기 시험 전 |
 | **Action / Platformer** | `jak1`, `jak2`, `jak3`, `sonic1`, `sonic2`, `sonic-cd`, `jazz`, `cannonball` | OpenGOAL 소니 공식 한국어 더빙/자막(Jak 2/3), RSDKv4 공식 한국어(Language=8), Jazz2 C++ 엔진, OutRun 아케이드 |
 | **Fan Game / Roguelite** | `pokemon-survivor-burst`, `dragonball-z-rpg`, `wwhd` | mkxp-z 커스텀 루비 3.1 런타임, 바람의 지휘봉 HD 네이티브 환경 |
 
@@ -73,7 +77,7 @@ python3 build.py ge007 --rom /path/to/baserom.j.z64 --zip
 python3 build.py fallout2 --deploy /mnt/HDD-8TB-STRIPE/media3/game/switch/homebrew/
 ```
 
-### 4.3 전체 31개 레시피 일괄 회귀 테스트
+### 4.3 전체 59개 레시피 일괄 회귀 테스트
 ```bash
 python3 -c '
 import json, subprocess, sys

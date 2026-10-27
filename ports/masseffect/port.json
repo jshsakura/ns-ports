@@ -1,0 +1,14 @@
+{
+  "id": "masseffect",
+  "title": "매스 이펙트 1 (Mass Effect)",
+  "reason": "매스 이펙트 1 (Mass Effect) 실행을 위한 Xbox 360판 매스 이펙트 1 게임 데이터",
+  "base": ".",
+  "nro": {
+    "src": "in/masseffect-nx.nro",
+    "out": "masseffect-nx.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

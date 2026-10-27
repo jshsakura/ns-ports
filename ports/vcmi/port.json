@@ -1,0 +1,14 @@
+{
+  "id": "vcmi",
+  "title": "히어로즈 오브 마이트 앤 매직 3 (VCMI)",
+  "reason": "히어로즈 오브 마이트 앤 매직 3 (VCMI) 실행을 위한 HOMM3 Data 및 Maps 폴더",
+  "base": ".",
+  "nro": {
+    "src": "in/vcmi.nro",
+    "out": "vcmi.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

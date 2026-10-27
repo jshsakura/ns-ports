@@ -88,8 +88,10 @@ def retitle_nro(src, icon, title):
     for k in range(NACP_LANGS):
         nacp[k * NACP_STRIDE:k * NACP_STRIDE + NACP_NAME] = raw + b'\0' * (NACP_NAME - len(raw))
     jpg = open(icon, 'rb').read() if icon else b[i + off(8):i + off(8) + off(16)]  # 아이콘을 안 주면 NRO 의 것을 그대로 쓴다
-    hdr = b'ASET' + struct.pack('<I', 0) + struct.pack('<QQQQQQ', 0x38, len(jpg), 0x38 + len(jpg), len(nacp), 0, 0)
-    return b[:i] + hdr + jpg + bytes(nacp)
+    rom = b[i + off(40):i + off(40) + off(48)]  # romfs 는 그대로 이어 붙인다
+    rom_off = 0x38 + len(jpg) + len(nacp)
+    hdr = b'ASET' + struct.pack('<I', 0) + struct.pack('<QQQQQQ', 0x38, len(jpg), 0x38 + len(jpg), len(nacp), rom_off if rom else 0, len(rom))
+    return b[:i] + hdr + jpg + bytes(nacp) + rom
 
 
 def fetch_url(entry):

@@ -908,6 +908,12 @@
   {
     "id": "iortcw",
     "title": "리턴 투 캐슬 울펜슈타인 (iortcw)",
-    "status": "active"
+    "status": "active",
+    "name": "리턴 투 캐슬 울펜슈타인 (iortcw)",
+    "category": "FPS / Modern Native",
+    "engine": "iortcw C++ 네이티브",
+    "description": "2차 세계대전 SF 액션 FPS 명작 리턴 투 캐슬 울펜슈타인 스위치 네이티브 싱글 캠페인 포트. 유저 한글 자막 및 브리핑 패치 지원",
+    "korean": true,
+    "motion_controls": false
   }
 ]

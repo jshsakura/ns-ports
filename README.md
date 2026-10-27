@@ -55,6 +55,7 @@
 | **`sonic2`** | **소닉 더 헤지혹 2 (2013)** | Platformer / RSDK | RSDKv4 디컴파일 공식 한국어(Lang=8) | ➖ | 📦 레시피 수록 완료 |
 | **`sonic-cd`** | **소닉 CD (2011)** | Platformer / RSDK | RSDKv3 디컴파일 60fps 와이드스크린 | ➖ | 📦 레시피 수록 완료 |
 | **`cannonball`** | **아웃런 (Cannonball)** | Racing / Arcade | 60fps 아케이드 재구현 엔진 | ➖ | 📦 레시피 수록 완료 |
+| **`sly1`** | **슬라이 쿠퍼 1** | Action / PS2 Decomp | 앱이 ISO를 직접 풀어 주는 네이티브 포트 (한국판 ISO 미지원) | ➖ | 🧪 기기 시험 전 |
 | **`nfsmw`** | **니드 포 스피드: 모스트 원티드** | Racing / Xbox 360 Recomp | 한국판(NTSC-K) 정적 리컴파일, 30fps | ✅ | 🧪 기기 시험 전 |
 | **`jazz`** | **재즈 잭래빗 2** | Platformer / PC | Jazz² Resurrection C++ 엔진 | ➖ | 📦 레시피 수록 완료 |
 | **`doom64`** | **둠 64 EX** | FPS / N64 | Doom64EX C++ 네이티브 포트 | ➖ | 📦 레시피 수록 완료 |

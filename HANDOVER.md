@@ -21,7 +21,7 @@
 
 ---
 
-## 2. 수록 포트 현황 (32종 전원 레시피 완비 & 오카리나/무쥬라/폴아웃 실기 검증 완료)
+## 2. 수록 포트 현황 (33종 전원 레시피 완비 & 오카리나/무쥬라/폴아웃 실기 검증 완료)
 
 모든 포트는 `ports.json`에 메타데이터가 등록되어 있으며, `ports/<id>/recipe.py`를 통해 규격화된 빌드/배포 로직을 제공합니다.
 
@@ -38,6 +38,7 @@
 | **RTS / Strategy** | `war1gus`, `wargus`, `cnc`, `redalert`, `fheroes2` | Stratagus 엔진 워크래프트 1 & 2 에셋 연동, C&C 타이베리안 던/레드얼럿 풀 FMV, HOMM2 공식 한국어 팩 |
 | **Simulation / City Builder** | `caesar3`, `openrct2`, `openttd` | 나눔고딕 TTF 폰트 및 한국어 lng 연동, 720p/1080p 터치 조작 |
 | **Racing / Xbox 360 Recomp** | `nfsmw` | ReXGlue 정적 리컴파일 NFS 모스트 원티드 한국판(`nfsmw-nx-kor.nro`). 기기 시험 전 |
+| **Action / PS2 Decomp** | `sly1` | ProjectCane 0.5.0. 앱이 SD 의 ISO 를 직접 풀며 미국/유럽/일본판만 받는다. 한국판(`SCKA_200.04`)은 거절. 기기 시험 전 |
 | **Action / Platformer** | `jak1`, `jak2`, `jak3`, `sonic1`, `sonic2`, `sonic-cd`, `jazz`, `cannonball` | OpenGOAL 소니 공식 한국어 더빙/자막(Jak 2/3), RSDKv4 공식 한국어(Language=8), Jazz2 C++ 엔진, OutRun 아케이드 |
 | **Fan Game / Roguelite** | `pokemon-survivor-burst`, `dragonball-z-rpg`, `wwhd` | mkxp-z 커스텀 루비 3.1 런타임, 바람의 지휘봉 HD 네이티브 환경 |
 
@@ -74,7 +75,7 @@ python3 build.py ge007 --rom /path/to/baserom.j.z64 --zip
 python3 build.py fallout2 --deploy /mnt/HDD-8TB-STRIPE/media3/game/switch/homebrew/
 ```
 
-### 4.3 전체 32개 레시피 일괄 회귀 테스트
+### 4.3 전체 33개 레시피 일괄 회귀 테스트
 ```bash
 python3 -c '
 import json, subprocess, sys

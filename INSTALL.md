@@ -31,6 +31,7 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | Port | Game data you provide | Kind | NRO | Upstream |
 | --- | --- | --- | --- | --- |
 | `caesar3` | Caesar 3 PC 설치 데이터 | assemble | place your built `caesar3.nro` in `ports/caesar3/in/` | - |
+| `sly1` | 슬라이 쿠퍼 1 PS2 ISO (미국/유럽/일본판, SD 카드에 두면 앱이 직접 풀어 줍니다) | assemble | place `ProjectCane.nro` as `ports/sly1/in/sly1.nro` | NaGaa95/ProjectCane 0.5.0, downloaded |
 | `nfsmw` | Xbox 360 NTSC-K 디스크의 game_root 와 nfsmw_shaders.nfsp | assemble | place `nfsmw-nx-kor.nro` as `ports/nfsmw/in/nfsmw.nro` | StevensND/nfsmw-nx v1.0.0, downloaded |
 | `cannonball` | OutRun 아케이드 ROM 세트 | assemble | place your built `cannonball.nro` in `ports/cannonball/in/` | Thorhax/Cannonball-NX-Modern v1.08-nx, downloaded |
 | `cnc` | C&C Gold .MIX 파일 및 영상 에셋 | assemble | place your built `vanillatd.nro` in `ports/cnc/in/` | - |

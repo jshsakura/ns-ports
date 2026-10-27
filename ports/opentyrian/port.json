@@ -1,0 +1,12 @@
+{
+  "id": "opentyrian",
+  "title": "오픈 타이리안 (OpenTyrian)",
+  "reason": "오픈 타이리안 (OpenTyrian v1.0.0) 클래식 탄막 슈팅 타이리안 2.1 정식 프리웨어 풀버전",
+  "base": ".",
+  "nro": {
+    "src": "in/opentyrian.nro",
+    "out": "opentyrian.nro"
+  },
+  "overlays": [],
+  "files": []
+}

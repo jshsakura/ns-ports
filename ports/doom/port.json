@@ -1,0 +1,12 @@
+{
+  "id": "doom",
+  "title": "GZDoom (Doom 1 & FreeDoom)",
+  "reason": "Doom 1 Shareware 및 FreeDoom 1/2 IWAD가 포함된 GZDoom 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/gzdoom_launcher.nro",
+    "out": "gzdoom_launcher.nro"
+  },
+  "overlays": [],
+  "files": []
+}

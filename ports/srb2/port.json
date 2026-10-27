@@ -1,0 +1,12 @@
+{
+  "id": "srb2",
+  "title": "소닉 로보 블래스트 2 (Sonic Robo Blast 2)",
+  "reason": "소닉 로보 블래스트 2 (Sonic Robo Blast 2 v2.2.13) 풀버전 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/srb2switch22.nro",
+    "out": "srb2switch22.nro"
+  },
+  "overlays": [],
+  "files": []
+}

@@ -1,0 +1,12 @@
+{
+  "id": "supermariowar",
+  "title": "슈퍼 마리오 워 (Super Mario War)",
+  "reason": "슈퍼 마리오 워 (Super Mario War v2.0.0-nx5) 4인 대전 파티 게임 네이티브 포트",
+  "base": ".",
+  "nro": {
+    "src": "in/smw.nro",
+    "out": "smw.nro"
+  },
+  "overlays": [],
+  "files": []
+}

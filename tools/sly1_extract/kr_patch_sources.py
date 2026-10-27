@@ -133,6 +133,55 @@ def patch_binary_input_stream(text):
         "LooksLikeUtf16 Hangul")
 
 
+def patch_brx_binary_input_stream(text):
+    text = patch_binary_input_stream(text)
+    text = replace_once(text, '#include <cstring>\n', '#include <cstring>\n#include "kr_font.h"\n', "kr_font include")
+    return replace_once(text,
+        "        result += Utf8FromCodePoint(cp);",
+        "        krfont::NoteCodePoint(cp);\n        result += Utf8FromCodePoint(cp);",
+        "collect UTF-16 code points")
+
+
+def patch_brx_walker_reset(text):
+    text = patch_brx_walker(text)
+    text = replace_once(text, '#include "BrxWalker.h"\n', '#include "BrxWalker.h"\n#include "kr_font.h"\n', "kr_font include")
+    return replace_once(text, "    stats_ = {};\n", "    stats_ = {};\n    krfont::Reset();\n", "reset collected code points")
+
+
+def patch_asset_walker(text):
+    # Keep each font's header and glyph table, then let kr_font append the syllables
+    # the level's strings use, composed from the font's own jamo glyphs.
+    text = replace_once(text, '#include "BrxWalker.h"\n',
+        '#include "BrxWalker.h"\n#include "kr_font.h"\n'
+        'namespace { struct KrFontRecord { std::size_t glyphsBegin{}, glyphsEnd{}; std::vector<krfont::Glyph> glyphs; };'
+        ' thread_local std::vector<KrFontRecord> krFonts; }\n',
+        "includes")
+    text = replace_once(text, "pendingFonts_.clear();", "pendingFonts_.clear();krFonts.clear();", "clear fonts")
+    text = replace_once(text,
+        'pendingFonts_.push_back(p);s.U8Read();s.U8Read();s.U8Read();s.U8Read();s.F32Read();auto ng=s.U32Read();'
+        'if(ng>0x10000u)throw std::runtime_error("Implausible font glyph count");s.Skip(size_t(ng)*8);}',
+        'pendingFonts_.push_back(p);s.U8Read();s.U8Read();s.U8Read();s.U8Read();s.F32Read();KrFontRecord kr;kr.glyphsBegin=s.GetOffset();'
+        'auto ng=s.U32Read();if(ng>0x10000u)throw std::runtime_error("Implausible font glyph count");'
+        'for(uint32_t g=0;g<ng;++g){krfont::Glyph q;q.ch=s.U16Read();q.x=s.U16Read();q.y=s.U16Read();q.width=s.U16Read();kr.glyphs.push_back(q);}'
+        'kr.glyphsEnd=s.GetOffset();krFonts.push_back(std::move(kr));}',
+        "read glyph tables")
+    text = replace_once(text,
+        'for(auto& f:pendingFonts_){std::vector<uint8_t> out;S32(out,add(f.bitmap,uint16_t(f.clut),0,true,false));'
+        'RecordReplacement(f.referenceBegin,f.referenceBegin+4,std::move(out));}',
+        'for(size_t fi=0;fi<pendingFonts_.size();++fi){auto& f=pendingFonts_[fi];auto& kr=krFonts[fi];int32_t index;'
+        'auto glyphs=kr.glyphs;uint32_t fw=0,fh=0;std::vector<uint8_t> frgba;'
+        'if(f.bitmap<sourceBitmaps_.size()&&f.clut>=0&&size_t(f.clut)<sourceCluts_.size()){auto& b=sourceBitmaps_[f.bitmap];fw=b.width;fh=b.height;frgba=decode(f.bitmap,uint16_t(f.clut),true);}'
+        'if(!frgba.empty()&&krfont::Augment(frgba,fw,fh,glyphs)){'
+        'PcImage im;im.w=fw;im.h=fh;im.zone=sourceBitmaps_[f.bitmap].grfzon;im.flags=0;im.mips=1;im.format=TextureRgba8;im.data=std::move(frgba);'
+        'images.push_back(std::move(im));index=int32_t(images.size()-1);'
+        'std::vector<uint8_t> table;U32(table,uint32_t(glyphs.size()));for(auto& g:glyphs){U16(table,g.ch);U16(table,g.x);U16(table,g.y);U16(table,g.width);}'
+        'RecordReplacement(kr.glyphsBegin,kr.glyphsEnd,std::move(table));}'
+        'else index=add(f.bitmap,uint16_t(f.clut),0,true,false);'
+        'std::vector<uint8_t> out;S32(out,index);RecordReplacement(f.referenceBegin,f.referenceBegin+4,std::move(out));}',
+        "augment font atlases")
+    return text
+
+
 def patch_iso_extractor(text):
     text = replace_once(text,
         'const std::vector<std::string> languages = japanese ? std::vector<std::string>{"Japanese", "English"} :',
@@ -156,8 +205,9 @@ def main():
     src, out = sys.argv[1:]
     jobs = [
         ("File Extractor GUI/NativeTools/PalExtractor/PalIsoExtractor.cpp", "pal/PalIsoExtractor.cpp", patch_pal_iso_extractor),
-        ("File Extractor GUI/NativeTools/BrxRebuilder/BrxWalker.cpp", "brx/BrxWalker.cpp", patch_brx_walker),
-        ("File Extractor GUI/NativeTools/BrxRebuilder/BinaryInputStream.cpp", "brx/BinaryInputStream.cpp", patch_binary_input_stream),
+        ("File Extractor GUI/NativeTools/BrxRebuilder/BrxWalker.cpp", "brx/BrxWalker.cpp", patch_brx_walker_reset),
+        ("File Extractor GUI/NativeTools/BrxRebuilder/BinaryInputStream.cpp", "brx/BinaryInputStream.cpp", patch_brx_binary_input_stream),
+        ("File Extractor GUI/NativeTools/BrxRebuilder/AssetWalker.cpp", "brx/AssetWalker.cpp", patch_asset_walker),
         ("File Extractor GUI/NativeTools/PalExtractor/BinaryInputStream.cpp", "pal/BinaryInputStream.cpp", patch_binary_input_stream),
         ("platform/installer/iso_extractor.cpp", "platform/installer/iso_extractor.cpp", patch_iso_extractor),
     ]

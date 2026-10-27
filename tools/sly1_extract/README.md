@@ -5,6 +5,13 @@ instead of on the Switch. The Korean disc (`SCKA_200.04`) is not the USA layout,
 extractor sources are patched on the fly with the Korean tables and routed through the
 Japanese/PAL path.
 
+## Korean text
+
+The Korean disc stores Hangul as conjoining jamo glyphs (initial, vowel, final) that the PS2 code
+composes at draw time. The port draws one glyph per code point, so Hangul showed up blank.
+`kr_font.h` composes the syllables each level's strings use from the disc's own jamo glyphs and
+appends them to that level's font atlas and glyph table. No outside font is used.
+
 Nothing from the game or from upstream is stored here. You bring the ISO and the upstream sources.
 
 ## Use

@@ -11,15 +11,16 @@ ln -s "$SRC/File Extractor GUI" "$GEN/File Extractor GUI"
 ln -s "$SRC/platform/switch" "$GEN/platform/switch"
 python3 "$HERE/kr_patch_sources.py" "$SRC" "$GEN"
 cp "$SRC/platform/installer/iso_extractor.h" "$GEN/platform/installer/"
-CXX="g++ -std=c++20 -O2 -pthread -I$SRC/Libraries/include"
+cp "$HERE/kr_font.h" "$GEN/"
+CXX="g++ -std=c++20 -O2 -pthread -I$SRC/Libraries/include -I$GEN"
 BRX="$SRC/File Extractor GUI/NativeTools/BrxRebuilder"
 PAL="$SRC/File Extractor GUI/NativeTools/PalExtractor"
 pids=""; objs=""
 cc() { o="$OUT/obj/$1.o"; shift; objs="$objs $o"; $CXX "$@" -o "$o" & pids="$pids $!"; }
-for s in AssetWalker GeometryWalker ObjectWalker OptionWalker SpliceWalker TriangleList; do
+for s in GeometryWalker ObjectWalker OptionWalker SpliceWalker TriangleList; do
   cc brx_$s -DCBinaryInputStream=CaneBrxInputStream -c "$BRX/$s.cpp"
 done
-for s in BrxWalker BinaryInputStream; do
+for s in AssetWalker BrxWalker BinaryInputStream; do
   cc brx_$s -DCBinaryInputStream=CaneBrxInputStream -iquote "$BRX" -c "$GEN/brx/$s.cpp"
 done
 for s in AssetWalker BrxWalker GeometryWalker ObjectWalker OptionWalker SpliceWalker; do

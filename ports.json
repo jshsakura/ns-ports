@@ -426,5 +426,20 @@
     "upstream": "https://github.com/SylphiaWindy/openbor",
     "version": "switch-v26.0919.1",
     "obtained": "downloaded"
+  },
+  {
+    "id": "nfsmw",
+    "name": "니드 포 스피드: 모스트 원티드 (Need for Speed: Most Wanted)",
+    "category": "Racing / Xbox 360 Recomp",
+    "engine": "ReXGlue 정적 리컴파일 + NVK Vulkan",
+    "status": "planned",
+    "korean": true,
+    "motion_controls": false,
+    "description": "Xbox 360판 니드 포 스피드: 모스트 원티드를 정적 리컴파일한 네이티브 포트. 한국판(NTSC-K) 전용 빌드로 한글 UI와 자막을 그대로 씁니다. 30fps",
+    "required_assets": "Xbox 360 NTSC-K 디스크의 game_root 폴더와 셰이더 파일(nfsmw_shaders.nfsp)",
+    "nro": "nfsmw-nx.nro",
+    "upstream": "https://github.com/StevensND/nfsmw-nx",
+    "version": "v1.0.0",
+    "obtained": "downloaded"
   }
 ]

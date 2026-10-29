@@ -1,99 +1,26 @@
 # 바람의 지휘봉 HD (Wind Waker HD, SwitchWakerHD)
 
 <!-- quick:begin -->
-## 필요한 파일과 명령어
+## 하는 법
 
-**1. 받아서 둘 것**
-
-| 놓을 위치 | 무엇 | 구하는 곳 |
-| :--- | :--- | :--- |
-| `ports/wwhd/in/wwhd.nro` | SwitchWakerHD 빌드 NRO | https://github.com/centollOS/SwitchWakerHD 를 직접 빌드 (BUILD.md) |
-| `ports/wwhd/in/data` | 내 Wii U 바람의 지휘봉 HD 덤프 (code/ content/ meta/ 가 보이는 폴더) | 내 Wii U 에서 추출. 복사할 필요 없이 --rom <그 폴더> 로 알려 주면 된다 |
-| `ports/wwhd/in/Title_00.szs` | 한글 패치의 타이틀 화면 레이아웃 (한글 판만) | 한글 패치 Ver 1.02 폴더의 windwakerHD/Layout/Title_00.szs (패치 제작진 배포) |
-| `ports/wwhd/icon.jpg` | 앱 아이콘 (256x256 JPEG) (선택) | 직접 구하거나 만든다. 없으면 NRO 에 든 아이콘을 그대로 쓴다 |
-
-**2. 이미지**: 앱 아이콘(`icon.jpg`, 256x256 JPEG)만 쓰이고 없으면 NRO 의 기본 아이콘을 씁니다. 이미지는 저장소에 없으니 필요하면 직접 구해 위 위치에 두세요. 배너와 스크린샷은 다루지 않습니다.
-
-**3. 확인하고 실행**
+1. 한글 패치(Ver 1.02) 압축을 풀고 `windwakerHD/Layout/Title_00.szs` 를 `ports/wwhd/in/Title_00.szs` 로 복사한다. (원본 그대로 만들 거면 생략)
+2. 실행한다.
 
 ```
-python3 build.py guide wwhd    # 빈 칸과 구하는 곳 확인
-python3 build.py wwhd --zip
+python3 build.py wwhd --rom <Wii U 덤프 폴더> --zip
 ```
 
-- 스위치 포트 소스: https://github.com/centollOS/SwitchWakerHD
+`<Wii U 덤프 폴더>` 는 `code/` `content/` `meta/` 가 바로 보이는 폴더다(USA, 버전 0). 옮기지 않고 경로만 주면 된다.
+
+이 한 줄이 알아서 하는 일: `xdelta3` 로 한글 pack 만들기, `wwhd.nro` 가 없으면 SwitchWakerHD 를 받아 도커로 빌드하기(몇 시간, git 과 docker 필요), 게임 데이터 연결, zip 만들기.
+결과는 `ports/wwhd/dist/switch/wwhd/` 이고 SD 카드의 `switch/` 에 복사해 홈브루 메뉴에서 실행한다.
+
+이미 빌드한 NRO 가 있으면 `ports/wwhd/in/wwhd.nro` 로 두면 빌드를 건너뛴다. 원본 그대로: `--variant original`. 앱 아이콘을 바꾸려면 256x256 JPEG 를 `ports/wwhd/icon.jpg` 로 둔다(선택).
 <!-- quick:end -->
 
 WiiU 바람의 지휘봉 HD 를 스위치에서 네이티브로 구동하는 [centollOS/SwitchWakerHD](https://github.com/centollOS/SwitchWakerHD) 포트에, 한국어 패치 파일을 얹는 방법 가이드.
 
 이 저장소는 방법을 안내할 뿐, NRO 나 한글 패치 산출물, 게임 데이터를 담지 않는다(클린룸). 아래 파일은 전부 사용자 소유분을 쓴다.
-
-## 어떤 파일을 어디서 구해 어디에 두나
-
-| # | 파일 | 어디서 | 어디에 |
-| :-: | :--- | :--- | :--- |
-| 1 | `wwhd.nro` | [SwitchWakerHD](https://github.com/centollOS/SwitchWakerHD) 를 직접 빌드 ([BUILD.md](BUILD.md)) | `ports/wwhd/in/wwhd.nro` |
-| 2 | Wii U 덤프 폴더 | 내 Wii U 에서 추출 (`code/` `content/` `meta/` 가 보이는 폴더) | 옮기지 않는다. 명령에 `--rom <그 폴더>` 로 적는다 |
-| 3 | `Title_00.szs` | 한글 패치 Ver 1.02 압축 안의 `windwakerHD/Layout/Title_00.szs` (패치 제작진 배포) | `ports/wwhd/in/Title_00.szs` (한글 판만) |
-
-한글 pack(`permanent_2d_UsEnglish.pack`)은 따로 구하지 않는다. 조립할 때 이 저장소의 차이 패치
-`patches/permanent_2d_UsEnglish.xdelta` 를 2번 덤프의 `content/Common/Pack/permanent_2d_UsFrench.pack` 에 적용해 만든다.
-그래서 `xdelta3` 만 깔려 있으면 된다(예: `sudo apt install xdelta3`).
-
-## 명령어만 따라 하기
-
-앞의 세 줄에서 내 경로로 바꿀 곳은 이 셋뿐이다. 나머지는 그대로 붙여 넣는다.
-
-```bash
-DUMP=/path/to/wwhd_dump          # content/ code/ meta/ 가 바로 보이는 Wii U 덤프 폴더 (USA, 버전 0)
-PATCH=/path/to/한글패치_Ver1.02    # 압축을 푼 폴더 (안에 windwakerHD/Layout/Title_00.szs 가 있어야 한다)
-SWHD=$HOME/SwitchWakerHD         # NRO 를 빌드할 작업 폴더
-
-# 0) 준비: python3, git, docker, xdelta3
-sudo apt install -y xdelta3 git python3
-
-# 1) 이 저장소
-git clone https://github.com/jshsakura/ns-ports.git && cd ns-ports
-
-# 2) NRO 만들기 (BUILD.md 의 요약. 몇 시간 걸리고 도커 이미지를 받는다)
-git clone https://github.com/centollOS/SwitchWakerHD "$SWHD" && git -C "$SWHD" checkout 9a57081
-(cd "$SWHD" && python3 tools/switch/make_sd.py --game-dir "$DUMP" --jobs 2)
-
-# 3) 파일 두기 (이름까지 이대로)
-mkdir -p ports/wwhd/in
-cp "$SWHD/build/switch-dk/wwhd.nro"           ports/wwhd/in/wwhd.nro
-cp "$PATCH/windwakerHD/Layout/Title_00.szs"   ports/wwhd/in/Title_00.szs     # 한글 판만
-
-# 4) 빈 칸 확인 → 조립
-python3 build.py guide wwhd
-python3 build.py wwhd --rom "$DUMP" --zip                        # 한글 판
-# python3 build.py wwhd --rom "$DUMP" --variant original --zip   # 원본 그대로 (Title_00.szs 불필요)
-
-# 5) 결과: ports/wwhd/dist/switch/wwhd/ 를 SD 카드의 switch/ 로 복사
-cp -r ports/wwhd/dist/switch/wwhd /path/to/sdcard/switch/
-```
-
-2번에서 `make_sd.py` 가 `$DUMP` 에서 `code/cking.rpx` 를 읽는다. 덤프 자체를 만드는 복호화 단계(Wii U 공용키 필요)는 [BUILD.md](BUILD.md) 1번에 있고, 키는 각자 콘솔에서 읽어야 하므로 여기에 적지 않는다.
-이미 만들어 둔 `wwhd.nro` 가 있으면 2번은 건너뛰고 3번의 첫 `cp` 만 내 파일 경로로 바꾼다.
-
-## 조립 옵션
-
-```
-python3 build.py guide wwhd                                                 # 빈 칸 확인
-python3 build.py wwhd --rom /path/to/wwhd_dump --zip                        # 한글 판
-python3 build.py wwhd --rom /path/to/wwhd_dump --variant original --zip     # 원본 그대로 (3번 불필요)
-```
-
-결과는 `ports/wwhd/dist/switch/wwhd/`(`wwhd.nro` + `game/`)와 zip 입니다. 폴더를 `sd:/switch/wwhd/` 로 복사해 홈브루 메뉴에서 실행합니다.
-
-## 조립이 덤프에 쓰는 것
-
-한글 pack 한 개가 두 언어 슬롯에 같은 내용으로 들어가서 게임 언어 설정과 상관없이 한글이 뜹니다(실기 검증된 배포본과 같은 구성).
-
-| 만들어지는 파일 | 위치 |
-| :--- | :--- |
-| 한글 pack | `game/content/Common/Pack/permanent_2d_UsEnglish.pack` 와 `permanent_2d_JpJapanese.pack` |
-| `Title_00.szs` | `game/content/Common/Layout/Title_00.szs` |
 
 ## 한글 패치 크레딧과 조건
 

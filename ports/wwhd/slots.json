@@ -2,7 +2,8 @@
   {
     "path": "in/wwhd.nro",
     "what": "SwitchWakerHD 빌드 NRO",
-    "get": "https://github.com/centollOS/SwitchWakerHD 를 직접 빌드 (BUILD.md)"
+    "get": "안 둬도 된다. 없으면 build.py 가 SwitchWakerHD 를 받아 자동으로 빌드한다",
+    "optional": true
   },
   {
     "path": "in/data",
@@ -13,6 +14,6 @@
     "path": "in/Title_00.szs",
     "what": "한글 패치의 타이틀 화면 레이아웃",
     "variant": "ko",
-    "get": "한글 패치 Ver 1.02 폴더의 windwakerHD/Layout/Title_00.szs (패치 제작진 배포)"
+    "get": "한글 패치 Ver 1.02 압축을 풀어 windwakerHD/Layout/Title_00.szs 를 이 위치에 복사"
   }
 ]

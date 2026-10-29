@@ -4,10 +4,8 @@ Port Recipe: The Legend of Zelda: The Wind Waker HD (centollOS/SwitchWakerHD, as
 
   python3 build.py wwhd --rom <WiiU 덤프 루트(code/, content/, meta/ 가 보이는 폴더)> [--variant ko|original] [--zip] [--deploy <homebrew 폴더>]
 
-ports/wwhd/in/ 준비물 (배치표는 README.md):
-  wwhd.nro                     SwitchWakerHD 빌드 NRO
-  permanent_2d_UsEnglish.pack  한글 패치의 2d 팩(한국어 텍스트 주입본)
-  Title_00.szs                 한글 패치의 타이틀 화면 레이아웃
+사람이 둘 것은 한글 판의 ports/wwhd/in/Title_00.szs 하나뿐이다. wwhd.nro 는 없으면 이 레시피가
+SwitchWakerHD 를 받아 도커로 빌드해 in/ 에 채운다(몇 시간, docker 와 git 필요).
 
 ko 판은 언어 설정과 상관없이 한글이 뜨도록 세 언어 슬롯(UsEnglish/JpJapanese/EuEnglish)에
 같은 팩을 넣는다(실기 검증된 배포본과 동일 구성). original 은 패치 없이 원본 그대로 조립한다.
@@ -69,6 +67,31 @@ def ko_pack(dump, dry):
         return open(out, "rb").read()
 
 
+SWHD_URL, SWHD_COMMIT = "https://github.com/centollOS/SwitchWakerHD", "9a57081"
+SWHD_SRC = os.path.join(PORT_DIR, "src", "SwitchWakerHD")
+
+
+def build_nro(dump):
+    """in/wwhd.nro 가 없을 때 SwitchWakerHD 를 받아 빌드해 채운다(BUILD.md 의 절차 그대로)."""
+    for tool in ("git", "docker"):
+        if not shutil.which(tool):
+            print("[!] NRO 를 빌드하려면 %s 가 필요합니다. 설치한 뒤 같은 명령을 다시 실행하세요." % tool, file=sys.stderr)
+            return False
+    if not os.path.isdir(os.path.join(SWHD_SRC, ".git")):
+        os.makedirs(os.path.dirname(SWHD_SRC), exist_ok=True)
+        subprocess.run(["git", "clone", "--quiet", SWHD_URL, SWHD_SRC], check=True)
+    subprocess.run(["git", "checkout", "--quiet", SWHD_COMMIT], cwd=SWHD_SRC, check=True)
+    print("[*] wwhd.nro 가 없어 SwitchWakerHD 를 빌드합니다. 몇 시간 걸립니다.")
+    r = subprocess.run([sys.executable, "tools/switch/make_sd.py", "--game-dir", dump, "--jobs", "2"], cwd=SWHD_SRC)
+    built = os.path.join(SWHD_SRC, "build", "switch-dk", "wwhd.nro")
+    if r.returncode != 0 or not os.path.exists(built):
+        print("[!] NRO 빌드가 실패했습니다. 덤프가 USA 버전 0 인지 확인하고 BUILD.md 를 보세요.", file=sys.stderr)
+        return False
+    os.makedirs(IN, exist_ok=True)
+    shutil.copyfile(built, os.path.join(IN, "wwhd.nro"))
+    return True
+
+
 def build(args):
     own = argparse.ArgumentParser(prog="build.py wwhd")
     own.add_argument("--dry-run", action="store_true")
@@ -76,17 +99,15 @@ def build(args):
     variant = getattr(args, "variant", None) or "ko"
 
     nro = os.path.join(IN, "wwhd.nro")
-    if not os.path.exists(nro):
-        print("[!] %s 이(가) 없습니다. SwitchWakerHD 빌드 NRO 를 그 이름으로 in/ 에 두세요." % nro, file=sys.stderr)
+    if not args.rom or not os.path.isdir(os.path.join(args.rom, "content")):
+        print("[!] --rom 에는 content/ 폴더가 보이는 Wii U 덤프 폴더(code/, content/, meta/)를 지정하세요.", file=sys.stderr)
         return 1
     missing = [f for f in KO_INPUTS if not os.path.exists(os.path.join(IN, f))]
     if variant == "ko" and missing:
-        print("[!] 한글 판에 필요한 파일이 in/ 에 없습니다: %s" % ", ".join(missing), file=sys.stderr)
-        print("[*] 한글 패치 배포본의 windwakerHD/Layout/Title_00.szs 를 ports/wwhd/in/Title_00.szs 로 두세요.", file=sys.stderr)
-        print("[*] 원본 그대로 조립하려면 --variant original 을 쓰세요.", file=sys.stderr)
+        print("[!] 한글 패치의 windwakerHD/Layout/Title_00.szs 를 ports/wwhd/in/Title_00.szs 로 넣고 다시 실행하세요.", file=sys.stderr)
+        print("    (원본 그대로 만들려면 --variant original)", file=sys.stderr)
         return 1
-    if not args.rom or not os.path.isdir(os.path.join(args.rom, "content")):
-        print("[!] --rom 에는 content/ 폴더가 보이는 WiiU 덤프 루트(code/, content/, meta/)를 지정하세요.", file=sys.stderr)
+    if not os.path.exists(nro) and not opt.dry_run and not build_nro(args.rom):
         return 1
 
     out = args.deploy or os.path.join(PORT_DIR, "dist", "switch")

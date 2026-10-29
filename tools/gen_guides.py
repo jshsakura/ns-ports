@@ -15,6 +15,9 @@ ports = json.load(open(os.path.join(ROOT, "ports.json"), encoding="utf-8"))
 def block(p):
     pid = p["id"]
     slots = build.load_slots(pid)
+    custom = os.path.join(ROOT, "ports", pid, "quick.md")  # 직접 쓴 안내가 있으면 그것을 맨 위에 쓴다
+    if os.path.exists(custom):
+        return "\n".join([BEGIN, open(custom, encoding="utf-8").read().rstrip(), END, ""])
     lines = [BEGIN, "## 필요한 파일과 명령어", ""]
     if slots is None:
         lines += ["이 포트는 소스부터 빌드하거나 전용 레시피를 씁니다. 필요한 것: %s" % (p.get("required_assets") or "게임 데이터"), ""]

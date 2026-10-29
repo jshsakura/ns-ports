@@ -1,0 +1,14 @@
+{
+  "id": "supertuxkart",
+  "title": "SuperTuxKart",
+  "reason": "SuperTuxKart 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/supertuxkart.nro",
+    "out": "supertuxkart.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": []
+}

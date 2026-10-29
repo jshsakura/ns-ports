@@ -1,0 +1,10 @@
+[
+  {
+    "path": "in/supertux2.nro",
+    "what": "스위치용 빌드 NRO"
+  },
+  {
+    "path": "in/data",
+    "what": "게임 데이터 (data/)"
+  }
+]

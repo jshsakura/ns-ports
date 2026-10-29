@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "Thorhax/AvP-Gold-NX-Modern",
+    "tag": "v2026-nx",
+    "asset": "AvP_Gold.nro",
+    "sha256": "5d5c043995ee4a6163308b4c57dabf315d88baf7b688229d063b0c046c2ae349", "note": "public release checksum, privacy-ok"
+  }
 }

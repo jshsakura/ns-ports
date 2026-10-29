@@ -17,7 +17,7 @@
 
 ```
 python3 build.py guide pokemon-survivor-burst    # 빈 칸과 구하는 곳 확인
-python3 build.py pokemon-survivor-burst --zip
+python3 build.py pokemon-survivor-burst --rom <내 게임 데이터 폴더> --zip
 ```
 
 - 원 프로젝트: https://github.com/white-axe/mkxp-z

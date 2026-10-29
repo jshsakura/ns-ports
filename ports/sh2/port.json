@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "cutarev/sh2-nx",
+    "tag": "v1.02",
+    "asset": "sh2-nx.nro",
+    "sha256": "260d5e893eef06b38da38080a72108a9e58463cda5c9a489f5894ff24e18f41c", "note": "public release checksum, privacy-ok"
+  }
 }

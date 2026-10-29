@@ -127,6 +127,22 @@ def fetch_url(entry):
     return data
 
 
+def ensure_nro(p):
+    """in/ 에 NRO 가 없고 프로필에 release 가 있으면 GitHub 릴리스에서 받아 채운다(태그와 sha256 고정)."""
+    dest = rel(p, p['nro']['src'])
+    r = p.get('release')
+    if os.path.exists(dest) or not r:
+        return
+    url = 'https://github.com/%s/releases/download/%s/%s' % (r['repo'], r['tag'], r['asset'])
+    print('NRO 가 없어 릴리스에서 받습니다: %s %s' % (r['repo'], r['tag']))
+    data = fetch_url({'url': url, 'sha256': r.get('sha256')})
+    if r.get('member'):
+        import io, zipfile
+        data = zipfile.ZipFile(io.BytesIO(data)).read(r['member'])
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    open(dest, 'wb').write(data)
+
+
 def favorites(path, proto='49'):
     out = []
     for raw in open(path, encoding='utf-8'):
@@ -228,6 +244,7 @@ def main():
         p['icon'] = ic
     if not p.get('icon') and os.path.exists(rel(p, 'icon.jpg')):  # ports/<id>/icon.jpg 를 두면 자동으로 쓴다
         p['icon'] = 'icon.jpg'
+    ensure_nro(p)
     nro_src = rel(p, p['nro']['src'])
     if not os.path.exists(nro_src):  # in/ 에 없으면 이미 샵에 올라가 있는 NRO 를 그대로 쓴다(검증된 것)
         deployed = os.path.join(root, p['nro'].get('out', p['id'] + '.nro'))

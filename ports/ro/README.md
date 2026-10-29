@@ -17,7 +17,7 @@
 
 ```
 python3 build.py guide ro    # 빈 칸과 구하는 곳 확인
-python3 build.py ro --zip
+python3 build.py ro --rom <내 게임 데이터 폴더> --zip
 ```
 <!-- quick:end -->
 

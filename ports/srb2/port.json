@@ -8,5 +8,12 @@
     "out": "srb2switch22.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "P-AS/srb2-switch",
+    "tag": "v2.2.13",
+    "asset": "srb2switch22_2.2.13.full.zip",
+    "sha256": "baf3a21fcfced632724b182ec66de6b5a65232ab383734a70222c32bdc5d6c57", "note": "public release checksum, privacy-ok",
+    "member": "switch/srb2switch22/srb2switch22.nro"
+  }
 }

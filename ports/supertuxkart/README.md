@@ -17,7 +17,7 @@
 
 ```
 python3 build.py guide supertuxkart    # 빈 칸과 구하는 곳 확인
-python3 build.py supertuxkart --zip
+python3 build.py supertuxkart --rom <내 게임 데이터 폴더> --zip
 ```
 
 - 원 프로젝트: https://github.com/supertuxkart/stk-code

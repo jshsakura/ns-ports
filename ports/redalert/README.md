@@ -17,7 +17,7 @@
 
 ```
 python3 build.py guide redalert    # 빈 칸과 구하는 곳 확인
-python3 build.py redalert --zip
+python3 build.py redalert --rom <내 게임 데이터 폴더> --zip
 ```
 
 - 스위치 포트 소스: https://github.com/TheAssemblyArmada/Vanilla-Conquer

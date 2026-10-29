@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "R-drg/project8-sw",
+    "tag": "v1.0.0",
+    "asset": "project8-sw.nro",
+    "sha256": "0a2f584d14bdc0d1feed701df2d3f55e146229f412bcd7b789eb3f8603b56106", "note": "public release checksum, privacy-ok"
+  }
 }

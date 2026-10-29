@@ -8,5 +8,11 @@
     "out": "wargus.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Wargus-NX-Modern",
+    "tag": "v3.3.2-nx.2",
+    "asset": "wargus.nro",
+    "sha256": "d15075fbe9f9fc8b929d35c7c545abd3c324e3db98207fc1d6aba90f48659661", "note": "public release checksum, privacy-ok"
+  }
 }

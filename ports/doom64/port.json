@@ -8,5 +8,12 @@
     "out": "doom64ex.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "fgsfdsfgs/Doom64EX",
+    "tag": "v0.2.0-nx",
+    "asset": "doom64ex_nx_v020.zip",
+    "sha256": "c2f6569be9bc463eca7ebe47479f963d6304206ccdf3677d2e2219f9f247eb01", "note": "public release checksum, privacy-ok",
+    "member": "switch/doom64ex/doom64ex.nro"
+  }
 }

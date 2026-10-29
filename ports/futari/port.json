@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "ChanseyIsTheBest/futari-nx",
+    "tag": "v1.0.4",
+    "asset": "futari.nro",
+    "sha256": "31fa4203b05037be23b2228323b3bf596894d47bf178d17dd4503395d17c2329", "note": "public release checksum, privacy-ok"
+  }
 }

@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "souldbminerr/0ad-switch",
+    "tag": "r28-nx1",
+    "asset": "pyrogenesis.nro",
+    "sha256": "4a80b8500abe09042302f8678db1d63b556bc1955a04384b8b4f1d47f64816e5", "note": "public release checksum, privacy-ok"
+  }
 }

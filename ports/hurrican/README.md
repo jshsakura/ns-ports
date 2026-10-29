@@ -17,8 +17,10 @@
 
 ```
 python3 build.py guide hurrican    # 빈 칸과 구하는 곳 확인
-python3 build.py hurrican --zip
+python3 build.py hurrican --rom <내 게임 데이터 폴더> --zip
 ```
+
+NRO 는 구하지 않아도 됩니다. `in/` 에 없으면 rsn8887/Hurrican 릴리스 v1.04-Switch 에서 받아 sha256 을 확인하고 씁니다.
 
 - 원 프로젝트: https://github.com/Uukrull/Hurrican
 - 스위치 포트 소스: https://github.com/rsn8887/Hurrican

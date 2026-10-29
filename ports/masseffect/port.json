@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "nebadasSwifty/masseffect-nx",
+    "tag": "v0.2.1",
+    "asset": "masseffect-nx.nro",
+    "sha256": "ea4010f5b1f28d94c015e70878f4cb0a20b513b6cf5c932e10f8c7bb6b792c29", "note": "public release checksum, privacy-ok"
+  }
 }

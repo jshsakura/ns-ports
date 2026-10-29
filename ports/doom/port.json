@@ -8,5 +8,12 @@
     "out": "gzdoom_launcher.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "fgsfdsfgs/gzdoom",
+    "tag": "nx4.11pre-2",
+    "asset": "gzdoom_nx_10_4.10.zip",
+    "sha256": "b7cdd31480ab80ef60b50f4db0c5ad3064e7cf4faad0e0b5b911c0af4a7393c6", "note": "public release checksum, privacy-ok",
+    "member": "gzdoom/gzdoom.nro"
+  }
 }

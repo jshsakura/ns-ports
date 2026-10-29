@@ -140,8 +140,9 @@ def load_slots(port_id):
     meta = next((p for p in load_ports() if p.get("id") == port_id), {})
     up = meta.get("upstream")
     return [
-        {"path": prof["nro"]["src"], "what": "스위치용 NRO",
-         "get": f"{up} 의 릴리스를 받거나 직접 빌드" if up else "직접 빌드한 NRO"},
+        {"path": prof["nro"]["src"], "what": "스위치용 NRO", "optional": bool(prof.get("release")),
+         "get": (f"안 둬도 된다. 없으면 {prof['release']['repo']} 릴리스 {prof['release']['tag']} 에서 자동으로 받는다"
+                 if prof.get("release") else (f"{up} 의 릴리스를 받거나 직접 빌드" if up else "직접 빌드한 NRO"))},
         {"path": "in/data", "what": meta.get("required_assets") or "게임 데이터",
          "get": "내가 가진 정품 데이터 (--rom <폴더> 로 따로 줘도 된다)"},
     ]
@@ -173,7 +174,7 @@ def check_slots(port_id, variant=None, quiet_ok=False, rom=None):
         have = _filled(os.path.join(port_dir, sl["path"]))
         if not have and not sl.get("optional"):
             missing.append(sl)
-        if have and quiet_ok:
+        if quiet_ok and (have or sl.get("optional")):
             continue
         mark = "OK  " if have else ("빈칸" if not sl.get("optional") else "선택")
         print(f"  [{mark}] ports/{port_id}/{sl['path']:<38} {sl['what']}")

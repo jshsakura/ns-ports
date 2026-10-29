@@ -8,5 +8,11 @@
     "out": "jak2.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "fildicio/jak-project-switch",
+    "tag": "v1.1.1-Beta",
+    "asset": "Jak.2.nro",
+    "sha256": "5cc60820d3c52e285424d059f2a92a6bd1724a7c41322a5db392d6c48f709534", "note": "public release checksum, privacy-ok"
+  }
 }

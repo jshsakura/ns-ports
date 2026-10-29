@@ -10,5 +10,12 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "fgsfdsfgs/openmw",
+    "tag": "0.46.0-nx4",
+    "asset": "openmw_nx_v4.zip",
+    "sha256": "8d45ef7f75200f3bbfc10a96fd59570591a96a0db9440e1420102fc92983d582", "note": "public release checksum, privacy-ok",
+    "member": "openmw.nro"
+  }
 }

@@ -10,5 +10,12 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "worthis/ZeldaROTH-new-engine",
+    "tag": "1.1.4",
+    "asset": "ZeldaRotH_nx.zip",
+    "sha256": "c3e96ecea7a5fdc7b41806d411558dad8669b15cad776cbab2c7809b8e4f24d8", "note": "public release checksum, privacy-ok",
+    "member": "ZeldaRotH_nx.nro"
+  }
 }

@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "boraeskicioglu/sonic_the_fighters_nx",
+    "tag": "0.8.3",
+    "asset": "sonic_fighters_nx.nro",
+    "sha256": "d07d44ed70630c4c88344f38fa8ef220025255c35a9d755e7bae6c12e533ef34", "note": "public release checksum, privacy-ok"
+  }
 }

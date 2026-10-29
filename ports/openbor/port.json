@@ -4,7 +4,16 @@
   "reason": "OpenBOR 게임 팩(.pak)을 Paks 폴더에 넣어야 실행됩니다",
   "base": ".",
   "upstream": "https://github.com/SylphiaWindy/openbor",
-  "nro": { "src": "in/OpenBOR.nro", "out": "OpenBOR.nro" },
+  "nro": {
+    "src": "in/OpenBOR.nro",
+    "out": "OpenBOR.nro"
+  },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "SylphiaWindy/openbor",
+    "tag": "fightforever-v6453",
+    "asset": "OpenBOR2018.nro",
+    "sha256": "7b2d4e239456d5d34affdc64b27629cdd7a6116fc2e40bb605807b03abe36c80", "note": "public release checksum, privacy-ok"
+  }
 }

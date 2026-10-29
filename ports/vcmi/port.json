@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "NaGaa95/vcmi_nx",
+    "tag": "1.8.0-R2",
+    "asset": "vcmiclient.nro",
+    "sha256": "17894ac4ac009d5f14c514d9aa385033deff3b5e03fc60605ea5a5768df25796", "note": "public release checksum, privacy-ok"
+  }
 }

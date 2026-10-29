@@ -8,5 +8,12 @@
     "out": "opentyrian.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "theflippedbit/opentyrian-nx",
+    "tag": "v1.0.0",
+    "asset": "opentyrian-nx-v1.0.0.zip",
+    "sha256": "6a7d975b5c209e40bebcad5970f1d2ee0051bebc8620ed78162ae609f043e77f", "note": "public release checksum, privacy-ok",
+    "member": "opentyrian.nro"
+  }
 }

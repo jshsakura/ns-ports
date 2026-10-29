@@ -10,5 +10,12 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "rsn8887/OpenTTD",
+    "tag": "v1.07-switch",
+    "asset": "openttd_1.07_switch.zip",
+    "sha256": "9f04df610742d5ca9df8966f5150799f76344f90f48723c7e410939d0a648c69", "note": "public release checksum, privacy-ok",
+    "member": "openttd/openttd.nro"
+  }
 }

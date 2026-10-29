@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Daytona-NX-Modern",
+    "tag": "v1.1.0",
+    "asset": "daytona.nro",
+    "sha256": "3b26dc3ae86d48f8546fc42b6c708c82c8fda2ae84cd847f285c47b06b12a270", "note": "public release checksum, privacy-ok"
+  }
 }

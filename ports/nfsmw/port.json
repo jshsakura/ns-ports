@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "StevensND/nfsmw-nx",
+    "tag": "v1.0.0",
+    "asset": "nfsmw-nx-kor.nro",
+    "sha256": "d39d5a026b7215b7d4c71a8efd82d81456d5277c8011bdf89bc355de34944f49", "note": "public release checksum, privacy-ok"
+  }
 }

@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "NaGaa95/ProjectCane",
+    "tag": "0.5.0",
+    "asset": "ProjectCane.nro",
+    "sha256": "04f69c78b4fe362bacb7374cead2674412f4b016dd0998cbf18cec11ee5ab944", "note": "public release checksum, privacy-ok"
+  }
 }

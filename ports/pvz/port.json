@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "HayatoG/PvZ-Portable",
+    "tag": "v2026.07.02",
+    "asset": "pvz-portable.nro",
+    "sha256": "82f034410e6936b3640bb6efdbd68eb7e930040ae280eca647c523069faf0b56", "note": "public release checksum, privacy-ok"
+  }
 }

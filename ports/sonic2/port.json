@@ -8,5 +8,12 @@
     "out": "s22013.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "heyjoeway/Sonic-1-2-2013-Decompilation",
+    "tag": "1.0.0",
+    "asset": "s122013_switch.zip",
+    "sha256": "161a96522e9c00637c54a65b2324795724bd4061c3d67d292d630ff3f6692ee8", "note": "public release checksum, privacy-ok",
+    "member": "switch/s22013/s22013.nro"
+  }
 }

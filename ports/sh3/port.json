@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "cutarev/sh3-nx",
+    "tag": "v0.06",
+    "asset": "sh3-nx.nro",
+    "sha256": "d010ac04f1a1e5b23d8c191e850cbc5456533bab5f4f8329e62e3c4f067a16f5", "note": "public release checksum, privacy-ok"
+  }
 }

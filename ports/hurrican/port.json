@@ -10,5 +10,12 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "rsn8887/Hurrican",
+    "tag": "v1.04-Switch",
+    "asset": "Hurrican_1.04_switch.zip",
+    "sha256": "8e4773e8cdde8c08d61b40d3dc1c6bbd8f6901c169c43c9d4054e894f2613604", "note": "public release checksum, privacy-ok",
+    "member": "Hurrican/Hurrican.nro"
+  }
 }

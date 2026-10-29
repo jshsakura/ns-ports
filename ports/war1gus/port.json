@@ -8,5 +8,11 @@
     "out": "war1gus.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "Thorhax/War1gus-NX-Modern",
+    "tag": "v3.3.3-nx",
+    "asset": "war1gus.nro",
+    "sha256": "328a458477385da3a92c2e31037e1babc09592a8695e4ecea3e17cb488163492", "note": "public release checksum, privacy-ok"
+  }
 }

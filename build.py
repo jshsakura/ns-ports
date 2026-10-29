@@ -78,6 +78,9 @@ def new_port(argv):
     with open(os.path.join(d, "port.json"), "w", encoding="utf-8") as f:
         json.dump(profile, f, ensure_ascii=False, indent=2)
         f.write("\n")
+    with open(os.path.join(d, "slots.json"), "w", encoding="utf-8") as f:
+        json.dump([{"path": f"in/{a.id}.nro", "what": "빌드된 NRO"}], f, ensure_ascii=False, indent=2)
+        f.write("\n")
     with open(os.path.join(d, ".gitignore"), "w") as f:
         f.write("in/\ndist/\n")
     with open(os.path.join(d, "README.md"), "w", encoding="utf-8") as f:
@@ -100,8 +103,10 @@ def new_port(argv):
 def generic_build(port_id, args):
     """recipe.py 가 없고 port.json 만 있는 포트: 파일을 조립해 homebrew 폴더에 반영한다."""
     cmd = [sys.executable, REGISTER, os.path.join(ROOT_DIR, "ports", port_id, "port.json")]
-    if args.rom:
-        cmd += ["--data", args.rom]
+    data = args.rom or (os.path.join(ROOT_DIR, "ports", port_id, "in", "data")
+                        if os.path.isdir(os.path.join(ROOT_DIR, "ports", port_id, "in", "data")) else None)
+    if data:
+        cmd += ["--data", data]
     if args.variant:
         cmd += ["--variant", args.variant]
     if not args.deploy:
@@ -118,7 +123,56 @@ def generic_build(port_id, args):
     return ret
 
 
+def load_slots(port_id):
+    path = os.path.join(ROOT_DIR, "ports", port_id, "slots.json")
+    if not os.path.exists(path):
+        return None
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def check_slots(port_id, variant=None, quiet_ok=False, rom=None):
+    """slots.json 의 칸마다 파일이 있는지 보고 비어 있는 칸을 알려 준다. 빠진 필수 칸이 없으면 True."""
+    slots = load_slots(port_id)
+    if slots is None:
+        print(f"[*] {port_id}: slots.json 이 없어 준비물 점검을 건너뜁니다. ports/{port_id}/README.md 를 보세요.")
+        return True
+    port_dir = os.path.join(ROOT_DIR, "ports", port_id)
+    missing = []
+    for sl in slots:
+        if sl.get("variant") and variant and sl["variant"] != variant:
+            continue
+        if rom and sl["path"].startswith("in/data"):  # --rom 으로 데이터 폴더를 따로 줬으면 in/data 칸은 보지 않는다
+            continue
+        have = os.path.exists(os.path.join(port_dir, sl["path"]))
+        if not have and not sl.get("optional"):
+            missing.append(sl)
+        if have and quiet_ok:
+            continue
+        mark = "OK  " if have else ("빈칸" if not sl.get("optional") else "선택")
+        print(f"  [{mark}] ports/{port_id}/{sl['path']:<40} {sl['what']}")
+    if missing:
+        print(f"[!] 채울 칸 {len(missing)}개가 비어 있습니다. 채우고 다시 실행하세요.", file=sys.stderr)
+    return not missing
+
+
+def check_cmd(argv):
+    """python3 build.py check [id] : 포트별 알맹이 칸이 얼마나 채워졌는지 보여 준다."""
+    ids = argv or [p["id"] for p in load_ports() if load_slots(p["id"]) is not None]
+    ok = True
+    for pid in ids:
+        print(f"== {pid}")
+        ok &= check_slots(pid)
+    return 0 if ok else 1
+
+
 def run_port(port_id, extra_args):
+    if "--check" in extra_args:
+        return check_cmd([port_id])
+    variant = extra_args[extra_args.index("--variant") + 1] if "--variant" in extra_args else None
+    rom = extra_args[extra_args.index("--rom") + 1] if "--rom" in extra_args else None
+    if not check_slots(port_id, variant, quiet_ok=True, rom=rom):
+        return 1
     recipe_path = os.path.join(ROOT_DIR, "ports", port_id, "recipe.py")
     if not os.path.exists(recipe_path) and os.path.exists(os.path.join(ROOT_DIR, "ports", port_id, "port.json")):
         parser = argparse.ArgumentParser(prog=f"build.py {port_id}")
@@ -159,11 +213,14 @@ def main():
     port_id = sys.argv[1]
     if port_id == "new":
         return new_port(sys.argv[2:])
+    if port_id == "check":
+        return check_cmd(sys.argv[2:])
     if port_id in ("-h", "--help"):
         print("NS Ports Hub CLI")
         print("Commands:")
         print("  python3 build.py --list                 List all ports")
         print("  python3 build.py <port-id> [options]    Build a specific port")
+        print("  python3 build.py check [id]             Show which input slots (in/) are filled")
         print("  python3 build.py new <id> \"<title>\" [--nro F] [--icon F]   Scaffold a port from files you already have")
         return 0
 

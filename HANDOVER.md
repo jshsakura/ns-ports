@@ -17,7 +17,6 @@
 * **OOT SoH v9.3.0 한글 HD 에셋 보관소:** `/mnt/HDD-8TB-STRIPE/media3/game/switch/homebrew-archive/zelda-oot-soh-930-assets/`
 * **MM 2S2H v5.0.1 HD 에셋 보관소:** `/mnt/HDD-8TB-STRIPE/media3/game/switch/homebrew-archive/zelda-mm-2s2h-assets/`
 * **스위치 실기 배포 스토리지:** `/mnt/HDD-8TB-STRIPE/media3/game/switch/homebrew/`
-  * CookingFoil 서버(`oc-cookingfoil`)와 `.cookingfoil.json`을 통해 직접 연동 및 서비스
 
 ---
 
@@ -53,8 +52,6 @@
    * 레시피(`recipe.py`)는 사용자가 합법적으로 소유한 데이터를 마운트하거나, 배포 디렉토리(`--deploy`)로 폰트 및 설정 파일(`config.ini`, `.cfg`)만 생성하여 배포합니다.
 2. **패치 배포는 순수 차분 파일(BPS/XDelta)만 사용**
    * 골든아이 007처럼 원본 변형이 필요한 경우, `patches/*.bps` 형태의 순수 차분 패치 파일만 포함하고 내장 순수 파이썬 BPS 엔진(`bps.py`)으로 무결성 검증 후 패치합니다.
-3. **CookingFoil 메타데이터 동기화**
-   * 배포 폴더에는 항상 `.cookingfoil.json`이 유지되어야 스위치 클라이언트가 폴더 모드로 인식하고 올바르게 다운로드/설치합니다.
 
 ---
 

@@ -1,0 +1,18 @@
+{
+  "id": "openmohaa",
+  "title": "메달 오브 아너: 얼라이드 어설트 (OpenMoHAA)",
+  "reason": "메달 오브 아너: 얼라이드 어설트 (OpenMoHAA) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/openmohaa.nro",
+    "out": "openmohaa.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "NaGaa95/openmohaa_nx",
+    "tag": "0.83.0.3",
+    "asset": "openmohaa.nro",
+    "sha256": "2bea1f7f30c5a9d8126b028b3deeaa8762ebe1b8492eeab9e0f4fc57d8ffe9a0", "note": "public release checksum, privacy-ok"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "touhou7",
+  "title": "동방요요몽 (Touhou 7)",
+  "reason": "동방요요몽 (Touhou 7) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/touhou7.nro",
+    "out": "touhou7.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "saekaze/th07-switch",
+    "tag": "v1.00b-r5",
+    "asset": "touhou7.nro",
+    "sha256": "a1feaf512215c5820dad9ed209f7ef169a16e423e4eb42635d25496e3fbe20db", "note": "public release checksum, privacy-ok"
+  }
+}

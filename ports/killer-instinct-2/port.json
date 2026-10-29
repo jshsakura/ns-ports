@@ -1,0 +1,18 @@
+{
+  "id": "killer-instinct-2",
+  "title": "킬러 인스팅트 2 (Killer Instinct 2)",
+  "reason": "킬러 인스팅트 2 (Killer Instinct 2) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/kinst2.nro",
+    "out": "kinst2.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Killer-Instinct-2-NX-Modern",
+    "tag": "v1.0.0",
+    "asset": "kinst2.nro",
+    "sha256": "434e820cd00f363b033b4df7e684cb1dd6d19b5bf4dca188f9d0b3c543d90ed9", "note": "public release checksum, privacy-ok"
+  }
+}

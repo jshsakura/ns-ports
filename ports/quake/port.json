@@ -1,0 +1,18 @@
+{
+  "id": "quake",
+  "title": "퀘이크 (Quake)",
+  "reason": "퀘이크 (Quake) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/quakespasmnx.nro",
+    "out": "quakespasmnx.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Quakespasm-NX-Modern",
+    "tag": "v0.93.3-nx",
+    "asset": "quakespasmnx.nro",
+    "sha256": "4f21603dc7ea1c7bbc3f7abc307b9219cf4b9c313da349b4313c3d078e5e1b9f", "note": "public release checksum, privacy-ok"
+  }
+}

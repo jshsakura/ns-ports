@@ -1,0 +1,18 @@
+{
+  "id": "wolf3d",
+  "title": "울펜슈타인 3D (Wolfenstein 3D)",
+  "reason": "울펜슈타인 3D (Wolfenstein 3D) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/Wolf4SDL.nro",
+    "out": "Wolf4SDL.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Wolf4SDL-NX-Modern",
+    "tag": "v2.2-nx",
+    "asset": "Wolf4SDL.nro",
+    "sha256": "abe44d833c732ece14515260c633fd7d7152ed46a4f4d134c1f619be18745c34", "note": "public release checksum, privacy-ok"
+  }
+}

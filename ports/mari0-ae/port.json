@@ -1,0 +1,18 @@
+{
+  "id": "mari0-ae",
+  "title": "마리0: Alesan99's Entities",
+  "reason": "마리0: Alesan99's Entities 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/mari0_ae_nx.nro",
+    "out": "mari0_ae_nx.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "aks796/mari0_ae_nx",
+    "tag": "1.0.0",
+    "asset": "mari0_ae_nx.nro",
+    "sha256": "aa91133e74c693a9cbfbe9710c0905543dd1327fa6d2ef9a25fc529c18f69321", "note": "public release checksum, privacy-ok"
+  }
+}

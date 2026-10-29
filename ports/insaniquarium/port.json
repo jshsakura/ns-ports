@@ -1,0 +1,18 @@
+{
+  "id": "insaniquarium",
+  "title": "인새니쿠아리움 (Insaniquarium)",
+  "reason": "인새니쿠아리움 (Insaniquarium) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/insaniquarium_nx.nro",
+    "out": "insaniquarium_nx.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "ChanseyIsTheBest/insaniquarium_nx",
+    "tag": "1.0.1",
+    "asset": "insaniquarium_nx.nro",
+    "sha256": "963c462fcff6d261cd03770ba8cb9d8b3fd44ae570dda06e71486eb485e26275", "note": "public release checksum, privacy-ok"
+  }
+}

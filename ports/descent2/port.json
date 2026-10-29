@@ -1,0 +1,18 @@
+{
+  "id": "descent2",
+  "title": "디센트 2 (Descent 2)",
+  "reason": "디센트 2 (Descent 2) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/d2x-switch.nro",
+    "out": "d2x-switch.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Descent2-NX-Modern",
+    "tag": "v0.58.6-nx",
+    "asset": "d2x-switch.nro",
+    "sha256": "1734db6cc4281c0e88531be2218773fe7665b8ae444819edb4c5c984e344a067", "note": "public release checksum, privacy-ok"
+  }
+}

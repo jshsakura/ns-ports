@@ -65,7 +65,7 @@ ports/wwhd/in/patch/
 | `wwhd.nro` | `ports/wwhd/in/wwhd.nro` 가 없으면 SwitchWakerHD(커밋 9a57081)를 받아 내 덤프로 도커 빌드 | `git`, `docker`, 몇 시간, 디스크 여유 |
 | 게임 데이터 연결 | 덤프를 하드링크로 연결(복사 아님) | 덤프와 같은 디스크여야 링크, 아니면 복사 |
 
-NRO 자동 빌드는 아직 내가 처음부터 끝까지 돌려 확인한 적이 없습니다. 이미 빌드한 `wwhd.nro` 가 있으면 `ports/wwhd/in/wwhd.nro` 로 두면 이 단계를 건너뜁니다.
+NRO 는 구하는 파일이 아니라 위 덤프로 빌드해서 만드는 파일입니다. 절차는 라이브러리의 `wwhd.nro` 를 만들 때 실제로 돌린 것과 같습니다([BUILD.md](BUILD.md)). 이미 빌드한 `wwhd.nro` 가 있으면 `ports/wwhd/in/wwhd.nro` 로 두면 이 단계를 건너뜁니다.
 
 ### 4) 끝나면 나오는 것
 

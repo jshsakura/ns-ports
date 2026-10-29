@@ -1,0 +1,18 @@
+{
+  "id": "touhou11",
+  "title": "동방지령전 (Touhou 11)",
+  "reason": "동방지령전 (Touhou 11) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/touhou11.nro",
+    "out": "touhou11.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "saekaze/th11-switch",
+    "tag": "v1.00a-r3",
+    "asset": "touhou11.nro",
+    "sha256": "625630a4a1ec817fdc613502f88db214bd1f1c4ca18a5ccc8408d3aeea84667e", "note": "public release checksum, privacy-ok"
+  }
+}

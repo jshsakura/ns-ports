@@ -1,0 +1,18 @@
+{
+  "id": "touhou6",
+  "title": "동방홍마향 (Touhou 6)",
+  "reason": "동방홍마향 (Touhou 6) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/touhou6.nro",
+    "out": "touhou6.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "saekaze/th06-switch",
+    "tag": "v1.02h-r2",
+    "asset": "touhou6.nro",
+    "sha256": "b955f09ae53763b2e40c174b465d340b071168a49498095aa11be856444235a2", "note": "public release checksum, privacy-ok"
+  }
+}

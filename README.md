@@ -3,7 +3,7 @@
 [![Platforms](https://img.shields.io/badge/platform-NS%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/ns-ports)
 [![Language](https://img.shields.io/badge/language-Korean%20(100%25)-red.svg)](README.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Ports](https://img.shields.io/badge/native%20ports-69-orange.svg)](ports.json)
+[![Ports](https://img.shields.io/badge/native%20ports-90-orange.svg)](ports.json)
 
 **닌텐도 스위치(NS / Horizon OS)에서 오래된 게임을 한국어로 돌려 본 개인 포팅 테스트 기록**입니다.
 
@@ -36,7 +36,7 @@
 
 ---
 
-## 🎮 포트 카탈로그 (전체 69종)
+## 🎮 포트 카탈로그 (전체 90종)
 
 > 상태는 `ports.json` 의 `status` 를 그대로 옮긴 것이고 이 표는 `tools/gen_catalog.py` 가 만듭니다. 🎯 는 실기에서 확인한 것, 🟡 는 켜지는 것까지, 📦 는 레시피만 정리한 것, 🧪 는 아직 기기에서 안 해 본 것입니다. 빌더 저장소가 따로 있는 포트는 **빌더** 링크가 있습니다.
 
@@ -86,17 +86,28 @@
 | `avp-gold` | 에일리언 대 프레데터: 골드 (AvP Gold) | FPS / Classic Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/avp-gold/README.md) · [포트 소스](https://github.com/Thorhax/AvP-Gold-NX-Modern) |
 | `dantes-inferno` | 단테스 인페르노 (Dante's Inferno) | Action / Xbox 360 Recomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/dantes-inferno/README.md) · [포트 소스](https://github.com/VasilkovND/dantes-inferno-nx) |
 | `daytona-usa` | 데이토나 USA (Daytona USA) | Racing / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/daytona-usa/README.md) · [포트 소스](https://github.com/Thorhax/Daytona-NX-Modern) |
+| `descent` | 디센트 (Descent) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/descent/README.md) · [포트 소스](https://github.com/Thorhax/Descent1-NX-Modern) |
+| `descent2` | 디센트 2 (Descent 2) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/descent2/README.md) · [포트 소스](https://github.com/Thorhax/Descent2-NX-Modern) |
 | `doukutsu-rs` | 동굴 이야기 (Cave Story, doukutsu-rs) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/doukutsu-rs/README.md) · [원 프로젝트](https://github.com/doukutsu-rs/doukutsu-rs) |
+| `freespace2` | 프리스페이스 2 (Freespace 2) | Space Sim / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/freespace2/README.md) · [포트 소스](https://github.com/NaGaa95/freespace2_nx) |
 | `futari` | 벌레공주 두 사람 (Mushihimesama Futari) | Shooter / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/futari/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/futari-nx) |
 | `hurrican` | Hurrican | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/hurrican/README.md) · [포트 소스](https://github.com/rsn8887/Hurrican) · [원 프로젝트](https://github.com/Uukrull/Hurrican) |
+| `insaniquarium` | 인새니쿠아리움 (Insaniquarium) | Casual / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/insaniquarium/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/insaniquarium_nx) |
+| `killer-instinct` | 킬러 인스팅트 (Killer Instinct) | Fighting / Arcade | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/killer-instinct/README.md) · [포트 소스](https://github.com/Thorhax/Killer-Instinct-NX-Modern) |
+| `killer-instinct-2` | 킬러 인스팅트 2 (Killer Instinct 2) | Fighting / Arcade | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/killer-instinct-2/README.md) · [포트 소스](https://github.com/Thorhax/Killer-Instinct-2-NX-Modern) |
 | `marathon-recomp` | 소닉 더 헤지혹 2006 (Sonic 06 / MarathonRecomp) | Action / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/marathon-recomp/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/MarathonRecomp-NX) · [원 프로젝트](https://github.com/sonicnext-dev/MarathonRecomp) |
+| `mari0` | 마리0 (Mari0) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mari0/README.md) · [포트 소스](https://github.com/delsonazevedo/mari0-switch) |
+| `mari0-ae` | 마리0: Alesan99's Entities | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mari0-ae/README.md) · [포트 소스](https://github.com/aks796/mari0_ae_nx) |
 | `masseffect` | 매스 이펙트 1 (Mass Effect) | RPG / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/masseffect/README.md) · [포트 소스](https://github.com/nebadasSwifty/masseffect-nx) |
 | `nfsmw` | 니드 포 스피드: 모스트 원티드 (Need for Speed: Most Wanted) | Racing / Xbox 360 Recomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/nfsmw/README.md) · [포트 소스](https://github.com/StevensND/nfsmw-nx) |
 | `nzportable` | 나치 좀비: 포터블 (Nazi Zombies: Portable) | FPS / Standalone | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/nzportable/README.md) · [포트 소스](https://github.com/nzp-team/nzportable) |
+| `openmohaa` | 메달 오브 아너: 얼라이드 어설트 (OpenMoHAA) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/openmohaa/README.md) · [포트 소스](https://github.com/NaGaa95/openmohaa_nx) |
 | `openmw` | 엘더스크롤 3: 모로윈드 (OpenMW) | RPG / Modern Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/openmw/README.md) · [포트 소스](https://github.com/fgsfdsfgs/openmw) · [원 프로젝트](https://github.com/OpenMW/openmw) |
 | `pokemmo` | 포켓몬 MMO (PokeMMO) | MMORPG / Client | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/pokemmo/README.md) · [포트 소스](https://github.com/Petit-Prince-dev/PokeMMO-NX) |
 | `project8` | 토니 호크 프로젝트 8 (Tony Hawk Project 8) | Sports / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/project8/README.md) · [포트 소스](https://github.com/R-drg/project8-sw) |
 | `pvz` | 식물 대 좀비 (Plants vs. Zombies Portable) | Strategy / Decomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/pvz/README.md) · [포트 소스](https://github.com/HayatoG/PvZ-Portable) · [원 프로젝트](https://github.com/wszqkzqk/PvZ-Portable) |
+| `quake` | 퀘이크 (Quake) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/quake/README.md) · [포트 소스](https://github.com/Thorhax/Quakespasm-NX-Modern) |
+| `quake2` | 퀘이크 2 (Quake II) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/quake2/README.md) · [포트 소스](https://github.com/Thorhax/Quake2-NX-Modern) |
 | `sa2` | 소닉 어드벤처 2 (Sonic Adventure 2) | Action / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sa2/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/sa2-nx) |
 | `sh1` | 사일런트 힐 1 (Silent Hill 1) | Horror / PS1 Decomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh1/README.md) · [포트 소스](https://github.com/ChaykaDed/silent-hill-decomp-nx) · [원 프로젝트](https://github.com/SlickAmogus/silent-hill-decomp) |
 | `sh2` | 사일런트 힐 2 (Silent Hill 2) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh2/README.md) · [포트 소스](https://github.com/cutarev/sh2-nx) |
@@ -104,13 +115,23 @@
 | `sh4` | 사일런트 힐 4: 더 룸 (Silent Hill 4) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh4/README.md) · [포트 소스](https://github.com/72ak/sh4-nx) |
 | `sly1` | 슬라이 쿠퍼 1 (Sly Cooper and the Thievius Raccoonus) | Action / PS2 Decomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sly1/README.md) · [포트 소스](https://github.com/NaGaa95/ProjectCane) · [원 프로젝트](https://github.com/theclub654/ProjectCane) |
 | `sonic-fighters` | 소닉 더 파이터즈 (Sonic the Fighters) | Fighting / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sonic-fighters/README.md) · [포트 소스](https://github.com/boraeskicioglu/sonic_the_fighters_nx) |
+| `sonic-r` | 소닉 R (Sonic R) | Racing / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sonic-r/README.md) · [포트 소스](https://github.com/boraeskicioglu/sonic_r_nx) |
 | `supertux2` | SuperTux | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/supertux2/README.md) · [원 프로젝트](https://github.com/SuperTux/supertux) |
 | `supertuxkart` | SuperTuxKart | Racing / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/supertuxkart/README.md) · [원 프로젝트](https://github.com/supertuxkart/stk-code) |
 | `torchlight` | 토치라이트 (Torchlight) | Action RPG / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/torchlight/README.md) · [포트 소스](https://github.com/liartes/torchlight-nx) |
+| `touhou-www` | 동방 원더풀 웨이킹 월드 (Touhou WWW) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou-www/README.md) · [포트 소스](https://github.com/saekaze/thWWW-switch) |
+| `touhou10` | 동방풍신록 (Touhou 10) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou10/README.md) · [포트 소스](https://github.com/saekaze/th10-switch) |
+| `touhou11` | 동방지령전 (Touhou 11) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou11/README.md) · [포트 소스](https://github.com/saekaze/th11-switch) |
+| `touhou15` | 동방감주전 (Touhou 15) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou15/README.md) · [포트 소스](https://github.com/saekaze/th15-switch) |
+| `touhou6` | 동방홍마향 (Touhou 6) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou6/README.md) · [포트 소스](https://github.com/saekaze/th06-switch) |
+| `touhou7` | 동방요요몽 (Touhou 7) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou7/README.md) · [포트 소스](https://github.com/saekaze/th07-switch) |
+| `touhou8` | 동방영야초 (Touhou 8) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou8/README.md) · [포트 소스](https://github.com/saekaze/th08-switch) |
+| `touhou9` | 동방화영총 (Touhou 9) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou9/README.md) · [포트 소스](https://github.com/saekaze/th09-switch) |
 | `undertale-yellow` | 언더테일 옐로우 (Undertale Yellow) | RPG / Decomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/undertale-yellow/README.md) · [포트 소스](https://github.com/NalienDev/Undertale-Yellow-NX) |
 | `vcmi` | 히어로즈 오브 마이트 앤 매직 3 (VCMI) | Strategy / Modern Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/vcmi/README.md) · [포트 소스](https://github.com/NaGaa95/vcmi_nx) · [원 프로젝트](https://github.com/vcmi/vcmi) |
 | `vf2` | 버추어 파이터 2 (Virtua Fighter 2) | Fighting / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/vf2/README.md) · [포트 소스](https://github.com/Thorhax/VF2-NX-Modern) |
 | `virtual-on` | 전뇌전기 버추얼 온 (Cyber Troopers Virtual-On) | Arcade / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/virtual-on/README.md) · [포트 소스](https://github.com/Thorhax/Virtual-On-NX) |
+| `wolf3d` | 울펜슈타인 3D (Wolfenstein 3D) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/wolf3d/README.md) · [포트 소스](https://github.com/Thorhax/Wolf4SDL-NX-Modern) |
 | `zelda3t` | 젤다: 시간의 승리 (Zelda Time to Triumph) | ARPG / Fan Game | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/zelda3t/README.md) · [포트 소스](https://github.com/worthis/Zelda3T) · [원 프로젝트](https://github.com/worthis/Zelda3T) |
 <!-- catalog:end -->
 

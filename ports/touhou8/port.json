@@ -1,0 +1,18 @@
+{
+  "id": "touhou8",
+  "title": "동방영야초 (Touhou 8)",
+  "reason": "동방영야초 (Touhou 8) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/touhou8.nro",
+    "out": "touhou8.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "saekaze/th08-switch",
+    "tag": "v1.00d-r4",
+    "asset": "touhou8.nro",
+    "sha256": "f62f0c4689eb352ca163e643c5ea1ca10daedb2fb5b803d9712a8160d645f517", "note": "public release checksum, privacy-ok"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "freespace2",
+  "title": "프리스페이스 2 (Freespace 2)",
+  "reason": "프리스페이스 2 (Freespace 2) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/freespace2.nro",
+    "out": "freespace2.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "NaGaa95/freespace2_nx",
+    "tag": "1.0.1",
+    "asset": "freespace2.nro",
+    "sha256": "ec09f2426c0686130dbba0314dcd32c1ecddc737e4d296e83a853b459c173bee", "note": "public release checksum, privacy-ok"
+  }
+}

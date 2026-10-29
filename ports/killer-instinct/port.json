@@ -1,0 +1,18 @@
+{
+  "id": "killer-instinct",
+  "title": "킬러 인스팅트 (Killer Instinct)",
+  "reason": "킬러 인스팅트 (Killer Instinct) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/kinst.nro",
+    "out": "kinst.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Killer-Instinct-NX-Modern",
+    "tag": "v1.1.1",
+    "asset": "kinst.nro",
+    "sha256": "ba3c85e2be3576e0f48bef25c5f2e2bbdf23c9e5579620047d530fc170165bdf", "note": "public release checksum, privacy-ok"
+  }
+}

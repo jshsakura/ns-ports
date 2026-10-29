@@ -40,7 +40,43 @@ WiiU 바람의 지휘봉 HD 를 스위치에서 네이티브로 구동하는 [ce
 `patches/permanent_2d_UsEnglish.xdelta` 를 2번 덤프의 `content/Common/Pack/permanent_2d_UsFrench.pack` 에 적용해 만든다.
 그래서 `xdelta3` 만 깔려 있으면 된다(예: `sudo apt install xdelta3`).
 
-## 조립
+## 명령어만 따라 하기
+
+앞의 세 줄에서 내 경로로 바꿀 곳은 이 셋뿐이다. 나머지는 그대로 붙여 넣는다.
+
+```bash
+DUMP=/path/to/wwhd_dump          # content/ code/ meta/ 가 바로 보이는 Wii U 덤프 폴더 (USA, 버전 0)
+PATCH=/path/to/한글패치_Ver1.02    # 압축을 푼 폴더 (안에 windwakerHD/Layout/Title_00.szs 가 있어야 한다)
+SWHD=$HOME/SwitchWakerHD         # NRO 를 빌드할 작업 폴더
+
+# 0) 준비: python3, git, docker, xdelta3
+sudo apt install -y xdelta3 git python3
+
+# 1) 이 저장소
+git clone https://github.com/jshsakura/ns-ports.git && cd ns-ports
+
+# 2) NRO 만들기 (BUILD.md 의 요약. 몇 시간 걸리고 도커 이미지를 받는다)
+git clone https://github.com/centollOS/SwitchWakerHD "$SWHD" && git -C "$SWHD" checkout 9a57081
+(cd "$SWHD" && python3 tools/switch/make_sd.py --game-dir "$DUMP" --jobs 2)
+
+# 3) 파일 두기 (이름까지 이대로)
+mkdir -p ports/wwhd/in
+cp "$SWHD/build/switch-dk/wwhd.nro"           ports/wwhd/in/wwhd.nro
+cp "$PATCH/windwakerHD/Layout/Title_00.szs"   ports/wwhd/in/Title_00.szs     # 한글 판만
+
+# 4) 빈 칸 확인 → 조립
+python3 build.py guide wwhd
+python3 build.py wwhd --rom "$DUMP" --zip                        # 한글 판
+# python3 build.py wwhd --rom "$DUMP" --variant original --zip   # 원본 그대로 (Title_00.szs 불필요)
+
+# 5) 결과: ports/wwhd/dist/switch/wwhd/ 를 SD 카드의 switch/ 로 복사
+cp -r ports/wwhd/dist/switch/wwhd /path/to/sdcard/switch/
+```
+
+2번에서 `make_sd.py` 가 `$DUMP` 에서 `code/cking.rpx` 를 읽는다. 덤프 자체를 만드는 복호화 단계(Wii U 공용키 필요)는 [BUILD.md](BUILD.md) 1번에 있고, 키는 각자 콘솔에서 읽어야 하므로 여기에 적지 않는다.
+이미 만들어 둔 `wwhd.nro` 가 있으면 2번은 건너뛰고 3번의 첫 `cp` 만 내 파일 경로로 바꾼다.
+
+## 조립 옵션
 
 ```
 python3 build.py guide wwhd                                                 # 빈 칸 확인

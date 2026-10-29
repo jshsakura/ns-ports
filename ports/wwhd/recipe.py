@@ -82,7 +82,7 @@ def build(args):
     missing = [f for f in KO_INPUTS if not os.path.exists(os.path.join(IN, f))]
     if variant == "ko" and missing:
         print("[!] 한글 판에 필요한 파일이 in/ 에 없습니다: %s" % ", ".join(missing), file=sys.stderr)
-        print("[*] 한글 패치 배포본의 permanent_2d_*.pack 과 Title_00.szs 를 ports/wwhd/in/ 에 두세요.", file=sys.stderr)
+        print("[*] 한글 패치 배포본의 windwakerHD/Layout/Title_00.szs 를 ports/wwhd/in/Title_00.szs 로 두세요.", file=sys.stderr)
         print("[*] 원본 그대로 조립하려면 --variant original 을 쓰세요.", file=sys.stderr)
         return 1
     if not args.rom or not os.path.isdir(os.path.join(args.rom, "content")):

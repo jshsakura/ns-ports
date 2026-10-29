@@ -20,7 +20,7 @@ python3 build.py zelda-mm-hd --zip
 - 필요한 것: mm.o2r, 2ship.o2r, mods/MM_Reloaded_v11.0.3_HD.o2r, 2ship2harkinian.json
 - Required files: zelda-mm-hd.nro, mm.o2r, 2ship.o2r, 2ship2harkinian.json
 - HD Texture Mod: mods/MM_Reloaded_v11.0.3_HD.o2r (2.95 GB)
-- Title ID: 05BC5D84DDD7A000 (CookingFoil NSP Forwarder Sync)
+- Title ID: 05BC5D84DDD7A000
 - Features: 60FPS native, 16:9 widescreen, dual-stick 360 camera, instant boot
 - Status: Verified & 100% playable on Nintendo Switch!
 

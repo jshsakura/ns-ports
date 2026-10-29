@@ -137,7 +137,7 @@ def build(args):
         except SystemExit:
             print("[*] NRO 에 ASET 이 없어 그대로 복사합니다.")
             shutil.copyfile(nro, os.path.join(root, "wwhd.nro"))
-        # 4) CookingFoil 매니페스트 (실기 검증본과 같은 내용)
+        # 4) 폴더 매니페스트 (실기 검증본과 같은 내용)
         manifest = {"nro": "wwhd.nro", "mode": "folder",
                     "reason": "게임 데이터가 함께 있어야 실행됩니다", "rules": [], "excluded": [],
                     "own_metadata": False}

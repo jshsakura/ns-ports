@@ -57,7 +57,6 @@ def build(args):
     own = argparse.ArgumentParser(prog="build.py openrct2")
     own.add_argument("--skip-build", action="store_true", help="reuse in/openrct2.nro")
     own.add_argument("--dry-run", action="store_true")
-    own.add_argument("--no-register", action="store_true")
     opt = own.parse_args(getattr(args, "extra", []))
     variant = getattr(args, "variant", None) or "ko"
     if not opt.skip_build:
@@ -72,9 +71,7 @@ def build(args):
         cmd += ["--data", args.rom]
     if opt.dry_run:
         cmd.append("--dry-run")
-    if opt.no_register or not args.deploy:
-        cmd.append("--no-register")
-    ret = subprocess.call(cmd, env=dict(os.environ, COOK_HOMEBREW_DIR=out))
+    ret = subprocess.call(cmd, env=dict(os.environ, NS_PORTS_OUT=out))
     if ret == 0 and args.zip and not opt.dry_run:
         shutil.make_archive(os.path.join(PORT_DIR, "dist", "openrct2-" + variant), "zip", out)
     return ret

@@ -107,7 +107,6 @@ def build(args):
     own = argparse.ArgumentParser(prog="build.py cstrike")
     own.add_argument("--skip-build", action="store_true", help="reuse binaries in out/")
     own.add_argument("--dry-run", action="store_true")
-    own.add_argument("--no-register", action="store_true")
     opt = own.parse_args(getattr(args, "extra", []))
 
     if not opt.skip_build:
@@ -130,9 +129,7 @@ def build(args):
         cmd += ["--data", args.rom]
     if opt.dry_run:
         cmd.append("--dry-run")
-    if opt.no_register or not args.deploy:
-        cmd.append("--no-register")
-    env = dict(os.environ, COOK_HOMEBREW_DIR=out)
+    env = dict(os.environ, NS_PORTS_OUT=out)
     ret = subprocess.call(cmd, env=env)
     if ret == 0 and args.zip and not opt.dry_run:
         shutil.make_archive(os.path.join(DIST, "cstrike"), "zip", out)
@@ -145,7 +142,7 @@ if __name__ == "__main__":
     parser.add_argument("--rom", help="your cstrike/valve game data folder")
     parser.add_argument("--zip", action="store_true")
     parser.add_argument("--no-docker", action="store_true")
-    parser.add_argument("--deploy", help="homebrew folder to assemble into (registers via the server API when configured)")
+    parser.add_argument("--deploy", help="homebrew folder to assemble into")
     a, rest = parser.parse_known_args()
     a.extra = rest
     sys.exit(build(a))

@@ -8,5 +8,12 @@
     "out": "scd2011.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "heyjoeway/Sonic-CD-11-Decompilation",
+    "tag": "1.3.0",
+    "asset": "scd2011_1.3.0.zip",
+    "sha256": "25d2309e548b7a50101acd3998f792cb9ef1393a83594f9c0baabf55aca98b0c", "note": "public release checksum, privacy-ok",
+    "member": "switch/scd2011/scd2011.nro"
+  }
 }

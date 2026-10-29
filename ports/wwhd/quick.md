@@ -23,3 +23,55 @@ python3 build.py wwhd --zip
 빠진 게 있으면 어디에 뭘 두라고 말하고 멈춥니다. 끝나면 `ports/wwhd/dist/switch/wwhd/` 폴더를 SD 카드의 `switch/` 에 복사해 홈브루 메뉴에서 실행합니다.
 
 이미 빌드한 NRO 가 있으면 `ports/wwhd/in/wwhd.nro` 로 두면 빌드를 건너뜁니다. 원본 그대로: `python3 build.py wwhd --variant original --zip`. 경로를 직접 주려면 `--rom <덤프 폴더>` 도 됩니다.
+
+## 필요한 파일을 자세히
+
+### 1) Wii U 덤프 폴더 (필수, 내가 구함) → `ports/wwhd/in/data`
+
+내 Wii U 로 받은 바람의 지휘봉 HD 의 게임 파일입니다. 아래 모양이어야 합니다.
+
+```
+ports/wwhd/in/data/
+├── code/       ← 안에 cking.rpx 가 있어야 함
+├── content/    ← Common/Pack/permanent_2d_UsFrench.pack 등이 들어 있음
+└── meta/
+```
+
+- 반드시 **미국판(USA), 버전 0** 입니다. 한글 pack 을 만드는 차이 패치가 이 판의 `permanent_2d_UsFrench.pack` 한 파일에 맞춰져 있어서, 다른 판이면 패치 적용이 실패합니다.
+- 읽기만 합니다. 원본 파일을 수정하지 않고 하드링크로 연결합니다.
+- 덤프를 이 모양으로 만드는 방법(복호화에 Wii U 공용키가 필요)은 [BUILD.md](BUILD.md) 1번에 있습니다. 키는 각자 콘솔에서 읽어야 해서 저장소에 적지 않습니다.
+
+### 2) 한글 패치 폴더 (한글 판일 때만, 내가 구함) → `ports/wwhd/in/patch`
+
+한글 패치 Ver 1.02 배포본을 압축 푼 폴더 통째입니다. 안에 `windwakerHD/Layout/Title_00.szs` 가 있어야 하고, 프로그램은 이 파일 **하나만** 꺼내 씁니다 (타이틀 화면 한글 이미지).
+
+```
+ports/wwhd/in/patch/
+└── windwakerHD/
+    └── Layout/Title_00.szs     ← 이것만 사용
+```
+
+한글 텍스트가 든 pack 은 패치 폴더에서 가져오지 않습니다. 이 저장소의 `patches/permanent_2d_UsEnglish.xdelta` 를 덤프의 `permanent_2d_UsFrench.pack` 에 적용해 만들어 냅니다.
+원본 그대로 만들 거면(`--variant original`) 이 폴더는 필요 없습니다.
+
+### 3) 프로그램이 알아서 만드는 것 (내가 구하지 않음)
+
+| 만드는 것 | 방법 | 필요한 도구 |
+| :--- | :--- | :--- |
+| 한글 pack | xdelta 차이 패치를 덤프의 원본 pack 에 적용 | `xdelta3` (`sudo apt install xdelta3`) |
+| `wwhd.nro` | `ports/wwhd/in/wwhd.nro` 가 없으면 SwitchWakerHD(커밋 9a57081)를 받아 내 덤프로 도커 빌드 | `git`, `docker`, 몇 시간, 디스크 여유 |
+| 게임 데이터 연결 | 덤프를 하드링크로 연결(복사 아님) | 덤프와 같은 디스크여야 링크, 아니면 복사 |
+
+NRO 자동 빌드는 아직 내가 처음부터 끝까지 돌려 확인한 적이 없습니다. 이미 빌드한 `wwhd.nro` 가 있으면 `ports/wwhd/in/wwhd.nro` 로 두면 이 단계를 건너뜁니다.
+
+### 4) 끝나면 나오는 것
+
+```
+ports/wwhd/dist/switch/wwhd/
+├── wwhd.nro
+└── game/         ← 덤프 + 한글 pack 2개(UsEnglish, JpJapanese) + Title_00.szs
+```
+
+`wwhd` 폴더를 SD 카드의 `switch/` 에 통째로 복사합니다. SD 카드에서는 `switch/wwhd/wwhd.nro` 와 `switch/wwhd/game/` 이 됩니다.
+
+실행: 아무 게임 아이콘 위에서 **R 버튼을 누른 채** 시작해 홈브루 메뉴로 들어가서 wwhd 를 켭니다(앨범으로 들어가면 메모리가 모자랍니다). 첫 실행에는 셰이더를 기기에서 컴파일하느라 20분쯤 걸리고(독 권장, B 로 건너뜀) 이후에는 저장됩니다.

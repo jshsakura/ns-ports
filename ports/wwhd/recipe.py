@@ -4,7 +4,7 @@ Port Recipe: The Legend of Zelda: The Wind Waker HD (centollOS/SwitchWakerHD, as
 
   python3 build.py wwhd --rom <WiiU 덤프 루트(code/, content/, meta/ 가 보이는 폴더)> [--variant ko|original] [--zip] [--deploy <homebrew 폴더>]
 
-사람이 둘 것은 한글 판의 ports/wwhd/in/Title_00.szs 하나뿐이다. wwhd.nro 는 없으면 이 레시피가
+사람이 둘 것은 ports/wwhd/in/data(Wii U 덤프)와 한글 판의 ports/wwhd/in/patch(한글 패치 압축 푼 폴더)뿐이다. wwhd.nro 는 없으면 이 레시피가
 SwitchWakerHD 를 받아 도커로 빌드해 in/ 에 채운다(몇 시간, docker 와 git 필요).
 
 ko 판은 언어 설정과 상관없이 한글이 뜨도록 세 언어 슬롯(UsEnglish/JpJapanese/EuEnglish)에
@@ -92,6 +92,28 @@ def build_nro(dump):
     return True
 
 
+def find_title_szs(folder):
+    """한글 패치 폴더(압축을 푼 그대로) 안에서 Layout/Title_00.szs 를 찾는다."""
+    for r, _, fs in os.walk(folder):
+        if "Title_00.szs" in fs and os.path.basename(r) == "Layout":
+            return os.path.join(r, "Title_00.szs")
+    return None
+
+
+def place_inputs(args, variant):
+    """ports/wwhd/in/data(덤프)와 in/patch(한글 패치 폴더)에 둔 것을 쓴다. --rom 을 주면 그것이 우선이다."""
+    data = os.path.join(IN, "data")
+    if not args.rom and os.path.isdir(os.path.join(data, "content")):
+        args.rom = data
+    szs = os.path.join(IN, "Title_00.szs")
+    patch = os.path.join(IN, "patch")
+    if variant == "ko" and not os.path.exists(szs) and os.path.isdir(patch):
+        found = find_title_szs(patch)
+        if found:
+            shutil.copyfile(found, szs)
+            print("[*] 한글 패치에서 Title_00.szs 를 찾아 사용합니다.")
+
+
 def build(args):
     own = argparse.ArgumentParser(prog="build.py wwhd")
     own.add_argument("--dry-run", action="store_true")
@@ -99,12 +121,13 @@ def build(args):
     variant = getattr(args, "variant", None) or "ko"
 
     nro = os.path.join(IN, "wwhd.nro")
+    place_inputs(args, variant)
     if not args.rom or not os.path.isdir(os.path.join(args.rom, "content")):
         print("[!] --rom 에는 content/ 폴더가 보이는 Wii U 덤프 폴더(code/, content/, meta/)를 지정하세요.", file=sys.stderr)
         return 1
     missing = [f for f in KO_INPUTS if not os.path.exists(os.path.join(IN, f))]
     if variant == "ko" and missing:
-        print("[!] 한글 패치의 windwakerHD/Layout/Title_00.szs 를 ports/wwhd/in/Title_00.szs 로 넣고 다시 실행하세요.", file=sys.stderr)
+        print("[!] 한글 패치를 압축 푼 폴더를 ports/wwhd/in/patch 로 두고 다시 실행하세요.", file=sys.stderr)
         print("    (원본 그대로 만들려면 --variant original)", file=sys.stderr)
         return 1
     if not os.path.exists(nro) and not opt.dry_run and not build_nro(args.rom):

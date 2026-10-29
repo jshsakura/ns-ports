@@ -7,8 +7,7 @@
 
 | 놓을 위치 | 무엇 | 구하는 곳 |
 | :--- | :--- | :--- |
-| `ports/zelda-olb/in/ZeldaOLB.nro` | 스위치용 NRO | https://github.com/worthis/ZeldaOLB-new-engine 의 릴리스를 받거나 직접 빌드 |
-| `ports/zelda-olb/in/data` | 자체 무료 데이터 포함 | 내가 가진 정품 데이터 (--rom <폴더> 로 따로 줘도 된다) |
+| `ports/zelda-olb/in/ZeldaOLB.nro` | ZeldaOLB NRO (게임 데이터는 자체 무료 데이터가 NRO 에 포함) | https://github.com/worthis/ZeldaOLB-new-engine 의 Switch 빌드 |
 | `ports/zelda-olb/icon.jpg` | 앱 아이콘 (256x256 JPEG) (선택) | 직접 구하거나 만든다. 없으면 NRO 에 든 아이콘을 그대로 쓴다 |
 
 **2. 이미지**: 앱 아이콘(`icon.jpg`, 256x256 JPEG)만 쓰이고 없으면 NRO 의 기본 아이콘을 씁니다. 이미지는 저장소에 없으니 필요하면 직접 구해 위 위치에 두세요. 배너와 스크린샷은 다루지 않습니다.
@@ -23,11 +22,18 @@ python3 build.py zelda-olb --zip
 - 스위치 포트 소스: https://github.com/worthis/ZeldaOLB-new-engine
 <!-- quick:end -->
 
-- **엔진/프로젝트**: C++ 네이티브 엔진
-- **업스트림**: https://github.com/worthis/ZeldaOLB-new-engine
-- **버전**: v1.1.1
-- **필요 에셋**: 자체 무료 데이터 포함
+ZeldaOLB 엔진(v1.1.1) 네이티브 포트. 게임 데이터는 자체 무료 데이터라 따로 구할 게임 파일이 없다.
 
-```bash
-python3 build.py zelda-olb --rom <게임 데이터 폴더> --deploy <homebrew 배포 폴더>
+## 어떤 파일을 어디서 구해 어디에 두나
+
+| # | 파일 | 어디서 | 어디에 |
+| :-: | :--- | :--- | :--- |
+| 1 | `ZeldaOLB.nro` | [worthis/ZeldaOLB-new-engine](https://github.com/worthis/ZeldaOLB-new-engine) 의 Switch 빌드 | `ports/zelda-olb/in/ZeldaOLB.nro` |
+
+## 조립
+
 ```
+python3 build.py zelda-olb --zip
+```
+
+결과는 `ports/zelda-olb/dist/switch/` 와 zip 이고 `sd:/switch/` 로 복사해 실행한다.

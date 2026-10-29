@@ -35,7 +35,8 @@
     "motion_controls": true,
     "description": "Ship of Harkinian v9.3.0 C++ 네이티브 포트 + 60FPS 와이드스크린 + 한글 Pretendard HD 에셋(3.89GB) 실기 검수 완료",
     "required_assets": "oot.o2r, soh.o2r, mods/OoT_Reloaded_Korean_Pretendard_HD.o2r, shipofharkinian.json",
-    "nro": "zelda-oot-hd.nro"
+    "nro": "zelda-oot-hd.nro",
+    "upstream": "https://github.com/HarbourMasters/Shipwright"
   },
   {
     "id": "zelda-mm-hd",
@@ -47,7 +48,8 @@
     "motion_controls": true,
     "description": "2 Ship 2 Harkinian v5.0.1 (Battler Bravo) C++ 네이티브 포트 + 60FPS 와이드스크린 + MM-Reloaded v11.0.3 HD 에셋(2.95GB) 실기 배포 완료",
     "required_assets": "mm.o2r, 2ship.o2r, mods/MM_Reloaded_v11.0.3_HD.o2r, 2ship2harkinian.json",
-    "nro": "zelda-mm-hd.nro"
+    "nro": "zelda-mm-hd.nro",
+    "upstream": "https://github.com/2ship2harkinian/2ship2harkinian"
   },
   {
     "id": "devilutionx",
@@ -102,7 +104,8 @@
     "motion_controls": false,
     "description": "폴아웃 1 커뮤니티 에디션 기반. 한국어 패치 및 스위치 컨트롤러 지원",
     "required_assets": "master.dat, critter.dat (PC판 데이터)",
-    "nro": "fallout1.nro"
+    "nro": "fallout1.nro",
+    "upstream": "https://github.com/alexbatalov/fallout1-ce"
   },
   {
     "id": "fallout2",
@@ -114,7 +117,8 @@
     "motion_controls": false,
     "description": "폴아웃 2 커뮤니티 에디션(fallout2-ce) 기반. CP949 FreeType 한글 폰트 & 1,033개 한글 대화 연동 실기 검수 완료",
     "required_assets": "master.dat, critter.dat (PC판 데이터)",
-    "nro": "fallout2.nro"
+    "nro": "fallout2.nro",
+    "upstream": "https://github.com/alexbatalov/fallout2-ce"
   },
   {
     "id": "cnc",
@@ -126,7 +130,8 @@
     "motion_controls": false,
     "description": "C&C 원작 엔진 복각 포트. GDI/NOD 캠페인 및 컷신 영상 지원",
     "required_assets": "C&C Gold .MIX 파일 및 영상 에셋",
-    "nro": "vanillatd.nro"
+    "nro": "vanillatd.nro",
+    "upstream": "https://github.com/TheAssemblyArmada/Vanilla-Conquer"
   },
   {
     "id": "redalert",
@@ -138,7 +143,8 @@
     "motion_controls": false,
     "description": "레드얼럿 연합군(CD1)/소련군(CD2) 풀 리테일 데이터 연동 포트",
     "required_assets": "Red Alert CD1/CD2 .MIX 파일",
-    "nro": "vanillara.nro"
+    "nro": "vanillara.nro",
+    "upstream": "https://github.com/TheAssemblyArmada/Vanilla-Conquer"
   },
   {
     "id": "war1gus",
@@ -247,7 +253,8 @@
     "motion_controls": false,
     "description": "고전 도시 건설 시뮬레이션 Julius 오픈소스 엔진 + 공식 한국어 패치",
     "required_assets": "Caesar 3 PC 설치 데이터",
-    "nro": "caesar3.nro"
+    "nro": "caesar3.nro",
+    "upstream": "https://github.com/bvschaik/julius"
   },
   {
     "id": "openrct2",
@@ -262,7 +269,8 @@
     "nro": "openrct2.nro",
     "upstream": "https://github.com/Wander-Eule/OpenRCT2-Switch",
     "version": "7d4673d8b2 + Korean patch",
-    "obtained": "built"
+    "obtained": "built",
+    "origin": "https://github.com/OpenRCT2/OpenRCT2"
   },
   {
     "id": "openttd",
@@ -277,7 +285,8 @@
     "nro": "openttd.nro",
     "upstream": "https://github.com/rsn8887/OpenTTD",
     "version": "v1.07-switch",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/OpenTTD/OpenTTD"
   },
   {
     "id": "sonic1",
@@ -292,7 +301,8 @@
     "nro": "s12013.nro",
     "upstream": "https://github.com/heyjoeway/Sonic-1-2-2013-Decompilation",
     "version": "1.3.0rev1",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/RSDKModding/RSDKv4-Decompilation"
   },
   {
     "id": "sonic2",
@@ -307,7 +317,8 @@
     "nro": "s22013.nro",
     "upstream": "https://github.com/heyjoeway/Sonic-1-2-2013-Decompilation",
     "version": "1.3.0rev1",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/RSDKModding/RSDKv4-Decompilation"
   },
   {
     "id": "sonic-cd",
@@ -322,7 +333,8 @@
     "nro": "scd2011.nro",
     "upstream": "https://github.com/heyjoeway/Sonic-CD-11-Decompilation",
     "version": "1.3.0",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/RSDKModding/RSDKv3-Decompilation"
   },
   {
     "id": "cannonball",
@@ -367,20 +379,22 @@
     "nro": "doom64ex.nro",
     "upstream": "https://github.com/fgsfdsfgs/Doom64EX",
     "version": "v0.2.0-nx",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/svkaiser/Doom64EX"
   },
   {
     "id": "pokemon-survivor-burst",
     "name": "포켓몬 서바이버 버스트 (Pokemon Survivor Burst)",
     "category": "Fan Game / Roguelite",
-    "engine": "mkxp-z",
-    "status": "active",
+    "engine": "rgss-switch 0.1.0 (mkxp-z 2.4.2 + CRuby 3.1.7)",
+    "status": "boot-ok",
     "korean": true,
     "motion_controls": false,
-    "repository": "https://github.com/jshsakura/psb-switch",
-    "description": "포켓몬 서바이버 버스트 닌텐도 스위치 홈브루 포트",
-    "required_assets": "게임 데이터 리소스",
-    "nro": "pokemon-survivor-burst.nro"
+    "description": "원작자가 배포한 팬게임 Pokémon Survivor Burst 9.0.3 을 rgss-switch(mkxp-z 기반 Horizon 네이티브 엔진)로 스위치에서 돌린 개인 포트. 한국어는 게임 내장. 게임 본체는 원작자 배포본을 받아 쓴다.",
+    "required_assets": "원작자 배포본 게임 폴더 (Audio/, Data/, Fonts/, Graphics/, Plugins/, lib/)",
+    "nro": "pokemon-survivor-burst.nro",
+    "origin": "https://github.com/white-axe/mkxp-z",
+    "upstream": "https://github.com/randygil/rgss-switch"
   },
   {
     "id": "dragonball-z-rpg",
@@ -395,18 +409,20 @@
     "nro": "DragonballZrpg.nro",
     "upstream": "https://github.com/white-axe/mkxp-z",
     "version": "libretro 2.4.2",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/Ancurio/mkxp"
   },
   {
     "id": "wwhd",
     "name": "바람의 지휘봉 HD (Wind Waker HD Decomp/Port)",
     "category": "Action Adventure / GC",
-    "engine": "Custom Port",
+    "engine": "SwitchWakerHD",
     "status": "active",
     "korean": true,
     "motion_controls": false,
-    "description": "바람의 지휘봉 네이티브 홈브루 구동 환경",
-    "required_assets": "게임 데이터",
+    "description": "SwitchWakerHD 네이티브 포트에 한글 패치 pack/Layout 파일을 얹는 방법 가이드. 파일 배치는 ports/wwhd/README.md",
+    "required_assets": "WiiU 덤프 루트(code/, content/, meta/)와 한글 패치 파일(permanent_2d_UsEnglish.pack, Title_00.szs)",
+    "kind": "assemble",
     "nro": "wwhd.nro",
     "upstream": "https://github.com/centollOS/SwitchWakerHD",
     "version": "9a57081",
@@ -425,7 +441,8 @@
     "nro": "OpenBOR.nro",
     "upstream": "https://github.com/SylphiaWindy/openbor",
     "version": "switch-v26.0919.1",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/DCurrent/openbor"
   },
   {
     "id": "nfsmw",
@@ -455,7 +472,8 @@
     "nro": "ProjectCane.nro",
     "upstream": "https://github.com/NaGaa95/ProjectCane",
     "version": "0.5.0",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/theclub654/ProjectCane"
   },
   {
     "id": "ro",
@@ -513,7 +531,8 @@
     "nro": "MarathonRecomp.nro",
     "upstream": "https://github.com/ChanseyIsTheBest/MarathonRecomp-NX",
     "version": "1.0.3",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/sonicnext-dev/MarathonRecomp"
   },
   {
     "id": "futari",
@@ -603,7 +622,8 @@
     "nro": "SpaceCadetPinball.nro",
     "upstream": "https://github.com/averne/SpaceCadetPinball-NX",
     "version": "1.1.1-NX3",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/k4zmu2a/SpaceCadetPinball"
   },
   {
     "id": "undertale-yellow",
@@ -708,7 +728,8 @@
     "nro": "silent-hill.nro",
     "upstream": "https://github.com/ChaykaDed/silent-hill-decomp-nx",
     "version": "1.2.0",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/SlickAmogus/silent-hill-decomp"
   },
   {
     "id": "sh2",
@@ -783,7 +804,8 @@
     "nro": "openmw.nro",
     "upstream": "https://github.com/fgsfdsfgs/openmw",
     "version": "0.46.0-nx4",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/OpenMW/openmw"
   },
   {
     "id": "vcmi",
@@ -798,7 +820,8 @@
     "nro": "vcmi.nro",
     "upstream": "https://github.com/NaGaa95/vcmi_nx",
     "version": "1.8.0-R2",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/vcmi/vcmi"
   },
   {
     "id": "pvz",
@@ -813,7 +836,8 @@
     "nro": "pvz.nro",
     "upstream": "https://github.com/HayatoG/PvZ-Portable",
     "version": "v2026.07.02",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/wszqkzqk/PvZ-Portable"
   },
   {
     "id": "zelda-olb",
@@ -858,7 +882,8 @@
     "nro": "gzdoom_launcher.nro",
     "upstream": "https://github.com/fgsfdsfgs/gzdoom",
     "version": "nx4.11pre-2",
-    "obtained": "downloaded"
+    "obtained": "downloaded",
+    "origin": "https://github.com/ZDoom/gzdoom"
   },
   {
     "id": "srb2",
@@ -904,5 +929,86 @@
     "upstream": "https://github.com/theflippedbit/opentyrian-nx",
     "version": "v1.0.0",
     "obtained": "downloaded"
+  },
+  {
+    "id": "0ad",
+    "name": "0 A.D.",
+    "category": "RTS / PC",
+    "engine": "0 A.D. (Pyrogenesis)",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "0 A.D. 스위치 홈브루 포트. 아직 실기 확인 전.",
+    "required_assets": "0ad-0.28.0 데이터 (data/)",
+    "nro": "0ad.nro",
+    "upstream": "https://github.com/souldbminerr/0ad-switch",
+    "origin": "https://github.com/0ad/0ad"
+  },
+  {
+    "id": "doukutsu-rs",
+    "name": "동굴 이야기 (Cave Story, doukutsu-rs)",
+    "category": "Platformer / PC",
+    "engine": "doukutsu-rs",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "동굴 이야기 (Cave Story, doukutsu-rs) 스위치 홈브루 포트. 아직 실기 확인 전.",
+    "required_assets": "Cave Story 게임 데이터 (data/)",
+    "nro": "doukutsu-rs.nro",
+    "origin": "https://github.com/doukutsu-rs/doukutsu-rs"
+  },
+  {
+    "id": "hurrican",
+    "name": "Hurrican",
+    "category": "Platformer / PC",
+    "engine": "Hurrican",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "Hurrican 스위치 홈브루 포트. 아직 실기 확인 전.",
+    "required_assets": "data/, lang/",
+    "nro": "hurrican.nro",
+    "upstream": "https://github.com/rsn8887/Hurrican",
+    "origin": "https://github.com/Uukrull/Hurrican"
+  },
+  {
+    "id": "supertux2",
+    "name": "SuperTux",
+    "category": "Platformer / PC",
+    "engine": "SuperTux 2",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "SuperTux 스위치 홈브루 포트. 아직 실기 확인 전.",
+    "required_assets": "게임 데이터 (data/)",
+    "nro": "supertux2.nro",
+    "origin": "https://github.com/SuperTux/supertux"
+  },
+  {
+    "id": "supertuxkart",
+    "name": "SuperTuxKart",
+    "category": "Racing / PC",
+    "engine": "SuperTuxKart",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "SuperTuxKart 스위치 홈브루 포트. 아직 실기 확인 전.",
+    "required_assets": "SuperTuxKart-1.5 데이터 (data/)",
+    "nro": "supertuxkart.nro",
+    "origin": "https://github.com/supertuxkart/stk-code"
+  },
+  {
+    "id": "zelda3t",
+    "name": "젤다: 시간의 승리 (Zelda Time to Triumph)",
+    "category": "ARPG / Fan Game",
+    "engine": "Solarus 기반 팬게임 엔진",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "젤다: 시간의 승리 (Zelda Time to Triumph) 스위치 홈브루 포트. 아직 실기 확인 전.",
+    "required_assets": "data/ (images, maps, musics, sounds, texts)",
+    "nro": "zelda3t.nro",
+    "upstream": "https://github.com/worthis/Zelda3T",
+    "origin": "https://github.com/worthis/Zelda3T"
   }
 ]

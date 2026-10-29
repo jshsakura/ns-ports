@@ -1,5 +1,20 @@
 # 슬라이 쿠퍼 1 (Sly Cooper and the Thievius Raccoonus)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: 슬라이 쿠퍼 1 PS2 ISO (미국 SCUS-971.98, 유럽 SCES-509.17, 일본 SCPS-150.36 중 하나)
+NRO: `ports/sly1/in/ProjectCane.nro`
+
+- 원 프로젝트: https://github.com/theclub654/ProjectCane
+- 스위치 포트 소스: https://github.com/NaGaa95/ProjectCane
+
+```
+python3 build.py check sly1    # 빈 칸 확인
+python3 build.py sly1 --zip
+```
+<!-- quick:end -->
+
 PS2 슬라이 쿠퍼 1을 디컴파일한 네이티브 포트. 업스트림 [NaGaa95/ProjectCane](https://github.com/NaGaa95/ProjectCane) 0.5.0 의 `ProjectCane.nro` 를 쓴다.
 게임 데이터는 앱이 처음 실행할 때 SD 카드의 ISO 를 골라 `sdmc:/switch/ProjectCane` 에 직접 풀어 준다. 그래서 이 저장소는 NRO 만 배포한다.
 

@@ -1,5 +1,19 @@
 # 카운터 스트라이크 1.6 스위치 포트 (신형 Xash3D FWGS)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: 정품 cstrike/ 및 valve/ 데이터
+NRO: `ports/cstrike/in/cstrike.nro`
+
+- 스위치 포트 소스: https://github.com/FWGS/xash3d-fwgs
+
+```
+python3 build.py check cstrike    # 빈 칸 확인
+python3 build.py cstrike --zip
+```
+<!-- quick:end -->
+
 신형 엔진(FWGS)과 cs16-client 로 만든 스위치용 카스. 한글 입력과 표시, 터치/게임패드/자이로 조작,
 푸시투토크를 넣었다. 빌드 절차와 변경 내역은 `BUILD.md`.
 

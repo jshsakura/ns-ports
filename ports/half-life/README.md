@@ -1,5 +1,19 @@
 # 하프라이프 1 (Half-Life)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: valve/ 폴더 (원작 PC 게임 데이터)
+NRO: `ports/half-life/in/half-life.nro`
+
+- 스위치 포트 소스: https://github.com/FWGS/xash3d-fwgs
+
+```
+python3 build.py check half-life    # 빈 칸 확인
+python3 build.py half-life --zip
+```
+<!-- quick:end -->
+
 Xash3D 엔진 기반 하프라이프 1 네이티브 포트. 공식 한국어 풀더빙 음성 연동
 
 - 엔진: Xash3D-FWGS

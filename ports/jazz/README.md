@@ -1,5 +1,19 @@
 # 재즈 잭래빗 2 (Jazz² Resurrection)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: 원작 PC 설치 데이터 (Source/)
+NRO: `ports/jazz/in/jazz.nro`
+
+- 스위치 포트 소스: https://github.com/deathkiller/jazz2
+
+```
+python3 build.py check jazz    # 빈 칸 확인
+python3 build.py jazz --zip
+```
+<!-- quick:end -->
+
 재즈 잭래빗 2 C++ 오픈소스 네이티브 엔진. 60fps 720p/1080p 지원
 
 - 엔진: Jazz2-Native

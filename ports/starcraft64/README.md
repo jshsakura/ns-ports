@@ -1,5 +1,19 @@
 # 스타크래프트 64 (StarCraft 64 Recomp)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: StarCraft 64 (USA) ROM (.z64)
+NRO: `ports/starcraft64/in/starcraft64.nro`
+
+- 스위치 포트 소스: https://github.com/gabryboy12-ai/StarCraft64-NX
+
+```
+python3 build.py check starcraft64    # 빈 칸 확인
+python3 build.py starcraft64 --zip
+```
+<!-- quick:end -->
+
 StarCraft 64 정적 리컴파일 네이티브 포트 + 한국어 번역 & HD 커스텀 베젤
 
 - 엔진: StarCraft64-recomp

@@ -1,5 +1,19 @@
 # 니드 포 스피드: 모스트 원티드 (Need for Speed: Most Wanted)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: Xbox 360 NTSC-K 디스크의 game_root 폴더와 셰이더 파일(nfsmw_shaders.nfsp)
+NRO: `ports/nfsmw/in/nfsmw-nx.nro`
+
+- 스위치 포트 소스: https://github.com/StevensND/nfsmw-nx
+
+```
+python3 build.py check nfsmw    # 빈 칸 확인
+python3 build.py nfsmw --zip
+```
+<!-- quick:end -->
+
 Xbox 360판을 [ReXGlue](https://github.com/rexglue/rexglue-sdk) 로 정적 리컴파일하고 NVK(Vulkan)로 그리는 네이티브 포트. 30fps, 오버클럭 없음.
 업스트림 [StevensND/nfsmw-nx](https://github.com/StevensND/nfsmw-nx) v1.0.0 의 **`nfsmw-nx-kor.nro`**(NTSC-K 한국판)를 쓴다.
 한국판 디스크의 한글 UI와 자막이 그대로 나오므로 따로 번역하지 않는다.

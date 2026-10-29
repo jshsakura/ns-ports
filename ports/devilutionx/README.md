@@ -1,5 +1,19 @@
 # 디아블로 1 (Diablo 1 + Hellfire)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: DIABDAT.MPQ (원작 PC CD 데이터)
+NRO: `ports/devilutionx/in/devilutionx.nro`
+
+- 스위치 포트 소스: https://github.com/diasurgical/DevilutionX
+
+```
+python3 build.py check devilutionx    # 빈 칸 확인
+python3 build.py devilutionx --zip
+```
+<!-- quick:end -->
+
 디아블로 1 오픈소스 리버스 엔지니어링 포트. 한글 폰트 및 패드 조작 최적화
 
 - 엔진: DevilutionX

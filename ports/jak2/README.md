@@ -1,5 +1,19 @@
 # 잭 2 (Jak II)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: Jak 2 PS2 ISO (정발판)
+NRO: `ports/jak2/in/jak2.nro`
+
+- 스위치 포트 소스: https://github.com/fildicio/jak-project-switch
+
+```
+python3 build.py check jak2    # 빈 칸 확인
+python3 build.py jak2 --zip
+```
+<!-- quick:end -->
+
 PS2 공식 한국어 음성 에셋 연동 OpenGOAL 포트
 
 - 엔진: OpenGOAL

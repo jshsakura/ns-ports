@@ -1,5 +1,19 @@
 # 아웃런 (OutRun / Cannonball)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: OutRun 아케이드 ROM 세트
+NRO: `ports/cannonball/in/cannonball.nro`
+
+- 스위치 포트 소스: https://github.com/Thorhax/Cannonball-NX-Modern
+
+```
+python3 build.py check cannonball    # 빈 칸 확인
+python3 build.py cannonball --zip
+```
+<!-- quick:end -->
+
 아웃런 아케이드 C++ 재구현 엔진 포트. 60fps & 와이드스크린 지원
 
 - 엔진: Cannonball

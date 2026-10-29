@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "ChanseyIsTheBest/MarathonRecomp-NX",
+    "tag": "1.0.3",
+    "asset": "MarathonRecomp.nro",
+    "sha256": "1358a721b75bebf07193cb18f775f44bf820058ded03c1a3925dbf73b796a84a", "note": "public release checksum, privacy-ok"
+  }
 }

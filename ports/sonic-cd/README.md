@@ -17,7 +17,7 @@
 
 ```
 python3 build.py guide sonic-cd    # 빈 칸과 구하는 곳 확인
-python3 build.py sonic-cd --zip
+python3 build.py sonic-cd --rom <내 게임 데이터 폴더> --zip
 ```
 
 - 원 프로젝트: https://github.com/RSDKModding/RSDKv3-Decompilation

@@ -8,5 +8,12 @@
     "out": "jazz.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "deathkiller/jazz2",
+    "tag": "3.9.0",
+    "asset": "Jazz2_3.9.0_Switch.zip",
+    "sha256": "9367b41d6cc05acd552c50f981d4846309aa4b05d74ba835d75148ecd89cef38", "note": "public release checksum, privacy-ok",
+    "member": "Jazz2.nro"
+  }
 }

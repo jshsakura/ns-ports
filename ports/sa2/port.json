@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "ChanseyIsTheBest/sa2-nx",
+    "tag": "v1.0.4",
+    "asset": "sa2.nro",
+    "sha256": "55cdcfd5c799c81ef1a398fc6b753b0d68ca7236c93e236de192030c09375e3d", "note": "public release checksum, privacy-ok"
+  }
 }

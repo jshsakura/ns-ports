@@ -8,5 +8,12 @@
     "out": "smw.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "retronx-team/supermariowar-nx",
+    "tag": "2.0.0-nx5",
+    "asset": "smw-2.0.0-nx5.zip",
+    "sha256": "8a0b0735629a63c03f47c78acd28cba22809fd0f8477711e5891e8010a1e9530", "note": "public release checksum, privacy-ok",
+    "member": "smw/smw.nro"
+  }
 }

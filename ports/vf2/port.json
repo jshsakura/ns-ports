@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "Thorhax/VF2-NX-Modern",
+    "tag": "v1.1.0",
+    "asset": "vf2.nro",
+    "sha256": "f5103b7c2cbc7e149d6577d0edc850a6c2dfca44dfe0850280c4f354dd92c1a0", "note": "public release checksum, privacy-ok"
+  }
 }

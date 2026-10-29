@@ -68,6 +68,40 @@ class SlotsTest(FakeRoot):
         self.assertTrue(build.check_slots("demo", "original", quiet_ok=True))
 
 
+class ReleaseTest(FakeRoot):
+    def test_nro_is_taken_from_a_zip_member_and_checked_against_sha256(self):
+        import hashlib, io, zipfile
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w") as z:
+            z.writestr("pkg/demo.nro", b"NRODATA")
+        blob = buf.getvalue()
+        src = os.path.join(self.tmp.name, "rel.zip")
+        open(src, "wb").write(blob)
+        os.environ["NS_PORTS_CACHE"] = os.path.join(self.tmp.name, "cache")
+        prof = {"_base": self.dir, "nro": {"src": "in/demo.nro"},
+                "release": {"repo": "x/y", "tag": "t", "asset": "rel.zip", "member": "pkg/demo.nro",
+                            "sha256": hashlib.sha256(blob).hexdigest()}}
+        orig = port_register.fetch_url
+        port_register.fetch_url = lambda e: blob
+        try:
+            port_register.ensure_nro(prof)
+        finally:
+            port_register.fetch_url = orig
+        self.assertEqual(open(os.path.join(self.dir, "in", "demo.nro"), "rb").read(), b"NRODATA")
+
+    def test_existing_nro_is_not_replaced(self):
+        path = os.path.join(self.dir, "in", "demo.nro")
+        open(path, "wb").write(b"MINE")
+        prof = {"_base": self.dir, "nro": {"src": "in/demo.nro"}, "release": {"repo": "x/y", "tag": "t", "asset": "a"}}
+        port_register.ensure_nro(prof)
+        self.assertEqual(open(path, "rb").read(), b"MINE")
+
+    def test_release_makes_the_nro_slot_optional(self):
+        json.dump({"id": "demo", "nro": {"src": "in/demo.nro"}, "release": {"repo": "x/y", "tag": "t1", "asset": "a"}},
+                  open(os.path.join(self.dir, "port.json"), "w"))
+        self.assertTrue(build.load_slots("demo")[0]["optional"])
+
+
 class IconTest(unittest.TestCase):
     def write(self, data):
         f = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")

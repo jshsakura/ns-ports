@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Virtual-On-NX",
+    "tag": "v1.2.0",
+    "asset": "von.nro",
+    "sha256": "35b49efba53a022fe0d0b8272203558f3a5649bd91f46bc726c6943b200913a0", "note": "public release checksum, privacy-ok"
+  }
 }

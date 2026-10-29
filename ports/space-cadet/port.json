@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "averne/SpaceCadetPinball-NX",
+    "tag": "Release_1.1.1-NX3",
+    "asset": "SpaceCadetPinball.nro",
+    "sha256": "7aeda07b5f78decfc22f261aaa3e13f6bf6f1cbb6cb9a1efb80514928cdee162", "note": "public release checksum, privacy-ok"
+  }
 }

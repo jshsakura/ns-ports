@@ -10,5 +10,12 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "Petit-Prince-dev/PokeMMO-NX",
+    "tag": "v1.1.4",
+    "asset": "PokeMMO-NX-32920.zip",
+    "sha256": "d20294278f1ce72c6e2544075818a76a35580bc15ffd4198279bae77ed140c5d", "note": "public release checksum, privacy-ok",
+    "member": "switch/PokeMMO/PokeMMO.nro"
+  }
 }

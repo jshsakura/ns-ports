@@ -10,5 +10,12 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "ihhub/fheroes2",
+    "tag": "1.1.17",
+    "asset": "fheroes2_switch.zip",
+    "sha256": "117a3e450da734cc3c0efd5618efdcb538b04723b2aa06b71ec4ca7aabca2fca", "note": "public release checksum, privacy-ok",
+    "member": "fheroes2.nro"
+  }
 }

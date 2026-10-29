@@ -8,5 +8,11 @@
     "out": "devilutionx.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "diasurgical/DevilutionX",
+    "tag": "1.5.5",
+    "asset": "devilutionx-switch.nro",
+    "sha256": "4f9f06540f43f83d01d5b7b82e8848c6591681907f423990604b42731097c504", "note": "public release checksum, privacy-ok"
+  }
 }

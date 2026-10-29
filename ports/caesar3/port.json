@@ -8,5 +8,12 @@
     "out": "caesar3.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "bvschaik/julius",
+    "tag": "v1.8.0",
+    "asset": "julius-1.8.0-switch.zip",
+    "sha256": "070274c5bf592f54803f1db9c748c882d12beb98ce423682276b51ed4d165522", "note": "public release checksum, privacy-ok",
+    "member": "julius/julius.nro"
+  }
 }

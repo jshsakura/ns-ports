@@ -16,8 +16,10 @@
 
 ```
 python3 build.py guide zelda-roth    # 빈 칸과 구하는 곳 확인
-python3 build.py zelda-roth --zip
+python3 build.py zelda-roth --rom <내 게임 데이터 폴더> --zip
 ```
+
+NRO 는 구하지 않아도 됩니다. `in/` 에 없으면 worthis/ZeldaROTH-new-engine 릴리스 1.1.4 에서 받아 sha256 을 확인하고 씁니다.
 
 - 스위치 포트 소스: https://github.com/worthis/ZeldaROTH-new-engine
 <!-- quick:end -->

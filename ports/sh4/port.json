@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "72ak/sh4-nx",
+    "tag": "v0.1",
+    "asset": "sh4-nx.nro",
+    "sha256": "82f7b8d01eea2902983d330275ca6826ec57a4cc583b3ab8f69808beca534fd6", "note": "public release checksum, privacy-ok"
+  }
 }

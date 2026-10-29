@@ -19,7 +19,7 @@
 
 ```
 python3 build.py guide zelda-oot-hd    # 빈 칸과 구하는 곳 확인
-python3 build.py zelda-oot-hd --zip
+python3 build.py zelda-oot-hd --rom <내 게임 데이터 폴더> --zip
 ```
 
 - 스위치 포트 소스: https://github.com/HarbourMasters/Shipwright

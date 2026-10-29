@@ -10,5 +10,12 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "worthis/ZeldaOLB-new-engine",
+    "tag": "1.1.1",
+    "asset": "ZeldaOLB_nx.zip",
+    "sha256": "d0e8e8df3d18a4afd48ded1eab00aa27c6ac374d6ec789871e51d5233baf6560", "note": "public release checksum, privacy-ok",
+    "member": "ZeldaOLB_nx.nro"
+  }
 }

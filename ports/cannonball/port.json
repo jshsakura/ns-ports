@@ -8,5 +8,11 @@
     "out": "cannonball.nro"
   },
   "overlays": [],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "Thorhax/Cannonball-NX-Modern",
+    "tag": "v1.08-nx",
+    "asset": "Cannonball_Switch.nro",
+    "sha256": "cbd5e3181742c0b8a86f5ed5024db7117ac1bac333855f543fd42b2d19891a77", "note": "public release checksum, privacy-ok"
+  }
 }

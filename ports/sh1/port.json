@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "ChaykaDed/silent-hill-decomp-nx",
+    "tag": "1.2.0",
+    "asset": "SilentHillPC.nro",
+    "sha256": "50268ca1033fde03d9c09cc1222f4476a10b468255ec974ab0f75037bfe7dbe0", "note": "public release checksum, privacy-ok"
+  }
 }

@@ -17,7 +17,7 @@
 
 ```
 python3 build.py guide dantes-inferno    # 빈 칸과 구하는 곳 확인
-python3 build.py dantes-inferno --zip
+python3 build.py dantes-inferno --rom <내 게임 데이터 폴더> --zip
 ```
 
 - 스위치 포트 소스: https://github.com/VasilkovND/dantes-inferno-nx

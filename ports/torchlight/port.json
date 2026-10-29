@@ -10,5 +10,12 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "liartes/torchlight-nx",
+    "tag": "v1.0.3",
+    "asset": "torchlight-nx-1.0.3.zip",
+    "sha256": "1a82cae29c69e0557388907f8f5ade34546438687554dc29ccb7c6616811edd8", "note": "public release checksum, privacy-ok",
+    "member": "switch/torchlight/torchlight.nro"
+  }
 }

@@ -394,7 +394,8 @@
     "required_assets": "원작자 배포본 게임 폴더 (Audio/, Data/, Fonts/, Graphics/, Plugins/, lib/)",
     "nro": "pokemon-survivor-burst.nro",
     "origin": "https://github.com/white-axe/mkxp-z",
-    "upstream": "https://github.com/randygil/rgss-switch"
+    "upstream": "https://github.com/randygil/rgss-switch",
+    "repository": "https://github.com/jshsakura/psb-switch-kit"
   },
   {
     "id": "dragonball-z-rpg",

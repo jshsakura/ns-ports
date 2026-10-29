@@ -108,13 +108,11 @@ def generic_build(port_id, args):
         cmd += ["--data", data]
     if args.variant:
         cmd += ["--variant", args.variant]
-    if not args.deploy:
-        cmd.append("--no-register")
     extra = getattr(args, "extra", [])
-    cmd += [x for x in extra if x in ("--dry-run", "--no-register")]
+    cmd += [x for x in extra if x in ("--dry-run",)]
     env = dict(os.environ)
     out = args.deploy or os.path.join(ROOT_DIR, "ports", port_id, "dist", "switch")
-    env["COOK_HOMEBREW_DIR"] = out
+    env["NS_PORTS_OUT"] = out
     ret = subprocess.call(cmd, env=env)
     if ret == 0 and args.zip:
         shutil.make_archive(os.path.join(ROOT_DIR, "ports", port_id, "dist", port_id), "zip", out)

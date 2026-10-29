@@ -52,7 +52,6 @@ def build(args):
     own = argparse.ArgumentParser(prog="build.py zelda3-ko")
     own.add_argument("--skip-build", action="store_true", help="reuse in/zelda3.nro")
     own.add_argument("--dry-run", action="store_true")
-    own.add_argument("--no-register", action="store_true")
     opt = own.parse_args(getattr(args, "extra", []))
     variant = getattr(args, "variant", None) or "ko"
     if not opt.skip_build:
@@ -67,9 +66,7 @@ def build(args):
         cmd += ["--data", args.rom]
     if opt.dry_run:
         cmd.append("--dry-run")
-    if opt.no_register or not args.deploy:
-        cmd.append("--no-register")
-    ret = subprocess.call(cmd, env=dict(os.environ, COOK_HOMEBREW_DIR=out))
+    ret = subprocess.call(cmd, env=dict(os.environ, NS_PORTS_OUT=out))
     if ret == 0 and args.zip and not opt.dry_run:
         shutil.make_archive(os.path.join(PORT_DIR, "dist", "zelda3-" + variant), "zip", out)
         print("[*] zip:", os.path.join(PORT_DIR, "dist", "zelda3-%s.zip" % variant))

@@ -1,23 +1,18 @@
 #!/usr/bin/env python3
 """스위치 포트를 홈브루 폴더에 조립한다.
 
-사용: register.py <프로필.json> [--variant ko|original] [--data <게임 데이터 폴더>] [--dry-run] [--no-register]
+사용: register.py <프로필.json> [--variant ko|original] [--data <게임 데이터 폴더>] [--dry-run]
 
 하는 일
   1) 엔진 NRO 의 이름과 아이콘 교체 (NACP / ASET)
   2) homebrew/<id>/ 에 조립: 게임 데이터(하드링크), 오버레이, 개별 파일, 즐겨찾기 목록
-  3) .cookingfoil.json 매니페스트
-  4) 서버 API 로 폴더 재스캔(adopt) 후 종류를 port 로 지정 (서버 재시작 없음)
 
 설정 (위에서 아래로 우선: 명령줄 > 환경 변수 > 설정 파일 > 프로필)
   설정 파일: $NS_PORTS_CONFIG, 없으면 <저장소>/ns-ports.config.json, 없으면 ~/.config/ns-ports/config.json
-    { "homebrew_dir": "...", "cook_url": "...", "token_file": "...", "variant": "ko",
+    { "homebrew_dir": "...", "variant": "ko",
       "data": { "<포트 id>": "<게임 데이터 폴더>" } }
   환경 변수
-    COOK_HOMEBREW_DIR  homebrew 폴더
-    COOK_URL           서버 주소. 없으면 등록 단계를 건너뛰고 안내만 한다
-    COOK_API_TOKEN     관리자 화면에서 만든 자동화 토큰 (cft_...). 값은 출력하지 않는다
-  토큰은 설정 파일에 직접 쓰지 않고 token_file(권한 600 권장)이 가리키는 파일에서 읽는다.
+    NS_PORTS_OUT  homebrew 폴더
 
 같은 크기인데 내용이 바뀐 파일은 끝에 여분을 붙여 크기를 바꾼다(크기만 보고 넘기는 동기화 문제).
 """
@@ -202,58 +197,21 @@ class Dest:
                     self.write(r, open(s, 'rb').read())
 
 
-def kind_id(folder):
-    return 'm-' + hashlib.sha256(folder.lower().encode()).hexdigest()[:12]
-
-
-def api(method, path, body=None):
-    url = os.environ['COOK_URL'].rstrip('/') + path
-    req = urllib.request.Request(url, method=method, data=json.dumps(body).encode() if body is not None else None,
-                                 headers={'Authorization': 'Bearer ' + os.environ['COOK_API_TOKEN'],
-                                          'Content-Type': 'application/json'})
-    try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            return r.status, json.loads(r.read() or b'{}')
-    except urllib.error.HTTPError as e:
-        return e.code, {}
-
-
-def register(folder):
-    if not os.environ.get('COOK_URL') or not os.environ.get('COOK_API_TOKEN'):
-        print('등록 건너뜀: COOK_URL 과 COOK_API_TOKEN 이 필요합니다. 관리자 화면에서 종류를 port 로 지정하세요.')
-        return
-    st, _ = api('POST', '/api/homebrew/adopt', {})
-    print('폴더 재스캔', st)
-    st, res = api('POST', '/api/homebrew/kind', {'id': kind_id(folder), 'kind': 'port'})
-    if st == 200:
-        print('종류 port 로 등록됨 (재시작 없이 반영)')
-    elif st == 404:
-        print('아직 목록에 없습니다. 재스캔이 끝난 뒤 다시 실행하세요.')
-    else:
-        print('등록 실패', st)
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('profile')
     ap.add_argument('--data', help='게임 데이터 폴더(하드링크)')
     ap.add_argument('--variant', help='프로필의 변형(예: ko, original). 기본은 첫 번째')
     ap.add_argument('--dry-run', action='store_true')
-    ap.add_argument('--no-register', action='store_true')
     a = ap.parse_args()
     cfg = load_config()
     p = load_profile(a.profile, a.variant or cfg.get('variant'))
-    if not os.environ.get('COOK_URL') and cfg.get('cook_url'):
-        os.environ['COOK_URL'] = cfg['cook_url']
-    tf = cfg.get('token_file')
-    if not os.environ.get('COOK_API_TOKEN') and tf and os.path.exists(os.path.expanduser(tf)):
-        os.environ['COOK_API_TOKEN'] = open(os.path.expanduser(tf)).read().strip()
     if not a.data:
         a.data = (cfg.get('data') or {}).get(p['id'])
 
-    hb = os.environ.get('COOK_HOMEBREW_DIR') or cfg.get('homebrew_dir') or p.get('homebrew_dir')
+    hb = os.environ.get('NS_PORTS_OUT') or cfg.get('homebrew_dir') or p.get('homebrew_dir')
     if not hb:
-        sys.exit('homebrew 폴더를 정하세요(COOK_HOMEBREW_DIR 또는 프로필 homebrew_dir)')
+        sys.exit('homebrew 폴더를 정하세요(NS_PORTS_OUT 또는 프로필 homebrew_dir)')
     root = os.path.join(hb, p['id'])
     d = Dest(root, a.dry_run)
 
@@ -290,12 +248,7 @@ def main():
     fav = p.get('favorites')
     if fav and os.path.exists(rel(p, fav['file'])):
         d.write(fav['dest'], favorites(rel(p, fav['file']), str(fav.get('protocol', '49'))))
-    manifest = {'nro': p['nro'].get('out', p['id'] + '.nro'), 'mode': 'folder',
-                'reason': p.get('reason', ''), 'rules': [], 'excluded': []}
-    d.write('.cookingfoil.json', json.dumps(manifest, ensure_ascii=False, separators=(',', ':')).encode())
     print('바뀐 파일 %d개' % d.changed)
-    if not a.dry_run and not a.no_register:
-        register(p['id'])
 
 
 if __name__ == '__main__':

@@ -43,7 +43,7 @@ PACK_BASE = "content/Common/Pack/permanent_2d_UsFrench.pack"
 DUMP_SKIP = ("content/Common/Pack/permanent_2d_EuEnglish.pack",)  # 검증본 구성에 없는 덤프 파일
 
 sys.path.insert(0, os.path.join(ROOT_DIR, "tools"))
-import port_register as pr  # noqa: E402  (retitle_nro / register / load_config 재사용)
+import port_register as pr  # noqa: E402  (retitle_nro / load_config 재사용)
 
 
 def ko_pack(dump, dry):
@@ -72,7 +72,6 @@ def ko_pack(dump, dry):
 def build(args):
     own = argparse.ArgumentParser(prog="build.py wwhd")
     own.add_argument("--dry-run", action="store_true")
-    own.add_argument("--no-register", action="store_true")
     opt = own.parse_args(getattr(args, "extra", []))
     variant = getattr(args, "variant", None) or "ko"
 
@@ -140,25 +139,11 @@ def build(args):
         except SystemExit:
             print("[*] NRO 에 ASET 이 없어 그대로 복사합니다.")
             shutil.copyfile(nro, os.path.join(root, "wwhd.nro"))
-        # 4) 폴더 매니페스트 (실기 검증본과 같은 내용)
-        manifest = {"nro": "wwhd.nro", "mode": "folder",
-                    "reason": "게임 데이터가 함께 있어야 실행됩니다", "rules": [], "excluded": [],
-                    "own_metadata": False}
-        with open(os.path.join(root, ".cookingfoil.json"), "w", encoding="utf-8") as f:
-            json.dump(manifest, f, ensure_ascii=False, separators=(",", ":"))
 
     if args.zip and not opt.dry_run:
         os.makedirs(os.path.join(PORT_DIR, "dist"), exist_ok=True)
         shutil.make_archive(os.path.join(PORT_DIR, "dist", "wwhd"), "zip", out)
         print("[*] zip:", os.path.join(PORT_DIR, "dist", "wwhd.zip"))
-    if args.deploy and not opt.no_register and not opt.dry_run:
-        cfg = pr.load_config()
-        if cfg.get("cook_url") and not os.environ.get("COOK_URL"):
-            os.environ["COOK_URL"] = cfg["cook_url"]
-        tf = cfg.get("token_file")
-        if tf and os.path.exists(os.path.expanduser(tf)) and not os.environ.get("COOK_API_TOKEN"):
-            os.environ["COOK_API_TOKEN"] = open(os.path.expanduser(tf)).read().strip()
-        pr.register("wwhd")
     return 0
 
 

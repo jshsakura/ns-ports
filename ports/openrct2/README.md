@@ -3,16 +3,11 @@
 <!-- quick:begin -->
 ## 필요한 파일과 명령어
 
-필요한 것: RCT2 설치 파일
-NRO: `ports/openrct2/in/openrct2.nro`
+이 포트는 소스부터 빌드하거나 전용 레시피를 씁니다. 필요한 것: RCT2 설치 파일
+
 
 - 원 프로젝트: https://github.com/OpenRCT2/OpenRCT2
 - 스위치 포트 소스: https://github.com/Wander-Eule/OpenRCT2-Switch
-
-```
-python3 build.py check openrct2    # 빈 칸 확인
-python3 build.py openrct2 --zip
-```
 <!-- quick:end -->
 
 OpenRCT2 for Switch with touch and controller support, based on the Wander-Eule/OpenRCT2-Switch fork (`7d4673d8b2`, engine 0.5.4).

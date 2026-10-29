@@ -33,3 +33,6 @@ ports/cstrike/out
 ports/cstrike/dist
 ports/cstrike/logs
 ports/cstrike/overlay-private
+
+# User supplied app icons (not ours to ship)
+ports/*/icon.jpg

@@ -3,12 +3,7 @@
 <!-- quick:begin -->
 ## 필요한 파일과 명령어
 
-필요한 것: baserom.j.z64 (일본판 순정 ROM)
-NRO: `ports/ge007/in/ge007.nro`
+이 포트는 소스부터 빌드하거나 전용 레시피를 씁니다. 필요한 것: baserom.j.z64 (일본판 순정 ROM)
 
-```
-python3 build.py check ge007    # 빈 칸 확인
-python3 build.py ge007 --zip
-```
 <!-- quick:end -->
 

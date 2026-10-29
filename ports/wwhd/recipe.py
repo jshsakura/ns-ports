@@ -24,6 +24,7 @@ import tempfile
 PORT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(os.path.dirname(PORT_DIR))
 IN = os.path.join(PORT_DIR, "in")
+ICON = os.path.join(PORT_DIR, "icon.jpg")  # 선택. 256x256 JPEG 를 두면 앱 아이콘으로 쓴다
 TITLE = "젤다의 전설 바람의 지휘봉 HD"  # 실기 검증된 배포본의 NACP 이름과 같다
 VARIANTS = ("ko", "original")
 
@@ -131,9 +132,11 @@ def build(args):
                 open(dst, "wb").write(data)
 
     if not opt.dry_run:
-        # 3) NRO: 이름 교체(ASET 이 없으면 있는 그대로 복사)
+        # 3) NRO: 이름 교체(ASET 이 없으면 있는 그대로 복사). 아이콘 오류는 아래 try 에 가려지지 않게 먼저 검사한다.
+        if os.path.exists(ICON):
+            pr.check_icon(ICON)
         try:
-            open(os.path.join(root, "wwhd.nro"), "wb").write(pr.retitle_nro(nro, None, TITLE))
+            open(os.path.join(root, "wwhd.nro"), "wb").write(pr.retitle_nro(nro, ICON if os.path.exists(ICON) else None, TITLE))
         except SystemExit:
             print("[*] NRO 에 ASET 이 없어 그대로 복사합니다.")
             shutil.copyfile(nro, os.path.join(root, "wwhd.nro"))

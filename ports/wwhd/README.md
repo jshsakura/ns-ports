@@ -3,17 +3,24 @@
 <!-- quick:begin -->
 ## 필요한 파일과 명령어
 
-| 넣을 위치 | 파일 |
-| :--- | :--- |
-| `ports/wwhd/in/wwhd.nro` | SwitchWakerHD 빌드 NRO |
-| `ports/wwhd/in/Title_00.szs` | 한글 패치의 타이틀 화면 레이아웃 (한글 판만) |
+**1. 받아서 둘 것**
 
-- 스위치 포트 소스: https://github.com/centollOS/SwitchWakerHD
+| 놓을 위치 | 무엇 | 구하는 곳 |
+| :--- | :--- | :--- |
+| `ports/wwhd/in/wwhd.nro` | SwitchWakerHD 빌드 NRO | https://github.com/centollOS/SwitchWakerHD 를 직접 빌드 (BUILD.md) |
+| `ports/wwhd/in/Title_00.szs` | 한글 패치의 타이틀 화면 레이아웃 (한글 판만) | 한글 패치 Ver 1.02 폴더의 windwakerHD/Layout/Title_00.szs (패치 제작진 배포) |
+| `ports/wwhd/icon.jpg` | 앱 아이콘 (256x256 JPEG) (선택) | 직접 구하거나 만든다. 없으면 NRO 에 든 아이콘을 그대로 쓴다 |
+
+**2. 이미지**: 앱 아이콘(`icon.jpg`, 256x256 JPEG)만 쓰이고 없으면 NRO 의 기본 아이콘을 씁니다. 이미지는 저장소에 없으니 필요하면 직접 구해 위 위치에 두세요. 배너와 스크린샷은 다루지 않습니다.
+
+**3. 확인하고 실행**
 
 ```
-python3 build.py check wwhd    # 빈 칸 확인
+python3 build.py guide wwhd    # 빈 칸과 구하는 곳 확인
 python3 build.py wwhd --zip
 ```
+
+- 스위치 포트 소스: https://github.com/centollOS/SwitchWakerHD
 <!-- quick:end -->
 
 WiiU 바람의 지휘봉 HD 를 스위치에서 네이티브로 구동하는 [centollOS/SwitchWakerHD](https://github.com/centollOS/SwitchWakerHD) 포트에, 한국어 패치 파일을 얹는 방법 가이드.

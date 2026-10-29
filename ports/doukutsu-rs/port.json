@@ -10,5 +10,11 @@
   "overlays": [
     "overlay"
   ],
-  "files": []
+  "files": [],
+  "release": {
+    "repo": "doukutsu-rs/doukutsu-rs",
+    "tag": "1.0.0",
+    "asset": "doukutsu-rs_switch_1.0.0.arm64.nro",
+    "sha256": "4e9433c958f8b56839062a6e26cdfb4ea75d419d4f606fe4788346f8def4b87c", "note": "public release checksum, privacy-ok"
+  }
 }

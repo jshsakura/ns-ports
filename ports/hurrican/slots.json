@@ -1,0 +1,10 @@
+[
+  {
+    "path": "in/hurrican.nro",
+    "what": "스위치용 빌드 NRO"
+  },
+  {
+    "path": "in/data",
+    "what": "data/, lang/"
+  }
+]

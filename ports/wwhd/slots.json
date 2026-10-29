@@ -1,0 +1,11 @@
+[
+  {
+    "path": "in/wwhd.nro",
+    "what": "SwitchWakerHD 빌드 NRO"
+  },
+  {
+    "path": "in/Title_00.szs",
+    "what": "한글 패치의 타이틀 화면 레이아웃",
+    "variant": "ko"
+  }
+]

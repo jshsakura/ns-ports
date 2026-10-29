@@ -1,5 +1,20 @@
 # 소닉 더 헤지혹 1 (Sonic 1 2013)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: Data.rsdk (모바일 2013 리마스터 데이터)
+NRO: `ports/sonic1/in/s12013.nro`
+
+- 원 프로젝트: https://github.com/RSDKModding/RSDKv4-Decompilation
+- 스위치 포트 소스: https://github.com/heyjoeway/Sonic-1-2-2013-Decompilation
+
+```
+python3 build.py check sonic1    # 빈 칸 확인
+python3 build.py sonic1 --zip
+```
+<!-- quick:end -->
+
 소닉 1 2013 리마스터 네이티브 디컴파일 포트. 공식 한국어(Language=8) 지원
 
 - 엔진: RSDKv4 Decomp

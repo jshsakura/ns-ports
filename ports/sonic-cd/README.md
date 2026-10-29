@@ -1,5 +1,20 @@
 # 소닉 CD (Sonic CD 2011)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: Data.rsdk (Steam/모바일 리마스터 데이터)
+NRO: `ports/sonic-cd/in/scd2011.nro`
+
+- 원 프로젝트: https://github.com/RSDKModding/RSDKv3-Decompilation
+- 스위치 포트 소스: https://github.com/heyjoeway/Sonic-CD-11-Decompilation
+
+```
+python3 build.py check sonic-cd    # 빈 칸 확인
+python3 build.py sonic-cd --zip
+```
+<!-- quick:end -->
+
 소닉 CD 2011 리마스터 네이티브 디컴파일 포트. 60fps 와이드스크린 & 테일즈 플레이
 
 - 엔진: RSDKv3 Decomp

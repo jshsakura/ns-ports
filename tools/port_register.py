@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""스위치 포트를 쇼핑몰 라이브러리에 조립하고 등록한다.
+"""스위치 포트를 홈브루 폴더에 조립한다.
 
 사용: register.py <프로필.json> [--variant ko|original] [--data <게임 데이터 폴더>] [--dry-run] [--no-register]
 
@@ -19,7 +19,7 @@
     COOK_API_TOKEN     관리자 화면에서 만든 자동화 토큰 (cft_...). 값은 출력하지 않는다
   토큰은 설정 파일에 직접 쓰지 않고 token_file(권한 600 권장)이 가리키는 파일에서 읽는다.
 
-같은 크기인데 내용이 바뀐 파일은 끝에 여분을 붙여 크기를 바꾼다(쇼핑몰이 크기만 보고 넘기는 문제).
+같은 크기인데 내용이 바뀐 파일은 끝에 여분을 붙여 크기를 바꾼다(크기만 보고 넘기는 동기화 문제).
 """
 import argparse, hashlib, json, os, re, shutil, struct, sys, urllib.request, urllib.error
 
@@ -252,7 +252,7 @@ def main():
     if not os.path.exists(nro_src):  # in/ 에 없으면 이미 샵에 올라가 있는 NRO 를 그대로 쓴다(검증된 것)
         deployed = os.path.join(root, p['nro'].get('out', p['id'] + '.nro'))
         if os.path.exists(deployed):
-            print('in/ 에 NRO 가 없어 샵 폴더의 것을 씁니다:', os.path.basename(deployed))
+            print('in/ 에 NRO 가 없어 배포 폴더의 것을 씁니다:', os.path.basename(deployed))
             nro_src = deployed
     nro = open(nro_src, 'rb').read() if nro_src.startswith(root) else retitle_nro(need(p, nro_src), need(p, p['icon']) if p.get('icon') else None, p['title'])
     d.write(p['nro'].get('out', p['id'] + '.nro'), nro)

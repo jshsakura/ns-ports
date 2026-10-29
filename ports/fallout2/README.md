@@ -1,5 +1,19 @@
 # 폴아웃 2 (Fallout 2)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: master.dat, critter.dat (PC판 데이터)
+NRO: `ports/fallout2/in/fallout2.nro`
+
+- 스위치 포트 소스: https://github.com/alexbatalov/fallout2-ce
+
+```
+python3 build.py check fallout2    # 빈 칸 확인
+python3 build.py fallout2 --zip
+```
+<!-- quick:end -->
+
 폴아웃 2 커뮤니티 에디션(fallout2-ce) 기반. CP949 FreeType 한글 폰트 & 1,033개 한글 대화 연동 실기 검수 완료
 
 - 엔진: fallout2-ce

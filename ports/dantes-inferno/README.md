@@ -1,5 +1,19 @@
 # 단테스 인페르노 (Dante's Inferno)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: Xbox 360 디스크 game 폴더(bigfile0.viv, bigfile1.viv, default.xex, default.xexp 타이틀 업데이트 2)와 dante_shaders.dslib, shadercache_dksh.bin
+NRO: `ports/dantes-inferno/in/dantes-inferno-nx.nro`
+
+- 스위치 포트 소스: https://github.com/VasilkovND/dantes-inferno-nx
+
+```
+python3 build.py check dantes-inferno    # 빈 칸 확인
+python3 build.py dantes-inferno --zip
+```
+<!-- quick:end -->
+
 Xbox 360판(유럽판 + Title Update 2)을 [ReXGlue](https://github.com/rexglue/rexglue-sdk) 로 정적 리컴파일하고 deko3d 로 그리는 네이티브 포트.
 업스트림 [VasilkovND/dantes-inferno-nx](https://github.com/VasilkovND/dantes-inferno-nx) v1.1.0 (코드, 셰이더, NRO 는 모두 자기 디스크로 컴퓨터에서 만든다).
 이 저장소에는 NRO, 셰이더, 게임 데이터, 번역 데이터가 없다.

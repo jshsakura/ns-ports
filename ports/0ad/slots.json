@@ -1,0 +1,10 @@
+[
+  {
+    "path": "in/0ad.nro",
+    "what": "스위치용 빌드 NRO"
+  },
+  {
+    "path": "in/data",
+    "what": "0ad-0.28.0 데이터 (data/)"
+  }
+]

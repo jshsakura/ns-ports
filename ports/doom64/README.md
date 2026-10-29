@@ -1,5 +1,20 @@
 # 둠 64 EX (Doom 64 EX)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: doom64.wad, doomsnd.sf2
+NRO: `ports/doom64/in/doom64ex.nro`
+
+- 원 프로젝트: https://github.com/svkaiser/Doom64EX
+- 스위치 포트 소스: https://github.com/fgsfdsfgs/Doom64EX
+
+```
+python3 build.py check doom64    # 빈 칸 확인
+python3 build.py doom64 --zip
+```
+<!-- quick:end -->
+
 Doom 64 리버스 엔지니어링 네이티브 C++ 포트
 
 - 엔진: Doom64EX

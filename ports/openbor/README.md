@@ -1,5 +1,20 @@
 # OpenBOR (Switch)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: OpenBOR .pak 게임 팩
+NRO: `ports/openbor/in/OpenBOR.nro`
+
+- 원 프로젝트: https://github.com/DCurrent/openbor
+- 스위치 포트 소스: https://github.com/SylphiaWindy/openbor
+
+```
+python3 build.py check openbor    # 빈 칸 확인
+python3 build.py openbor --zip
+```
+<!-- quick:end -->
+
 출처: [SylphiaWindy/openbor](https://github.com/SylphiaWindy/openbor) 릴리스 `switch-v26.0919.1` (2026-09-18).
 2026-10-20 에 받아 `SHA256SUMS` 대조를 마쳤습니다(4개 모두 OK). 원문 안내는 `release/switch-v26.0919.1/RELEASE-NOTES.md` 에 있습니다.
 

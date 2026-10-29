@@ -1,5 +1,19 @@
 # 잭 & 덱스터: 구세계의 유산 (Jak and Daxter)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: Jak 1 PS2 ISO
+NRO: `ports/jak1/in/jak1.nro`
+
+- 스위치 포트 소스: https://github.com/fildicio/jak-project-switch
+
+```
+python3 build.py check jak1    # 빈 칸 확인
+python3 build.py jak1 --zip
+```
+<!-- quick:end -->
+
 OpenGOAL 기반 잭 & 덱스터 1 네이티브 포트. 60fps & 16:9 와이드스크린
 
 - 엔진: OpenGOAL

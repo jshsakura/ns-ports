@@ -1,5 +1,20 @@
 # 오픈 TTD (OpenTTD)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: 오픈 그래픽/사운드 베이스셋
+NRO: `ports/openttd/in/openttd.nro`
+
+- 원 프로젝트: https://github.com/OpenTTD/OpenTTD
+- 스위치 포트 소스: https://github.com/rsn8887/OpenTTD
+
+```
+python3 build.py check openttd    # 빈 칸 확인
+python3 build.py openttd --zip
+```
+<!-- quick:end -->
+
 교통망 경영 시뮬레이션 오픈소스 엔진. 한글 폰트 지원
 
 - 엔진: OpenTTD

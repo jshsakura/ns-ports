@@ -1,5 +1,19 @@
 # 히어로즈 오브 마이트 앤 매직 2 (fheroes2)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: HOMM2 원작 게임 데이터 (HEROES2/DATA)
+NRO: `ports/fheroes2/in/fheroes2.nro`
+
+- 스위치 포트 소스: https://github.com/ihhub/fheroes2
+
+```
+python3 build.py check fheroes2    # 빈 칸 확인
+python3 build.py fheroes2 --zip
+```
+<!-- quick:end -->
+
 HOMM2 최신 C++ 오픈소스 리메이크 엔진. 공식 한국어 팩 지원
 
 - 엔진: fheroes2

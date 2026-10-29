@@ -1,5 +1,19 @@
 # 사일런트 힐 3 (Silent Hill 3)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: 사일런트 힐 3 PC판 설치본
+NRO: `ports/sh3/in/sh3.nro`
+
+- 스위치 포트 소스: https://github.com/cutarev/sh3-nx
+
+```
+python3 build.py check sh3    # 빈 칸 확인
+python3 build.py sh3 --zip
+```
+<!-- quick:end -->
+
 - **엔진/프로젝트**: sh3-nx C 네이티브
 - **업스트림**: https://github.com/cutarev/sh3-nx
 - **버전**: v0.02

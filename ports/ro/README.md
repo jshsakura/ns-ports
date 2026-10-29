@@ -1,5 +1,17 @@
 # 라그나로크 온라인 (RO Switch)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: 라그나로크 클라이언트 데이터(data.grf, rdata.grf)와 접속 설정(login.ini)
+NRO: `ports/ro/in/ragnarok.nro`
+
+```
+python3 build.py check ro    # 빈 칸 확인
+python3 build.py ro --zip
+```
+<!-- quick:end -->
+
 스위치용 라그나로크 클라이언트(`ragnarok.nro`). 실기 폴더에 풀 배포되어 돌아가는 구성을 레시피로 옮겼다.
 NRO 와 게임 데이터는 저장소에 없다. 업스트림 주소는 아직 확인하지 못했다.
 

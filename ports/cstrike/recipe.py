@@ -8,7 +8,7 @@ Same flow as the other native ports:
   1. fetch   upstream sources at pinned commits into ports/cstrike/src and apply patches/
   2. build   engine and game code in the devkitPro container (docker)
   3. assemble binaries + overlays + your game data into dist/switch/<id>/
-  4. --zip   pack it, --deploy copy it into a homebrew folder (CookingFoil layout)
+  4. --zip   pack it, --deploy copy it into a homebrew folder
 
 The game data is yours: it is hard-linked, never uploaded or committed.
 Options and defaults can also live in ns-ports.config.json (see ns-ports.config.example.json).

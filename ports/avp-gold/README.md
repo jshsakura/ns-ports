@@ -1,5 +1,19 @@
 # 에일리언 대 프레데터: 골드 (AvP Gold)
 
+<!-- quick:begin -->
+## 필요한 파일과 명령어
+
+필요한 것: AvP Gold / Classic 2000 PC 게임 데이터
+NRO: `ports/avp-gold/in/avp.nro`
+
+- 스위치 포트 소스: https://github.com/Thorhax/AvP-Gold-NX-Modern
+
+```
+python3 build.py check avp-gold    # 빈 칸 확인
+python3 build.py avp-gold --zip
+```
+<!-- quick:end -->
+
 - **엔진/프로젝트**: AvP Gold C++ 네이티브
 - **업스트림**: https://github.com/Thorhax/AvP-Gold-NX-Modern
 - **버전**: v2026-nx

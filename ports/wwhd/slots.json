@@ -5,6 +5,11 @@
     "get": "https://github.com/centollOS/SwitchWakerHD 를 직접 빌드 (BUILD.md)"
   },
   {
+    "path": "in/data",
+    "what": "내 Wii U 바람의 지휘봉 HD 덤프 (code/ content/ meta/ 가 보이는 폴더)",
+    "get": "내 Wii U 에서 추출. 복사할 필요 없이 --rom <그 폴더> 로 알려 주면 된다"
+  },
+  {
     "path": "in/Title_00.szs",
     "what": "한글 패치의 타이틀 화면 레이아웃",
     "variant": "ko",

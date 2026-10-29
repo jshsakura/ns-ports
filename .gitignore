@@ -36,3 +36,6 @@ ports/cstrike/overlay-private
 
 # sly1 extractor build output
 tools/sly1_extract/build/
+
+# User supplied app icons (not ours to ship)
+ports/*/icon.jpg

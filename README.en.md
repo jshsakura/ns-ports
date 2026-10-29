@@ -1,25 +1,37 @@
 # NS Ports Hub (ns-ports)
 
-Native Nintendo Switch ports of classic games with Korean localisation, motion (gyro) aiming and a one-command build.
-Each port is a recipe: it fetches the upstream project at a pinned commit, applies our patches, builds it,
-and assembles a ready-to-copy folder around **your own game data**.
+Personal notes from my own tests of running old games on the Nintendo Switch as native ports with Korean localisation.
+This is a record of what I tried, not a service or a release. Ports I have checked on a real console are marked as verified in the status column; the rest are recipes or not yet checked. Each port folder lists which
+file went where under what name; `build.py` is a small helper that packs them into a homebrew folder the same way.
+No game data, NRO or patched assets are included, and nothing is fetched for you.
 
 > [!IMPORTANT]
 > **You must supply your own game files.** This repository and its releases contain no ROMs, no game data and no
 > copyrighted art. See [Legal](#legal).
 
-## Quick start
+## Per-port guides
 
-Requirements and the game data each port needs are in [INSTALL.md](INSTALL.md).
+Requirements for every port are in [INSTALL.md](INSTALL.md); the Korean localisation method itself lives in each
+`ports/<id>/README.md`. Example, Wind Waker HD ([guide](ports/wwhd/README.md)):
+
+| File you provide | Where to put it |
+| --- | --- |
+| SwitchWakerHD build NRO | `ports/wwhd/in/wwhd.nro` |
+| Korean patch `permanent_2d_UsEnglish.pack` | `ports/wwhd/in/permanent_2d_UsEnglish.pack` |
+| Korean patch `Title_00.szs` | `ports/wwhd/in/Title_00.szs` |
 
 ```bash
-git clone https://github.com/jshsakura/ns-ports.git && cd ns-ports
-python3 build.py --list                                      # what is available
-python3 build.py cstrike --rom /path/to/your/cstrike-valve-data --variant original --zip
+python3 build.py wwhd --rom /path/to/wwhd-dump --zip                   # Korean edition
+python3 build.py wwhd --rom /path/to/wwhd-dump --variant original --zip  # stock edition
 ```
-Needs Python 3 and, for ports built from source, Docker (devkitPro image). Output goes to `ports/<id>/dist/`.
-`--variant ko` builds the Korean edition, `--variant original` the stock edition.
-Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
+
+`--rom` points at the Wii U dump root where `content/` is visible. Python 3 is enough for assembly;
+ports marked `source` in INSTALL.md build their NRO in Docker (devkitPro image), and GoldenEye 007 uses its own
+builder repo that BPS-patches your `baserom.j.z64`.
+
+`python3 build.py guide <id>` lists what to get, where to put it and which command to run: the empty input slots with where to get each, the image note, then the build command. The same check runs before every build. Slots come from `ports/<id>/slots.json`, or from `port.json` and `ports.json` when that file is absent.
+
+Images: none are shipped. Only the app icon is used (optional): put your own 256x256 JPEG at `ports/<id>/icon.jpg`, otherwise the NRO's own icon is kept. Banners and screenshots are not handled here.
 
 ## Use your own files (new port)
 
@@ -29,9 +41,7 @@ If you already have a built `.nro`, an icon and your game data:
 python3 build.py new mygame "My Game" --nro mygame.nro --icon icon.jpg
 python3 build.py mygame --rom /path/to/game-data --zip
 ```
-Put files that must be laid over the game data into `ports/mygame/overlay/`. Add `--deploy <homebrew folder>` to assemble
-straight into a [CookingFoil](https://github.com/jshsakura/oc-cookingfoil) library (the app is registered through the server API
-when `ns-ports.config.json` has the server address and a token file; see `ns-ports.config.example.json`).
+Put files that must be laid over the game data into `ports/mygame/overlay/`.
 A port that needs building from source gets a `ports/<id>/recipe.py`; `ports/cstrike` is a complete example.
 
 ## Counter-Strike 1.6

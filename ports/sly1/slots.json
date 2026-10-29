@@ -1,0 +1,12 @@
+[
+  {
+    "path": "in/sly1.nro",
+    "what": "ProjectCane 0.5.0 NRO",
+    "get": "https://github.com/NaGaa95/ProjectCane 릴리스의 ProjectCane.nro"
+  },
+  {
+    "path": "in/data",
+    "what": "한국판 ISO 를 풀어낸 데이터 폴더",
+    "get": "내 한국판 ISO(SCKA_200.04)로 tools/sly1_extract/README.md 대로 만든다 (--rom 으로 따로 줘도 된다)"
+  }
+]

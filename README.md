@@ -3,111 +3,113 @@
 [![Platforms](https://img.shields.io/badge/platform-NS%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/ns-ports)
 [![Language](https://img.shields.io/badge/language-Korean%20(100%25)-red.svg)](README.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Ports](https://img.shields.io/badge/native%20ports-32-orange.svg)](ports.json)
+[![Ports](https://img.shields.io/badge/native%20ports-69-orange.svg)](ports.json)
 
-**닌텐도 스위치(NS / Horizon OS) 환경을 위한 명작 게임 한국어화(Korean) 네이티브 포트 전문 컬렉션**입니다.
+**닌텐도 스위치(NS / Horizon OS)에서 오래된 게임을 한국어로 돌려 본 개인 포팅 테스트 기록**입니다.
 
-모든 타이틀은 단순 에뮬레이션 구동이 아닌, C/C++ 소스코드 디컴파일 및 역공학 프로젝트를 기반으로 포팅되었으며, **완벽한 한국어 번역(자막/음성), 한글 폰트 렌더러(CJK/TTF), 모션 컨트롤(자이로 조준)**을 기본 탑재하고 있습니다.
+제가 직접 해 본 방법과 결과를 적어 둔 것이라 서비스나 배포물이 아닙니다. 실기에서 확인한 포트는 상태 열에 확인됨(🎯)으로 표시했고, 나머지는 레시피만 정리했거나 확인 전입니다. 포트마다 어떤 파일을 어디에 어떤 이름으로 두었는지 배치표로 남겼고, 같은 방식으로 폴더를 묶는 작은 스크립트(`build.py`)를 곁들였습니다. 이 저장소에는 게임 데이터, NRO, 패치가 적용된 완성 데이터가 없고, 차이 패치만 들어 있습니다. 필요한 파일은 각자 합법적으로 구해야 합니다.
 
 ---
 
 ## 🌟 핵심 특징
 
-* 🇰🇷 **100% 한국어화 전용 포트**
-  * 수록된 모든 게임은 한국어 자막, 공식 한국어 더빙, 유저 한국어화 패치 연동을 전제로 제작 및 관리됩니다.
-  * 한글 폰트 깨짐/중복 렌더링 버그(골든아이 Fast3D 캐시 버그 등)를 자체 엔진 패치로 해결.
-* ⚖️ **저작권 100% 클린룸 (Clean-room Rule)**
-  * 원작 게임의 저작권 보호 대상(ROM, ISO, 상용 음원, 텍스처 등)을 일절 포함하지 않습니다.
-  * 순정 정품 롬/데이터를 지정하면, 내장된 BPS/XDelta 패처가 자동으로 한글 롬을 생성하여 컴파일합니다.
-* 🛠️ **원클릭 자동 빌더 (`build.py`)**
-  * `python3 build.py <포트ID> --rom <파일>` 한 줄로 한글 패치 적용, 에셋 변환, Switch NRO 패키징까지 일괄 수행.
-* 📦 **CookingFoil 생태계 완벽 호환**
-  * 자체 홈브루 서버인 [oc-cookingfoil](https://github.com/jshsakura/oc-cookingfoil) 메타데이터(`.cookingfoil.json`) 자동 연동.
+* 📖 **한국어 포팅 방법 가이드**
+  * `ports/<id>/README.md` 마다 준비물, 그 구하는 법, 파일 배치 경로와 파일명을 적어 둡니다.
+  * 모든 포트가 한국어화된 것은 아닙니다. 아래 표의 한국어화 형태 열을 확인하세요.
+* 🔧 **조립 스크립트 (`build.py` + 포트별 `recipe.py`)**
+  * 배치표대로 파일을 두면 `sd:/switch/<id>/` 폴더로 묶는 정도를 합니다.
+  * 포트에 따라 한글 pack 배치나 일부 변환이 레시피에 들어 있지만, 파일을 구해 주거나 번역해 주지는 않습니다.
+  * 확인된 포트는 일부이고, 아래 표의 상태 열이 기준입니다.
+
+| 구성 요소 | 하는 일 |
+| :--- | :--- |
+| `build.py` | 포트 조립, 새 포트 뼈대 생성(`new`), 목록(`--list`) |
+| `ports/<id>/recipe.py` | 포트별 변환과 빌드 (예: `wwhd` 는 한글 pack 을 두 언어 슬롯에 배치) |
+| `ports/<id>/slots.json` | 채워야 할 알맹이 칸 목록. `python3 build.py guide <id>` 가 빈칸과 구하는 곳을 알려 주고, 빌드 전에도 자동 점검(없으면 `port.json` 과 `ports.json` 에서 만든다) |
+| `tools/dante_kr_patch.py` | 단테스 인페르노 한글 패치 적용 |
+| `tools/sly1_extract` | 슬라이 쿠퍼 1 한국판 디스크에서 게임 데이터 추출 |
+| `tools/gen_install.py` | `ports.json` 으로 INSTALL.md 준비물 표 생성 |
+
+* ⚖️ **저작권 클린룸 (Clean-room Rule)**
+  * 원작의 저작권 보호 파일(ROM, ISO, 상용 음원, 패치가 적용된 완성 데이터 등)은 저장소에 담지 않습니다. 원본 없이는 쓸 수 없는 차이 패치(BPS 등)만 `ports/<id>/patches/` 에 둡니다.
+  * 모든 준비와 조립은 사용자가 합법적으로 소유한 정품 데이터로 각자의 컴퓨터에서 이루어집니다.
 
 ---
 
-## 🎮 네이티브 포트 카탈로그 (32 Games)
+## 🎮 포트 카탈로그 (하이라이트 34종)
+
+> 전체 69종 목록은 `python3 build.py --list` 또는 [INSTALL.md](INSTALL.md) 의 포트별 준비물 표를 보십시오. ID 를 누르면 그 포트의 필요 파일과 명령어가 맨 위에 나옵니다.
 
 | ID | 타이틀 | 장르 / 원작 | 한국어화 형태 | 자이로 | 구동 및 레시피 상태 |
 | :--- | :--- | :--- | :--- | :---: | :---: |
-| **`ge007`** | **골든아이 007** | FPS / N64 | 100% 한글 자막 (v1.0 retrace) | ✅ | 🎯 **실기 검수 완료** ([빌더 준비 완료](https://github.com/jshsakura/goldeneye-007-switch)) |
-| **`zelda3-ko`** | **젤다: 신들의 트라이포스** | ARPG / SNES | C 디컴파일 60fps & 16:9 한글화 | ➖ | 🎯 **실기 검수 완료** |
-| **`zelda-oot-hd`** | **젤다: 시간의 오카리나 HD** | Action / N64 | SoH v9.3.0 + 한글 Pretendard HD | ✅ | 🎯 **실기 검수 완료** |
-| **`zelda-mm-hd`** | **젤다: 무쥬라의 가면 HD** | Action / N64 | 2S2H v5.0.1 + MM-Reloaded HD | ✅ | 🎯 **실기 배포 완료** |
-| **`devilutionx`** | **디아블로 1 + 헬파이어** | ARPG / PC | 한글 폰트 + 완벽 한글 자막 | ➖ | 🎯 **실기 검수 완료** |
-| **`half-life`** | **하프라이프 1** | FPS / PC | **공식 한국어 풀더빙 음성 & 자막** | ✅ | 🎯 **실기 검수 완료** |
-| **`cstrike`** | **카운터 스트라이크 1.6** | FPS / PC | 한글 UI/입력/점수판 + 순정 영문판 | ✅ | 🔧 신형 엔진 빌드, 실기 확인 중 ([레시피](ports/cstrike)) |
-| **`fallout1`** | **폴아웃 1** | CRPG / PC | fallout1-ce CJK 폰트 엔진 + 한글화 | ➖ | 🎯 **실기 검수 완료** |
-| **`fallout2`** | **폴아웃 2** | CRPG / PC | fallout2-ce CP949 FreeType 한글 | ➖ | 🎯 **실기 검수 완료** |
-| **`cnc`** | **C&C: 타이베리안 던** | RTS / PC | C&C Gold 한글 폰트 & 미션 브리핑 | ➖ | 📦 레시피 수록 완료 |
-| **`redalert`** | **C&C: 레드 얼럿** | RTS / PC | 한글화 연합군/소련군 캠페인 | ➖ | 📦 레시피 수록 완료 |
-| **`war1gus`** | **워크래프트 1: 오크와 인간** | RTS / PC | War1gus Stratagus 원작 에셋 연동 | ➖ | 📦 레시피 수록 완료 |
-| **`wargus`** | **워크래프트 2: BNE** | RTS / PC | 워크래프트 2 완벽 한글화 데이터 | ➖ | 📦 레시피 수록 완료 |
-| **`starcraft64`** | **스타크래프트 64 Recomp** | RTS / N64 | StarCraft 64 정적 리컴파일 한국어판 | ➖ | 📦 레시피 수록 완료 |
-| **`jak1`** | **잭 & 덱스터 (Jak 1)** | Action / PS2 | OpenGOAL 60fps 와이드스크린 | ➖ | 📦 레시피 수록 완료 |
-| **`jak2`** | **잭 2 (Jak II)** | Action / PS2 | **소니 공식 한국어 음성 더빙** | ➖ | 📦 레시피 수록 완료 |
-| **`jak3`** | **잭 3 (Jak 3)** | Action / PS2 | **소니 공식 한국어 음성 & 자막** | ➖ | 📦 레시피 수록 완료 |
-| **`fheroes2`** | **히어로즈 오브 마이트 앤 매직 2** | TBS / PC | fheroes2 공식 한국어 팩 지원 | ➖ | 📦 레시피 수록 완료 |
-| **`caesar3`** | **시저 3 (Julius)** | Sim / PC | 시저 3 공식 한국어화 데이터 | ➖ | 📦 레시피 수록 완료 |
-| **`openrct2`** | **롤러코스터 타이쿤 2** | Sim / PC | OpenRCT2 한글 폰트 & 자막 | ➖ | 📦 레시피 수록 완료 |
-| **`openttd`** | **오픈 TTD** | Sim / PC | OpenTTD 나눔고딕 한글 번역 | ➖ | 📦 레시피 수록 완료 |
-| **`sonic1`** | **소닉 더 헤지혹 1 (2013)** | Platformer / RSDK | RSDKv4 디컴파일 공식 한국어(Lang=8) | ➖ | 📦 레시피 수록 완료 |
-| **`sonic2`** | **소닉 더 헤지혹 2 (2013)** | Platformer / RSDK | RSDKv4 디컴파일 공식 한국어(Lang=8) | ➖ | 📦 레시피 수록 완료 |
-| **`sonic-cd`** | **소닉 CD (2011)** | Platformer / RSDK | RSDKv3 디컴파일 60fps 와이드스크린 | ➖ | 📦 레시피 수록 완료 |
-| **`cannonball`** | **아웃런 (Cannonball)** | Racing / Arcade | 60fps 아케이드 재구현 엔진 | ➖ | 📦 레시피 수록 완료 |
-| **`dantes-inferno`** | **단테스 인페르노** | Action / Xbox 360 Recomp | 정적 리컴파일 + 한글패치 적용 도구 | ✅ | 🧪 기기 시험 전 |
-| **`ro`** | **라그나로크 온라인** | MMORPG / Client | 스위치 클라이언트 | ✅ | 🎯 기동 확인 |
-| **`sly1`** | **슬라이 쿠퍼 1** | Action / PS2 Decomp | 앱이 ISO를 직접 풀어 주는 네이티브 포트 (한국판 ISO 미지원) | ➖ | 🧪 기기 시험 전 |
-| **`nfsmw`** | **니드 포 스피드: 모스트 원티드** | Racing / Xbox 360 Recomp | 한국판(NTSC-K) 정적 리컴파일, 30fps | ✅ | 🧪 기기 시험 전 |
-| **`jazz`** | **재즈 잭래빗 2** | Platformer / PC | Jazz² Resurrection C++ 엔진 | ➖ | 📦 레시피 수록 완료 |
-| **`doom64`** | **둠 64 EX** | FPS / N64 | Doom64EX C++ 네이티브 포트 | ➖ | 📦 레시피 수록 완료 |
-| **`pokemon-survivor-burst`** | **포켓몬 서바이버 버스트** | Fan Game | [한국어 홈브루 포트](https://github.com/jshsakura/psb-switch) | ➖ | 📦 레시피 수록 완료 |
-| **`dragonball-z-rpg`** | **드래곤볼 Z RPG** | Fan RPG | 한글 자막 지원 | ➖ | 📦 레시피 수록 완료 |
-| **`wwhd`** | **바람의 지휘봉 HD** | Action / GC | 젤다 바람의 지휘봉 한글 텍스처 | ➖ | 📦 레시피 수록 완료 |
+| **[`ge007`](ports/ge007/README.md)** | **골든아이 007** | FPS / N64 | 100% 한글 자막 (v1.0 retrace) | ✅ | 🎯 **실기 검수 완료** ([빌더 준비 완료](https://github.com/jshsakura/goldeneye-007-switch)) |
+| **[`zelda3-ko`](ports/zelda3-ko/README.md)** | **젤다: 신들의 트라이포스** | ARPG / SNES | C 디컴파일 60fps & 16:9 한글화 | ➖ | 🎯 **실기 검수 완료** |
+| **[`zelda-oot-hd`](ports/zelda-oot-hd/README.md)** | **젤다: 시간의 오카리나 HD** | Action / N64 | SoH v9.3.0 + 한글 Pretendard HD | ✅ | 🎯 **실기 검수 완료** |
+| **[`zelda-mm-hd`](ports/zelda-mm-hd/README.md)** | **젤다: 무쥬라의 가면 HD** | Action / N64 | 2S2H v5.0.1 + MM-Reloaded HD | ✅ | 🎯 **실기 배포 완료** |
+| **[`devilutionx`](ports/devilutionx/README.md)** | **디아블로 1 + 헬파이어** | ARPG / PC | 한글 폰트 + 완벽 한글 자막 | ➖ | 🎯 **실기 검수 완료** |
+| **[`half-life`](ports/half-life/README.md)** | **하프라이프 1** | FPS / PC | **공식 한국어 풀더빙 음성 & 자막** | ✅ | 🎯 **실기 검수 완료** |
+| **[`cstrike`](ports/cstrike/README.md)** | **카운터 스트라이크 1.6** | FPS / PC | 한글 UI/입력/점수판 + 순정 영문판 | ✅ | 🔧 신형 엔진 빌드, 실기 확인 중 ([레시피](ports/cstrike)) |
+| **[`fallout1`](ports/fallout1/README.md)** | **폴아웃 1** | CRPG / PC | fallout1-ce CJK 폰트 엔진 + 한글화 | ➖ | 🎯 **실기 검수 완료** |
+| **[`fallout2`](ports/fallout2/README.md)** | **폴아웃 2** | CRPG / PC | fallout2-ce CP949 FreeType 한글 | ➖ | 🎯 **실기 검수 완료** |
+| **[`cnc`](ports/cnc/README.md)** | **C&C: 타이베리안 던** | RTS / PC | C&C Gold 한글 폰트 & 미션 브리핑 | ➖ | 📦 레시피 수록 완료 |
+| **[`redalert`](ports/redalert/README.md)** | **C&C: 레드 얼럿** | RTS / PC | 한글화 연합군/소련군 캠페인 | ➖ | 📦 레시피 수록 완료 |
+| **[`war1gus`](ports/war1gus/README.md)** | **워크래프트 1: 오크와 인간** | RTS / PC | War1gus Stratagus 원작 에셋 연동 | ➖ | 📦 레시피 수록 완료 |
+| **[`wargus`](ports/wargus/README.md)** | **워크래프트 2: BNE** | RTS / PC | 워크래프트 2 완벽 한글화 데이터 | ➖ | 📦 레시피 수록 완료 |
+| **[`starcraft64`](ports/starcraft64/README.md)** | **스타크래프트 64 Recomp** | RTS / N64 | StarCraft 64 정적 리컴파일 한국어판 | ➖ | 📦 레시피 수록 완료 |
+| **[`jak1`](ports/jak1/README.md)** | **잭 & 덱스터 (Jak 1)** | Action / PS2 | OpenGOAL 60fps 와이드스크린 | ➖ | 📦 레시피 수록 완료 |
+| **[`jak2`](ports/jak2/README.md)** | **잭 2 (Jak II)** | Action / PS2 | **소니 공식 한국어 음성 더빙** | ➖ | 📦 레시피 수록 완료 |
+| **[`jak3`](ports/jak3/README.md)** | **잭 3 (Jak 3)** | Action / PS2 | **소니 공식 한국어 음성 & 자막** | ➖ | 📦 레시피 수록 완료 |
+| **[`fheroes2`](ports/fheroes2/README.md)** | **히어로즈 오브 마이트 앤 매직 2** | TBS / PC | fheroes2 공식 한국어 팩 지원 | ➖ | 📦 레시피 수록 완료 |
+| **[`caesar3`](ports/caesar3/README.md)** | **시저 3 (Julius)** | Sim / PC | 시저 3 공식 한국어화 데이터 | ➖ | 📦 레시피 수록 완료 |
+| **[`openrct2`](ports/openrct2/README.md)** | **롤러코스터 타이쿤 2** | Sim / PC | OpenRCT2 한글 폰트 & 자막 | ➖ | 📦 레시피 수록 완료 |
+| **[`openttd`](ports/openttd/README.md)** | **오픈 TTD** | Sim / PC | OpenTTD 나눔고딕 한글 번역 | ➖ | 📦 레시피 수록 완료 |
+| **[`sonic1`](ports/sonic1/README.md)** | **소닉 더 헤지혹 1 (2013)** | Platformer / RSDK | RSDKv4 디컴파일 공식 한국어(Lang=8) | ➖ | 📦 레시피 수록 완료 |
+| **[`sonic2`](ports/sonic2/README.md)** | **소닉 더 헤지혹 2 (2013)** | Platformer / RSDK | RSDKv4 디컴파일 공식 한국어(Lang=8) | ➖ | 📦 레시피 수록 완료 |
+| **[`sonic-cd`](ports/sonic-cd/README.md)** | **소닉 CD (2011)** | Platformer / RSDK | RSDKv3 디컴파일 60fps 와이드스크린 | ➖ | 📦 레시피 수록 완료 |
+| **[`cannonball`](ports/cannonball/README.md)** | **아웃런 (Cannonball)** | Racing / Arcade | 60fps 아케이드 재구현 엔진 | ➖ | 📦 레시피 수록 완료 |
+| **[`dantes-inferno`](ports/dantes-inferno/README.md)** | **단테스 인페르노** | Action / Xbox 360 Recomp | 정적 리컴파일 + 한글패치 적용 도구 | ✅ | 🧪 기기 시험 전 |
+| **[`ro`](ports/ro/README.md)** | **라그나로크 온라인** | MMORPG / Client | 스위치 클라이언트 | ✅ | 🎯 기동 확인 |
+| **[`sly1`](ports/sly1/README.md)** | **슬라이 쿠퍼 1** | Action / PS2 Decomp | 앱이 ISO를 직접 풀어 주는 네이티브 포트 (한국판 ISO 미지원) | ➖ | 🧪 기기 시험 전 |
+| **[`nfsmw`](ports/nfsmw/README.md)** | **니드 포 스피드: 모스트 원티드** | Racing / Xbox 360 Recomp | 한국판(NTSC-K) 정적 리컴파일, 30fps | ✅ | 🧪 기기 시험 전 |
+| **[`jazz`](ports/jazz/README.md)** | **재즈 잭래빗 2** | Platformer / PC | Jazz² Resurrection C++ 엔진 | ➖ | 📦 레시피 수록 완료 |
+| **[`doom64`](ports/doom64/README.md)** | **둠 64 EX** | FPS / N64 | Doom64EX C++ 네이티브 포트 | ➖ | 📦 레시피 수록 완료 |
+| **[`pokemon-survivor-burst`](ports/pokemon-survivor-burst/README.md)** | **포켓몬 서바이버 버스트** | Fan Game | mkxp-z 기반 팬게임, [변환 키트](https://github.com/jshsakura/psb-switch-kit) | ➖ | 📦 레시피 수록 완료 |
+| **[`dragonball-z-rpg`](ports/dragonball-z-rpg/README.md)** | **드래곤볼 Z RPG** | Fan RPG | 한글 자막 지원 | ➖ | 📦 레시피 수록 완료 |
+| **[`wwhd`](ports/wwhd/README.md)** | **바람의 지휘봉 HD** | Action / GC | 한글 패치 pack 적용 가이드 ([배치표](ports/wwhd/README.md)) | ➖ | 🎯 실기 검증 구성 재현 |
 
 ---
 
 ## 🚀 사용법 (Getting Started)
 
-> 모든 포트의 준비물과 설치법, 포트별로 필요한 게임 데이터는 [INSTALL.md](INSTALL.md) 한 곳에 모았습니다.
-
-### 1. 저장소 클론
-```bash
-git clone https://github.com/jshsakura/ns-ports.git
-cd ns-ports
-```
-
-### 2. 한국어 지원 포트 목록 확인
-```bash
-python3 build.py --list
-```
-
-### 3. 포트 빌드 예시 (골든아이 007)
-사용자가 소유한 일본판 순정 롬을 지정하면, **내장된 한국어 BPS 패치를 자동으로 적용**하여 한글판 NRO를 완성합니다.
+어느 포트든 같은 3단계입니다. 헤매지 않도록 무엇을 어디서 받아 어디에 둘지 명령 하나가 알려 줍니다.
 
 ```bash
-# 일본판 순정 롬 투입 (자동 한글 패치 + 빌드 + ZIP 패키징)
-python3 build.py ge007 --rom /path/to/baserom.j.z64 --zip
-
-# 스위치 SD 카드 또는 CookingFoil 배포 폴더로 즉시 배포
-python3 build.py ge007 --rom /path/to/baserom.j.z64 --deploy /path/to/homebrew/
+git clone https://github.com/jshsakura/ns-ports.git && cd ns-ports
+python3 build.py --list              # 포트 목록
+python3 build.py guide <포트 ID>      # 1) 받아서 둘 것  2) 이미지 안내  3) 실행 명령
 ```
 
-### 4. 내 파일로 바로 쓰기 (새 포트 만들기)
-이미 빌드된 NRO 와 아이콘, 내 게임 데이터만 있으면 포트 뼈대가 바로 만들어집니다.
+1. **받아서 둘 것**: `guide` 가 `ports/<id>/` 아래 빈 칸과 구하는 곳을 표로 보여 줍니다. NRO, 게임 데이터, 한글 패치 같은 파일을 각자 구해 그 위치에 둡니다. 포트 가이드(`ports/<id>/README.md`) 맨 위에도 같은 표가 있습니다.
+2. **이미지**: 이 저장소에는 이미지가 없습니다. 앱 아이콘만 쓰이고(선택) `ports/<id>/icon.jpg` 에 **256x256 JPEG** 를 직접 구해 두면 적용됩니다. 안 두면 NRO 의 기본 아이콘이 나옵니다. 배너와 스크린샷은 다루지 않습니다.
+3. **실행**: `python3 build.py <포트 ID> --zip`. 칸이 비어 있으면 실행 전에 같은 안내를 다시 보여 주고 멈춥니다. 결과는 `ports/<id>/dist/switch/<id>/` 와 zip 입니다. 폴더를 SD 카드 `sd:/switch/` 로 복사해 홈브루 메뉴에서 실행합니다.
+
+예) 바람의 지휘봉 HD: [ports/wwhd/README.md](ports/wwhd/README.md)
 
 ```bash
-# 1) 뼈대 만들기 (ports/<id>/ 와 목록 항목이 생깁니다)
-python3 build.py new mygame "내 게임 (My Game)" --nro /path/to/mygame.nro --icon /path/to/icon.jpg
-
-# 2) 덮어쓸 파일(한글 사전, 설정 등)은 ports/mygame/overlay/ 에 같은 구조로 넣습니다
-
-# 3) 내 게임 데이터와 합쳐 조립 (또는 --deploy 로 homebrew 폴더에 바로 반영, --zip 으로 압축)
-python3 build.py mygame --rom /path/to/game-data
+python3 build.py guide wwhd
+python3 build.py wwhd --rom /path/to/wwhd_dump --zip                        # 한글 판 (--rom 은 content/ 가 보이는 Wii U 덤프 루트)
+python3 build.py wwhd --rom /path/to/wwhd_dump --variant original --zip     # 원본 그대로
 ```
-조립 결과는 쇼핑몰(CookingFoil) 폴더 구조이고 `.cookingfoil.json` 도 함께 만들어집니다.
-서버 주소와 토큰을 `ns-ports.config.json` 에 적어 두면 `--deploy` 후 폴더 재스캔과 종류(port) 지정까지 서버 API 로 합니다
-([예시](ns-ports.config.example.json)). 소스부터 빌드하는 포트(예: `cstrike`)는 `ports/<id>/recipe.py` 를 두면 됩니다.
+
+> 소스 빌드 포트(`cstrike`, `openrct2`, `zelda3-ko`, `ge007`)는 Docker(devkitPro) 로 NRO 를 직접 빌드합니다. 골든아이 007 은 전용 빌더 저장소([goldeneye-007-switch](https://github.com/jshsakura/goldeneye-007-switch))가 사용자의 일본판 `baserom.j.z64` 를 받아 BPS 한글 패치를 적용해 빌드합니다.
+
+### 내 파일로 새 포트 만들기
+```bash
+python3 build.py new mygame "내 게임 (My Game)" --nro /path/to/mygame.nro [--icon /path/to/icon.jpg]
+python3 build.py guide mygame
+python3 build.py mygame --rom /path/to/game-data --zip
+```
+덮어쓸 파일(한글 사전, 설정 등)은 `ports/mygame/overlay/` 에 같은 구조로 넣습니다.
 
 ---
 

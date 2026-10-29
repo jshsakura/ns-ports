@@ -7,7 +7,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ports = json.load(open(os.path.join(ROOT, "ports.json"), encoding="utf-8"))
 
 
-def kind(pid):
+def kind(pid, p):
+    if p.get("kind"):  # ports.json 에 명시된 조립/빌드 구분을 우선한다
+        return p["kind"]
     d = os.path.join(ROOT, "ports", pid)
     if os.path.exists(os.path.join(d, "recipe.py")):
         return "source" if pid != "ge007" else "source (separate repo)"
@@ -16,7 +18,7 @@ def kind(pid):
 
 rows = []
 for p in sorted(ports, key=lambda p: p["id"]):
-    k = kind(p["id"])
+    k = kind(p["id"], p)
     need = p.get("required_assets") or "game data"
     nro = "built on your machine" if k.startswith("source") else "place your built `%s` in `ports/%s/in/`" % (p.get("nro", p["id"] + ".nro"), p["id"])
     up = p.get("upstream", "").replace("https://github.com/", "")
@@ -45,7 +47,7 @@ git clone https://github.com/jshsakura/ns-ports.git && cd ns-ports
 python3 build.py <port-id> --rom <your game data> --variant ko        # Korean edition
 python3 build.py <port-id> --rom <your game data> --variant original  # stock edition
 ```
-Add `--zip` for a zip, or `--deploy <homebrew folder>` to assemble straight into a CookingFoil library.
+Add `--zip` for a zip.
 Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 
 - `source`: the recipe fetches the upstream project, applies our patches and builds the NRO in Docker.

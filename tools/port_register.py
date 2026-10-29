@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""스위치 포트를 쇼핑몰 라이브러리에 조립하고 등록한다.
+"""스위치 포트를 홈브루 폴더에 조립한다.
 
 사용: register.py <프로필.json> [--variant ko|original] [--data <게임 데이터 폴더>] [--dry-run] [--no-register]
 
@@ -19,7 +19,7 @@
     COOK_API_TOKEN     관리자 화면에서 만든 자동화 토큰 (cft_...). 값은 출력하지 않는다
   토큰은 설정 파일에 직접 쓰지 않고 token_file(권한 600 권장)이 가리키는 파일에서 읽는다.
 
-같은 크기인데 내용이 바뀐 파일은 끝에 여분을 붙여 크기를 바꾼다(쇼핑몰이 크기만 보고 넘기는 문제).
+같은 크기인데 내용이 바뀐 파일은 끝에 여분을 붙여 크기를 바꾼다(크기만 보고 넘기는 동기화 문제).
 """
 import argparse, hashlib, json, os, re, shutil, struct, sys, urllib.request, urllib.error
 
@@ -74,6 +74,26 @@ def need(p, path):
     return full
 
 
+def check_icon(path):
+    """앱 아이콘은 256x256 JPEG 여야 한다. 아니면 무엇이 틀렸고 어떻게 고치는지 알려 주고 멈춘다."""
+    b = open(path, 'rb').read()
+    if b[:2] != b'\xff\xd8':
+        sys.exit('아이콘이 JPEG 가 아닙니다: %s\n256x256 JPEG 로 저장해서 다시 두세요 (예: convert 원본.png -resize 256x256! icon.jpg).' % path)
+    i = 2
+    while i + 9 < len(b):
+        if b[i] != 0xFF:
+            i += 1
+            continue
+        m = b[i + 1]
+        if 0xC0 <= m <= 0xCF and m not in (0xC4, 0xC8, 0xCC):
+            h, w = int.from_bytes(b[i + 5:i + 7], 'big'), int.from_bytes(b[i + 7:i + 9], 'big')
+            if (w, h) != (256, 256):
+                sys.exit('아이콘 크기가 %dx%d 입니다: %s\n256x256 으로 맞추세요 (예: convert 원본.jpg -resize 256x256! icon.jpg).' % (w, h, path))
+            return path
+        i += 2 + int.from_bytes(b[i + 2:i + 4], 'big')
+    sys.exit('아이콘 크기를 읽지 못했습니다: ' + path)
+
+
 def retitle_nro(src, icon, title):
     """ASET 의 아이콘과 NACP 이름을 바꾼다(make-nro.py 와 같은 규칙)."""
     b = open(src, 'rb').read()
@@ -87,7 +107,7 @@ def retitle_nro(src, icon, title):
         sys.exit('이름이 너무 깁니다')
     for k in range(NACP_LANGS):
         nacp[k * NACP_STRIDE:k * NACP_STRIDE + NACP_NAME] = raw + b'\0' * (NACP_NAME - len(raw))
-    jpg = open(icon, 'rb').read() if icon else b[i + off(8):i + off(8) + off(16)]  # 아이콘을 안 주면 NRO 의 것을 그대로 쓴다
+    jpg = open(check_icon(icon), 'rb').read() if icon else b[i + off(8):i + off(8) + off(16)]  # 아이콘을 안 주면 NRO 의 것을 그대로 쓴다
     rom = b[i + off(40):i + off(40) + off(48)]  # romfs 는 그대로 이어 붙인다
     rom_off = 0x38 + len(jpg) + len(nacp)
     hdr = b'ASET' + struct.pack('<I', 0) + struct.pack('<QQQQQQ', 0x38, len(jpg), 0x38 + len(jpg), len(nacp), rom_off if rom else 0, len(rom))
@@ -248,11 +268,13 @@ def main():
         os.makedirs(os.path.dirname(ic), exist_ok=True)
         open(ic, 'wb').write(fetch_url({'url': p['icon_url'], 'sha256': p.get('icon_sha256')}))
         p['icon'] = ic
+    if not p.get('icon') and os.path.exists(rel(p, 'icon.jpg')):  # ports/<id>/icon.jpg 를 두면 자동으로 쓴다
+        p['icon'] = 'icon.jpg'
     nro_src = rel(p, p['nro']['src'])
     if not os.path.exists(nro_src):  # in/ 에 없으면 이미 샵에 올라가 있는 NRO 를 그대로 쓴다(검증된 것)
         deployed = os.path.join(root, p['nro'].get('out', p['id'] + '.nro'))
         if os.path.exists(deployed):
-            print('in/ 에 NRO 가 없어 샵 폴더의 것을 씁니다:', os.path.basename(deployed))
+            print('in/ 에 NRO 가 없어 배포 폴더의 것을 씁니다:', os.path.basename(deployed))
             nro_src = deployed
     nro = open(nro_src, 'rb').read() if nro_src.startswith(root) else retitle_nro(need(p, nro_src), need(p, p['icon']) if p.get('icon') else None, p['title'])
     d.write(p['nro'].get('out', p['id'] + '.nro'), nro)

@@ -1,0 +1,10 @@
+[
+  {
+    "path": "in/zelda3t.nro",
+    "what": "스위치용 빌드 NRO"
+  },
+  {
+    "path": "in/data",
+    "what": "data/ (images, maps, musics, sounds, texts)"
+  }
+]

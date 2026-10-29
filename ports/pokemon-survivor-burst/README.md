@@ -21,7 +21,7 @@ Pokémon Survivor Burst 9.0.3 을 [rgss-switch](https://github.com/randygil/rgss
 
 ## 구성 (완성본 기준)
 
-`SD:/switch/pokemon-survivor-burst/` 안에 `pokemon-survivor-burst.nro`, `mkxp.json`, `Game.ini`, `soundfont.sf2`, `lib/`, `Data/`, `Graphics/`, `Audio/`, `Fonts/`, `Plugins/` (파일 약 6,260개, 약 0.91GiB). `mkxp.json` 은 `kit/pack_psb.py` 로 층을 쌓아 생성했다.
+`SD:/switch/pokemon-survivor-burst/` 안에 `pokemon-survivor-burst.nro`, `mkxp.json`, `Game.ini`, `soundfont.sf2`, `lib/`, `Data/`, `Graphics/`, `Audio/`, `Fonts/`, `Plugins/` (파일 약 6,260개, 약 0.91GiB). `mkxp.json` 은 `pack_psb.py` 로 층을 쌓아 생성했다.
 
 ## 실행
 
@@ -38,32 +38,32 @@ Pokémon Survivor Burst 9.0.3 을 [rgss-switch](https://github.com/randygil/rgss
 
 게임에 내장돼 있다(`fusion-poke-pixel-ko` 폰트 + `messages_korean_*.dat`). 따로 패치하지 않는다.
 
-## 변환 키트 (`kit/`)
+## 변환 키트
 
-게임에서 파생된 파일이 하나도 없는 변환 스크립트 모음이다. 라이선스는 이 저장소의 MIT 가 아니라 **GPLv2+** 이고(`kit/LICENSE`, 크레딧은 `kit/NOTICE.md`), rgss-switch 의 `Empaquetar.ps1` 을 파이썬으로 옮긴 파생이라서 같은 조건으로 둔다.
+변환 스크립트는 별도 공개 저장소 [jshsakura/psb-switch-kit](https://github.com/jshsakura/psb-switch-kit) 에 있다. 게임에서 파생된 파일이 하나도 없는 도구 모음이고, rgss-switch 의 `Empaquetar.ps1` 을 파이썬으로 옮긴 파생이라 라이선스는 이 저장소의 MIT 가 아니라 **GPLv2+** 이다(키트의 `LICENSE`, 크레딧은 `NOTICE.md`).
 
-| 파일 | 하는 일 |
+| 키트 안의 파일 | 하는 일 |
 | :--- | :--- |
-| `kit/pack_psb.py` | 사용자가 푼 게임 폴더와 rgss-switch 를 묶어 `out/switch/pokemon-survivor-burst/` 를 만든다. 빌드 전에 `ruby -c` 와 심 행동 테스트를 돌려 실패하면 중단한다 |
-| `kit/widescreen_patch.py` | `Scripts.rxdata` 의 화면 폭 변경(원본 자동 보존) |
-| `kit/lib/nx-psb-fixes.rb` | 이름 입력의 게임패드 매핑과 스플래시·로드 화면 중앙 정렬 런타임 심 |
-| `kit/tests/nx_shims_test.rb` | 위 심의 행동 테스트 |
+| `pack_psb.py` | 사용자가 푼 게임 폴더와 rgss-switch 를 묶어 `out/switch/pokemon-survivor-burst/` 를 만든다. 빌드 전에 `ruby -c` 와 심 행동 테스트를 돌려 실패하면 중단한다 |
+| `widescreen_patch.py` | `Scripts.rxdata` 의 화면 폭 변경(원본 자동 보존) |
+| `lib/nx-psb-fixes.rb` | 이름 입력의 게임패드 매핑과 스플래시·로드 화면 중앙 정렬 런타임 심 |
+| `tests/nx_shims_test.rb` | 위 심의 행동 테스트 |
 
-사용법은 `kit/README.ko.md` 를 본다. 게임 본체와 rgss-switch 엔진(NRO 포함)은 이 저장소에도 키트에도 없고 각자 받는다(저장소 릴리스 페이지, 내가 쓴 것은 v0.1.0 이고 이후 v0.2.x 가 나왔지만 써 보지 않았다). 내 라이브러리의 완성본에는 이 키트에 없는 조정(타이틀 배경 교체, 성능 옵션, 엔티티 상한 등)이 더 들어 있으므로 키트 결과가 완성본과 똑같지는 않다.
+게임 본체와 rgss-switch 엔진(NRO 포함)은 이 저장소에도 키트에도 없고 각자 받는다(엔진은 [저장소 릴리스](https://github.com/randygil/rgss-switch/releases), 내가 쓴 것은 v0.1.0 이고 이후 v0.2.x 가 나왔지만 써 보지 않았다). 내 라이브러리의 완성본에는 키트에 없는 조정(타이틀 배경 교체, 성능 옵션, 엔티티 상한 등)이 더 들어 있으므로 키트 결과가 완성본과 똑같지는 않다.
 
 ### Ruby 가 필요한 이유
 
 Ruby 는 스위치가 아니라 **변환하는 PC** 에만 필요하다(`sudo apt install ruby-full`).
 
 - 게임이 RPG Maker XP(RGSS1)로 만든 Pokémon Essentials 계열 팬게임이라 스크립트가 전부 Ruby 다. rgss-switch 가 CRuby 3.1.7 을 품고 있어 스위치에서 그대로 돈다(`mkxp.json` 의 `rubyLoadpath: ["lib"]`, 게임 계열 `ruby31`).
-- `kit/lib/nx-psb-fixes.rb` 같은 런타임 심도 Ruby 이고, `mkxp.json` 의 `preloadScript` 로 부팅 때 먼저 읽힌다.
-- `kit/pack_psb.py` 는 빌드 전에 PC 의 Ruby 로 ① `lib/` 와 `Plugins/` 의 모든 `.rb` 를 `ruby -c` 로 문법 검사하고 ② `kit/tests/nx_shims_test.rb` 로 RGSS 를 흉내 낸 스텁 위에서 심 동작을 검사한다. 하나라도 실패하면 빌드를 멈춘다. 문법 오류가 든 채로 기기에 올라가 재다운로드를 여러 번 한 일이 있어서 만든 관문이다.
+- `lib/nx-psb-fixes.rb` 같은 런타임 심도 Ruby 이고, `mkxp.json` 의 `preloadScript` 로 부팅 때 먼저 읽힌다.
+- `pack_psb.py` 는 빌드 전에 PC 의 Ruby 로 ① `lib/` 와 `Plugins/` 의 모든 `.rb` 를 `ruby -c` 로 문법 검사하고 ② `tests/nx_shims_test.rb` 로 RGSS 를 흉내 낸 스텁 위에서 심 동작을 검사한다. 하나라도 실패하면 빌드를 멈춘다. 문법 오류가 든 채로 기기에 올라가 재다운로드를 여러 번 한 일이 있어서 만든 관문이다.
 - 알려진 함정: `class_eval` 블록 안의 `def` 에서는 클래스 상수가 렉시컬로 풀리지 않아 `self.class.const_get(:KEY)` 로 써야 한다. 조용한 `rescue` 가 `NameError` 를 삼키면 패치가 말없이 죽는다.
 - 이 저장소를 준비한 컴퓨터에는 Ruby 가 없어 위 검사를 돌리지 못했다. 키트는 Ruby 없이 빌드를 시작하면 "ruby 없음" 으로 멈춘다.
 
 ## 와이드(16:9)
 
-`Data/Scripts.rxdata` 의 `Settings::SCREEN_WIDTH` 를 512 에서 683 으로, `mkxp.json` 의 `defScreenW` 도 683 으로 바꿨다(683x384, 16:9). 바꾸는 스크립트는 `kit/widescreen_patch.py` 이고 원본은 `.orig` 로 보존한다. `Scripts.rxdata` 는 게임 파일이라 이 저장소에 담지 않는다. 일부 Essentials 메뉴가 어긋나 보일 수 있다.
+`Data/Scripts.rxdata` 의 `Settings::SCREEN_WIDTH` 를 512 에서 683 으로, `mkxp.json` 의 `defScreenW` 도 683 으로 바꿨다(683x384, 16:9). 바꾸는 스크립트는 키트의 `widescreen_patch.py` 이고 원본은 `.orig` 로 보존한다. `Scripts.rxdata` 는 게임 파일이라 이 저장소에 담지 않는다. 일부 Essentials 메뉴가 어긋나 보일 수 있다.
 
 ## 알려진 제약
 

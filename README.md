@@ -73,7 +73,7 @@
 | **[`nfsmw`](ports/nfsmw/README.md)** | **니드 포 스피드: 모스트 원티드** | Racing / Xbox 360 Recomp | 한국판(NTSC-K) 정적 리컴파일, 30fps | ✅ | 🧪 기기 시험 전 |
 | **[`jazz`](ports/jazz/README.md)** | **재즈 잭래빗 2** | Platformer / PC | Jazz² Resurrection C++ 엔진 | ➖ | 📦 레시피 수록 완료 |
 | **[`doom64`](ports/doom64/README.md)** | **둠 64 EX** | FPS / N64 | Doom64EX C++ 네이티브 포트 | ➖ | 📦 레시피 수록 완료 |
-| **[`pokemon-survivor-burst`](ports/pokemon-survivor-burst/README.md)** | **포켓몬 서바이버 버스트** | Fan Game | mkxp-z 기반 팬게임, 기록용(비공개) | ➖ | 📦 레시피 수록 완료 |
+| **[`pokemon-survivor-burst`](ports/pokemon-survivor-burst/README.md)** | **포켓몬 서바이버 버스트** | Fan Game | mkxp-z 기반 팬게임, [변환 키트](https://github.com/jshsakura/psb-switch-kit) | ➖ | 📦 레시피 수록 완료 |
 | **[`dragonball-z-rpg`](ports/dragonball-z-rpg/README.md)** | **드래곤볼 Z RPG** | Fan RPG | 한글 자막 지원 | ➖ | 📦 레시피 수록 완료 |
 | **[`wwhd`](ports/wwhd/README.md)** | **바람의 지휘봉 HD** | Action / GC | 한글 패치 pack 적용 가이드 ([배치표](ports/wwhd/README.md)) | ➖ | 🎯 실기 검증 구성 재현 |
 

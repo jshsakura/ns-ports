@@ -38,6 +38,8 @@ WiiU 바람의 지휘봉 HD 를 스위치에서 네이티브로 구동하는 [ce
 패치 pack 하나로 조립 시 두 언어 슬롯(`permanent_2d_UsEnglish/JpJapanese.pack`)에
 같은 내용이 들어가, 게임 내 언어 설정과 상관없이 한글이 뜬다(실기 검증된 배포본과 동일 구성).
 
+NRO 를 만드는 법은 [BUILD.md](BUILD.md).
+
 ## 조립
 
 ```

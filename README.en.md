@@ -1,6 +1,6 @@
 # NS Ports Hub (ns-ports)
 
-Personal notes from my own tests of running old games on the Nintendo Switch as native ports with Korean localisation.
+Personal notes from my own tests of running old games on the Nintendo Switch as native ports, some of them with Korean localisation.
 This is a record of what I tried, not a service or a release. Ports I have checked on a real console are marked as verified in the status column; the rest are recipes or not yet checked. Each port folder lists which
 file went where under what name; `build.py` is a small helper that packs them into a homebrew folder the same way.
 No game data, NRO or patched assets are included, and nothing is fetched for you.

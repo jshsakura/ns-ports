@@ -1,11 +1,10 @@
-# NS Korean Ports Hub (ns-ports)
+# NS Ports Hub (ns-ports)
 
 [![Platforms](https://img.shields.io/badge/platform-NS%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/ns-ports)
-[![Language](https://img.shields.io/badge/language-Korean%20(100%25)-red.svg)](README.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Ports](https://img.shields.io/badge/native%20ports-90-orange.svg)](ports.json)
 
-**닌텐도 스위치(NS / Horizon OS)에서 오래된 게임을 한국어로 돌려 본 개인 포팅 테스트 기록**입니다.
+**닌텐도 스위치(NS / Horizon OS)에서 오래된 게임을 네이티브 포트로 돌려 보고, 일부는 한글화한 개인 테스트 기록**입니다.
 
 제가 직접 해 본 방법과 결과를 적어 둔 것이라 서비스나 배포물이 아닙니다. 실기에서 확인한 포트는 상태 열에 확인됨(🎯)으로 표시했고, 나머지는 레시피만 정리했거나 확인 전입니다. 포트마다 어떤 파일을 어디에 어떤 이름으로 두었는지 배치표로 남겼고, 같은 방식으로 폴더를 묶는 작은 스크립트(`build.py`)를 곁들였습니다. 이 저장소에는 게임 데이터, NRO, 패치가 적용된 완성 데이터가 없고, 차이 패치만 들어 있습니다. 필요한 파일은 각자 합법적으로 구해야 합니다.
 

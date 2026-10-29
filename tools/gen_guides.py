@@ -2,31 +2,38 @@
 """각 ports/<id>/README.md 맨 위에 '필요한 파일 + 명령어' 블록을 넣거나 갱신한다 (ports.json + slots.json 기준)."""
 import json
 import os
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BEGIN, END = "<!-- quick:begin -->", "<!-- quick:end -->"
+sys.path.insert(0, ROOT)
+import build  # noqa: E402  (칸 목록과 안내 문구를 build.py 와 똑같이 쓴다)
+
 ports = json.load(open(os.path.join(ROOT, "ports.json"), encoding="utf-8"))
 
 
 def block(p):
     pid = p["id"]
-    d = os.path.join(ROOT, "ports", pid)
+    slots = build.load_slots(pid)
     lines = [BEGIN, "## 필요한 파일과 명령어", ""]
-    sp = os.path.join(d, "slots.json")
-    if os.path.exists(sp):
-        lines += ["| 넣을 위치 | 파일 |", "| :--- | :--- |"]
-        for s in json.load(open(sp, encoding="utf-8")):
-            lines.append("| `ports/%s/%s` | %s%s |" % (pid, s["path"], s["what"], " (한글 판만)" if s.get("variant") == "ko" else ""))
+    if slots is None:
+        lines += ["이 포트는 소스부터 빌드하거나 전용 레시피를 씁니다. 필요한 것: %s" % (p.get("required_assets") or "게임 데이터"), ""]
     else:
-        lines.append("필요한 것: %s" % (p.get("required_assets") or "게임 데이터"))
-        lines.append("NRO: `ports/%s/in/%s`" % (pid, p.get("nro", pid + ".nro")))
+        if not any(sl["path"] == "icon.jpg" for sl in slots):
+            slots = slots + [build.ICON_SLOT]
+        lines += ["**1. 받아서 둘 것**", "", "| 놓을 위치 | 무엇 | 구하는 곳 |", "| :--- | :--- | :--- |"]
+        for sl in slots:
+            tag = (" (한글 판만)" if sl.get("variant") == "ko" else "") + (" (선택)" if sl.get("optional") else "")
+            lines.append("| `ports/%s/%s` | %s%s | %s |" % (pid, sl["path"], sl["what"], tag, (sl.get("get") or "-").replace("|", "/")))
+        lines += ["", "**2. 이미지**: 앱 아이콘(`icon.jpg`, 256x256 JPEG)만 쓰이고 없으면 NRO 의 기본 아이콘을 씁니다. 이미지는 저장소에 없으니 필요하면 직접 구해 위 위치에 두세요. 배너와 스크린샷은 다루지 않습니다.", "",
+                  "**3. 확인하고 실행**", "", "```", "python3 build.py guide %s    # 빈 칸과 구하는 곳 확인" % pid, "python3 build.py %s --zip" % pid, "```"]
     if p.get("origin") or p.get("upstream"):
         lines.append("")
         if p.get("origin"):
             lines.append("- 원 프로젝트: %s" % p["origin"])
         if p.get("upstream"):
             lines.append("- 스위치 포트 소스: %s" % p["upstream"])
-    lines += ["", "```", "python3 build.py check %s    # 빈 칸 확인" % pid, "python3 build.py %s --zip" % pid, "```", END, ""]
+    lines += [END, ""]
     return "\n".join(lines)
 
 

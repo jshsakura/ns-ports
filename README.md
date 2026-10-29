@@ -25,7 +25,7 @@
 | :--- | :--- |
 | `build.py` | 포트 조립, 새 포트 뼈대 생성(`new`), 목록(`--list`) |
 | `ports/<id>/recipe.py` | 포트별 변환과 빌드 (예: `wwhd` 는 한글 pack 을 두 언어 슬롯에 배치) |
-| `ports/<id>/slots.json` | 채워야 할 알맹이 칸 목록. `python3 build.py check <id>` 가 빈칸을 알려 주고, 빌드 전에도 자동 점검 |
+| `ports/<id>/slots.json` | 채워야 할 알맹이 칸 목록. `python3 build.py guide <id>` 가 빈칸과 구하는 곳을 알려 주고, 빌드 전에도 자동 점검(없으면 `port.json` 과 `ports.json` 에서 만든다) |
 | `tools/dante_kr_patch.py` | 단테스 인페르노 한글 패치 적용 |
 | `tools/sly1_extract` | 슬라이 쿠퍼 1 한국판 디스크에서 게임 데이터 추출 |
 | `tools/gen_install.py` | `ports.json` 으로 INSTALL.md 준비물 표 생성 |
@@ -81,46 +81,35 @@
 
 ## 🚀 사용법 (Getting Started)
 
-> 포트별 준비물은 [INSTALL.md](INSTALL.md), 한국어화 적용 방법은 각 포트 가이드(`ports/<id>/README.md`)를 보십시오.
+어느 포트든 같은 3단계입니다. 헤매지 않도록 무엇을 어디서 받아 어디에 둘지 명령 하나가 알려 줍니다.
 
-### 1. 저장소 클론
 ```bash
-git clone https://github.com/jshsakura/ns-ports.git
-cd ns-ports
-python3 build.py --list
+git clone https://github.com/jshsakura/ns-ports.git && cd ns-ports
+python3 build.py --list              # 포트 목록
+python3 build.py guide <포트 ID>      # 1) 받아서 둘 것  2) 이미지 안내  3) 실행 명령
 ```
 
-### 2. 가이드대로 파일 배치 (예: 바람의 지휘봉 HD)
-[ports/wwhd/README.md](ports/wwhd/README.md) 의 배치표대로 파일을 둡니다.
+1. **받아서 둘 것**: `guide` 가 `ports/<id>/` 아래 빈 칸과 구하는 곳을 표로 보여 줍니다. NRO, 게임 데이터, 한글 패치 같은 파일을 각자 구해 그 위치에 둡니다. 포트 가이드(`ports/<id>/README.md`) 맨 위에도 같은 표가 있습니다.
+2. **이미지**: 이 저장소에는 이미지가 없습니다. 앱 아이콘만 쓰이고(선택) `ports/<id>/icon.jpg` 에 **256x256 JPEG** 를 직접 구해 두면 적용됩니다. 안 두면 NRO 의 기본 아이콘이 나옵니다. 배너와 스크린샷은 다루지 않습니다.
+3. **실행**: `python3 build.py <포트 ID> --zip`. 칸이 비어 있으면 실행 전에 같은 안내를 다시 보여 주고 멈춥니다. 결과는 `ports/<id>/dist/switch/<id>/` 와 zip 입니다. 폴더를 SD 카드 `sd:/switch/` 로 복사해 홈브루 메뉴에서 실행합니다.
 
-| 넣을 파일 | 위치 |
-| :--- | :--- |
-| SwitchWakerHD 빌드 NRO | `ports/wwhd/in/wwhd.nro` |
-| 한글 패치의 `permanent_2d_UsEnglish.pack` | `ports/wwhd/in/permanent_2d_UsEnglish.pack` |
-| 한글 패치의 `Title_00.szs` | `ports/wwhd/in/Title_00.szs` |
+예) 바람의 지휘봉 HD: [ports/wwhd/README.md](ports/wwhd/README.md)
 
-### 3. 조립
 ```bash
-# --rom 에는 WiiU 덤프에서 content/ 가 보이는 폴더를 지정
-python3 build.py wwhd --rom /path/to/wwhd_dump --zip                        # 한글 판
+python3 build.py guide wwhd
+python3 build.py wwhd --rom /path/to/wwhd_dump --zip                        # 한글 판 (--rom 은 content/ 가 보이는 Wii U 덤프 루트)
 python3 build.py wwhd --rom /path/to/wwhd_dump --variant original --zip     # 원본 그대로
 ```
-결과(`wwhd.nro` + `game/`)를 `sd:/switch/wwhd/` 로 복사해 홈브루 메뉴에서 실행합니다.
 
 > 소스 빌드 포트(`cstrike`, `openrct2`, `zelda3-ko`, `ge007`)는 Docker(devkitPro) 로 NRO 를 직접 빌드합니다. 골든아이 007 은 전용 빌더 저장소([goldeneye-007-switch](https://github.com/jshsakura/goldeneye-007-switch))가 사용자의 일본판 `baserom.j.z64` 를 받아 BPS 한글 패치를 적용해 빌드합니다.
 
-### 4. 내 파일로 바로 쓰기 (새 포트 만들기)
-이미 빌드된 NRO 와 아이콘, 내 게임 데이터만 있으면 포트 뼈대가 바로 만들어집니다.
-
+### 내 파일로 새 포트 만들기
 ```bash
-# 1) 뼈대 만들기 (ports/<id>/ 와 목록 항목이 생깁니다)
-python3 build.py new mygame "내 게임 (My Game)" --nro /path/to/mygame.nro --icon /path/to/icon.jpg
-
-# 2) 덮어쓸 파일(한글 사전, 설정 등)은 ports/mygame/overlay/ 에 같은 구조로 넣습니다
-
-# 3) 내 게임 데이터와 합쳐 조립 (--zip 으로 압축)
-python3 build.py mygame --rom /path/to/game-data
+python3 build.py new mygame "내 게임 (My Game)" --nro /path/to/mygame.nro [--icon /path/to/icon.jpg]
+python3 build.py guide mygame
+python3 build.py mygame --rom /path/to/game-data --zip
 ```
+덮어쓸 파일(한글 사전, 설정 등)은 `ports/mygame/overlay/` 에 같은 구조로 넣습니다.
 
 ---
 

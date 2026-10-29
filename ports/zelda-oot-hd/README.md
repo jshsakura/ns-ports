@@ -3,19 +3,26 @@
 <!-- quick:begin -->
 ## 필요한 파일과 명령어
 
-| 넣을 위치 | 파일 |
-| :--- | :--- |
-| `ports/zelda-oot-hd/in/zelda-oot-hd.nro` | Ship of Harkinian 9.3.0 Switch 빌드 NRO |
-| `ports/zelda-oot-hd/in/data/oot.o2r` | 내 롬으로 SoH 가 만든 oot.o2r |
-| `ports/zelda-oot-hd/in/data/soh.o2r` | SoH 릴리스에 든 soh.o2r |
-| `ports/zelda-oot-hd/in/data/mods/OoT_Reloaded_Korean_Pretendard_HD.o2r` | 한글 Pretendard HD 모드 (3.89GB) (한글 판만) |
+**1. 받아서 둘 것**
 
-- 스위치 포트 소스: https://github.com/HarbourMasters/Shipwright
+| 놓을 위치 | 무엇 | 구하는 곳 |
+| :--- | :--- | :--- |
+| `ports/zelda-oot-hd/in/zelda-oot-hd.nro` | Ship of Harkinian 9.3.0 Switch 빌드 NRO | https://github.com/HarbourMasters/Shipwright 의 Switch 빌드 |
+| `ports/zelda-oot-hd/in/data/oot.o2r` | 내 롬으로 SoH 가 만든 oot.o2r | 내 정품 롬을 SoH 에 넣어 생성 |
+| `ports/zelda-oot-hd/in/data/soh.o2r` | SoH 릴리스에 든 soh.o2r | https://github.com/HarbourMasters/Shipwright/releases |
+| `ports/zelda-oot-hd/in/data/mods/OoT_Reloaded_Korean_Pretendard_HD.o2r` | 한글 Pretendard HD 모드 (3.89GB) (한글 판만) | OoT Reloaded 한글 모드 배포처 (직접 확인) |
+| `ports/zelda-oot-hd/icon.jpg` | 앱 아이콘 (256x256 JPEG) (선택) | 직접 구하거나 만든다. 없으면 NRO 에 든 아이콘을 그대로 쓴다 |
+
+**2. 이미지**: 앱 아이콘(`icon.jpg`, 256x256 JPEG)만 쓰이고 없으면 NRO 의 기본 아이콘을 씁니다. 이미지는 저장소에 없으니 필요하면 직접 구해 위 위치에 두세요. 배너와 스크린샷은 다루지 않습니다.
+
+**3. 확인하고 실행**
 
 ```
-python3 build.py check zelda-oot-hd    # 빈 칸 확인
+python3 build.py guide zelda-oot-hd    # 빈 칸과 구하는 곳 확인
 python3 build.py zelda-oot-hd --zip
 ```
+
+- 스위치 포트 소스: https://github.com/HarbourMasters/Shipwright
 <!-- quick:end -->
 
 Ship of Harkinian v9.3.0 네이티브 포트에 60FPS 와이드스크린과 한글 Pretendard HD 모드(3.89GB)를 얹은 구성의 방법 가이드. 실기 검수 완료.
@@ -31,7 +38,7 @@ Ship of Harkinian v9.3.0 네이티브 포트에 60FPS 와이드스크린과 한�
 | `soh.o2r` ([Ship of Harkinian 릴리스](https://github.com/HarbourMasters/Shipwright/releases)에 들어 있는 것) | `ports/zelda-oot-hd/in/data/soh.o2r` |
 | OoT Reloaded 한글 Pretendard HD 모드 | `ports/zelda-oot-hd/in/data/mods/OoT_Reloaded_Korean_Pretendard_HD.o2r` |
 
-모드가 3.89GB 라 복사하지 말고 심볼릭 링크나 하드링크로 둬도 된다. 비어 있는 칸은 `python3 build.py check zelda-oot-hd` 로 확인한다.
+모드가 3.89GB 라 복사하지 말고 심볼릭 링크나 하드링크로 둬도 된다. 비어 있는 칸은 `python3 build.py guide zelda-oot-hd` 로 확인한다.
 
 ## 조립
 

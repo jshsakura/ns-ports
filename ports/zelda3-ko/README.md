@@ -3,15 +3,10 @@
 <!-- quick:begin -->
 ## 필요한 파일과 명령어
 
-필요한 것: zelda3_assets.dat
-NRO: `ports/zelda3-ko/in/zelda3.nro`
+이 포트는 소스부터 빌드하거나 전용 레시피를 씁니다. 필요한 것: zelda3_assets.dat
+
 
 - 스위치 포트 소스: https://github.com/snesrev/zelda3
-
-```
-python3 build.py check zelda3-ko    # 빈 칸 확인
-python3 build.py zelda3-ko --zip
-```
 <!-- quick:end -->
 
 snesrev/zelda3 (`a23632a`) 의 스위치 빌드. 두 판이 있다.

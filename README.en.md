@@ -29,7 +29,9 @@ python3 build.py wwhd --rom /path/to/wwhd-dump --variant original --zip  # stock
 ports marked `source` in INSTALL.md build their NRO in Docker (devkitPro image), and GoldenEye 007 uses its own
 builder repo that BPS-patches your `baserom.j.z64`.
 
-`python3 build.py check <id>` lists which input slots (`ports/<id>/slots.json`) are still empty; the same check runs before every build.
+`python3 build.py guide <id>` lists what to get, where to put it and which command to run: the empty input slots with where to get each, the image note, then the build command. The same check runs before every build. Slots come from `ports/<id>/slots.json`, or from `port.json` and `ports.json` when that file is absent.
+
+Images: none are shipped. Only the app icon is used (optional): put your own 256x256 JPEG at `ports/<id>/icon.jpg`, otherwise the NRO's own icon is kept. Banners and screenshots are not handled here.
 
 ## Use your own files (new port)
 

@@ -3,15 +3,10 @@
 <!-- quick:begin -->
 ## 필요한 파일과 명령어
 
-필요한 것: 정품 cstrike/ 및 valve/ 데이터
-NRO: `ports/cstrike/in/cstrike.nro`
+이 포트는 소스부터 빌드하거나 전용 레시피를 씁니다. 필요한 것: 정품 cstrike/ 및 valve/ 데이터
+
 
 - 스위치 포트 소스: https://github.com/FWGS/xash3d-fwgs
-
-```
-python3 build.py check cstrike    # 빈 칸 확인
-python3 build.py cstrike --zip
-```
 <!-- quick:end -->
 
 신형 엔진(FWGS)과 cs16-client 로 만든 스위치용 카스. 한글 입력과 표시, 터치/게임패드/자이로 조작,

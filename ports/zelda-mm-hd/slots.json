@@ -1,0 +1,23 @@
+[
+  {
+    "path": "in/zelda-mm-hd.nro",
+    "what": "2 Ship 2 Harkinian 5.0.1 Switch 빌드 NRO",
+    "get": "https://github.com/2ship2harkinian/2ship2harkinian 의 Switch 빌드"
+  },
+  {
+    "path": "in/data/mm.o2r",
+    "what": "내 정품 롬으로 2Ship 이 만든 mm.o2r",
+    "get": "내 롬을 2Ship2Harkinian(PC 판)에 넣어 생성"
+  },
+  {
+    "path": "in/data/2ship.o2r",
+    "what": "2Ship 릴리스에 든 2ship.o2r",
+    "get": "https://github.com/2ship2harkinian/2ship2harkinian/releases 의 압축 안"
+  },
+  {
+    "path": "in/data/mods/MM_Reloaded_v11.0.3_HD.o2r",
+    "what": "MM Reloaded v11.0.3 HD 텍스처 모드 (2.95GB)",
+    "optional": true,
+    "get": "MM Reloaded 배포처에서 직접 받는다. 없으면 HD 텍스처 없이 조립된다"
+  }
+]

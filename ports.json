@@ -505,6 +505,22 @@
     "obtained": "built"
   },
   {
+    "id": "gears2",
+    "name": "기어스 오브 워 2 (Gears of War 2)",
+    "category": "Shooter / Xbox 360 Recomp",
+    "engine": "ReXGlue 정적 리컴파일 + deko3d",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "Xbox 360판 기어스 오브 워 2를 정적 리컴파일한 네이티브 포트. CPU 오버클럭이 필요합니다. 코드, 셰이더, NRO는 사용자 컴퓨터에서 자기 디스크로 만듭니다",
+    "required_assets": "Xbox 360 소매판 디스크 game 폴더(default.xex, GearGame)와 gow2_shaders.dslib, shadercache_dksh.bin",
+    "nro": "gears2-nx.nro",
+    "upstream": "https://github.com/VasilkovND/gears2-nx",
+    "version": "v1.0.0",
+    "obtained": "built",
+    "origin": "https://github.com/santiquiroz/gears-of-war-2-pc-port"
+  },
+  {
     "id": "sa2",
     "name": "소닉 어드벤처 2 (Sonic Adventure 2)",
     "category": "Action / Xbox 360 Recomp",

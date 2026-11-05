@@ -51,6 +51,7 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `freespace2` | 프리스페이스 2 정품 게임 데이터 | assemble | place your built `freespace2.nro` in `ports/freespace2/in/` | NaGaa95/freespace2_nx 1.0.1, downloaded |
 | `futari` | Xbox 360판 벌레공주 두 사람 게임 데이터 | assemble | place your built `futari-nx.nro` in `ports/futari/in/` | ChanseyIsTheBest/futari-nx v1.0.3, downloaded |
 | `ge007` | baserom.j.z64 (일본판 순정 ROM) | source (separate repo) | built on your machine | - |
+| `gears2` | Xbox 360 소매판 디스크 game 폴더(default.xex, GearGame)와 gow2_shaders.dslib, shadercache_dksh.bin | assemble | place your built `gears2-nx.nro` in `ports/gears2/in/` | VasilkovND/gears2-nx v1.0.0, built |
 | `half-life` | valve/ 폴더 (원작 PC 게임 데이터) | assemble | place your built `half-life.nro` in `ports/half-life/in/` | FWGS/xash3d-fwgs 4211 |
 | `hurrican` | data/, lang/ | assemble | place your built `hurrican.nro` in `ports/hurrican/in/` | rsn8887/Hurrican |
 | `insaniquarium` | 인새니쿠아리움 정품 게임 데이터 | assemble | place your built `insaniquarium_nx.nro` in `ports/insaniquarium/in/` | ChanseyIsTheBest/insaniquarium_nx 1.0.1, downloaded |

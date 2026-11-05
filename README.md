@@ -35,7 +35,7 @@
 
 ---
 
-## 🎮 포트 카탈로그 (전체 90종)
+## 🎮 포트 카탈로그 (전체 91종)
 
 > 상태는 `ports.json` 의 `status` 를 그대로 옮긴 것이고 이 표는 `tools/gen_catalog.py` 가 만듭니다. 🎯 는 실기에서 확인한 것, 🟡 는 켜지는 것까지, 📦 는 레시피만 정리한 것, 🧪 는 아직 기기에서 안 해 본 것입니다. 빌더 저장소가 따로 있는 포트는 **빌더** 링크가 있습니다.
 
@@ -90,6 +90,7 @@
 | `doukutsu-rs` | 동굴 이야기 (Cave Story, doukutsu-rs) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/doukutsu-rs/README.md) · [원 프로젝트](https://github.com/doukutsu-rs/doukutsu-rs) |
 | `freespace2` | 프리스페이스 2 (Freespace 2) | Space Sim / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/freespace2/README.md) · [포트 소스](https://github.com/NaGaa95/freespace2_nx) |
 | `futari` | 벌레공주 두 사람 (Mushihimesama Futari) | Shooter / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/futari/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/futari-nx) |
+| `gears2` | 기어스 오브 워 2 (Gears of War 2) | Shooter / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/gears2/README.md) · [포트 소스](https://github.com/VasilkovND/gears2-nx) · [원 프로젝트](https://github.com/santiquiroz/gears-of-war-2-pc-port) |
 | `hurrican` | Hurrican | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/hurrican/README.md) · [포트 소스](https://github.com/rsn8887/Hurrican) · [원 프로젝트](https://github.com/Uukrull/Hurrican) |
 | `insaniquarium` | 인새니쿠아리움 (Insaniquarium) | Casual / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/insaniquarium/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/insaniquarium_nx) |
 | `killer-instinct` | 킬러 인스팅트 (Killer Instinct) | Fighting / Arcade | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/killer-instinct/README.md) · [포트 소스](https://github.com/Thorhax/Killer-Instinct-NX-Modern) |

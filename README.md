@@ -47,6 +47,7 @@
 | `fallout2` | 폴아웃 2 (Fallout 2) | CRPG / PC | ✅ | ➖ | 🎯 실기 확인 | [가이드](ports/fallout2/README.md) · [포트 소스](https://github.com/alexbatalov/fallout2-ce) |
 | `ge007` | 골든아이 007 (GoldenEye 007) | FPS / N64 | ✅ | ✅ | 🎯 실기 확인 | [가이드](ports/ge007/README.md) · [레시피](ports/ge007/recipe.py) · [빌더 저장소](https://github.com/jshsakura/goldeneye-007-switch) |
 | `half-life` | 하프라이프 1 (Half-Life) | FPS / PC | ✅ | ✅ | 🎯 실기 확인 | [가이드](ports/half-life/README.md) · [포트 소스](https://github.com/FWGS/xash3d-fwgs) |
+| `sly1` | 슬라이 쿠퍼 1 (Sly Cooper and the Thievius Raccoonus) | Action / PS2 Decomp | ✅ | ➖ | 🎯 실기 확인 | [가이드](ports/sly1/README.md) · [포트 소스](https://github.com/NaGaa95/ProjectCane) · [원 프로젝트](https://github.com/theclub654/ProjectCane) |
 | `zelda-mm-hd` | 젤다의 전설: 무쥬라의 가면 HD (Majora's Mask) | Action Adventure / N64 | ✅ | ✅ | 🎯 실기 확인 | [가이드](ports/zelda-mm-hd/README.md) · [포트 소스](https://github.com/2ship2harkinian/2ship2harkinian) |
 | `zelda-oot-hd` | 젤다의 전설: 시간의 오카리나 HD (Ocarina of Time) | Action Adventure / N64 | ✅ | ✅ | 🎯 실기 확인 | [가이드](ports/zelda-oot-hd/README.md) · [포트 소스](https://github.com/HarbourMasters/Shipwright) |
 | `zelda3-ko` | 젤다의 전설: 신들의 트라이포스 (A Link to the Past) | Action Adventure / SNES | ✅ | ➖ | 🎯 실기 확인 | [가이드](ports/zelda3-ko/README.md) · [레시피](ports/zelda3-ko/recipe.py) · [포트 소스](https://github.com/snesrev/zelda3) |
@@ -114,7 +115,6 @@
 | `sh2` | 사일런트 힐 2 (Silent Hill 2) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh2/README.md) · [포트 소스](https://github.com/cutarev/sh2-nx) |
 | `sh3` | 사일런트 힐 3 (Silent Hill 3) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh3/README.md) · [포트 소스](https://github.com/cutarev/sh3-nx) |
 | `sh4` | 사일런트 힐 4: 더 룸 (Silent Hill 4) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh4/README.md) · [포트 소스](https://github.com/72ak/sh4-nx) |
-| `sly1` | 슬라이 쿠퍼 1 (Sly Cooper and the Thievius Raccoonus) | Action / PS2 Decomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sly1/README.md) · [포트 소스](https://github.com/NaGaa95/ProjectCane) · [원 프로젝트](https://github.com/theclub654/ProjectCane) |
 | `sonic-fighters` | 소닉 더 파이터즈 (Sonic the Fighters) | Fighting / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sonic-fighters/README.md) · [포트 소스](https://github.com/boraeskicioglu/sonic_the_fighters_nx) |
 | `sonic-r` | 소닉 R (Sonic R) | Racing / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sonic-r/README.md) · [포트 소스](https://github.com/boraeskicioglu/sonic_r_nx) |
 | `supertux2` | SuperTux | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/supertux2/README.md) · [원 프로젝트](https://github.com/SuperTux/supertux) |

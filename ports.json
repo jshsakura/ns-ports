@@ -468,7 +468,7 @@
     "status": "verified",
     "korean": true,
     "motion_controls": false,
-    "description": "PS2 슬라이 쿠퍼 1을 디컴파일한 네이티브 포트. 한국판 ISO를 PC에서 미리 풀어 쓰며, 풀 때 디스크의 자모 글리프로 한글 글자를 만들어 넣습니다.한글 출력까지 기기에서 확인했습니다",
+    "description": "PS2 슬라이 쿠퍼 1을 디컴파일한 네이티브 포트. 한국판 ISO를 PC에서 미리 풀어 쓰며, 풀 때 디스크의 자모 글리프로 한글 글자를 만들어 넣습니다. 한글 출력까지 기기에서 확인했습니다",
     "required_assets": "슬라이 쿠퍼 1 한국판 PS2 ISO(SCKA-200.04)를 tools/sly1_extract 로 풀어낸 데이터 폴더",
     "nro": "ProjectCane.nro",
     "upstream": "https://github.com/NaGaa95/ProjectCane",

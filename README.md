@@ -112,7 +112,7 @@
 | `sh2` | 사일런트 힐 2 (Silent Hill 2) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh2/README.md) · [포트 소스](https://github.com/cutarev/sh2-nx) |
 | `sh3` | 사일런트 힐 3 (Silent Hill 3) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh3/README.md) · [포트 소스](https://github.com/cutarev/sh3-nx) |
 | `sh4` | 사일런트 힐 4: 더 룸 (Silent Hill 4) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh4/README.md) · [포트 소스](https://github.com/72ak/sh4-nx) |
-| `sly1` | 슬라이 쿠퍼 1 (Sly Cooper and the Thievius Raccoonus) | Action / PS2 Decomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sly1/README.md) · [포트 소스](https://github.com/NaGaa95/ProjectCane) · [원 프로젝트](https://github.com/theclub654/ProjectCane) |
+| `sly1` | 슬라이 쿠퍼 1 (Sly Cooper and the Thievius Raccoonus) | Action / PS2 Decomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sly1/README.md) · [포트 소스](https://github.com/NaGaa95/ProjectCane) · [원 프로젝트](https://github.com/theclub654/ProjectCane) |
 | `sonic-fighters` | 소닉 더 파이터즈 (Sonic the Fighters) | Fighting / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sonic-fighters/README.md) · [포트 소스](https://github.com/boraeskicioglu/sonic_the_fighters_nx) |
 | `sonic-r` | 소닉 R (Sonic R) | Racing / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sonic-r/README.md) · [포트 소스](https://github.com/boraeskicioglu/sonic_r_nx) |
 | `supertux2` | SuperTux | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/supertux2/README.md) · [원 프로젝트](https://github.com/SuperTux/supertux) |

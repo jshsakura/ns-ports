@@ -85,7 +85,7 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `sh2` | 사일런트 힐 2 PC판(Enhanced Edition) 설치본 | assemble | place your built `sh2.nro` in `ports/sh2/in/` | cutarev/sh2-nx v1.02, downloaded |
 | `sh3` | 사일런트 힐 3 PC판 설치본 | assemble | place your built `sh3.nro` in `ports/sh3/in/` | cutarev/sh3-nx v0.06, downloaded |
 | `sh4` | 사일런트 힐 4 GOG PC판 설치본 | assemble | place your built `sh4.nro` in `ports/sh4/in/` | 72ak/sh4-nx v0.1, downloaded |
-| `sly1` | 슬라이 쿠퍼 1 PS2 ISO (미국 SCUS-971.98, 유럽 SCES-509.17, 일본 SCPS-150.36 중 하나) | assemble | place your built `ProjectCane.nro` in `ports/sly1/in/` | NaGaa95/ProjectCane 0.5.0, downloaded |
+| `sly1` | 슬라이 쿠퍼 1 한국판 PS2 ISO(SCKA-200.04)를 tools/sly1_extract 로 풀어낸 데이터 폴더 | assemble | place your built `ProjectCane.nro` in `ports/sly1/in/` | NaGaa95/ProjectCane 0.5.0, downloaded |
 | `sonic-cd` | Data.rsdk (Steam/모바일 리마스터 데이터) | assemble | place your built `scd2011.nro` in `ports/sonic-cd/in/` | heyjoeway/Sonic-CD-11-Decompilation 1.3.0, downloaded |
 | `sonic-fighters` | MAME Model 2 sfight.zip 롬 | assemble | place your built `sonic_the_fighters.nro` in `ports/sonic-fighters/in/` | boraeskicioglu/sonic_the_fighters_nx 0.8.3, downloaded |
 | `sonic-r` | 소닉 R PC 정품 게임 데이터 | assemble | place your built `sonicr.nro` in `ports/sonic-r/in/` | boraeskicioglu/sonic_r_nx 0.1, downloaded |

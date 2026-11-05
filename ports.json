@@ -809,6 +809,22 @@
     "obtained": "downloaded"
   },
   {
+    "id": "iowolfsp",
+    "name": "리턴 투 캐슬 울펜슈타인 (Return to Castle Wolfenstein)",
+    "category": "FPS / Classic Native",
+    "engine": "iortcw 네이티브",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "iortcw 싱글플레이 클라이언트의 스위치 네이티브 빌드. 업스트림 사전 공개판을 씁니다",
+    "required_assets": "RTCW PC 정품 Main 폴더의 pak 파일(pak0.pk3, sp_pak1.pk3 등)",
+    "nro": "iowolfsp.nro",
+    "upstream": "https://github.com/capsterx-switch/iortcw",
+    "version": "pre-release",
+    "obtained": "downloaded",
+    "origin": "https://github.com/iortcw/iortcw"
+  },
+  {
     "id": "openmw",
     "name": "엘더스크롤 3: 모로윈드 (OpenMW)",
     "category": "RPG / Modern Native",

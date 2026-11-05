@@ -55,6 +55,7 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `half-life` | valve/ 폴더 (원작 PC 게임 데이터) | assemble | place your built `half-life.nro` in `ports/half-life/in/` | FWGS/xash3d-fwgs 4211 |
 | `hurrican` | data/, lang/ | assemble | place your built `hurrican.nro` in `ports/hurrican/in/` | rsn8887/Hurrican |
 | `insaniquarium` | 인새니쿠아리움 정품 게임 데이터 | assemble | place your built `insaniquarium_nx.nro` in `ports/insaniquarium/in/` | ChanseyIsTheBest/insaniquarium_nx 1.0.1, downloaded |
+| `iowolfsp` | RTCW PC 정품 Main 폴더의 pak 파일(pak0.pk3, sp_pak1.pk3 등) | assemble | place your built `iowolfsp.nro` in `ports/iowolfsp/in/` | capsterx-switch/iortcw pre-release, downloaded |
 | `jak1` | Jak 1 PS2 ISO | assemble | place your built `jak1.nro` in `ports/jak1/in/` | fildicio/jak-project-switch |
 | `jak2` | Jak 2 PS2 ISO (정발판) | assemble | place your built `jak2.nro` in `ports/jak2/in/` | fildicio/jak-project-switch |
 | `jak3` | Jak 3 PS2 ISO (정발판) | assemble | place your built `jak3.nro` in `ports/jak3/in/` | fildicio/jak-project-switch |

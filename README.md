@@ -2,7 +2,7 @@
 
 [![Platforms](https://img.shields.io/badge/platform-NS%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/ns-ports)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Ports](https://img.shields.io/badge/native%20ports-90-orange.svg)](ports.json)
+[![Ports](https://img.shields.io/badge/native%20ports-92-orange.svg)](ports.json)
 
 **닌텐도 스위치(NS / Horizon OS)에서 오래된 게임을 네이티브 포트로 돌려 보고, 일부는 한글화한 개인 테스트 기록**입니다.
 
@@ -35,7 +35,7 @@
 
 ---
 
-## 🎮 포트 카탈로그 (전체 91종)
+## 🎮 포트 카탈로그 (전체 92종)
 
 > 상태는 `ports.json` 의 `status` 를 그대로 옮긴 것이고 이 표는 `tools/gen_catalog.py` 가 만듭니다. 🎯 는 실기에서 확인한 것, 🟡 는 켜지는 것까지, 📦 는 레시피만 정리한 것, 🧪 는 아직 기기에서 안 해 본 것입니다. 빌더 저장소가 따로 있는 포트는 **빌더** 링크가 있습니다.
 
@@ -93,6 +93,7 @@
 | `gears2` | 기어스 오브 워 2 (Gears of War 2) | Shooter / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/gears2/README.md) · [포트 소스](https://github.com/VasilkovND/gears2-nx) · [원 프로젝트](https://github.com/santiquiroz/gears-of-war-2-pc-port) |
 | `hurrican` | Hurrican | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/hurrican/README.md) · [포트 소스](https://github.com/rsn8887/Hurrican) · [원 프로젝트](https://github.com/Uukrull/Hurrican) |
 | `insaniquarium` | 인새니쿠아리움 (Insaniquarium) | Casual / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/insaniquarium/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/insaniquarium_nx) |
+| `iowolfsp` | 리턴 투 캐슬 울펜슈타인 (Return to Castle Wolfenstein) | FPS / Classic Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/iowolfsp/README.md) · [포트 소스](https://github.com/capsterx-switch/iortcw) · [원 프로젝트](https://github.com/iortcw/iortcw) |
 | `killer-instinct` | 킬러 인스팅트 (Killer Instinct) | Fighting / Arcade | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/killer-instinct/README.md) · [포트 소스](https://github.com/Thorhax/Killer-Instinct-NX-Modern) |
 | `killer-instinct-2` | 킬러 인스팅트 2 (Killer Instinct 2) | Fighting / Arcade | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/killer-instinct-2/README.md) · [포트 소스](https://github.com/Thorhax/Killer-Instinct-2-NX-Modern) |
 | `marathon-recomp` | 소닉 더 헤지혹 2006 (Sonic 06 / MarathonRecomp) | Action / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/marathon-recomp/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/MarathonRecomp-NX) · [원 프로젝트](https://github.com/sonicnext-dev/MarathonRecomp) |

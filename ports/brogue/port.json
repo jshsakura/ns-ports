@@ -1,0 +1,20 @@
+{
+  "id": "brogue",
+  "title": "Brogue CE",
+  "reason": "브로그 (Brogue CE) 실행 데이터가 NRO 안에 들어 있습니다",
+  "base": ".",
+  "nro": {
+    "src": "in/brogue.nro",
+    "out": "brogue.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "capsterx-switch/BrogueCE",
+    "tag": "v1.9.2-r2",
+    "asset": "BrogueCE-1.9.2-r2.zip",
+    "member": "switch/brogue/brogue.nro",
+    "sha256": "dc087224346dc18fcb4c83db4e518cb930f2b75be27182bcd26696bb6ff6ee24", "note": "public release checksum, privacy-ok",
+    "data": []
+  }
+}

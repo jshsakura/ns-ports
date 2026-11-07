@@ -24,15 +24,18 @@ def block(p):
     else:
         if not any(sl["path"] == "icon.jpg" for sl in slots):
             slots = slots + [build.ICON_SLOT]
+        prof = build._port_json(pid) or {}
+        rel = prof.get("release") or {}
         lines += ["**1. 받아서 둘 것**", "", "| 놓을 위치 | 무엇 | 구하는 곳 |", "| :--- | :--- | :--- |"]
         for sl in slots:
             tag = (" (한글 판만)" if sl.get("variant") == "ko" else "") + (" (선택)" if sl.get("optional") else "")
             lines.append("| `ports/%s/%s` | %s%s | %s |" % (pid, sl["path"], sl["what"], tag, (sl.get("get") or "-").replace("|", "/")))
         lines += ["", "**2. 이미지**: 앱 아이콘(`icon.jpg`, 256x256 JPEG)만 쓰이고 없으면 NRO 의 기본 아이콘을 씁니다. 이미지는 저장소에 없으니 필요하면 직접 구해 위 위치에 두세요. 배너와 스크린샷은 다루지 않습니다.", "",
-                  "**3. 확인하고 실행**", "", "```", "python3 build.py guide %s    # 빈 칸과 구하는 곳 확인" % pid, "python3 build.py %s --rom <내 게임 데이터 폴더> --zip" % pid, "```"]
-        prof = build._port_json(pid) or {}
+                  "**3. 확인하고 실행**", "", "```", "python3 build.py guide %s    # 빈 칸과 구하는 곳 확인" % pid, ("python3 build.py %s --zip" if "data" in rel else "python3 build.py %s --rom <내 게임 데이터 폴더> --zip") % pid, "```"]
         if prof.get("release"):
             lines += ["", "NRO 는 구하지 않아도 됩니다. `in/` 에 없으면 %s 릴리스 %s 에서 받아 sha256 을 확인하고 씁니다." % (prof["release"]["repo"], prof["release"]["tag"])]
+        if rel.get("data"):
+            lines += ["", "게임 데이터도 구하지 않아도 됩니다. 같은 릴리스의 %s 를 받아 sha256 을 확인하고 풀어 넣습니다." % ", ".join("`%s`" % e["asset"] for e in rel["data"])]
     if p.get("origin") or p.get("upstream"):
         lines.append("")
         if p.get("origin"):

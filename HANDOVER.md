@@ -38,9 +38,10 @@
 | **Simulation / City Builder** | `caesar3`, `openrct2`, `openttd` | 나눔고딕 TTF 폰트 및 한국어 lng 연동, 720p/1080p 터치 조작 |
 | **Racing / Xbox 360 Recomp** | `nfsmw` | ReXGlue 정적 리컴파일 NFS 모스트 원티드 한국판(`nfsmw-nx-kor.nro`). 기기 시험 전 |
 | **신규 24종 (전부 `planned`)** | `sa2`, `marathon-recomp`, `futari`, `masseffect`, `project8`, `torchlight`, `virtual-on`, `daytona-usa`, `vf2`, `sonic-fighters`, `nzportable`, `space-cadet`, `undertale-yellow`, `pokemmo`, `pvz`, `avp-gold`, `sh1`~`sh4`, `vcmi`, `openmw`, `zelda-olb`, `zelda-roth` | 업스트림 릴리스 NRO 를 쓰는 조립 뼈대. 기기에서 켜 보기 전이라 `boot-ok` 로 올리지 않았다. 사일런트 힐은 PC판, 슬라이/NFS 등은 디스크가 필요하다 |
-| **Xbox 360 Recomp / MMO** | `dantes-inferno`, `ro` | 단테스 인페르노 TU2 + 한글패치 리눅스 적용 도구(`tools/dante_kr_patch.py`), 라그나로크 스위치 클라이언트(기동 확인) |
-| **Action / PS2 Decomp** | `sly1` | ProjectCane 0.5.0. 앱이 SD 의 ISO 를 직접 풀며 미국/유럽/일본판만 받는다. 한국판(`SCKA_200.04`)은 거절. 기기 시험 전 |
+| **Xbox 360 Recomp / MMO** | `dantes-inferno`, `gears2`, `usf4`, `ro` | 단테스 인페르노 TU2 + 한글패치 리눅스 적용 도구(`tools/dante_kr_patch.py`), 기어스 오브 워 2 v1.0.0(기기 시험 전, CPU 오버클럭 필요), 울트라 스트리트 파이터 4 v0.8.1(기기 시험 전, 데이터는 업스트림 설치 페이지가 만든다), 라그나로크 스위치 클라이언트(기동 확인) |
+| **Action / PS2 Decomp** | `sly1` | ProjectCane 0.5.0. 앱은 미국/유럽/일본판 ISO 만 받으므로 한국판(`SCKA_200.04`)은 `tools/sly1_extract` 로 미리 풀어 넣는다. 폰트 수정 뒤 2026-11-06 기기에서 한글 출력까지 확인 |
 | **Action / Platformer** | `jak1`, `jak2`, `jak3`, `sonic1`, `sonic2`, `sonic-cd`, `jazz`, `cannonball` | OpenGOAL 소니 공식 한국어 더빙/자막(Jak 2/3), RSDKv4 공식 한국어(Language=8), Jazz2 C++ 엔진, OutRun 아케이드 |
+| **무료 게임 (데이터 포함, `planned`)** | `brogue`, `abuse`, `rocksndiamonds`, `mirrormagic`, `openomf`, `mcosu` | 정품 데이터가 필요 없다. 데이터가 NRO 안에 있거나(`brogue`, `abuse`), 같은 릴리스의 zip 에 있다. 후자는 `port.json` 의 `release.data`(asset, strip, sha256)로 조립 때 받아 푼다. `release.data` 가 `[]` 이면 데이터 칸이 필요 없다는 뜻이다 |
 | **Fan Game / Roguelite** | `pokemon-survivor-burst`, `dragonball-z-rpg`, `wwhd` | mkxp-z 커스텀 루비 3.1 런타임, 바람의 지휘봉 HD 네이티브 환경 |
 
 ---

@@ -1,0 +1,20 @@
+{
+  "id": "usf4",
+  "title": "Ultra Street Fighter IV",
+  "reason": "게임 데이터(game_root)와 셰이더 파일(deko3d_glsl.bin)이 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/usf4.nro",
+    "out": "usf4.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": [],
+  "release": {
+    "repo": "Thorhax/usf4-nx",
+    "tag": "v0.8.1",
+    "asset": "usf4.nro",
+    "sha256": "41cbf1bdf4bf4728474c154cbca94a9c801640066bc2c5db840c2fe242fc7622", "note": "public release checksum, privacy-ok"
+  }
+}

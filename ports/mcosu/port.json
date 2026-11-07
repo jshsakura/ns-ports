@@ -1,0 +1,26 @@
+{
+  "id": "mcosu",
+  "title": "McOsu",
+  "reason": "맥오수 (McOsu) 실행 데이터를 같은 릴리스에서 받아 함께 넣습니다",
+  "base": ".",
+  "nro": {
+    "src": "in/McEngine.nro",
+    "out": "McEngine.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "McKay42/McOsu-NX",
+    "tag": "v33.14",
+    "asset": "McOsu.zip",
+    "member": "switch/McOsu/McEngine.nro",
+    "sha256": "04c5730d37c1ff4a663a1aabbbd9fae535328e9d7edd550f43099253da7b6c9e", "note": "public release checksum, privacy-ok",
+    "data": [
+      {
+        "asset": "McOsu.zip",
+        "strip": "switch/McOsu/",
+        "sha256": "04c5730d37c1ff4a663a1aabbbd9fae535328e9d7edd550f43099253da7b6c9e", "note": "public release checksum, privacy-ok"
+      }
+    ]
+  }
+}

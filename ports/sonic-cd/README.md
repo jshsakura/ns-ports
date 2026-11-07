@@ -7,7 +7,7 @@
 
 | 놓을 위치 | 무엇 | 구하는 곳 |
 | :--- | :--- | :--- |
-| `ports/sonic-cd/in/scd2011.nro` | 스위치용 NRO | https://github.com/heyjoeway/Sonic-CD-11-Decompilation 의 릴리스를 받거나 직접 빌드 |
+| `ports/sonic-cd/in/scd2011.nro` | 스위치용 NRO (선택) | 안 둬도 된다. 없으면 heyjoeway/Sonic-CD-11-Decompilation 릴리스 1.3.0 에서 자동으로 받는다 |
 | `ports/sonic-cd/in/data` | Data.rsdk (Steam/모바일 리마스터 데이터) | 내가 가진 정품 데이터 (--rom <폴더> 로 따로 줘도 된다) |
 | `ports/sonic-cd/icon.jpg` | 앱 아이콘 (256x256 JPEG) (선택) | 직접 구하거나 만든다. 없으면 NRO 에 든 아이콘을 그대로 쓴다 |
 
@@ -19,6 +19,8 @@
 python3 build.py guide sonic-cd    # 빈 칸과 구하는 곳 확인
 python3 build.py sonic-cd --rom <내 게임 데이터 폴더> --zip
 ```
+
+NRO 는 구하지 않아도 됩니다. `in/` 에 없으면 heyjoeway/Sonic-CD-11-Decompilation 릴리스 1.3.0 에서 받아 sha256 을 확인하고 씁니다.
 
 - 원 프로젝트: https://github.com/RSDKModding/RSDKv3-Decompilation
 - 스위치 포트 소스: https://github.com/heyjoeway/Sonic-CD-11-Decompilation

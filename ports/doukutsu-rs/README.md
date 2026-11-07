@@ -20,6 +20,8 @@ python3 build.py guide doukutsu-rs    # 빈 칸과 구하는 곳 확인
 python3 build.py doukutsu-rs --rom <내 게임 데이터 폴더> --zip
 ```
 
+NRO 는 구하지 않아도 됩니다. `in/` 에 없으면 doukutsu-rs/doukutsu-rs 릴리스 1.0.0 에서 받아 sha256 을 확인하고 씁니다.
+
 - 원 프로젝트: https://github.com/doukutsu-rs/doukutsu-rs
 <!-- quick:end -->
 

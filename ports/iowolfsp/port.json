@@ -1,0 +1,21 @@
+{
+  "id": "iowolfsp",
+  "title": "Return to Castle Wolfenstein",
+  "reason": "RTCW PC 정품 main 폴더의 pak 파일과 릴리스 zip 의 main 폴더가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/iowolfsp.nro",
+    "out": "iowolfsp.nro"
+  },
+  "overlays": [
+    "overlay"
+  ],
+  "files": [],
+  "release": {
+    "repo": "capsterx-switch/iortcw",
+    "tag": "pre-release",
+    "asset": "iortcw-pre-release.zip",
+    "member": "switch/iowolfsp.nro",
+    "sha256": "43695e22cedc2a5af55d4a02ccf40981d12ca2e49b409179f16fc065cfec2910", "note": "public release checksum, privacy-ok"
+  }
+}

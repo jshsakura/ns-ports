@@ -1,0 +1,12 @@
+[
+  {
+    "path": "in/usf4.nro",
+    "what": "스위치용 NRO",
+    "get": "https://github.com/Thorhax/usf4-nx/releases 의 v0.8.1 usf4.nro"
+  },
+  {
+    "path": "in/data",
+    "what": "업스트림 설치 페이지가 내 Xbox 360 디스크로 만든 game_root 폴더와 deko3d_glsl.bin",
+    "get": "https://thorhax.github.io/usf4-nx-installer/ 에서 만든 usf4-nx.zip 을 풀어서 쓴다 (--rom 으로 따로 줘도 된다)"
+  }
+]

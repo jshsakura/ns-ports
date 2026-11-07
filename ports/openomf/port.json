@@ -1,0 +1,26 @@
+{
+  "id": "openomf",
+  "title": "One Must Fall: 2097",
+  "reason": "원 머스트 폴 2097 (One Must Fall: 2097) 실행 데이터를 같은 릴리스에서 받아 함께 넣습니다",
+  "base": ".",
+  "nro": {
+    "src": "in/openomf.nro",
+    "out": "openomf.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "Thorhax/OpenOMF-NX-Modern",
+    "tag": "v0.8.7-nx",
+    "asset": "openomf-switch-v0.8.7.zip",
+    "member": "openomf/openomf.nro",
+    "sha256": "9ad87a80a1d36fc360268618fd5614a5ca8efbbc0693671326162defaa57beee", "note": "public release checksum, privacy-ok",
+    "data": [
+      {
+        "asset": "openomf-switch-v0.8.7.zip",
+        "strip": "openomf/",
+        "sha256": "9ad87a80a1d36fc360268618fd5614a5ca8efbbc0693671326162defaa57beee", "note": "public release checksum, privacy-ok"
+      }
+    ]
+  }
+}

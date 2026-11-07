@@ -1,0 +1,12 @@
+[
+  {
+    "path": "in/gears2-nx.nro",
+    "what": "스위치용 NRO",
+    "get": "릴리스에 NRO 가 없다. https://github.com/VasilkovND/gears2-nx 의 INSTALL.md 대로 내 디스크로 직접 빌드한다"
+  },
+  {
+    "path": "in/data",
+    "what": "Xbox 360 소매판 디스크 game 폴더(default.xex, GearGame)와 gow2_shaders.dslib, shadercache_dksh.bin",
+    "get": "gears2-nx 빌드가 내 디스크로 만든다 (--rom 으로 따로 줘도 된다)"
+  }
+]

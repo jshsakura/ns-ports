@@ -139,12 +139,17 @@ def load_slots(port_id):
         return None
     meta = next((p for p in load_ports() if p.get("id") == port_id), {})
     up = meta.get("upstream")
+    rel_data = (prof.get("release") or {}).get("data")  # [] 이면 데이터가 NRO 안에 들어 있다
+    data_slot = {"path": "in/data", "what": meta.get("required_assets") or "게임 데이터",
+                 "get": "내가 가진 정품 데이터 (--rom <폴더> 로 따로 줘도 된다)"}
+    if rel_data is not None:
+        data_slot.update(optional=True, get=("안 둬도 된다. 릴리스의 %s 를 받아 함께 넣는다" % ", ".join(e["asset"] for e in rel_data)
+                                             if rel_data else "필요 없다. 게임 데이터가 NRO 안에 들어 있다"))
     return [
         {"path": prof["nro"]["src"], "what": "스위치용 NRO", "optional": bool(prof.get("release")),
          "get": (f"안 둬도 된다. 없으면 {prof['release']['repo']} 릴리스 {prof['release']['tag']} 에서 자동으로 받는다"
                  if prof.get("release") else (f"{up} 의 릴리스를 받거나 직접 빌드" if up else "직접 빌드한 NRO"))},
-        {"path": "in/data", "what": meta.get("required_assets") or "게임 데이터",
-         "get": "내가 가진 정품 데이터 (--rom <폴더> 로 따로 줘도 된다)"},
+        data_slot,
     ]
 
 

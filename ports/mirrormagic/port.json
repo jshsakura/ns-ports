@@ -1,0 +1,25 @@
+{
+  "id": "mirrormagic",
+  "title": "Mirror Magic",
+  "reason": "미러 매직 (Mirror Magic) 실행 데이터를 같은 릴리스에서 받아 함께 넣습니다",
+  "base": ".",
+  "nro": {
+    "src": "in/mirrormagic.nro",
+    "out": "mirrormagic.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "rsn8887/rocksndiamonds",
+    "tag": "1.15",
+    "asset": "mirrormagic.nro",
+    "sha256": "c55e1d4d3768912eb2d0561c7430b8472e16051e8ae6c9cbbd5bfab2aced51de", "note": "public release checksum, privacy-ok",
+    "data": [
+      {
+        "asset": "mirrormagic_data.zip",
+        "strip": "mirrormagic/",
+        "sha256": "8128889374c9aed4bd2b3e0c94ff691d05be639f95de989b682a8fd490c2ccd4", "note": "public release checksum, privacy-ok"
+      }
+    ]
+  }
+}

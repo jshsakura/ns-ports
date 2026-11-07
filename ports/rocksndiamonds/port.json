@@ -1,0 +1,25 @@
+{
+  "id": "rocksndiamonds",
+  "title": "Rocks'n'Diamonds",
+  "reason": "록스 앤 다이아몬즈 (Rocks'n'Diamonds) 실행 데이터를 같은 릴리스에서 받아 함께 넣습니다",
+  "base": ".",
+  "nro": {
+    "src": "in/rocksndiamonds.nro",
+    "out": "rocksndiamonds.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "rsn8887/rocksndiamonds",
+    "tag": "1.15",
+    "asset": "rocksndiamonds.nro",
+    "sha256": "a57db2583164f88823b89ef7fdf077f7bbea8ce11d474e3419ce3457b301034b", "note": "public release checksum, privacy-ok",
+    "data": [
+      {
+        "asset": "rocksndiamonds_data.zip",
+        "strip": "rocksndiamonds/",
+        "sha256": "fea13389e5e5f828b726fab1299fc23c77c680c88b1ff53424d2b6c628947af1", "note": "public release checksum, privacy-ok"
+      }
+    ]
+  }
+}

@@ -35,7 +35,7 @@
 
 ---
 
-## 🎮 포트 카탈로그 (전체 93종)
+## 🎮 포트 카탈로그 (전체 99종)
 
 > 상태는 `ports.json` 의 `status` 를 그대로 옮긴 것이고 이 표는 `tools/gen_catalog.py` 가 만듭니다. 🎯 는 실기에서 확인한 것, 🟡 는 켜지는 것까지, 📦 는 레시피만 정리한 것, 🧪 는 아직 기기에서 안 해 본 것입니다. 빌더 저장소가 따로 있는 포트는 **빌더** 링크가 있습니다.
 
@@ -83,7 +83,9 @@
 | `zelda-olb` | 젤다의 전설: 오니 링크의 시작 (Zelda: OLB) | Action RPG / Fan Game | ➖ | ➖ | 📦 레시피 정리 | [가이드](ports/zelda-olb/README.md) · [포트 소스](https://github.com/worthis/ZeldaOLB-new-engine) |
 | `zelda-roth` | 젤다의 전설: 하일리아인의 귀환 (Zelda: ROTH) | Action RPG / Fan Game | ➖ | ➖ | 📦 레시피 정리 | [가이드](ports/zelda-roth/README.md) · [포트 소스](https://github.com/worthis/ZeldaROTH-new-engine) |
 | `0ad` | 0 A.D. | RTS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/0ad/README.md) · [포트 소스](https://github.com/souldbminerr/0ad-switch) · [원 프로젝트](https://github.com/0ad/0ad) |
+| `abuse` | 어뷰즈 (Abuse) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/abuse/README.md) · [포트 소스](https://github.com/capsterx-switch/abuse) |
 | `avp-gold` | 에일리언 대 프레데터: 골드 (AvP Gold) | FPS / Classic Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/avp-gold/README.md) · [포트 소스](https://github.com/Thorhax/AvP-Gold-NX-Modern) |
+| `brogue` | 브로그 (Brogue CE) | Roguelike / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/brogue/README.md) · [포트 소스](https://github.com/capsterx-switch/BrogueCE) · [원 프로젝트](https://github.com/tmewett/BrogueCE) |
 | `dantes-inferno` | 단테스 인페르노 (Dante's Inferno) | Action / Xbox 360 Recomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/dantes-inferno/README.md) · [포트 소스](https://github.com/VasilkovND/dantes-inferno-nx) |
 | `daytona-usa` | 데이토나 USA (Daytona USA) | Racing / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/daytona-usa/README.md) · [포트 소스](https://github.com/Thorhax/Daytona-NX-Modern) |
 | `descent` | 디센트 (Descent) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/descent/README.md) · [포트 소스](https://github.com/Thorhax/Descent1-NX-Modern) |
@@ -101,15 +103,19 @@
 | `mari0` | 마리0 (Mari0) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mari0/README.md) · [포트 소스](https://github.com/delsonazevedo/mari0-switch) |
 | `mari0-ae` | 마리0: Alesan99's Entities | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mari0-ae/README.md) · [포트 소스](https://github.com/aks796/mari0_ae_nx) |
 | `masseffect` | 매스 이펙트 1 (Mass Effect) | RPG / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/masseffect/README.md) · [포트 소스](https://github.com/nebadasSwifty/masseffect-nx) |
+| `mcosu` | 맥오수 (McOsu) | Rhythm / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mcosu/README.md) · [포트 소스](https://github.com/McKay42/McOsu-NX) · [원 프로젝트](https://github.com/McKay42/McOsu) |
+| `mirrormagic` | 미러 매직 (Mirror Magic) | Puzzle / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mirrormagic/README.md) · [포트 소스](https://github.com/rsn8887/rocksndiamonds) · [원 프로젝트](https://www.artsoft.org/mirrormagic/) |
 | `nfsmw` | 니드 포 스피드: 모스트 원티드 (Need for Speed: Most Wanted) | Racing / Xbox 360 Recomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/nfsmw/README.md) · [포트 소스](https://github.com/StevensND/nfsmw-nx) |
 | `nzportable` | 나치 좀비: 포터블 (Nazi Zombies: Portable) | FPS / Standalone | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/nzportable/README.md) · [포트 소스](https://github.com/nzp-team/nzportable) |
 | `openmohaa` | 메달 오브 아너: 얼라이드 어설트 (OpenMoHAA) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/openmohaa/README.md) · [포트 소스](https://github.com/NaGaa95/openmohaa_nx) |
 | `openmw` | 엘더스크롤 3: 모로윈드 (OpenMW) | RPG / Modern Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/openmw/README.md) · [포트 소스](https://github.com/fgsfdsfgs/openmw) · [원 프로젝트](https://github.com/OpenMW/openmw) |
+| `openomf` | 원 머스트 폴 2097 (One Must Fall: 2097) | Fighting / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/openomf/README.md) · [포트 소스](https://github.com/Thorhax/OpenOMF-NX-Modern) · [원 프로젝트](https://github.com/omf2097/openomf) |
 | `pokemmo` | 포켓몬 MMO (PokeMMO) | MMORPG / Client | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/pokemmo/README.md) · [포트 소스](https://github.com/Petit-Prince-dev/PokeMMO-NX) |
 | `project8` | 토니 호크 프로젝트 8 (Tony Hawk Project 8) | Sports / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/project8/README.md) · [포트 소스](https://github.com/R-drg/project8-sw) |
 | `pvz` | 식물 대 좀비 (Plants vs. Zombies Portable) | Strategy / Decomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/pvz/README.md) · [포트 소스](https://github.com/HayatoG/PvZ-Portable) · [원 프로젝트](https://github.com/wszqkzqk/PvZ-Portable) |
 | `quake` | 퀘이크 (Quake) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/quake/README.md) · [포트 소스](https://github.com/Thorhax/Quakespasm-NX-Modern) |
 | `quake2` | 퀘이크 2 (Quake II) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/quake2/README.md) · [포트 소스](https://github.com/Thorhax/Quake2-NX-Modern) |
+| `rocksndiamonds` | 록스 앤 다이아몬즈 (Rocks'n'Diamonds) | Puzzle / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/rocksndiamonds/README.md) · [포트 소스](https://github.com/rsn8887/rocksndiamonds) · [원 프로젝트](https://www.artsoft.org/rocksndiamonds/) |
 | `sa2` | 소닉 어드벤처 2 (Sonic Adventure 2) | Action / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sa2/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/sa2-nx) |
 | `sh1` | 사일런트 힐 1 (Silent Hill 1) | Horror / PS1 Decomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh1/README.md) · [포트 소스](https://github.com/ChaykaDed/silent-hill-decomp-nx) · [원 프로젝트](https://github.com/SlickAmogus/silent-hill-decomp) |
 | `sh2` | 사일런트 힐 2 (Silent Hill 2) | Horror / PC Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sh2/README.md) · [포트 소스](https://github.com/cutarev/sh2-nx) |

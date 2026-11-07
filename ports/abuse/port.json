@@ -1,0 +1,20 @@
+{
+  "id": "abuse",
+  "title": "Abuse",
+  "reason": "어뷰즈 (Abuse) 실행 데이터가 NRO 안에 들어 있습니다",
+  "base": ".",
+  "nro": {
+    "src": "in/abuse.nro",
+    "out": "abuse.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "capsterx-switch/abuse",
+    "tag": "v0.8r3",
+    "asset": "abuse-0.8r3.zip",
+    "member": "switch/abuse.nro",
+    "sha256": "daace6233ea4f82f253dfec02163d3a6d45496eaa17598fb1d7d9ad3d1a76e8f", "note": "public release checksum, privacy-ok",
+    "data": []
+  }
+}

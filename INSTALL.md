@@ -31,7 +31,9 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | Port | Game data you provide | Kind | NRO | Upstream |
 | --- | --- | --- | --- | --- |
 | `0ad` | 0ad-0.28.0 데이터 (data/) | assemble | place your built `0ad.nro` in `ports/0ad/in/` | souldbminerr/0ad-switch |
+| `abuse` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `abuse.nro` in `ports/abuse/in/` | capsterx-switch/abuse v0.8r3, downloaded |
 | `avp-gold` | AvP Gold / Classic 2000 PC 게임 데이터 | assemble | place your built `avp.nro` in `ports/avp-gold/in/` | Thorhax/AvP-Gold-NX-Modern v2026-nx, downloaded |
+| `brogue` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `brogue.nro` in `ports/brogue/in/` | capsterx-switch/BrogueCE v1.9.2-r2, downloaded |
 | `caesar3` | Caesar 3 PC 설치 데이터 | assemble | place your built `caesar3.nro` in `ports/caesar3/in/` | bvschaik/julius |
 | `cannonball` | OutRun 아케이드 ROM 세트 | assemble | place your built `cannonball.nro` in `ports/cannonball/in/` | Thorhax/Cannonball-NX-Modern v1.08-nx, downloaded |
 | `cnc` | C&C Gold .MIX 파일 및 영상 에셋 | assemble | place your built `vanillatd.nro` in `ports/cnc/in/` | TheAssemblyArmada/Vanilla-Conquer |
@@ -66,11 +68,14 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `mari0` | 업스트림 README 참고 | assemble | place your built `Mari0.nro` in `ports/mari0/in/` | delsonazevedo/mari0-switch 1.0.0, downloaded |
 | `mari0-ae` | 업스트림 README 참고 | assemble | place your built `mari0_ae_nx.nro` in `ports/mari0-ae/in/` | aks796/mari0_ae_nx 1.0.0, downloaded |
 | `masseffect` | Xbox 360판 매스 이펙트 1 게임 데이터 | assemble | place your built `masseffect-nx.nro` in `ports/masseffect/in/` | nebadasSwifty/masseffect-nx v0.2.1, downloaded |
+| `mcosu` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `McEngine.nro` in `ports/mcosu/in/` | McKay42/McOsu-NX v33.14, downloaded |
+| `mirrormagic` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `mirrormagic.nro` in `ports/mirrormagic/in/` | rsn8887/rocksndiamonds 1.15, downloaded |
 | `nfsmw` | Xbox 360 NTSC-K 디스크의 game_root 폴더와 셰이더 파일(nfsmw_shaders.nfsp) | assemble | place your built `nfsmw-nx.nro` in `ports/nfsmw/in/` | StevensND/nfsmw-nx v1.0.0, downloaded |
 | `nzportable` | 자체 무료 데이터 포함 (독립 실행형) | assemble | place your built `nzportable.nro` in `ports/nzportable/in/` | nzp-team/nzportable v2.0.0, downloaded |
 | `openbor` | OpenBOR .pak 게임 팩 | assemble | place your built `OpenBOR.nro` in `ports/openbor/in/` | SylphiaWindy/openbor switch-v26.0919.1, downloaded |
 | `openmohaa` | 메달 오브 아너 얼라이드 어설트 정품 게임 데이터 | assemble | place your built `openmohaa.nro` in `ports/openmohaa/in/` | NaGaa95/openmohaa_nx 0.83.0.3, downloaded |
 | `openmw` | Morrowind Data Files (Morrowind.esm 등) | assemble | place your built `openmw.nro` in `ports/openmw/in/` | fgsfdsfgs/openmw 0.46.0-nx4, downloaded |
+| `openomf` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `openomf.nro` in `ports/openomf/in/` | Thorhax/OpenOMF-NX-Modern v0.8.7-nx, downloaded |
 | `openrct2` | RCT2 설치 파일 | source | built on your machine | Wander-Eule/OpenRCT2-Switch 7d4673d8b2 + Korean patch, built |
 | `openttd` | 오픈 그래픽/사운드 베이스셋 | assemble | place your built `openttd.nro` in `ports/openttd/in/` | rsn8887/OpenTTD v1.07-switch, downloaded |
 | `opentyrian` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `opentyrian.nro` in `ports/opentyrian/in/` | theflippedbit/opentyrian-nx v1.0.0, downloaded |
@@ -82,6 +87,7 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `quake2` | 퀘이크 2 정품 게임 데이터(baseq2) | assemble | place your built `nxquake2.nro` in `ports/quake2/in/` | Thorhax/Quake2-NX-Modern 8.21-nx, downloaded |
 | `redalert` | Red Alert CD1/CD2 .MIX 파일 | assemble | place your built `vanillara.nro` in `ports/redalert/in/` | TheAssemblyArmada/Vanilla-Conquer |
 | `ro` | 라그나로크 클라이언트 데이터(data.grf, rdata.grf)와 접속 설정(login.ini) | assemble | place your built `ragnarok.nro` in `ports/ro/in/` | - |
+| `rocksndiamonds` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `rocksndiamonds.nro` in `ports/rocksndiamonds/in/` | rsn8887/rocksndiamonds 1.15, downloaded |
 | `sa2` | Xbox 360판 소닉 어드벤처 2 게임 데이터 | assemble | place your built `sa2-nx.nro` in `ports/sa2/in/` | ChanseyIsTheBest/sa2-nx v1.0.3.1, downloaded |
 | `sh1` | PS1 사일런트 힐 1 롬 데이터 | assemble | place your built `silent-hill.nro` in `ports/sh1/in/` | ChaykaDed/silent-hill-decomp-nx 1.2.0, downloaded |
 | `sh2` | 사일런트 힐 2 PC판(Enhanced Edition) 설치본 | assemble | place your built `sh2.nro` in `ports/sh2/in/` | cutarev/sh2-nx v1.02, downloaded |

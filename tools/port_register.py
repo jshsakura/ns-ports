@@ -127,15 +127,32 @@ def fetch_url(entry):
     return data
 
 
+def release_url(r, asset):
+    return 'https://github.com/%s/releases/download/%s/%s' % (r['repo'], r['tag'], asset)
+
+
+def write_release_data(p, d):
+    """release.data 의 zip 마다 strip 아래 파일을 배포 폴더에 푼다. 릴리스가 데이터까지 싣는 무료 게임용."""
+    import io, zipfile
+    r = p.get('release') or {}
+    for e in r.get('data', []):
+        z = zipfile.ZipFile(io.BytesIO(fetch_url({'url': release_url(r, e['asset']), 'sha256': e.get('sha256')})))
+        n = 0
+        for name in z.namelist():
+            if name.endswith('/') or not name.startswith(e['strip']) or name == r.get('member'):
+                continue
+            n += d.write(name[len(e['strip']):], z.read(name), quiet=True)
+        print(('(예행) ' if d.dry else '') + '릴리스 데이터 %s: 바뀐 파일 %d개' % (e['asset'], n))
+
+
 def ensure_nro(p):
     """in/ 에 NRO 가 없고 프로필에 release 가 있으면 GitHub 릴리스에서 받아 채운다(태그와 sha256 고정)."""
     dest = rel(p, p['nro']['src'])
     r = p.get('release')
     if os.path.exists(dest) or not r:
         return
-    url = 'https://github.com/%s/releases/download/%s/%s' % (r['repo'], r['tag'], r['asset'])
     print('NRO 가 없어 릴리스에서 받습니다: %s %s' % (r['repo'], r['tag']))
-    data = fetch_url({'url': url, 'sha256': r.get('sha256')})
+    data = fetch_url({'url': release_url(r, r['asset']), 'sha256': r.get('sha256')})
     if r.get('member'):
         import io, zipfile
         data = zipfile.ZipFile(io.BytesIO(data)).read(r['member'])
@@ -159,30 +176,32 @@ class Dest:
     def __init__(self, root, dry):
         self.root, self.dry, self.changed = root, dry, 0
 
-    def write(self, relpath, data):
+    def write(self, relpath, data, quiet=False):
         dst = os.path.join(self.root, relpath)
         if os.path.exists(dst):
             old = open(dst, 'rb').read()
             pad = b'\n' if relpath.endswith(TEXT_EXT) else b'\0'
             if old == data or (old.startswith(data) and not old[len(data):].strip(pad)):
-                return  # 같거나, 지난번에 크기를 맞추려 붙인 여분만 다르다
+                return 0  # 같거나, 지난번에 크기를 맞추려 붙인 여분만 다르다
             if relpath.endswith('.json'):
                 try:
                     if json.loads(old) == json.loads(data):
-                        return
+                        return 0
                 except ValueError:
                     pass
             pad = b'\n' if relpath.endswith(TEXT_EXT) else b'\0'
             while len(data) == len(old):
                 data += pad
         self.changed += 1
-        print(('(예행) ' if self.dry else '') + '쓰기', relpath, len(data))
+        if not quiet:
+            print(('(예행) ' if self.dry else '') + '쓰기', relpath, len(data))
         if self.dry:
-            return
+            return 1
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         tmp = os.path.join(os.path.dirname(dst), '.tmp-' + os.path.basename(dst))
         open(tmp, 'wb').write(data)
         os.replace(tmp, dst)
+        return 1
 
     def link_tree(self, src, skip=frozenset()):
         """게임 데이터: 이미 있으면 건너뛰고, 없으면 하드링크(다른 디스크면 복사). skip 의 경로는 연결하지 않는다."""
@@ -237,6 +256,7 @@ def main():
             b = rel(p, ov)
             skip |= {os.path.relpath(os.path.join(r, f), b) for r, _, fs in os.walk(b) for f in fs}
         d.link_tree(a.data, skip)
+    write_release_data(p, d)
     if p.get('icon_url') and not p.get('icon'):
         ic = os.path.join(os.path.expanduser('~/.cache/ns-ports'), 'icon-' + p['id'] + '.jpg')
         os.makedirs(os.path.dirname(ic), exist_ok=True)

@@ -96,6 +96,37 @@ class ReleaseTest(FakeRoot):
         port_register.ensure_nro(prof)
         self.assertEqual(open(path, "rb").read(), b"MINE")
 
+    def test_release_data_zip_is_unpacked_under_its_prefix_without_the_nro(self):
+        import hashlib, io, zipfile
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w") as z:
+            z.writestr("pkg/demo.nro", b"NRODATA")
+            z.writestr("pkg/levels/1.lvl", b"L1")
+            z.writestr("pkg/levels/", b"")
+            z.writestr("other/readme.txt", b"R")
+        blob = buf.getvalue()
+        prof = {"release": {"repo": "x/y", "tag": "t", "asset": "rel.zip", "member": "pkg/demo.nro",
+                            "data": [{"asset": "rel.zip", "strip": "pkg/", "sha256": hashlib.sha256(blob).hexdigest()}]}}
+        out = os.path.join(self.tmp.name, "out")
+        seen = []
+        orig = port_register.fetch_url
+        port_register.fetch_url = lambda e: seen.append(e) or blob
+        try:
+            port_register.write_release_data(prof, port_register.Dest(out, False))
+        finally:
+            port_register.fetch_url = orig
+        self.assertEqual(sorted(os.listdir(out)), ["levels"])
+        self.assertEqual(open(os.path.join(out, "levels", "1.lvl"), "rb").read(), b"L1")
+        self.assertEqual(seen[0]["url"], "https://github.com/x/y/releases/download/t/rel.zip")
+        self.assertEqual(seen[0]["sha256"], hashlib.sha256(blob).hexdigest())
+
+    def test_release_data_makes_the_data_slot_optional(self):
+        json.dump({"id": "demo", "nro": {"src": "in/demo.nro"},
+                   "release": {"repo": "x/y", "tag": "t1", "asset": "a", "data": [{"asset": "d.zip", "strip": "d/"}]}},
+                  open(os.path.join(self.dir, "port.json"), "w"))
+        self.assertTrue(build.load_slots("demo")[1]["optional"])
+        self.assertTrue(build.check_slots("demo", quiet_ok=True))
+
     def test_release_makes_the_nro_slot_optional(self):
         json.dump({"id": "demo", "nro": {"src": "in/demo.nro"}, "release": {"repo": "x/y", "tag": "t1", "asset": "a"}},
                   open(os.path.join(self.dir, "port.json"), "w"))

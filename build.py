@@ -128,6 +128,11 @@ def _port_json(port_id):
     return None
 
 
+def data_sources(entries):
+    """release.data 항목이 받는 파일 이름들(중복 없이 순서대로)."""
+    return list(dict.fromkeys(e.get("asset") or e["url"].rsplit("/", 1)[-1] for e in entries))
+
+
 def load_slots(port_id):
     """칸 목록. slots.json 이 있으면 그것, 없으면 port.json 과 ports.json 에서 NRO 와 게임 데이터 칸을 만든다."""
     path = os.path.join(ROOT_DIR, "ports", port_id, "slots.json")
@@ -143,7 +148,7 @@ def load_slots(port_id):
     data_slot = {"path": "in/data", "what": meta.get("required_assets") or "게임 데이터",
                  "get": "내가 가진 정품 데이터 (--rom <폴더> 로 따로 줘도 된다)"}
     if rel_data is not None:
-        data_slot.update(optional=True, get=("안 둬도 된다. 릴리스의 %s 를 받아 함께 넣는다" % ", ".join(e["asset"] for e in rel_data)
+        data_slot.update(optional=True, get=("안 둬도 된다. 릴리스의 %s 를 받아 함께 넣는다" % ", ".join(data_sources(rel_data))
                                              if rel_data else "필요 없다. 게임 데이터가 NRO 안에 들어 있다"))
     return [
         {"path": prof["nro"]["src"], "what": "스위치용 NRO", "optional": bool(prof.get("release")),

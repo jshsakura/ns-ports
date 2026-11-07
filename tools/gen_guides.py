@@ -35,7 +35,7 @@ def block(p):
         if prof.get("release"):
             lines += ["", "NRO 는 구하지 않아도 됩니다. `in/` 에 없으면 %s 릴리스 %s 에서 받아 sha256 을 확인하고 씁니다." % (prof["release"]["repo"], prof["release"]["tag"])]
         if rel.get("data"):
-            lines += ["", "게임 데이터도 구하지 않아도 됩니다. 같은 릴리스의 %s 를 받아 sha256 을 확인하고 풀어 넣습니다." % ", ".join("`%s`" % e["asset"] for e in rel["data"])]
+            lines += ["", "게임 데이터도 구하지 않아도 됩니다. 릴리스에 든 %s 를 받아 sha256 을 확인하고 풀어 넣습니다." % ", ".join("`%s`" % s for s in build.data_sources(rel["data"]))]
     if p.get("origin") or p.get("upstream"):
         lines.append("")
         if p.get("origin"):

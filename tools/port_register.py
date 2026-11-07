@@ -131,18 +131,36 @@ def release_url(r, asset):
     return 'https://github.com/%s/releases/download/%s/%s' % (r['repo'], r['tag'], asset)
 
 
+def archive_files(blob):
+    """zip(apk 포함) 또는 7z 의 (경로, 내용) 목록. 7z 는 시스템의 7z 명령으로 푼다."""
+    import io, tempfile, zipfile
+    if not blob.startswith(b"7z\xbc\xaf'\x1c"):
+        z = zipfile.ZipFile(io.BytesIO(blob))
+        return [(n, z.read(n)) for n in z.namelist() if not n.endswith('/')]
+    if not shutil.which('7z'):
+        sys.exit('7z 압축을 풀려면 7z 명령이 필요합니다 (예: apt install p7zip-full)')
+    with tempfile.TemporaryDirectory() as tmp:
+        arc = os.path.join(tmp, 'a.7z')
+        open(arc, 'wb').write(blob)
+        out = os.path.join(tmp, 'x')
+        import subprocess
+        subprocess.run(['7z', 'x', '-y', '-bd', '-o' + out, arc], check=True, stdout=subprocess.DEVNULL)
+        return [(os.path.relpath(os.path.join(dp, f), out).replace(os.sep, '/'), open(os.path.join(dp, f), 'rb').read())
+                for dp, _, fs in os.walk(out) for f in fs]
+
+
 def write_release_data(p, d):
-    """release.data 의 zip 마다 strip 아래 파일을 배포 폴더에 푼다. 릴리스가 데이터까지 싣는 무료 게임용."""
-    import io, zipfile
+    """release.data 의 압축마다 strip 아래 파일을 배포 폴더의 dest 아래에 푼다. 릴리스가 데이터까지 싣는 무료 게임용.
+    항목은 같은 릴리스의 asset 이거나 url 이다. strip 이 파일 하나를 가리키면 그 파일이 dest 가 된다."""
     r = p.get('release') or {}
     for e in r.get('data', []):
-        z = zipfile.ZipFile(io.BytesIO(fetch_url({'url': release_url(r, e['asset']), 'sha256': e.get('sha256')})))
-        n = 0
-        for name in z.namelist():
-            if name.endswith('/') or not name.startswith(e['strip']) or name == r.get('member'):
+        url = e.get('url') or release_url(r, e['asset'])
+        strip, dest, n = e.get('strip', ''), e.get('dest', ''), 0
+        for name, data in archive_files(fetch_url({'url': url, 'sha256': e.get('sha256')})):
+            if not name.startswith(strip) or name == r.get('member'):
                 continue
-            n += d.write(name[len(e['strip']):], z.read(name), quiet=True)
-        print(('(예행) ' if d.dry else '') + '릴리스 데이터 %s: 바뀐 파일 %d개' % (e['asset'], n))
+            n += d.write(dest + name[len(strip):], data, quiet=True)
+        print(('(예행) ' if d.dry else '') + '릴리스 데이터 %s: 바뀐 파일 %d개' % (url.rsplit('/', 1)[-1], n))
 
 
 def ensure_nro(p):
@@ -154,8 +172,7 @@ def ensure_nro(p):
     print('NRO 가 없어 릴리스에서 받습니다: %s %s' % (r['repo'], r['tag']))
     data = fetch_url({'url': release_url(r, r['asset']), 'sha256': r.get('sha256')})
     if r.get('member'):
-        import io, zipfile
-        data = zipfile.ZipFile(io.BytesIO(data)).read(r['member'])
+        data = dict(archive_files(data))[r['member']]
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     open(dest, 'wb').write(data)
 

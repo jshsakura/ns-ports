@@ -120,6 +120,49 @@ class ReleaseTest(FakeRoot):
         self.assertEqual(seen[0]["url"], "https://github.com/x/y/releases/download/t/rel.zip")
         self.assertEqual(seen[0]["sha256"], hashlib.sha256(blob).hexdigest())
 
+    def unpack(self, prof, blobs):
+        out = os.path.join(self.tmp.name, "out")
+        seen = []
+        orig = port_register.fetch_url
+        port_register.fetch_url = lambda e: seen.append(e["url"]) or blobs[e["url"]]
+        try:
+            port_register.write_release_data(prof, port_register.Dest(out, False))
+        finally:
+            port_register.fetch_url = orig
+        files = sorted(os.path.relpath(os.path.join(d, f), out) for d, _, fs in os.walk(out) for f in fs)
+        return out, files, seen
+
+    def test_release_data_places_files_under_dest_and_takes_full_urls(self):
+        import io, zipfile
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w") as z:
+            z.writestr("assets/game.droid", b"G")
+            z.writestr("lib/arm64-v8a/libyoyo.so", b"SO")
+            z.writestr("kit/sdl2.txt", b"NEW")
+        blob = buf.getvalue()
+        url = "https://example.com/files/game.apk"
+        prof = {"release": {"repo": "x/y", "tag": "t", "asset": "a", "data": [
+            {"url": url, "strip": "assets/", "dest": "assets/"},
+            {"url": url, "strip": "lib/arm64-v8a/"},
+            {"url": url, "strip": "kit/sdl2.txt", "dest": "assets/sdl2.txt"}]}}
+        out, files, seen = self.unpack(prof, {url: blob})
+        self.assertEqual(files, ["assets/game.droid", "assets/sdl2.txt", "libyoyo.so"])
+        self.assertEqual(open(os.path.join(out, "assets", "sdl2.txt"), "rb").read(), b"NEW")
+        self.assertEqual(set(seen), {url})
+
+    @unittest.skipUnless(__import__("shutil").which("7z"), "7z is not installed")
+    def test_release_data_unpacks_7z_archives(self):
+        import subprocess
+        src = os.path.join(self.tmp.name, "src", "pkg", "data")
+        os.makedirs(src)
+        open(os.path.join(src, "level one.mis"), "wb").write(b"M")
+        arc = os.path.join(self.tmp.name, "rel.7z")
+        subprocess.run(["7z", "a", "-bd", arc, "pkg"], cwd=os.path.join(self.tmp.name, "src"), check=True, stdout=subprocess.DEVNULL)
+        url = "https://github.com/x/y/releases/download/t/rel.7z"
+        prof = {"release": {"repo": "x/y", "tag": "t", "asset": "a", "data": [{"asset": "rel.7z", "strip": "pkg/"}]}}
+        _, files, _ = self.unpack(prof, {url: open(arc, "rb").read()})
+        self.assertEqual(files, ["data/level one.mis"])
+
     def test_release_data_makes_the_data_slot_optional(self):
         json.dump({"id": "demo", "nro": {"src": "in/demo.nro"},
                    "release": {"repo": "x/y", "tag": "t1", "asset": "a", "data": [{"asset": "d.zip", "strip": "d/"}]}},

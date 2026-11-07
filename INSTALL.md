@@ -109,6 +109,7 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `touhou8` | 동방영야초 정품 게임 데이터 | assemble | place your built `touhou8.nro` in `ports/touhou8/in/` | saekaze/th08-switch 1.00d-r4, downloaded |
 | `touhou9` | 동방화영총 정품 게임 데이터 | assemble | place your built `touhou9.nro` in `ports/touhou9/in/` | saekaze/th09-switch 1.50a-r2, downloaded |
 | `undertale-yellow` | Undertale Yellow 무료 게임 데이터 | assemble | place your built `UndertaleYellow.nro` in `ports/undertale-yellow/in/` | NalienDev/Undertale-Yellow-NX v1.0, downloaded |
+| `usf4` | Xbox 360 디스크로 업스트림 설치 페이지가 만든 game_root 폴더와 deko3d_glsl.bin | assemble | place your built `usf4.nro` in `ports/usf4/in/` | Thorhax/usf4-nx v0.8.1, downloaded |
 | `vcmi` | HOMM3 Data 및 Maps 폴더 | assemble | place your built `vcmi.nro` in `ports/vcmi/in/` | NaGaa95/vcmi_nx 1.8.0-R2, downloaded |
 | `vf2` | MAME Model 2 vf2.zip 롬 | assemble | place your built `VF2.nro` in `ports/vf2/in/` | Thorhax/VF2-NX-Modern v1.1.0, downloaded |
 | `virtual-on` | MAME Model 2 von.zip 롬 | assemble | place your built `Virtual-On.nro` in `ports/virtual-on/in/` | Thorhax/Virtual-On-NX v1.2.0, downloaded |

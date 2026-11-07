@@ -521,6 +521,21 @@
     "origin": "https://github.com/santiquiroz/gears-of-war-2-pc-port"
   },
   {
+    "id": "usf4",
+    "name": "울트라 스트리트 파이터 4 (Ultra Street Fighter IV)",
+    "category": "Fighting / Xbox 360 Recomp",
+    "engine": "ReXGlue 정적 리컴파일 + deko3d",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "Xbox 360판 울트라 스트리트 파이터 4를 정적 리컴파일한 네이티브 포트. CPU와 GPU를 올리면 대전이 60fps로 돕니다. 셰이더와 게임 폴더는 업스트림 설치 페이지가 사용자 디스크로 만듭니다",
+    "required_assets": "Xbox 360 디스크로 업스트림 설치 페이지가 만든 game_root 폴더와 deko3d_glsl.bin",
+    "nro": "usf4.nro",
+    "upstream": "https://github.com/Thorhax/usf4-nx",
+    "version": "v0.8.1",
+    "obtained": "downloaded"
+  },
+  {
     "id": "sa2",
     "name": "소닉 어드벤처 2 (Sonic Adventure 2)",
     "category": "Action / Xbox 360 Recomp",

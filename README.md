@@ -35,7 +35,7 @@
 
 ---
 
-## 🎮 포트 카탈로그 (전체 92종)
+## 🎮 포트 카탈로그 (전체 93종)
 
 > 상태는 `ports.json` 의 `status` 를 그대로 옮긴 것이고 이 표는 `tools/gen_catalog.py` 가 만듭니다. 🎯 는 실기에서 확인한 것, 🟡 는 켜지는 것까지, 📦 는 레시피만 정리한 것, 🧪 는 아직 기기에서 안 해 본 것입니다. 빌더 저장소가 따로 있는 포트는 **빌더** 링크가 있습니다.
 
@@ -129,6 +129,7 @@
 | `touhou8` | 동방영야초 (Touhou 8) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou8/README.md) · [포트 소스](https://github.com/saekaze/th08-switch) |
 | `touhou9` | 동방화영총 (Touhou 9) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou9/README.md) · [포트 소스](https://github.com/saekaze/th09-switch) |
 | `undertale-yellow` | 언더테일 옐로우 (Undertale Yellow) | RPG / Decomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/undertale-yellow/README.md) · [포트 소스](https://github.com/NalienDev/Undertale-Yellow-NX) |
+| `usf4` | 울트라 스트리트 파이터 4 (Ultra Street Fighter IV) | Fighting / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/usf4/README.md) · [포트 소스](https://github.com/Thorhax/usf4-nx) |
 | `vcmi` | 히어로즈 오브 마이트 앤 매직 3 (VCMI) | Strategy / Modern Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/vcmi/README.md) · [포트 소스](https://github.com/NaGaa95/vcmi_nx) · [원 프로젝트](https://github.com/vcmi/vcmi) |
 | `vf2` | 버추어 파이터 2 (Virtua Fighter 2) | Fighting / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/vf2/README.md) · [포트 소스](https://github.com/Thorhax/VF2-NX-Modern) |
 | `virtual-on` | 전뇌전기 버추얼 온 (Cyber Troopers Virtual-On) | Arcade / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/virtual-on/README.md) · [포트 소스](https://github.com/Thorhax/Virtual-On-NX) |

@@ -41,7 +41,7 @@
 | **Xbox 360 Recomp / MMO** | `dantes-inferno`, `gears2`, `usf4`, `ro` | 단테스 인페르노 TU2 + 한글패치 리눅스 적용 도구(`tools/dante_kr_patch.py`), 기어스 오브 워 2 v1.0.0(기기 시험 전, CPU 오버클럭 필요), 울트라 스트리트 파이터 4 v0.8.1(기기 시험 전, 데이터는 업스트림 설치 페이지가 만든다), 라그나로크 스위치 클라이언트(기동 확인) |
 | **Action / PS2 Decomp** | `sly1` | ProjectCane 0.5.0. 앱은 미국/유럽/일본판 ISO 만 받으므로 한국판(`SCKA_200.04`)은 `tools/sly1_extract` 로 미리 풀어 넣는다. 폰트 수정 뒤 2026-11-06 기기에서 한글 출력까지 확인 |
 | **Action / Platformer** | `jak1`, `jak2`, `jak3`, `sonic1`, `sonic2`, `sonic-cd`, `jazz`, `cannonball` | OpenGOAL 소니 공식 한국어 더빙/자막(Jak 2/3), RSDKv4 공식 한국어(Language=8), Jazz2 C++ 엔진, OutRun 아케이드 |
-| **무료 게임 (데이터 포함, `planned`)** | `brogue`, `abuse`, `rocksndiamonds`, `mirrormagic`, `openomf`, `mcosu` | 정품 데이터가 필요 없다. 데이터가 NRO 안에 있거나(`brogue`, `abuse`), 같은 릴리스의 zip 에 있다. 후자는 `port.json` 의 `release.data`(asset, strip, sha256)로 조립 때 받아 푼다. `release.data` 가 `[]` 이면 데이터 칸이 필요 없다는 뜻이다 |
+| **무료 게임 (데이터 포함, `planned`)** | `brogue`, `abuse`, `rocksndiamonds`, `mirrormagic`, `openomf`, `mcosu`, `mbplatinum`, `cvrevamped_nx` | 정품 데이터가 필요 없다. 데이터가 NRO 안에 있거나(`brogue`, `abuse`), 릴리스 압축에 있다. 후자는 `port.json` 의 `release.data` 로 조립 때 받아 푼다. 항목마다 `asset`(같은 릴리스) 또는 `url`, `strip`(이 접두사 아래만, 파일 하나도 된다), `dest`(넣을 위치), `sha256` 을 적는다. zip, apk, 7z 를 읽고 7z 는 시스템 `7z` 명령을 쓴다. `[]` 이면 데이터 칸이 필요 없다는 뜻이다. 2026-11-07 에 `srb2`, `nzportable`, `supermariowar`, `opentyrian`, `zelda-olb`, `zelda-roth`, `doom` 도 이 방식으로 옮겼다(전에는 NRO 만 조립됐다) |
 | **Fan Game / Roguelite** | `pokemon-survivor-burst`, `dragonball-z-rpg`, `wwhd` | mkxp-z 커스텀 루비 3.1 런타임, 바람의 지휘봉 HD 네이티브 환경 |
 
 ---

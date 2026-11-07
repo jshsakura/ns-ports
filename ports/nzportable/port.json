@@ -15,7 +15,14 @@
     "repo": "nzp-team/nzportable",
     "tag": "nightly",
     "asset": "nzportable-switch.zip",
-    "sha256": "a5d6db164bc43e24239d6882383b845e66cb8357af2f79818d5e867813e6dac3", "note": "public release checksum, privacy-ok",
-    "member": "nzportable/nzportable.nro"
+    "sha256": "7a94dfe4a8cd35322447cbf007eb2c3c0d485625b3f18ffbb436443324647837", "note": "public release checksum, privacy-ok",
+    "member": "nzportable/nzportable.nro",
+    "data": [
+      {
+        "asset": "nzportable-switch.zip",
+        "strip": "nzportable/",
+        "sha256": "7a94dfe4a8cd35322447cbf007eb2c3c0d485625b3f18ffbb436443324647837", "note": "public release checksum, privacy-ok"
+      }
+    ]
   }
 }

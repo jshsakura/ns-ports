@@ -38,6 +38,7 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `cannonball` | OutRun 아케이드 ROM 세트 | assemble | place your built `cannonball.nro` in `ports/cannonball/in/` | Thorhax/Cannonball-NX-Modern v1.08-nx, downloaded |
 | `cnc` | C&C Gold .MIX 파일 및 영상 에셋 | assemble | place your built `vanillatd.nro` in `ports/cnc/in/` | TheAssemblyArmada/Vanilla-Conquer |
 | `cstrike` | 정품 cstrike/ 및 valve/ 데이터 | source | built on your machine | FWGS/xash3d-fwgs |
+| `cvrevamped_nx` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `cvrevamped_nx.nro` in `ports/cvrevamped_nx/in/` | bshurikan/cvrevamped_nx v1.1.3, downloaded |
 | `dantes-inferno` | Xbox 360 디스크 game 폴더(bigfile0.viv, bigfile1.viv, default.xex, default.xexp 타이틀 업데이트 2)와 dante_shaders.dslib, shadercache_dksh.bin | assemble | place your built `dantes-inferno-nx.nro` in `ports/dantes-inferno/in/` | VasilkovND/dantes-inferno-nx v1.1.0, built |
 | `daytona-usa` | MAME Model 2 daytona.zip (Rev A) 롬 | assemble | place your built `Daytona.nro` in `ports/daytona-usa/in/` | Thorhax/Daytona-NX-Modern v1.1.0, downloaded |
 | `descent` | 디센트 1 정품 게임 데이터 | assemble | place your built `d1x-switch.nro` in `ports/descent/in/` | Thorhax/Descent1-NX-Modern 0.58.6-nx, downloaded |
@@ -68,6 +69,7 @@ Copy the result to `sd:/switch/<id>/` and launch it from the homebrew menu.
 | `mari0` | 업스트림 README 참고 | assemble | place your built `Mari0.nro` in `ports/mari0/in/` | delsonazevedo/mari0-switch 1.0.0, downloaded |
 | `mari0-ae` | 업스트림 README 참고 | assemble | place your built `mari0_ae_nx.nro` in `ports/mari0-ae/in/` | aks796/mari0_ae_nx 1.0.0, downloaded |
 | `masseffect` | Xbox 360판 매스 이펙트 1 게임 데이터 | assemble | place your built `masseffect-nx.nro` in `ports/masseffect/in/` | nebadasSwifty/masseffect-nx v0.2.1, downloaded |
+| `mbplatinum` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `mbplatinum.nro` in `ports/mbplatinum/in/` | ChanseyIsTheBest/MBHaxe-Switch 1.7.3s, downloaded |
 | `mcosu` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `McEngine.nro` in `ports/mcosu/in/` | McKay42/McOsu-NX v33.14, downloaded |
 | `mirrormagic` | 자체 무료 풀버전 데이터 포함 | assemble | place your built `mirrormagic.nro` in `ports/mirrormagic/in/` | rsn8887/rocksndiamonds 1.15, downloaded |
 | `nfsmw` | Xbox 360 NTSC-K 디스크의 game_root 폴더와 셰이더 파일(nfsmw_shaders.nfsp) | assemble | place your built `nfsmw-nx.nro` in `ports/nfsmw/in/` | StevensND/nfsmw-nx v1.0.0, downloaded |

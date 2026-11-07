@@ -14,6 +14,31 @@
     "tag": "nx4.11pre-2",
     "asset": "gzdoom_nx_10_4.10.zip",
     "sha256": "b7cdd31480ab80ef60b50f4db0c5ad3064e7cf4faad0e0b5b911c0af4a7393c6", "note": "public release checksum, privacy-ok",
-    "member": "gzdoom/gzdoom.nro"
+    "member": "gzdoom_launcher.nro",
+    "data": [
+      {
+        "asset": "gzdoom_nx_10_4.10.zip",
+        "strip": "",
+        "sha256": "b7cdd31480ab80ef60b50f4db0c5ad3064e7cf4faad0e0b5b911c0af4a7393c6", "note": "public release checksum, privacy-ok"
+      },
+      {
+        "url": "https://github.com/freedoom/freedoom/releases/download/v0.13.0/freedoom-0.13.0.zip",
+        "strip": "freedoom-0.13.0/freedoom1.wad",
+        "dest": "gzdoom/iwads/freedoom1.wad",
+        "sha256": "3f9b264f3e3ce503b4fb7f6bdcb1f419d93c7b546f4df3e874dd878db9688f59", "note": "public release checksum, privacy-ok"
+      },
+      {
+        "url": "https://github.com/freedoom/freedoom/releases/download/v0.13.0/freedoom-0.13.0.zip",
+        "strip": "freedoom-0.13.0/freedoom2.wad",
+        "dest": "gzdoom/iwads/freedoom2.wad",
+        "sha256": "3f9b264f3e3ce503b4fb7f6bdcb1f419d93c7b546f4df3e874dd878db9688f59", "note": "public release checksum, privacy-ok"
+      },
+      {
+        "url": "https://github.com/freedoom/freedoom/releases/download/v0.13.0/freedoom-0.13.0.zip",
+        "strip": "freedoom-0.13.0/COPYING.txt",
+        "dest": "gzdoom/iwads/freedoom-COPYING.txt",
+        "sha256": "3f9b264f3e3ce503b4fb7f6bdcb1f419d93c7b546f4df3e874dd878db9688f59", "note": "public release checksum, privacy-ok"
+      }
+    ]
   }
 }

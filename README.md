@@ -35,7 +35,7 @@
 
 ---
 
-## 🎮 포트 카탈로그 (전체 99종)
+## 🎮 포트 카탈로그 (전체 101종)
 
 > 상태는 `ports.json` 의 `status` 를 그대로 옮긴 것이고 이 표는 `tools/gen_catalog.py` 가 만듭니다. 🎯 는 실기에서 확인한 것, 🟡 는 켜지는 것까지, 📦 는 레시피만 정리한 것, 🧪 는 아직 기기에서 안 해 본 것입니다. 빌더 저장소가 따로 있는 포트는 **빌더** 링크가 있습니다.
 
@@ -86,6 +86,7 @@
 | `abuse` | 어뷰즈 (Abuse) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/abuse/README.md) · [포트 소스](https://github.com/capsterx-switch/abuse) |
 | `avp-gold` | 에일리언 대 프레데터: 골드 (AvP Gold) | FPS / Classic Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/avp-gold/README.md) · [포트 소스](https://github.com/Thorhax/AvP-Gold-NX-Modern) |
 | `brogue` | 브로그 (Brogue CE) | Roguelike / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/brogue/README.md) · [포트 소스](https://github.com/capsterx-switch/BrogueCE) · [원 프로젝트](https://github.com/tmewett/BrogueCE) |
+| `cvrevamped_nx` | 캐슬바니아 리뱀프드 (Castlevania ReVamped) | Action / Fan Game | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/cvrevamped_nx/README.md) · [포트 소스](https://github.com/bshurikan/cvrevamped_nx) |
 | `dantes-inferno` | 단테스 인페르노 (Dante's Inferno) | Action / Xbox 360 Recomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/dantes-inferno/README.md) · [포트 소스](https://github.com/VasilkovND/dantes-inferno-nx) |
 | `daytona-usa` | 데이토나 USA (Daytona USA) | Racing / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/daytona-usa/README.md) · [포트 소스](https://github.com/Thorhax/Daytona-NX-Modern) |
 | `descent` | 디센트 (Descent) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/descent/README.md) · [포트 소스](https://github.com/Thorhax/Descent1-NX-Modern) |
@@ -103,6 +104,7 @@
 | `mari0` | 마리0 (Mari0) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mari0/README.md) · [포트 소스](https://github.com/delsonazevedo/mari0-switch) |
 | `mari0-ae` | 마리0: Alesan99's Entities | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mari0-ae/README.md) · [포트 소스](https://github.com/aks796/mari0_ae_nx) |
 | `masseffect` | 매스 이펙트 1 (Mass Effect) | RPG / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/masseffect/README.md) · [포트 소스](https://github.com/nebadasSwifty/masseffect-nx) |
+| `mbplatinum` | 마블 블래스트 플래티넘 (Marble Blast Platinum) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mbplatinum/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/MBHaxe-Switch) · [원 프로젝트](https://github.com/RandomityGuy/MBHaxe) |
 | `mcosu` | 맥오수 (McOsu) | Rhythm / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mcosu/README.md) · [포트 소스](https://github.com/McKay42/McOsu-NX) · [원 프로젝트](https://github.com/McKay42/McOsu) |
 | `mirrormagic` | 미러 매직 (Mirror Magic) | Puzzle / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/mirrormagic/README.md) · [포트 소스](https://github.com/rsn8887/rocksndiamonds) · [원 프로젝트](https://www.artsoft.org/mirrormagic/) |
 | `nfsmw` | 니드 포 스피드: 모스트 원티드 (Need for Speed: Most Wanted) | Racing / Xbox 360 Recomp | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/nfsmw/README.md) · [포트 소스](https://github.com/StevensND/nfsmw-nx) |

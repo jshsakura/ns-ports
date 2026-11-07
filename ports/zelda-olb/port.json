@@ -16,6 +16,14 @@
     "tag": "1.1.1",
     "asset": "ZeldaOLB_nx.zip",
     "sha256": "d0e8e8df3d18a4afd48ded1eab00aa27c6ac374d6ec789871e51d5233baf6560", "note": "public release checksum, privacy-ok",
-    "member": "ZeldaOLB_nx.nro"
+    "member": "ZeldaOLB_nx.nro",
+    "data": [
+      {
+        "url": "https://github.com/worthis/ZeldaOLB-new-engine/archive/refs/tags/1.1.1.zip",
+        "strip": "ZeldaOLB-new-engine-1.1.1/data/",
+        "dest": "data/",
+        "sha256": "e73b159d79af883512600cc2defa8610e46b628b8c00535020a59bcc71077d60", "note": "public release checksum, privacy-ok"
+      }
+    ]
   }
 }

@@ -22,7 +22,7 @@ python3 build.py openomf --zip
 
 NRO 는 구하지 않아도 됩니다. `in/` 에 없으면 Thorhax/OpenOMF-NX-Modern 릴리스 v0.8.7-nx 에서 받아 sha256 을 확인하고 씁니다.
 
-게임 데이터도 구하지 않아도 됩니다. 같은 릴리스의 `openomf-switch-v0.8.7.zip` 를 받아 sha256 을 확인하고 풀어 넣습니다.
+게임 데이터도 구하지 않아도 됩니다. 릴리스에 든 `openomf-switch-v0.8.7.zip` 를 받아 sha256 을 확인하고 풀어 넣습니다.
 
 - 원 프로젝트: https://github.com/omf2097/openomf
 - 스위치 포트 소스: https://github.com/Thorhax/OpenOMF-NX-Modern

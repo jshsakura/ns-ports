@@ -1,0 +1,26 @@
+{
+  "id": "mbplatinum",
+  "title": "Marble Blast Platinum",
+  "reason": "마블 블래스트 플래티넘 실행 데이터를 같은 릴리스에서 받아 함께 넣습니다",
+  "base": ".",
+  "nro": {
+    "src": "in/mbplatinum.nro",
+    "out": "mbplatinum.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "ChanseyIsTheBest/MBHaxe-Switch",
+    "tag": "1.7.3s",
+    "asset": "switch.7z",
+    "member": "mbplatinum/mbplatinum.nro",
+    "sha256": "feda4c397ee48f573e8ddca4a5c70cae3b50d9ff95415b1cdefdc388de6fef29", "note": "public release checksum, privacy-ok",
+    "data": [
+      {
+        "asset": "switch.7z",
+        "strip": "mbplatinum/",
+        "sha256": "feda4c397ee48f573e8ddca4a5c70cae3b50d9ff95415b1cdefdc388de6fef29", "note": "public release checksum, privacy-ok"
+      }
+    ]
+  }
+}

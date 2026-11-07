@@ -7,7 +7,8 @@
 
 | 놓을 위치 | 무엇 | 구하는 곳 |
 | :--- | :--- | :--- |
-| `ports/zelda-olb/in/ZeldaOLB.nro` | ZeldaOLB NRO (게임 데이터는 자체 무료 데이터가 NRO 에 포함) | https://github.com/worthis/ZeldaOLB-new-engine 의 Switch 빌드 |
+| `ports/zelda-olb/in/ZeldaOLB.nro` | 스위치용 NRO (선택) | 안 둬도 된다. 없으면 worthis/ZeldaOLB-new-engine 릴리스 1.1.1 에서 자동으로 받는다 |
+| `ports/zelda-olb/in/data` | 자체 무료 데이터 포함 (선택) | 안 둬도 된다. 릴리스의 1.1.1.zip 를 받아 함께 넣는다 |
 | `ports/zelda-olb/icon.jpg` | 앱 아이콘 (256x256 JPEG) (선택) | 직접 구하거나 만든다. 없으면 NRO 에 든 아이콘을 그대로 쓴다 |
 
 **2. 이미지**: 앱 아이콘(`icon.jpg`, 256x256 JPEG)만 쓰이고 없으면 NRO 의 기본 아이콘을 씁니다. 이미지는 저장소에 없으니 필요하면 직접 구해 위 위치에 두세요. 배너와 스크린샷은 다루지 않습니다.
@@ -16,21 +17,23 @@
 
 ```
 python3 build.py guide zelda-olb    # 빈 칸과 구하는 곳 확인
-python3 build.py zelda-olb --rom <내 게임 데이터 폴더> --zip
+python3 build.py zelda-olb --zip
 ```
 
 NRO 는 구하지 않아도 됩니다. `in/` 에 없으면 worthis/ZeldaOLB-new-engine 릴리스 1.1.1 에서 받아 sha256 을 확인하고 씁니다.
 
+게임 데이터도 구하지 않아도 됩니다. 릴리스에 든 `1.1.1.zip` 를 받아 sha256 을 확인하고 풀어 넣습니다.
+
 - 스위치 포트 소스: https://github.com/worthis/ZeldaOLB-new-engine
 <!-- quick:end -->
 
-ZeldaOLB 엔진(v1.1.1) 네이티브 포트. 게임 데이터는 자체 무료 데이터라 따로 구할 게임 파일이 없다.
+ZeldaOLB 엔진(v1.1.1) 네이티브 포트. 게임 데이터는 무료라 따로 구할 게임 파일이 없다. 조립할 때 NRO 는 릴리스 zip 에서, 데이터는 업스트림 저장소의 같은 태그 소스 압축 안 `data/` 폴더에서 받는다.
 
 ## 어떤 파일을 어디서 구해 어디에 두나
 
 | # | 파일 | 어디서 | 어디에 |
 | :-: | :--- | :--- | :--- |
-| 1 | `ZeldaOLB.nro` | [worthis/ZeldaOLB-new-engine](https://github.com/worthis/ZeldaOLB-new-engine) 의 Switch 빌드 | `ports/zelda-olb/in/ZeldaOLB.nro` |
+| 1 | `ZeldaOLB.nro` (안 둬도 된다) | [worthis/ZeldaOLB-new-engine](https://github.com/worthis/ZeldaOLB-new-engine) 의 Switch 빌드 | `ports/zelda-olb/in/ZeldaOLB.nro` |
 
 ## 조립
 

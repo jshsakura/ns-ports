@@ -16,6 +16,14 @@
     "tag": "1.1.4",
     "asset": "ZeldaRotH_nx.zip",
     "sha256": "c3e96ecea7a5fdc7b41806d411558dad8669b15cad776cbab2c7809b8e4f24d8", "note": "public release checksum, privacy-ok",
-    "member": "ZeldaRotH_nx.nro"
+    "member": "ZeldaRotH_nx.nro",
+    "data": [
+      {
+        "url": "https://github.com/worthis/ZeldaROTH-new-engine/archive/refs/tags/1.1.4.zip",
+        "strip": "ZeldaROTH-new-engine-1.1.4/data/",
+        "dest": "data/",
+        "sha256": "a46217569a5773820a7dcfe7dedcd7b4008444a2dc7c52ddf55b71b7d6629589", "note": "public release checksum, privacy-ok"
+      }
+    ]
   }
 }

@@ -1,0 +1,19 @@
+{
+  "id": "exult",
+  "title": "울티마 7 (Exult)",
+  "reason": "울티마 7 (Exult) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/exult.nro",
+    "out": "exult.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "capsterx-switch/exult",
+    "tag": "v1.7.0-switchr1.5",
+    "asset": "exult-1.7.0git-switchr1.4.zip",
+    "sha256": "46db07922378a6039460242cbf6bca9d0ec735bebf38c6e5872ed1694f01c4e5", "note": "public release checksum, privacy-ok",
+    "member": "switch/exult.nro"
+  }
+}

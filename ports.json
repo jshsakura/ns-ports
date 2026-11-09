@@ -1499,5 +1499,35 @@
     "upstream": "https://github.com/bshurikan/cvrevamped_nx",
     "version": "v1.1.3",
     "obtained": "downloaded"
+  },
+  {
+    "id": "exult",
+    "name": "울티마 7 (Exult)",
+    "category": "CRPG / PC",
+    "engine": "Native port",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "울티마 7 (Exult) 스위치 포트. 한글화는 아직 안 했습니다.",
+    "required_assets": "울티마 7 정품 게임 데이터",
+    "nro": "exult.nro",
+    "upstream": "https://github.com/capsterx-switch/exult",
+    "version": "1.7.0-switchr1.5",
+    "obtained": "downloaded"
+  },
+  {
+    "id": "vovochka",
+    "name": "벨리콜레프니 보보치카 (Vovochka)",
+    "category": "Adventure / PC",
+    "engine": "Native port",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "벨리콜레프니 보보치카 (Vovochka) 스위치 포트. 한글화는 아직 안 했습니다.",
+    "required_assets": "업스트림 README 참고",
+    "nro": "vovochka.nro",
+    "upstream": "https://github.com/worthis/Vovochka",
+    "version": "1.0.1.0",
+    "obtained": "downloaded"
   }
 ]

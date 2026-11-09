@@ -1,0 +1,19 @@
+{
+  "id": "vovochka",
+  "title": "벨리콜레프니 보보치카 (Vovochka)",
+  "reason": "벨리콜레프니 보보치카 (Vovochka) 게임 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/vovochka.nro",
+    "out": "vovochka.nro"
+  },
+  "overlays": [],
+  "files": [],
+  "release": {
+    "repo": "worthis/Vovochka",
+    "tag": "1.0.1.0",
+    "asset": "vovochka.switch.zip",
+    "sha256": "45917bc741b954501af53c90412cfeb468c29f9b6029356fa0b9f014805e44cf", "note": "public release checksum, privacy-ok",
+    "member": "vovochka.nro"
+  }
+}

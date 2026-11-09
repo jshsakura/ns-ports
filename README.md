@@ -2,7 +2,7 @@
 
 [![Platforms](https://img.shields.io/badge/platform-NS%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/ns-ports)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Ports](https://img.shields.io/badge/native%20ports-92-orange.svg)](ports.json)
+[![Ports](https://img.shields.io/badge/native%20ports-103-orange.svg)](ports.json)
 
 **닌텐도 스위치(NS / Horizon OS)에서 오래된 게임을 네이티브 포트로 돌려 보고, 일부는 한글화한 개인 테스트 기록**입니다.
 
@@ -35,7 +35,7 @@
 
 ---
 
-## 🎮 포트 카탈로그 (전체 101종)
+## 🎮 포트 카탈로그 (전체 103종)
 
 > 상태는 `ports.json` 의 `status` 를 그대로 옮긴 것이고 이 표는 `tools/gen_catalog.py` 가 만듭니다. 🎯 는 실기에서 확인한 것, 🟡 는 켜지는 것까지, 📦 는 레시피만 정리한 것, 🧪 는 아직 기기에서 안 해 본 것입니다. 빌더 저장소가 따로 있는 포트는 **빌더** 링크가 있습니다.
 
@@ -92,6 +92,7 @@
 | `descent` | 디센트 (Descent) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/descent/README.md) · [포트 소스](https://github.com/Thorhax/Descent1-NX-Modern) |
 | `descent2` | 디센트 2 (Descent 2) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/descent2/README.md) · [포트 소스](https://github.com/Thorhax/Descent2-NX-Modern) |
 | `doukutsu-rs` | 동굴 이야기 (Cave Story, doukutsu-rs) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/doukutsu-rs/README.md) · [원 프로젝트](https://github.com/doukutsu-rs/doukutsu-rs) |
+| `exult` | 울티마 7 (Exult) | CRPG / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/exult/README.md) · [포트 소스](https://github.com/capsterx-switch/exult) |
 | `freespace2` | 프리스페이스 2 (Freespace 2) | Space Sim / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/freespace2/README.md) · [포트 소스](https://github.com/NaGaa95/freespace2_nx) |
 | `futari` | 벌레공주 두 사람 (Mushihimesama Futari) | Shooter / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/futari/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/futari-nx) |
 | `gears2` | 기어스 오브 워 2 (Gears of War 2) | Shooter / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/gears2/README.md) · [포트 소스](https://github.com/VasilkovND/gears2-nx) · [원 프로젝트](https://github.com/santiquiroz/gears-of-war-2-pc-port) |
@@ -141,6 +142,7 @@
 | `vcmi` | 히어로즈 오브 마이트 앤 매직 3 (VCMI) | Strategy / Modern Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/vcmi/README.md) · [포트 소스](https://github.com/NaGaa95/vcmi_nx) · [원 프로젝트](https://github.com/vcmi/vcmi) |
 | `vf2` | 버추어 파이터 2 (Virtua Fighter 2) | Fighting / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/vf2/README.md) · [포트 소스](https://github.com/Thorhax/VF2-NX-Modern) |
 | `virtual-on` | 전뇌전기 버추얼 온 (Cyber Troopers Virtual-On) | Arcade / Model 2 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/virtual-on/README.md) · [포트 소스](https://github.com/Thorhax/Virtual-On-NX) |
+| `vovochka` | 벨리콜레프니 보보치카 (Vovochka) | Adventure / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/vovochka/README.md) · [포트 소스](https://github.com/worthis/Vovochka) |
 | `wolf3d` | 울펜슈타인 3D (Wolfenstein 3D) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/wolf3d/README.md) · [포트 소스](https://github.com/Thorhax/Wolf4SDL-NX-Modern) |
 | `zelda3t` | 젤다: 시간의 승리 (Zelda Time to Triumph) | ARPG / Fan Game | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/zelda3t/README.md) · [포트 소스](https://github.com/worthis/Zelda3T) · [원 프로젝트](https://github.com/worthis/Zelda3T) |
 <!-- catalog:end -->

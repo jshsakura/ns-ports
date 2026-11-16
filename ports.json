@@ -1499,5 +1499,61 @@
     "upstream": "https://github.com/bshurikan/cvrevamped_nx",
     "version": "v1.1.3",
     "obtained": "downloaded"
+  },
+  {
+    "id": "fd2",
+    "name": "용의기사 2 (Flame Dragon 2)",
+    "category": "SRPG / DOS",
+    "engine": "FD2 네이티브 포트 (DOSBox 미사용)",
+    "status": "planned",
+    "korean": true,
+    "motion_controls": false,
+    "description": "용의기사 2 (Flame Dragon 2). 개인 개발 빌드. 실기와 컨트롤러 확인 안 함(제작자 기록 기준). 기록용으로만 등록하며 배포하지 않습니다.",
+    "required_assets": "원본 DOS 데이터 50파일, TimGM6mb.sf2 (NRO 옆에 둠)",
+    "nro": "fd2.nro",
+    "version": "0.1.0-dev",
+    "obtained": "built"
+  },
+  {
+    "id": "genesis2-souls",
+    "name": "창세기전 2 소울",
+    "category": "SRPG / PC",
+    "engine": "네이티브 포트",
+    "status": "planned",
+    "korean": true,
+    "motion_controls": false,
+    "description": "창세기전 2 소울. 개인 빌드. 기록용으로만 등록하며 배포하지 않습니다.",
+    "required_assets": "genesis2-souls.pck (NRO 옆에 둠)",
+    "nro": "genesis2-souls.nro",
+    "version": "0.1.0",
+    "obtained": "built"
+  },
+  {
+    "id": "tekken3e",
+    "name": "철권 3 Expanded (Tekken 3 Expanded)",
+    "category": "Fighting / PC",
+    "engine": "네이티브 포트",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "철권 3 Expanded (Tekken 3 Expanded). 개인 빌드. 원작자 표기: omarma. 기록용으로만 등록하며 배포하지 않습니다.",
+    "required_assets": "game.toml, switch.ini 와 게임 데이터 (같은 폴더)",
+    "nro": "tekken3e.nro",
+    "version": "0.1.2",
+    "obtained": "built"
+  },
+  {
+    "id": "guimunrok",
+    "name": "귀문록",
+    "category": "기록용",
+    "engine": "네이티브 포트",
+    "status": "planned",
+    "korean": false,
+    "motion_controls": false,
+    "description": "귀문록. 개인 빌드. 제작자 표기: Guimunrok. 기록용으로만 등록하며 배포하지 않습니다.",
+    "required_assets": "NRO 단독 (게임 데이터 없음)",
+    "nro": "guimunrok.nro",
+    "version": "1.0.0",
+    "obtained": "built"
   }
 ]

@@ -1,0 +1,12 @@
+{
+  "id": "tekken3e",
+  "title": "철권 3 Expanded (Tekken 3 Expanded)",
+  "reason": "철권 3 Expanded (Tekken 3 Expanded) 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/tekken3e.nro",
+    "out": "tekken3e.nro"
+  },
+  "overlays": [],
+  "files": []
+}

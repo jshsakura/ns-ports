@@ -1,0 +1,12 @@
+{
+  "id": "guimunrok",
+  "title": "귀문록",
+  "reason": "귀문록 데이터가 함께 있어야 실행됩니다",
+  "base": ".",
+  "nro": {
+    "src": "in/guimunrok.nro",
+    "out": "guimunrok.nro"
+  },
+  "overlays": [],
+  "files": []
+}

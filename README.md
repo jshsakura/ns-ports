@@ -2,7 +2,7 @@
 
 [![Platforms](https://img.shields.io/badge/platform-NS%20%7C%20Horizon%20OS%20(AArch64)-blue.svg)](https://github.com/jshsakura/ns-ports)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Ports](https://img.shields.io/badge/native%20ports-92-orange.svg)](ports.json)
+[![Ports](https://img.shields.io/badge/native%20ports-105-orange.svg)](ports.json)
 
 **닌텐도 스위치(NS / Horizon OS)에서 오래된 게임을 네이티브 포트로 돌려 보고, 일부는 한글화한 개인 테스트 기록**입니다.
 
@@ -35,7 +35,7 @@
 
 ---
 
-## 🎮 포트 카탈로그 (전체 101종)
+## 🎮 포트 카탈로그 (전체 105종)
 
 > 상태는 `ports.json` 의 `status` 를 그대로 옮긴 것이고 이 표는 `tools/gen_catalog.py` 가 만듭니다. 🎯 는 실기에서 확인한 것, 🟡 는 켜지는 것까지, 📦 는 레시피만 정리한 것, 🧪 는 아직 기기에서 안 해 본 것입니다. 빌더 저장소가 따로 있는 포트는 **빌더** 링크가 있습니다.
 
@@ -92,9 +92,12 @@
 | `descent` | 디센트 (Descent) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/descent/README.md) · [포트 소스](https://github.com/Thorhax/Descent1-NX-Modern) |
 | `descent2` | 디센트 2 (Descent 2) | FPS / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/descent2/README.md) · [포트 소스](https://github.com/Thorhax/Descent2-NX-Modern) |
 | `doukutsu-rs` | 동굴 이야기 (Cave Story, doukutsu-rs) | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/doukutsu-rs/README.md) · [원 프로젝트](https://github.com/doukutsu-rs/doukutsu-rs) |
+| `fd2` | 용의기사 2 (Flame Dragon 2) | SRPG / DOS | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/fd2/README.md) |
 | `freespace2` | 프리스페이스 2 (Freespace 2) | Space Sim / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/freespace2/README.md) · [포트 소스](https://github.com/NaGaa95/freespace2_nx) |
 | `futari` | 벌레공주 두 사람 (Mushihimesama Futari) | Shooter / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/futari/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/futari-nx) |
 | `gears2` | 기어스 오브 워 2 (Gears of War 2) | Shooter / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/gears2/README.md) · [포트 소스](https://github.com/VasilkovND/gears2-nx) · [원 프로젝트](https://github.com/santiquiroz/gears-of-war-2-pc-port) |
+| `genesis2-souls` | 창세기전 2 소울 | SRPG / PC | ✅ | ➖ | 🧪 기기 시험 전 | [가이드](ports/genesis2-souls/README.md) |
+| `guimunrok` | 귀문록 | 기록용 | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/guimunrok/README.md) |
 | `hurrican` | Hurrican | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/hurrican/README.md) · [포트 소스](https://github.com/rsn8887/Hurrican) · [원 프로젝트](https://github.com/Uukrull/Hurrican) |
 | `insaniquarium` | 인새니쿠아리움 (Insaniquarium) | Casual / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/insaniquarium/README.md) · [포트 소스](https://github.com/ChanseyIsTheBest/insaniquarium_nx) |
 | `iowolfsp` | 리턴 투 캐슬 울펜슈타인 (Return to Castle Wolfenstein) | FPS / Classic Native | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/iowolfsp/README.md) · [포트 소스](https://github.com/capsterx-switch/iortcw) · [원 프로젝트](https://github.com/iortcw/iortcw) |
@@ -127,6 +130,7 @@
 | `sonic-r` | 소닉 R (Sonic R) | Racing / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/sonic-r/README.md) · [포트 소스](https://github.com/boraeskicioglu/sonic_r_nx) |
 | `supertux2` | SuperTux | Platformer / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/supertux2/README.md) · [원 프로젝트](https://github.com/SuperTux/supertux) |
 | `supertuxkart` | SuperTuxKart | Racing / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/supertuxkart/README.md) · [원 프로젝트](https://github.com/supertuxkart/stk-code) |
+| `tekken3e` | 철권 3 Expanded (Tekken 3 Expanded) | Fighting / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/tekken3e/README.md) |
 | `torchlight` | 토치라이트 (Torchlight) | Action RPG / Xbox 360 Recomp | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/torchlight/README.md) · [포트 소스](https://github.com/liartes/torchlight-nx) |
 | `touhou-www` | 동방 원더풀 웨이킹 월드 (Touhou WWW) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou-www/README.md) · [포트 소스](https://github.com/saekaze/thWWW-switch) |
 | `touhou10` | 동방풍신록 (Touhou 10) | Shmup / PC | ➖ | ➖ | 🧪 기기 시험 전 | [가이드](ports/touhou10/README.md) · [포트 소스](https://github.com/saekaze/th10-switch) |
